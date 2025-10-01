@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitor Price Analytics - Graphs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .brand-dell { border-left: 4px solid #007DB8; }
+        .brand-hp { border-left: 4px solid #0096D6; }
+        .brand-lenovo { border-left: 4px solid #E2231A; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">📊 Price Analytics Dashboard</h1>
+                    <p class="text-gray-600">Visual analytics for Dell, HP, and Lenovo competitor pricing</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="/" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                        🏠 Main Dashboard
+                    </a>
+                    <a href="/popularity" class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition">
+                        🏆 Popularity Rankings
+                    </a>
+                    <button onclick="loadData()" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+                        🔄 Refresh Data
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Total Products</div>
+                <div id="statTotal" class="text-3xl font-bold text-blue-600">622</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Average Price</div>
+                <div id="statAvgPrice" class="text-3xl font-bold text-green-600">$418.45</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Lowest Price</div>
+                <div id="statMinPrice" class="text-3xl font-bold text-purple-600">$99.99</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Highest Price</div>
+                <div id="statMaxPrice" class="text-3xl font-bold text-red-600">$2250.00</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-sm font-bold text-gray-800 mb-3">Products by Brand</h3>
+                <canvas id="brandChart" height="200"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-sm font-bold text-gray-800 mb-3">Price Distribution</h3>
+                <canvas id="priceChart" height="200"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-sm font-bold text-gray-800 mb-3">Products by Competitor</h3>
+                <canvas id="competitorChart" height="200"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-sm font-bold text-gray-800 mb-3">Products by Type</h3>
+                <canvas id="typeChart" height="200"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-sm font-bold text-gray-800 mb-3">Products by Grade</h3>
+                <canvas id="gradeChart" height="200"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-sm font-bold text-gray-800 mb-3">Avg Price by Brand</h3>
+                <canvas id="avgPriceChart" height="200"></canvas>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        let allData = {};
+        let filteredProducts = [];
+        let brandChart = null;
+        let priceChart = null;
+        let competitorChart = null;
+        let typeChart = null;
+        let gradeChart = null;
+        let avgPriceChart = null;
+
+        // Load data from API or JSON file
+        async function loadData() {
+            try {
+                // Try API first, fall back to JSON file
+                let response;
+                try {
+                    response = await fetch('/api/data');
+                } catch {
+                    response = await fetch('competitor_prices.json');
+                }
+
+                allData = await response.json();
+                updateCharts();
+                console.log('Data loaded successfully');
+
+                // Show success message
+                showNotification('Data refreshed successfully!', 'success');
+            } catch (error) {
+                console.error('Error loading data:', error);
+                showNotification('Error loading data. Make sure competitor_prices.json exists.', 'error');
+            }
+        }
+
+        // Update charts
+        function updateCharts() {
+            // Get all products for full dataset analysis
+            let allProducts = [];
+            for (const [compName, compData] of Object.entries(allData)) {
+                const products = compData.products || [];
+                for (const product of products) {
+                    allProducts.push({
+                        ...product,
+                        competitor: compName
+                    });
+                }
+            }
+
+            // Update statistics
+            updateStatistics(allProducts);
+
+            // Brand distribution
+            const brandCounts = {};
+            allProducts.forEach(p => {
+                brandCounts[p.brand] = (brandCounts[p.brand] || 0) + 1;
+            });
+
+            if (brandChart) brandChart.destroy();
+            const brandCtx = document.getElementById('brandChart').getContext('2d');
+            brandChart = new Chart(brandCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(brandCounts),
+                    datasets: [{
+                        data: Object.values(brandCounts),
+                        backgroundColor: ['#007DB8', '#0096D6', '#E2231A']
+                    }]
+                }
+            });
+
+            // Price distribution
+            const priceRanges = {
+                '$0-300': 0,
+                '$300-500': 0,
+                '$500-800': 0,
+                '$800-1200': 0,
+                '$1200+': 0
+            };
+
+            allProducts.forEach(p => {
+                if (!p.price) return;
+                if (p.price < 300) priceRanges['$0-300']++;
+                else if (p.price < 500) priceRanges['$300-500']++;
+                else if (p.price < 800) priceRanges['$500-800']++;
+                else if (p.price < 1200) priceRanges['$800-1200']++;
+                else priceRanges['$1200+']++;
+            });
+
+            if (priceChart) priceChart.destroy();
+            const priceCtx = document.getElementById('priceChart').getContext('2d');
+            priceChart = new Chart(priceCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(priceRanges),
+                    datasets: [{
+                        label: 'Products',
+                        data: Object.values(priceRanges),
+                        backgroundColor: '#4F46E5'
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Products by Competitor
+            const competitorCounts = {};
+            allProducts.forEach(p => {
+                competitorCounts[p.competitor] = (competitorCounts[p.competitor] || 0) + 1;
+            });
+
+            if (competitorChart) competitorChart.destroy();
+            const competitorCtx = document.getElementById('competitorChart').getContext('2d');
+            competitorChart = new Chart(competitorCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(competitorCounts),
+                    datasets: [{
+                        data: Object.values(competitorCounts),
+                        backgroundColor: ['#3B82F6', '#EF4444', '#10B981', '#F59E0B']
+                    }]
+                }
+            });
+
+            // Products by Type
+            const typeCounts = {};
+            allProducts.forEach(p => {
+                typeCounts[p.product_type] = (typeCounts[p.product_type] || 0) + 1;
+            });
+
+            if (typeChart) typeChart.destroy();
+            const typeCtx = document.getElementById('typeChart').getContext('2d');
+            typeChart = new Chart(typeCtx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(typeCounts),
+                    datasets: [{
+                        data: Object.values(typeCounts),
+                        backgroundColor: ['#3B82F6', '#EF4444']
+                    }]
+                }
+            });
+
+            // Products by Grade
+            const gradeCounts = {};
+            allProducts.forEach(p => {
+                const grade = p.config?.cosmetic_grade || 'N/A';
+                gradeCounts[grade] = (gradeCounts[grade] || 0) + 1;
+            });
+
+            if (gradeChart) gradeChart.destroy();
+            const gradeCtx = document.getElementById('gradeChart').getContext('2d');
+            gradeChart = new Chart(gradeCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(gradeCounts),
+                    datasets: [{
+                        label: 'Products',
+                        data: Object.values(gradeCounts),
+                        backgroundColor: ['#10B981', '#F59E0B', '#EF4444', '#8B5CF6']
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Average Price by Brand
+            const brandPrices = {};
+            const brandCountsForAvg = {};
+
+            allProducts.forEach(p => {
+                if (!p.price) return;
+
+                if (!brandPrices[p.brand]) {
+                    brandPrices[p.brand] = 0;
+                    brandCountsForAvg[p.brand] = 0;
+                }
+
+                brandPrices[p.brand] += p.price;
+                brandCountsForAvg[p.brand]++;
+            });
+
+            const avgPrices = {};
+            Object.keys(brandPrices).forEach(brand => {
+                avgPrices[brand] = brandPrices[brand] / brandCountsForAvg[brand];
+            });
+
+            if (avgPriceChart) avgPriceChart.destroy();
+            const avgPriceCtx = document.getElementById('avgPriceChart').getContext('2d');
+            avgPriceChart = new Chart(avgPriceCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(avgPrices),
+                    datasets: [{
+                        label: 'Average Price ($)',
+                        data: Object.values(avgPrices),
+                        backgroundColor: ['#007DB8', '#0096D6', '#E2231A']
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toFixed(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+
+        }
+
+        // Update statistics
+        function updateStatistics(products) {
+            const prices = products.filter(p => p.price).map(p => p.price);
+            
+            document.getElementById('statTotal').textContent = products.length;
+            
+            if (prices.length > 0) {
+                const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+                const min = Math.min(...prices);
+                const max = Math.max(...prices);
+                
+                document.getElementById('statAvgPrice').textContent = `$${avg.toFixed(2)}`;
+                document.getElementById('statMinPrice').textContent = `$${min.toFixed(2)}`;
+                document.getElementById('statMaxPrice').textContent = `$${max.toFixed(2)}`;
+            } else {
+                document.getElementById('statAvgPrice').textContent = '$0';
+                document.getElementById('statMinPrice').textContent = '$0';
+                document.getElementById('statMaxPrice').textContent = '$0';
+            }
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existing = document.getElementById('notification');
+            if (existing) existing.remove();
+
+            // Create notification
+            const notification = document.createElement('div');
+            notification.id = 'notification';
+            notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-500' :
+                type === 'error' ? 'bg-red-500' :
+                type === 'info' ? 'bg-blue-500' : 'bg-gray-500'
+            } text-white`;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Connect to real-time data stream
+        let dataEventSource = null;
+        
+        function connectDataStream() {
+            if (dataEventSource) {
+                dataEventSource.close();
+            }
+
+            dataEventSource = new EventSource('/api/data/stream');
+
+            dataEventSource.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+
+                    // Skip heartbeat messages
+                    if (data.type === 'heartbeat') return;
+
+                    // Data file was updated - reload silently
+                    if (data.type === 'data_updated') {
+                        console.log('📊 Data file updated - refreshing graphs...');
+                        loadData(); // Reload to update graphs
+                    }
+
+                } catch (error) {
+                    console.error('Error parsing data stream message:', error);
+                }
+            };
+
+            dataEventSource.onerror = function(error) {
+                console.error('Data stream error:', error);
+                
+                // Attempt to reconnect after 3 seconds
+                setTimeout(() => {
+                    console.log('🔄 Reconnecting to data stream...');
+                    connectDataStream();
+                }, 3000);
+            };
+
+            console.log('📡 Connected to real-time data stream');
+        }
+
+        // Load data on page load
+        window.onload = function() {
+            loadData();
+            connectDataStream(); // Connect to real-time data updates
+        };
+
+        // Clean up on page unload
+        window.onbeforeunload = function() {
+            if (dataEventSource) dataEventSource.close();
+        };
+    </script>
+</body>
+</html>

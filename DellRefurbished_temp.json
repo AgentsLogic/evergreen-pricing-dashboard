@@ -1,0 +1,1451 @@
+{
+  "DellRefurbished": {
+    "competitor": "DellRefurbished",
+    "website": "https://www.dellrefurbished.com",
+    "scrape_date": "2025-10-01T06:12:47.520037",
+    "total_products": 72,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 729.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000049/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 SFF",
+        "price": 729.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-sff-000004/dell-optiplex-3000-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 SFF",
+        "price": 839.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-sff-000006/dell-optiplex-3000-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MT",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MT",
+        "price": 769.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mt-000003/dell-optiplex-3000-mt/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300 (4-Core, 3.50 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 SFF",
+        "price": 339.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3070-sff-000111/dell-optiplex-3070-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-9500 (6-Core, 3.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3080 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3080 MFF",
+        "price": 439.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3080-mff-000105/dell-optiplex-3080-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-10500T (6-Core, 2.30 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 479.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000015/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000004/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12100T (4-Core, 2.20 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 479.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000014/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000025/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12100T (4-Core, 2.20 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 509.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000027/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 499.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000033/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "32 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000032/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000028/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000030/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 839.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000007/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "16 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 509.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000029/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "12 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000021/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 739.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000048/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 789.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000047/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 689.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000052/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 639.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000051/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 779.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000053/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "16 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 739.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000050/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 729.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000049/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 SFF",
+        "price": 729.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-sff-000004/dell-optiplex-3000-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 SFF",
+        "price": 839.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-sff-000006/dell-optiplex-3000-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MT",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MT",
+        "price": 769.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mt-000003/dell-optiplex-3000-mt/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300 (4-Core, 3.50 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 SFF",
+        "price": 339.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3070-sff-000111/dell-optiplex-3070-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-9500 (6-Core, 3.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3080 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3080 MFF",
+        "price": 439.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3080-mff-000105/dell-optiplex-3080-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-10500T (6-Core, 2.30 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 479.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000015/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000004/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12100T (4-Core, 2.20 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 479.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000014/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000025/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12100T (4-Core, 2.20 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 509.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000027/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 499.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000033/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "32 GB (2x 16GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000032/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000028/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000030/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 839.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000007/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 509.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000029/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "12 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000021/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 739.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000048/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 789.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000047/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 689.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000052/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 639.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000051/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 779.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000053/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 729.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000049/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 SFF",
+        "price": 729.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-sff-000004/dell-optiplex-3000-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 SFF",
+        "price": 839.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-sff-000006/dell-optiplex-3000-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-12500 (6-Core, 3.00 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MT",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MT",
+        "price": 769.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mt-000003/dell-optiplex-3000-mt/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-12300 (4-Core, 3.50 GHz)",
+          "ram": "16 GB (2x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 SFF",
+        "price": 339.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3070-sff-000111/dell-optiplex-3070-sff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-9500 (6-Core, 3.00 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3080 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3080 MFF",
+        "price": 439.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3080-mff-000105/dell-optiplex-3080-mff/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-10500T (6-Core, 2.30 GHz)",
+          "ram": "8 GB (1x 8GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 479.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000015/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000004/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12100T (4-Core, 2.20 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 479.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000014/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000025/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12100T (4-Core, 2.20 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 509.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000027/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 499.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000033/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "32 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000032/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000028/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000030/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 839.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000007/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "16 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 509.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000029/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i3-12300T (4-Core, 2.30 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "12 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 699.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000021/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 739.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000048/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 789.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000047/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 689.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000052/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 639.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000051/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 779.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000053/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "16 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 739.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000050/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 MFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3000 MFF",
+        "price": 639.0,
+        "url": "https://www.dellrefurbished.com/item/dell-optiplex-3000-mff-000049/dell-optiplex-3000-mff/1.html",
+        "config": {
+          "processor": "Intel Core i5-12500T (6-Core, 2.00 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      }
+    ],
+    "warning": "Rejected due to 63 product loss"
+  }
+}

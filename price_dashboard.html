@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitor MSRP Price Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .brand-dell { border-left: 4px solid #007DB8; }
+        .brand-hp { border-left: 4px solid #0096D6; }
+        .brand-lenovo { border-left: 4px solid #E2231A; }
+        
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">🏷️ Jeff's Competitor MSRP Price Dashboard</h1>
+            <p class="text-gray-600">Real-time pricing intelligence for Dell, HP, and Lenovo products</p>
+            <div class="mt-4 flex gap-4 items-center flex-wrap">
+                <a href="/graphs" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition inline-flex items-center gap-2">
+                    📊 View Graphs
+                </a>
+                <a href="/popularity" class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition inline-flex items-center gap-2">
+                    🏆 Popularity Rankings
+                </a>
+                <a href="/multi-site-comparison" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition inline-flex items-center gap-2">
+                    ⚖️ Compare Prices
+                </a>
+                <button onclick="loadData()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    🔄 Refresh Data
+                </button>
+                <div class="relative">
+                    <button onclick="toggleExportDropdown()" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2">
+                        📥 Export to CSV
+                        <span id="exportArrow">▼</span>
+                    </button>
+                    <div id="exportDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
+                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Data</div>
+                        <div onclick="exportToCSV('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
+                        <div onclick="exportToCSV('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
+                        <div onclick="exportToCSV('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
+                        <div onclick="exportToCSV('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
+                        <div onclick="exportToCSV('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button onclick="toggleScraperDropdown()" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition flex items-center gap-2">
+                        🕷️ Run Scraper
+                        <span id="scraperArrow">▼</span>
+                    </button>
+                    <div id="scraperDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
+                        <div onclick="runScraper('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Scrape All Sites</div>
+                        <div onclick="runScraper('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
+                        <div onclick="runScraper('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
+                        <div onclick="runScraper('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
+                        <div onclick="runScraper('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
+                        <div onclick="runScraper('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+                    </div>
+                </div>
+                <button id="stopScraperBtn" onclick="stopScraper()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition opacity-50 cursor-not-allowed" disabled>
+                    🛑 Stop Scraper
+                </button>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">🔍 Filters & Sorting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Competitor</label>
+                    <select id="filterCompetitor" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Competitors</option>
+                        <option value="PCLiquidations">PCLiquidations</option>
+                        <option value="DiscountElectronics">DiscountElectronics</option>
+                        <option value="SystemLiquidation">SystemLiquidation</option>
+                        <option value="DellRefurbished">DellRefurbished</option>
+                        <option value="DiscountPC">DiscountPC</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+                    <select id="filterBrand" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Brands</option>
+                        <option value="Dell">Dell</option>
+                        <option value="HP">HP</option>
+                        <option value="Lenovo">Lenovo</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Product Type</label>
+                    <select id="filterType" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Types</option>
+                        <option value="Laptop">Laptops</option>
+                        <option value="Desktop">Desktops</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Cosmetic Grade</label>
+                    <select id="filterGrade" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Grades</option>
+                        <option value="Grade A">Grade A</option>
+                        <option value="Grade B">Grade B</option>
+                        <option value="Grade C">Grade C</option>
+                        <option value="N/A">N/A (Not Listed)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                    <select id="filterPrice" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Prices</option>
+                        <option value="0-300">$0 - $300</option>
+                        <option value="300-500">$300 - $500</option>
+                        <option value="500-800">$500 - $800</option>
+                        <option value="800-1200">$800 - $1,200</option>
+                        <option value="1200-99999">$1,200+</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                    <select id="sortBy" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="brand-asc">Brand: A-Z</option>
+                        <option value="model-asc">Model: A-Z</option>
+                        <option value="competitor-asc">Competitor: A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4">
+                <input type="text" id="searchBox" placeholder="🔎 Search products..." onkeyup="applyFilters()"
+                       class="w-full border border-gray-300 rounded-lg px-4 py-2">
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Total Products</div>
+                <div id="statTotal" class="text-3xl font-bold text-blue-600">0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Average Price</div>
+                <div id="statAvgPrice" class="text-3xl font-bold text-green-600">$0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Lowest Price</div>
+                <div id="statMinPrice" class="text-3xl font-bold text-purple-600">$0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Highest Price</div>
+                <div id="statMaxPrice" class="text-3xl font-bold text-red-600">$0</div>
+            </div>
+        </div>
+
+
+
+        <!-- Live Chat Output -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">🤖 Live LLM Chat Output</h2>
+                <div class="flex gap-2">
+                    <button onclick="clearChat()" class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition">
+                        🗑️ Clear
+                    </button>
+                    <button onclick="togglePauseChat()" class="bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition">
+                        ⏸️ Pause
+                    </button>
+                    <button onclick="exportChat()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600 transition">
+                        📥 Export
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Controls -->
+            <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                <div class="flex gap-4 items-center">
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="autoScroll" checked class="rounded">
+                        <label for="autoScroll" class="text-sm text-gray-700">Auto-scroll</label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="showTimestamps" checked class="rounded">
+                        <label for="showTimestamps" class="text-sm text-gray-700">Show timestamps</label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-sm text-gray-700">Max lines:</label>
+                        <input type="number" id="maxLines" value="1000" min="100" max="5000" class="w-20 border rounded px-2 py-1 text-sm">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Display -->
+            <div id="chatContainer" class="bg-gray-900 text-gray-100 rounded-lg p-4 h-96 overflow-y-auto font-mono text-sm">
+                <div id="chatMessages">
+                    <!-- Chat messages will appear here -->
+                </div>
+            </div>
+
+            <!-- Chat Input (for testing) -->
+            <div class="mt-4 flex gap-2">
+                <input type="text" id="chatInput" placeholder="Type a message to test chat..." class="flex-1 border border-gray-300 rounded-lg px-3 py-2">
+                <button onclick="sendTestMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                    Send Test
+                </button>
+            </div>
+        </div>
+
+        <!-- Products Table -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">📋 Product Listings</h2>
+            <div class="mb-4">
+                <input type="text" id="searchBox" onkeyup="applyFilters()"
+                       placeholder="Search by model, processor, or specs..."
+                       class="w-full border border-gray-300 rounded-lg px-4 py-2">
+            </div>
+            <div id="productsContainer" class="space-y-4">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allData = {};
+        let filteredProducts = [];
+
+        // Load data from API or JSON file
+        async function loadData(silent = false) {
+            try {
+                // Try API first, fall back to JSON file
+                let response;
+                try {
+                    response = await fetch('/api/data');
+                } catch {
+                    response = await fetch('competitor_prices.json');
+                }
+
+                allData = await response.json();
+                applyFilters();
+                console.log('Data loaded successfully');
+                
+                // Only show notification if not silent (manual refresh)
+                if (!silent) {
+                    showNotification('Data refreshed successfully!', 'success');
+                }
+            } catch (error) {
+                console.error('Error loading data:', error);
+                if (!silent) {
+                    showNotification('Error loading data. Make sure competitor_prices.json exists.', 'error');
+                }
+            }
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const competitor = document.getElementById('filterCompetitor').value;
+            const brand = document.getElementById('filterBrand').value;
+            const type = document.getElementById('filterType').value;
+            const grade = document.getElementById('filterGrade').value;
+            const priceRange = document.getElementById('filterPrice').value;
+            const sortBy = document.getElementById('sortBy').value;
+            const search = document.getElementById('searchBox').value.toLowerCase();
+
+            filteredProducts = [];
+
+            // Collect all products
+            for (const [compName, compData] of Object.entries(allData)) {
+                if (competitor && compName !== competitor) continue;
+
+                const products = compData.products || [];
+                for (const product of products) {
+                    // Apply filters
+                    if (brand && product.brand !== brand) continue;
+                    if (type && product.product_type !== type) continue;
+
+                    // Cosmetic grade filter
+                    if (grade) {
+                        const productGrade = product.config?.cosmetic_grade || 'N/A';
+                        if (grade !== productGrade) continue;
+                    }
+
+                    // Price range filter
+                    if (priceRange && product.price) {
+                        const [min, max] = priceRange.split('-').map(Number);
+                        if (product.price < min || product.price > max) continue;
+                    }
+
+                    // Search filter
+                    if (search) {
+                        const searchText = JSON.stringify(product).toLowerCase();
+                        if (!searchText.includes(search)) continue;
+                    }
+
+                    filteredProducts.push({
+                        ...product,
+                        competitor: compName
+                    });
+                }
+            }
+
+            // Apply sorting
+            sortProducts(sortBy);
+
+            displayProducts();
+            updateStatistics();
+        }
+
+        // Sort products
+        function sortProducts(sortBy) {
+            switch(sortBy) {
+                case 'price-asc':
+                    filteredProducts.sort((a, b) => (a.price || 999999) - (b.price || 999999));
+                    break;
+                case 'price-desc':
+                    filteredProducts.sort((a, b) => (b.price || 0) - (a.price || 0));
+                    break;
+                case 'brand-asc':
+                    filteredProducts.sort((a, b) => (a.brand || '').localeCompare(b.brand || ''));
+                    break;
+                case 'model-asc':
+                    filteredProducts.sort((a, b) => (a.model || '').localeCompare(b.model || ''));
+                    break;
+                case 'competitor-asc':
+                    filteredProducts.sort((a, b) => (a.competitor || '').localeCompare(b.competitor || ''));
+                    break;
+            }
+        }
+
+        // Display products
+        function displayProducts() {
+            const container = document.getElementById('productsContainer');
+            
+            if (filteredProducts.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-8">No products found</p>';
+                return;
+            }
+
+            container.innerHTML = filteredProducts.map(product => `
+                <div class="product-card border rounded-lg p-4 brand-${product.brand.toLowerCase()}">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">${product.brand}</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2 py-1 rounded">${product.product_type}</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">${product.competitor}</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-800 mb-2">
+                                ${product.url ? `<a href="${product.url}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">${product.title || product.model} 🔗</a>` : (product.title || product.model)}
+                            </h3>
+                            <div class="text-xs text-gray-500 mb-2">Model: ${product.model}</div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                                ${product.config?.processor ? `<div><span class="text-gray-600">CPU:</span> <span class="font-medium">${product.config.processor}</span></div>` : ''}
+                                ${product.config?.ram ? `<div><span class="text-gray-600">RAM:</span> <span class="font-medium">${product.config.ram}</span></div>` : ''}
+                                ${product.config?.storage ? `<div><span class="text-gray-600">Storage:</span> <span class="font-medium">${product.config.storage}</span></div>` : ''}
+                                <div><span class="text-gray-600">Grade:</span> <span class="font-medium ${product.config?.cosmetic_grade ? 'text-green-700' : 'text-gray-400'}">${product.config?.cosmetic_grade || 'N/A'}</span></div>
+                                ${product.config?.screen_resolution ? `<div><span class="text-gray-600">Display:</span> <span class="font-medium">${product.config.screen_resolution}</span></div>` : ''}
+                                ${product.config?.form_factor ? `<div><span class="text-gray-600">Form:</span> <span class="font-medium">${product.config.form_factor}</span></div>` : ''}
+                            </div>
+                        </div>
+                        <div class="text-right ml-4">
+                            <div class="text-2xl font-bold text-green-600">
+                                ${product.price ? `$${product.price.toFixed(2)}` : 'N/A'}
+                            </div>
+                            ${product.availability ? `<div class="text-xs text-gray-500 mt-1">${product.availability}</div>` : ''}
+                            ${product.url ? `<a href="${product.url}" target="_blank" class="text-xs text-blue-600 hover:underline mt-2 inline-block">View Product →</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const prices = filteredProducts.filter(p => p.price).map(p => p.price);
+            
+            document.getElementById('statTotal').textContent = filteredProducts.length;
+            
+            if (prices.length > 0) {
+                const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+                const min = Math.min(...prices);
+                const max = Math.max(...prices);
+                
+                document.getElementById('statAvgPrice').textContent = `$${avg.toFixed(2)}`;
+                document.getElementById('statMinPrice').textContent = `$${min.toFixed(2)}`;
+                document.getElementById('statMaxPrice').textContent = `$${max.toFixed(2)}`;
+            } else {
+                document.getElementById('statAvgPrice').textContent = '$0';
+                document.getElementById('statMinPrice').textContent = '$0';
+                document.getElementById('statMaxPrice').textContent = '$0';
+            }
+        }
+
+
+
+        // Dropdown functionality
+        function toggleExportDropdown() {
+            const dropdown = document.getElementById('exportDropdown');
+            const arrow = document.getElementById('exportArrow');
+            const isHidden = dropdown.classList.contains('hidden');
+
+            // Close other dropdowns
+            closeAllDropdowns();
+
+            if (isHidden) {
+                dropdown.classList.remove('hidden');
+                arrow.textContent = '▲';
+            } else {
+                dropdown.classList.add('hidden');
+                arrow.textContent = '▼';
+            }
+        }
+
+        function toggleScraperDropdown() {
+            const dropdown = document.getElementById('scraperDropdown');
+            const arrow = document.getElementById('scraperArrow');
+            const isHidden = dropdown.classList.contains('hidden');
+
+            // Close other dropdowns
+            closeAllDropdowns();
+
+            if (isHidden) {
+                dropdown.classList.remove('hidden');
+                arrow.textContent = '▲';
+            } else {
+                dropdown.classList.add('hidden');
+                arrow.textContent = '▼';
+            }
+        }
+
+        function closeAllDropdowns() {
+            // Close all dropdowns and reset arrows
+            document.getElementById('exportDropdown').classList.add('hidden');
+            document.getElementById('scraperDropdown').classList.add('hidden');
+            document.getElementById('exportArrow').textContent = '▼';
+            document.getElementById('scraperArrow').textContent = '▼';
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            const exportButton = event.target.closest('button[onclick="toggleExportDropdown()"]');
+            const scraperButton = event.target.closest('button[onclick="toggleScraperDropdown()"]');
+            const exportDropdown = document.getElementById('exportDropdown');
+            const scraperDropdown = document.getElementById('scraperDropdown');
+
+            if (!exportButton && !exportDropdown.contains(event.target)) {
+                exportDropdown.classList.add('hidden');
+                document.getElementById('exportArrow').textContent = '▼';
+            }
+
+            if (!scraperButton && !scraperDropdown.contains(event.target)) {
+                scraperDropdown.classList.add('hidden');
+                document.getElementById('scraperArrow').textContent = '▼';
+            }
+        });
+
+        // Export to CSV (updated to support site selection)
+        function exportToCSV(site = 'all') {
+            let productsToExport = filteredProducts;
+            let siteName = 'all_data';
+
+            if (site !== 'all') {
+                // Filter products for specific site
+                productsToExport = filteredProducts.filter(p => p.competitor === site);
+                siteName = site.toLowerCase().replace(/\s+/g, '_');
+            }
+
+            if (productsToExport.length === 0) {
+                showNotification(`No products found for ${site === 'all' ? 'export' : site}`, 'warning');
+                return;
+            }
+
+            const headers = ['Competitor', 'Brand', 'Type', 'Model', 'Price', 'Processor', 'RAM', 'Storage', 'Screen', 'Form Factor', 'Cosmetic Grade'];
+            const rows = productsToExport.map(p => [
+                p.competitor,
+                p.brand,
+                p.product_type,
+                p.model || p.title,
+                p.price || '',
+                p.config.processor || '',
+                p.config.ram || '',
+                p.config.storage || '',
+                p.config.screen_resolution || '',
+                p.config.form_factor || '',
+                p.config.cosmetic_grade || 'N/A'
+            ]);
+
+            const csv = [headers, ...rows].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `competitor_prices_${siteName}_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+
+            showNotification(`Exported ${productsToExport.length} products (${site}) to CSV`, 'success');
+            closeAllDropdowns();
+        }
+
+        // Stop scraper
+        async function stopScraper() {
+            if (!confirm('Are you sure you want to stop the scraper?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/scrape/stop', {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showNotification('Scraper stopped successfully', 'warning');
+                    // Disable stop button
+                    const stopBtn = document.getElementById('stopScraperBtn');
+                    stopBtn.disabled = true;
+                    stopBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    stopBtn.classList.remove('hover:bg-red-700');
+                } else {
+                    showNotification(`Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('Error stopping scraper:', error);
+                showNotification('Failed to stop scraper', 'error');
+            }
+        }
+
+        // Run scraper (updated to support site selection)
+        async function runScraper(site = 'all') {
+            const siteName = site === 'all' ? 'all sites' : site;
+            const confirmMessage = `Start scraping ${siteName}? This may take several minutes.`;
+
+            if (!confirm(confirmMessage)) {
+                return;
+            }
+
+            // Check if we should use advanced or basic scraper
+            const useAdvanced = confirm('Use AI-powered scraper for better accuracy?\n\nClick OK for AI scraper (requires API key)\nClick Cancel for basic scraper (no API key needed)');
+
+            const scraperType = useAdvanced ? 'advanced' : 'basic';
+
+            try {
+                showNotification(`Starting ${scraperType} scraper for ${siteName}...`, 'info');
+
+                const response = await fetch('/api/scrape/start', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        type: scraperType,
+                        site: site
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showNotification(`Scraper started for ${siteName}! Check status below...`, 'success');
+                    // Enable stop button
+                    const stopBtn = document.getElementById('stopScraperBtn');
+                    stopBtn.disabled = false;
+                    stopBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    stopBtn.classList.add('hover:bg-red-700');
+                    // Start polling for status
+                    pollScraperStatus();
+                } else {
+                    showNotification(`Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('Error starting scraper:', error);
+                showNotification('Failed to start scraper. Make sure the server is running.', 'error');
+            }
+        }
+
+        // Poll scraper status
+        let statusInterval = null;
+        async function pollScraperStatus() {
+            if (statusInterval) clearInterval(statusInterval);
+
+            statusInterval = setInterval(async () => {
+                try {
+                    const response = await fetch('/api/scrape/status');
+                    const status = await response.json();
+
+                    if (status.running) {
+                        // Keep stop button enabled while running
+                        const stopBtn = document.getElementById('stopScraperBtn');
+                        stopBtn.disabled = false;
+                        stopBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        stopBtn.classList.add('hover:bg-red-700');
+                        showNotification(`Scraping: ${status.progress}`, 'info');
+                    } else {
+                        // Disable stop button when not running
+                        const stopBtn = document.getElementById('stopScraperBtn');
+                        stopBtn.disabled = true;
+                        stopBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        stopBtn.classList.remove('hover:bg-red-700');
+                        clearInterval(statusInterval);
+                        if (status.error) {
+                            showNotification(`Scraping failed: ${status.error}`, 'error');
+                        } else if (status.last_run) {
+                            showNotification('Scraping completed! Refreshing data...', 'success');
+                            await loadData();
+                        }
+                    }
+                } catch (error) {
+                    clearInterval(statusInterval);
+                    // Disable stop button on error
+                    const stopBtn = document.getElementById('stopScraperBtn');
+                    stopBtn.disabled = true;
+                    stopBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    stopBtn.classList.remove('hover:bg-red-700');
+                }
+            }, 2000); // Poll every 2 seconds
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existing = document.getElementById('notification');
+            if (existing) existing.remove();
+
+            // Create notification
+            const notification = document.createElement('div');
+            notification.id = 'notification';
+            notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-500' :
+                type === 'error' ? 'bg-red-500' :
+                type === 'info' ? 'bg-blue-500' : 'bg-gray-500'
+            } text-white`;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Chat functionality
+        let chatMessages = [];
+        let chatPaused = false;
+        let messageCount = 0;
+        let eventSource = null;
+
+        // Add message to chat
+        function addChatMessage(message, type = 'info') {
+            if (chatPaused) return;
+
+            const showTimestamps = document.getElementById('showTimestamps').checked;
+            const timestamp = showTimestamps ? `[${new Date().toLocaleTimeString()}] ` : '';
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-1 ${type === 'error' ? 'text-red-400' :
+                                           type === 'success' ? 'text-green-400' :
+                                           type === 'warning' ? 'text-yellow-400' :
+                                           'text-gray-100'}`;
+
+            const formattedMessage = `${timestamp}${message}`;
+            messageDiv.textContent = formattedMessage;
+
+            const chatMessagesDiv = document.getElementById('chatMessages');
+            chatMessagesDiv.appendChild(messageDiv);
+
+            chatMessages.push({
+                timestamp: new Date().toISOString(),
+                message: message,
+                type: type
+            });
+
+            // Limit messages
+            const maxLines = parseInt(document.getElementById('maxLines').value);
+            while (chatMessagesDiv.children.length > maxLines) {
+                chatMessagesDiv.removeChild(chatMessagesDiv.firstChild);
+            }
+
+            // Auto-scroll if enabled
+            if (document.getElementById('autoScroll').checked) {
+                const chatContainer = document.getElementById('chatContainer');
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            messageCount++;
+        }
+
+        // Clear chat
+        function clearChat() {
+            document.getElementById('chatMessages').innerHTML = '';
+            chatMessages = [];
+            messageCount = 0;
+            addChatMessage('Chat cleared', 'warning');
+        }
+
+        // Toggle pause chat
+        function togglePauseChat() {
+            chatPaused = !chatPaused;
+            const button = document.querySelector('button[onclick="togglePauseChat()"]');
+            button.textContent = chatPaused ? '▶️ Resume' : '⏸️ Pause';
+            button.className = chatPaused ?
+                'bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600 transition' :
+                'bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition';
+
+            addChatMessage(`Chat ${chatPaused ? 'paused' : 'resumed'}`, chatPaused ? 'warning' : 'success');
+        }
+
+        // Export chat
+        function exportChat() {
+            if (chatMessages.length === 0) {
+                showNotification('No chat messages to export', 'warning');
+                return;
+            }
+
+            const format = confirm('Export as JSON? (Click Cancel for plain text)') ? 'json' : 'txt';
+
+            let content;
+            if (format === 'json') {
+                content = JSON.stringify(chatMessages, null, 2);
+            } else {
+                content = chatMessages.map(msg =>
+                    `[${new Date(msg.timestamp).toLocaleString()}] ${msg.message}`
+                ).join('\n');
+            }
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `llm_chat_${new Date().toISOString().split('T')[0]}.${format}`;
+            a.click();
+
+            showNotification(`Exported ${chatMessages.length} messages as ${format.toUpperCase()}`, 'success');
+        }
+
+        // Send test message
+        function sendTestMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+
+            if (message) {
+                addChatMessage(`User: ${message}`, 'info');
+                input.value = '';
+
+                // Simulate LLM response
+                setTimeout(() => {
+                    addChatMessage(`Assistant: Thanks for your message "${message}". This is a test response to demonstrate the chat functionality.`, 'success');
+                }, 1000);
+            }
+        }
+
+        // Allow Enter key to send test message
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendTestMessage();
+            }
+        });
+
+        // Connect to real-time data stream
+        let dataEventSource = null;
+        let lastUpdateTime = null;
+        
+        function connectDataStream() {
+            if (dataEventSource) {
+                dataEventSource.close();
+            }
+
+            dataEventSource = new EventSource('/api/data/stream');
+
+            dataEventSource.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+
+                    // Skip heartbeat messages
+                    if (data.type === 'heartbeat') return;
+
+                    // Data file was updated - reload silently with visual feedback
+                    if (data.type === 'data_updated') {
+                        console.log('📊 Data file updated - refreshing dashboard...');
+                        lastUpdateTime = new Date();
+                        
+                        // Show subtle update indicator
+                        showUpdateIndicator();
+                        
+                        // Reload data silently
+                        loadData(true);
+                    }
+
+                } catch (error) {
+                    console.error('Error parsing data stream message:', error);
+                }
+            };
+
+            dataEventSource.onerror = function(error) {
+                console.error('Data stream error:', error);
+                
+                // Attempt to reconnect after 3 seconds
+                setTimeout(() => {
+                    console.log('🔄 Reconnecting to data stream...');
+                    connectDataStream();
+                }, 3000);
+            };
+
+            console.log('📡 Connected to real-time data stream');
+        }
+        
+        // Show subtle update indicator
+        function showUpdateIndicator() {
+            // Remove existing indicator
+            const existing = document.getElementById('updateIndicator');
+            if (existing) existing.remove();
+            
+            // Create indicator
+            const indicator = document.createElement('div');
+            indicator.id = 'updateIndicator';
+            indicator.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2';
+            indicator.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Updating products...</span>
+            `;
+            
+            document.body.appendChild(indicator);
+            
+            // Change to success message after data loads
+            setTimeout(() => {
+                indicator.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2';
+                indicator.innerHTML = `
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Products updated!</span>
+                `;
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    indicator.remove();
+                }, 3000);
+            }, 500);
+        }
+
+        // Connect to real-time chat stream
+        function connectChatStream() {
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            eventSource = new EventSource('/api/chat/stream');
+
+            eventSource.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+
+                    // Skip heartbeat messages
+                    if (data.type === 'heartbeat') return;
+
+                    // Add message to chat
+                    addChatMessage(data.message, data.type);
+
+                } catch (error) {
+                    console.error('Error parsing chat message:', error);
+                }
+            };
+
+            eventSource.onerror = function(error) {
+                console.error('Chat stream error:', error);
+                addChatMessage('⚠️ Chat stream connection lost, reconnecting...', 'warning');
+
+                // Attempt to reconnect after 3 seconds
+                setTimeout(() => {
+                    addChatMessage('🔄 Attempting to reconnect...', 'info');
+                    connectChatStream();
+                }, 3000);
+            };
+
+            addChatMessage('📡 Connected to live chat stream', 'success');
+        }
+
+        // Disconnect chat stream
+        function disconnectChatStream() {
+            if (eventSource) {
+                eventSource.close();
+                eventSource = null;
+                addChatMessage('📡 Disconnected from live chat stream', 'warning');
+            }
+        }
+
+        // Initialize chat with welcome message
+        function initChat() {
+            addChatMessage('🤖 Live LLM Chat Output initialized', 'success');
+            addChatMessage('💡 Use the controls above to manage chat display', 'info');
+            addChatMessage('🔧 Test the chat by typing in the input box below', 'info');
+            addChatMessage('📡 Connecting to live stream...', 'info');
+
+            // Connect to real-time stream
+            connectChatStream();
+        }
+
+        // Clear chat using API
+        async function clearChat() {
+            try {
+                const response = await fetch('/api/chat/clear', { method: 'POST' });
+                if (response.ok) {
+                    document.getElementById('chatMessages').innerHTML = '';
+                    chatMessages = [];
+                    messageCount = 0;
+                } else {
+                    showNotification('Failed to clear chat', 'error');
+                }
+            } catch (error) {
+                console.error('Error clearing chat:', error);
+                showNotification('Error clearing chat', 'error');
+            }
+        }
+
+        // Send test message using API
+        async function sendTestMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+
+            if (message) {
+                try {
+                    const response = await fetch('/api/chat/send', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: `User: ${message}`,
+                            type: 'info'
+                        })
+                    });
+
+                    if (response.ok) {
+                        input.value = '';
+
+                        // Simulate LLM response
+                        setTimeout(async () => {
+                            await fetch('/api/chat/send', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    message: `Assistant: Thanks for your message "${message}". This is a test response to demonstrate the chat functionality.`,
+                                    type: 'success'
+                                })
+                            });
+                        }, 1000);
+                    } else {
+                        showNotification('Failed to send message', 'error');
+                    }
+                } catch (error) {
+                    console.error('Error sending message:', error);
+                    showNotification('Error sending message', 'error');
+                }
+            }
+        }
+
+        // Load data on page load
+        window.onload = function() {
+            loadData();
+            initChat();
+            connectDataStream(); // Connect to real-time data updates
+            checkScraperStatus(); // Check if scraper is already running
+        };
+
+        // Check scraper status on page load
+        async function checkScraperStatus() {
+            try {
+                const response = await fetch('/api/scrape/status');
+                const status = await response.json();
+                
+                if (status.running) {
+                    // Enable stop button if scraper is running
+                    const stopBtn = document.getElementById('stopScraperBtn');
+                    stopBtn.disabled = false;
+                    stopBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    stopBtn.classList.add('hover:bg-red-700');
+                    
+                    // Start polling for status updates
+                    pollScraperStatus();
+                }
+            } catch (error) {
+                console.error('Error checking scraper status:', error);
+            }
+        }
+
+        // Clean up on page unload
+        window.onbeforeunload = function() {
+            disconnectChatStream();
+            if (dataEventSource) dataEventSource.close();
+        };
+    </script>
+</body>
+</html>

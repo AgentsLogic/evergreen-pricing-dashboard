@@ -1,0 +1,751 @@
+{
+  "DiscountElectronics": {
+    "competitor": "DiscountElectronics",
+    "website": "https://discountelectronics.com",
+    "scrape_date": "2025-10-01T06:32:55.313510",
+    "total_products": 37,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "Precision 5820 X-Series",
+        "product_type": "Unknown",
+        "title": "Dell Precision 5820 X-Series Workstation 14-Core i9-10940X 64GB Ram SSD Nvidia Quadro M4000 8GB Video Card Window 11 Pro",
+        "price": 2150.0,
+        "url": "https://discountelectronics.com/dell-precision-5820-x-series-workstation-14-core-i9-10940x-64gb-ram-ssd-nvidia-quadro-m4000-8gb-video-card-window-11-pro/",
+        "config": {
+          "processor": "i9-10940X",
+          "ram": "64GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Workstation",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 5820 X-Series",
+        "product_type": "Unknown",
+        "title": "Dell Precision 5820 X-Series 10 Core i9-10900X Workstation 32GB Ram SSD Nvidia M4000 8GB Video Card Window 11 Pro",
+        "price": 2150.0,
+        "url": "https://discountelectronics.com/dell-precision-5820-x-series-10-core-i9-10900x-workstation-32gb-ram-ssd-nvidia-m4000-8gb-video-card-window-11-pro/",
+        "config": {
+          "processor": "i9-10900X",
+          "ram": "32GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Workstation",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4",
+        "product_type": "Unknown",
+        "title": "Limited Offer Lot of 5 HP EliteDesk 800 G4 Core i5 16GB 512GB SSD Windows 11 Pro Micro PC",
+        "price": 1800.0,
+        "url": "https://discountelectronics.com/limited-offer-lot-of-5-hp-elitedesk-800-g4-core-i5-16gb-512gb-ssd-windows-11-pro-micro-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro PC",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex XE4",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex XE4 SFF i5-12500 16GB RAM SSD Windows 11 Computer",
+        "price": 875.0,
+        "url": "https://discountelectronics.com/dell-optiplex-xe4-sff-i5-12500-16gb-ram-ssd-windows-11-computer/",
+        "config": {
+          "processor": "i5-12500",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7490",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7490 All in One Touch Screen PC 10th Gen Core i7-10700 24-Inch Windows 11",
+        "price": 850.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7490-all-in-one-touch-screen-pc-10th-gen-core-i7-10700-24-inch-windows-11/",
+        "config": {
+          "processor": "Core i7-10700",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "All In One",
+          "screen_resolution": null,
+          "screen_size": "24-Inch"
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5080",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5080 Micro i5-10500T 16GB Windows 11 Pro Tiny Desktop PC",
+        "price": 750.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5080-micro-i5-10500t-16gb-windows-11-pro-tiny-desktop-pc/",
+        "config": {
+          "processor": "i5-10500T",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7080 SFF i5 10th Gen 16GB RAM SSD Windows 11 Pro Business Computer",
+        "price": 735.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7080-sff-i5-10th-gen-16gb-ram-ssd-windows-11-pro-business-computer/",
+        "config": {
+          "processor": "i5 10th Gen",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell OptiPlex Micro i7 32GB Windows 11 Pro Tiny Desktop PC EG",
+        "price": 699.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-micro-i7-32gb-windows-11-pro-tiny-desktop-pc-eg/",
+        "config": {
+          "processor": "i7",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 11 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7080 i5-10500 10th Gen 16GB RAM SSD Windows 11 Tower Computer",
+        "price": 675.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7080-i5-10500-10th-gen-16gb-ram-ssd-windows-11-tower-computer/",
+        "config": {
+          "processor": "i5-10500",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex",
+        "product_type": "Unknown",
+        "title": "Loaded Refurbished Dell Optiplex SFF Core i5 32GB RAM 1TB SSD Windows 11 Business Computer EG",
+        "price": 625.0,
+        "url": "https://discountelectronics.com/loaded-refurbished-dell-optiplex-sff-core-i5-32gb-ram-1tb-ssd-windows-11-business-computer-eg/",
+        "config": {
+          "processor": "Core i5",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 20 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070",
+        "product_type": "Unknown",
+        "title": "Dell Optiplex 3070 SFF Core i5 32GB 1TB SSD Windows 11 Business PC",
+        "price": 599.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3070-sff-core-i5-32gb-1tb-ssd-windows-11-business-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex SFF 10th Gen i5 Windows 11 Pro Business PC DVDRW",
+        "price": 599.0,
+        "url": "https://discountelectronics.com/dell-optiplex-sff-10th-gen-i5-windows-11-pro-business-pc-dvdrw/",
+        "config": {
+          "processor": "i5 10th Gen",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 12 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3000 Micro i5-12500T 16GB Windows 11 Pro Micro Desktop PC 1D",
+        "price": 595.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3000-micro-i5-12500t-16gb-windows-11-pro-micro-desktop-pc-1d/",
+        "config": {
+          "processor": "i5-12500T",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060 SFF",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5060 SFF Core i5 32GB 1TB SSD Windows 11 Pro PC",
+        "price": 570.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5060-sff-core-i5-32gb-1tb-ssd-windows-11-pro-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5060 Micro",
+        "product_type": "Unknown",
+        "title": "Clearance Dell Optiplex 5060 Micro 6-Core i5 32GB Windows 11 Tiny Computer",
+        "price": 535.0,
+        "url": "https://discountelectronics.com/clearance-dell-optiplex-5060-micro-6-core-i5-32gb-windows-11-tiny-computer/",
+        "config": {
+          "processor": "6-Core i5",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070 SFF",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7070 SFF Core i5 16GB RAM Windows 11 Pro Business PC",
+        "price": 525.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7070-sff-core-i5-16gb-ram-windows-11-pro-business-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070 Micro",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell OptiPlex 7070 Micro PC i5 16GB 256GB SSD + 1TB Windows 11 Pro",
+        "price": 499.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-7070-micro-pc-i5-16gb-256gb-ssd-1tb-windows-11-pro/",
+        "config": {
+          "processor": "i5",
+          "ram": "16GB",
+          "storage": "256GB SSD + 1TB",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell OptiPlex i7 Windows 11 Compact SFF Computer EG",
+        "price": 499.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-i7-windows-11-compact-sff-computer-eg/",
+        "config": {
+          "processor": "i7",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4 Micro",
+        "product_type": "Unknown",
+        "title": "HP EliteDesk 800 G4 Micro Core i5 32GB 1TB SSD Windows 11 Pro PC",
+        "price": 499.0,
+        "url": "https://discountelectronics.com/hp-elitedesk-800-g4-micro-core-i5-32gb-1tb-ssd-windows-11-pro-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070 SFF",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5070 SFF i5 9th Gen 16GB RAM 256GB SSD Windows 11 Pro Computer",
+        "price": 499.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5070-sff-i5-9th-gen-16gb-ram-256gb-ssd-windows-11-pro-computer/",
+        "config": {
+          "processor": "i5 9th Gen",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G5 SFF",
+        "product_type": "Unknown",
+        "title": "HP ProDesk 600 G5 SFF Core i7-9700 16GB RAM SSD Windows 11 Business PC",
+        "price": 495.0,
+        "url": "https://discountelectronics.com/hp-prodesk-600-g5-sff-core-i7-9700-16gb-ram-ssd-windows-11-business-pc/",
+        "config": {
+          "processor": "Core i7-9700",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070 Micro",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell OptiPlex 5070 Micro i5 9th Generation 16GB RAM 256GB SSD Plus 1TB Windows 11 Pro Tiny Desktop PC",
+        "price": 495.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-5070-micro-i5-9th-generation-16gb-ram-256gb-ssd-plus-1tb-windows-11-pro-tiny-desktop-pc/",
+        "config": {
+          "processor": "i5 9th Generation",
+          "ram": "16GB",
+          "storage": "256GB SSD Plus 1TB",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 12 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell Optiplex 7060 Intel Core i5-8500 6 Core Tower PC Windows 11 Pro",
+        "price": 495.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-7060-intel-core-i5-8500-6-core-tower-pc-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5-8500 6 Core",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7060 SFF",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7060 SFF i5 16GB SSD Windows 11 Computer",
+        "price": 490.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7060-sff-i5-16gb-ssd-windows-11-computer/",
+        "config": {
+          "processor": "i5",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7060 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7060 Micro i5 16GB RAM SSD Windows 11 Pro Desktop Tiny PC",
+        "price": 475.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7060-micro-i5-16gb-ram-ssd-windows-11-pro-desktop-tiny-pc/",
+        "config": {
+          "processor": "i5",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G5 SFF",
+        "product_type": "Unknown",
+        "title": "HP ProDesk 600 G5 SFF Core i5-9500 Windows 11 Business PC",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/hp-prodesk-600-g5-sff-core-i5-9500-windows-11-business-pc/",
+        "config": {
+          "processor": "Core i5-9500",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3060 SFF",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3060 SFF i5 16GB RAM SSD Windows 11 Pro Computer",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3060-sff-i5-16gb-ram-ssd-windows-11-pro-computer/",
+        "config": {
+          "processor": "i5",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3060 Micro",
+        "product_type": "Unknown",
+        "title": "Refurbished Mini Computer Micro Dell OptiPlex 3060 Micro 16GB SSD Windows 11 Tiny Business",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/refurbished-mini-computer-micro-dell-optiplex-3060-micro-16gb-ssd-windows-11-tiny-business/",
+        "config": {
+          "processor": null,
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5070 i5 Micro Desktop PC Windows 11 Pro 16GB RAM",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5070-i5-micro-desktop-pc-windows-11-pro-16gb-ram/",
+        "config": {
+          "processor": "i5",
+          "ram": "16GB",
+          "storage": "NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": "4K",
+          "screen_size": null
+        },
+        "availability": "Only 14 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060 SFF",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell OptiPlex 5060 SFF Core i5 Windows 11 Computer",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-5060-sff-core-i5-windows-11-computer/",
+        "config": {
+          "processor": "Core i5",
+          "ram": null,
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7070 Micro PC i5 16GB 256GB SSD Windows 11 Pro Refurbished Computer",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7070-micro-pc-i5-16gb-256gb-ssd-windows-11-pro-refurbished-computer/",
+        "config": {
+          "processor": "i5",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell OptiPlex i5 Windows 11 Compact SFF Computer EG",
+        "price": 425.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-i5-windows-11-compact-sff-computer-eg/",
+        "config": {
+          "processor": "i5",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell Optiplex i5 Windows 11 Compact Computer Free Shipping",
+        "price": 399.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-i5-windows-11-compact-computer-free-shipping/",
+        "config": {
+          "processor": "i5",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Compact",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G4 SFF",
+        "product_type": "Unknown",
+        "title": "HP ProDesk 600 G4 SFF Core i5 Windows 11 Business Small Form PC",
+        "price": 375.0,
+        "url": "https://discountelectronics.com/hp-prodesk-600-g4-sff-core-i5-windows-11-business-small-form-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 19 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G4",
+        "product_type": "Unknown",
+        "title": "Tiny Windows 11 Mini PC HP ProDesk 600 G4 i5-8500T Micro PC",
+        "price": 350.0,
+        "url": "https://discountelectronics.com/windows-11-mini-hp-prodesk-600-g4-i5-8500t-micro-pc/",
+        "config": {
+          "processor": "i5-8500T",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Micro PC",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4",
+        "product_type": "Unknown",
+        "title": "Refurbished HP EliteDesk 800 G4 Core i5 256GB SSD Windows 11 Pro Micro PC",
+        "price": 320.0,
+        "url": "https://discountelectronics.com/refurbished-hp-elitedesk-800-g4-core-i5-256gb-ssd-windows-11-pro-micro-pc/",
+        "config": {
+          "processor": "Core i5",
+          "ram": null,
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro PC",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70Q",
+        "product_type": "Unknown",
+        "title": "Lenovo ThinkCentre M70Q Quad Core Windows 11 Pro Tiny Desktop PC",
+        "price": 299.0,
+        "url": "https://discountelectronics.com/lenovo-thinkcentre-m70q-quad-core-windows-11-pro-tiny-desktop-pc/",
+        "config": {
+          "processor": "Quad Core",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop PC",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 Available",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      }
+    ],
+    "warning": "Rejected due to 43 product loss"
+  }
+}

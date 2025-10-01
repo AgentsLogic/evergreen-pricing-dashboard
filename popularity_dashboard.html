@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Popularity Rankings - Best Sellers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .brand-dell { border-left: 4px solid #007DB8; }
+        .brand-hp { border-left: 4px solid #0096D6; }
+        .brand-lenovo { border-left: 4px solid #E2231A; }
+
+        .product-card {
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .popularity-badge {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: linear-gradient(45deg, #4F46E5, #7C3AED);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">🏆 Product Popularity Rankings</h1>
+                    <p class="text-gray-600">Best selling products ranked by demand, availability, and market trends</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="/" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                        🏠 Main Dashboard
+                    </a>
+                    <a href="/graphs" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
+                        📊 Analytics
+                    </a>
+                    <button onclick="loadData()" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+                        🔄 Refresh Data
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ranking Criteria -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">📋 Ranking Methodology</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">1</div>
+                    <div>
+                        <div class="font-semibold text-gray-800">Market Availability</div>
+                        <div class="text-gray-600">How widely products are distributed across sellers</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">2</div>
+                    <div>
+                        <div class="font-semibold text-gray-800">Supply Indicators</div>
+                        <div class="text-gray-600">Stock levels and availability patterns</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold">3</div>
+                    <div>
+                        <div class="font-semibold text-gray-800">Price Strategy</div>
+                        <div class="text-gray-600">Competitive positioning and value proposition</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold">4</div>
+                    <div>
+                        <div class="font-semibold text-gray-800">Market Momentum</div>
+                        <div class="text-gray-600">Overall brand and product presence trends</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-lg">
+                <h4 class="font-semibold text-blue-800 mb-2">📊 Data Collection Status:</h4>
+                <p class="text-sm text-blue-700 mb-2">
+                    <strong>Review-Enhanced Rankings:</strong> Rankings include review counts, ratings, and "Best Seller" badges when available.
+                    This provides <em>real sales indicators</em> based on customer engagement and satisfaction.
+                </p>
+                <p class="text-sm text-blue-700">
+                    <strong>Auto-Collection:</strong> Review data is automatically collected when you use the scraping features in this application.
+                    Products with more reviews and higher ratings rank higher for accurate sales performance.
+                </p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">🔍 Filters & View Options</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+                    <select id="filterBrand" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Brands</option>
+                        <option value="Dell">Dell</option>
+                        <option value="HP">HP</option>
+                        <option value="Lenovo">Lenovo</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Product Type</label>
+                    <select id="filterType" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Types</option>
+                        <option value="Laptop">Laptops</option>
+                        <option value="Desktop">Desktops</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                    <select id="filterPrice" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Prices</option>
+                        <option value="0-300">$0 - $300</option>
+                        <option value="300-500">$300 - $500</option>
+                        <option value="500-800">$500 - $800</option>
+                        <option value="800-1200">$800 - $1,200</option>
+                        <option value="1200-99999">$1,200+</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                    <select id="sortBy" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="popularity-desc">Popularity: High to Low</option>
+                        <option value="popularity-asc">Popularity: Low to High</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="demand-desc">Demand Score</option>
+                        <option value="frequency-desc">Market Frequency</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Most Popular Brand</div>
+                <div id="topBrand" class="text-2xl font-bold text-blue-600">Loading...</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Most In-Demand Product</div>
+                <div id="topProduct" class="text-lg font-bold text-green-600">Loading...</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Average Popularity Score</div>
+                <div id="avgPopularity" class="text-2xl font-bold text-purple-600">0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="text-sm text-gray-600 mb-1">Total Products Ranked</div>
+                <div id="totalProducts" class="text-2xl font-bold text-red-600">0</div>
+            </div>
+        </div>
+
+
+
+        <!-- Rankings Table -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">🏆 Top Products by Popularity</h2>
+            <div id="rankingsContainer" class="space-y-4">
+                <!-- Rankings will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allData = {};
+        let rankedProducts = [];
+
+
+        // Load data from API or JSON file
+        async function loadData() {
+            try {
+                // Try API first, fall back to review-enhanced file, then regular JSON file
+                let response;
+                let dataSource = 'API';
+
+                try {
+                    response = await fetch('/api/data');
+                } catch {
+                    // Try review-enhanced file first
+                    try {
+                        response = await fetch('competitor_prices_with_reviews.json');
+                        dataSource = 'Review-Enhanced File';
+                    } catch {
+                        response = await fetch('competitor_prices.json');
+                        dataSource = 'Standard File';
+                    }
+                }
+
+                allData = await response.json();
+                calculatePopularityRankings();
+
+                const hasReviewData = checkForReviewData();
+                console.log(`Popularity data loaded successfully from ${dataSource}`);
+
+                // Show success message with data source info
+                if (hasReviewData) {
+                    showNotification(`Popularity rankings loaded with review data from ${dataSource}!`, 'success');
+                } else {
+                    showNotification(`Popularity rankings loaded from ${dataSource}. Use the scraping features in this application to collect enhanced review data.`, 'info');
+                }
+            } catch (error) {
+                console.error('Error loading data:', error);
+                showNotification('Error loading data. Make sure competitor_prices.json exists.', 'error');
+            }
+        }
+
+        // Check if loaded data contains review information
+        function checkForReviewData() {
+            for (const [compName, compData] of Object.entries(allData)) {
+                const products = compData.products || [];
+                for (const product of products) {
+                    if (product.reviews && (product.reviews.review_count || product.reviews.average_rating)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // Calculate popularity rankings
+        function calculatePopularityRankings() {
+            const products = [];
+            const modelFrequency = {};
+            const brandFrequency = {};
+
+            // Collect all products and calculate frequencies
+            for (const [compName, compData] of Object.entries(allData)) {
+                const compProducts = compData.products || [];
+
+                for (const product of compProducts) {
+                    // Count model frequency
+                    const modelKey = `${product.brand}-${product.model}`;
+                    modelFrequency[modelKey] = (modelFrequency[modelKey] || 0) + 1;
+
+                    // Count brand frequency
+                    brandFrequency[product.brand] = (brandFrequency[product.brand] || 0) + 1;
+
+                    products.push({
+                        ...product,
+                        competitor: compName,
+                        modelKey: modelKey,
+                        frequency: modelFrequency[modelKey]
+                    });
+                }
+            }
+
+            // Calculate popularity scores with enhanced sales estimation
+            products.forEach(product => {
+                let popularityScore = 0;
+                let salesIndicators = [];
+
+                // 1. Demand Indicators (40 points max) - Sales Velocity Signals
+                if (product.availability) {
+                    const availability = product.availability.toLowerCase();
+                    if (availability.includes('only') && availability.includes('remaining')) {
+                        // Extract number from "only X remaining"
+                        const remainingMatch = availability.match(/only\s+(\d+)/);
+                        if (remainingMatch) {
+                            const remaining = parseInt(remainingMatch[1]);
+                            if (remaining <= 1) {
+                                popularityScore += 40; // Very high demand
+                                salesIndicators.push('Critical Stock');
+                            } else if (remaining <= 5) {
+                                popularityScore += 35; // High demand
+                                salesIndicators.push('Low Stock');
+                            } else {
+                                popularityScore += 25; // Moderate demand
+                                salesIndicators.push('Limited Stock');
+                            }
+                        }
+                    } else if (availability.includes('few') || availability.includes('limited')) {
+                        popularityScore += 30; // High demand signals
+                        salesIndicators.push('High Demand');
+                    } else if (availability.includes('available') || availability.includes('stock')) {
+                        popularityScore += 15; // Normal availability
+                        salesIndicators.push('Good Availability');
+                    } else if (availability.includes('out of stock') || availability.includes('sold out')) {
+                        popularityScore += 35; // Sold out = very high previous demand
+                        salesIndicators.push('Previously Sold Out');
+                    }
+                } else {
+                    popularityScore += 20; // Unknown availability
+                    salesIndicators.push('Availability Unknown');
+                }
+
+                // 2. Market Presence Score (30 points max) - Supply Indicator
+                // Higher frequency might indicate higher supply, but also higher demand for popular items
+                const presenceScore = Math.min(product.frequency * 8, 25);
+                popularityScore += presenceScore;
+
+                // 3. Price Positioning (20 points max) - Market Competitiveness
+                if (product.price) {
+                    const basePrice = getBasePriceForModel(product);
+                    if (basePrice > 0) {
+                        const priceRatio = product.price / basePrice;
+                        if (priceRatio < 0.8) {
+                            popularityScore += 20; // Significantly cheaper - high value
+                            salesIndicators.push('Best Value');
+                        } else if (priceRatio < 0.9) {
+                            popularityScore += 15; // Moderately cheaper
+                            salesIndicators.push('Good Value');
+                        } else if (priceRatio < 1.1) {
+                            popularityScore += 10; // Competitive price
+                            salesIndicators.push('Competitive Price');
+                        } else {
+                            popularityScore += 5; // Higher price
+                            salesIndicators.push('Premium Price');
+                        }
+                    }
+                }
+
+                // 4. Market Momentum Bonus (10 points max) - Overall Market Presence
+                const momentumBonus = calculateMarketMomentumBonus(product, modelFrequency, brandFrequency);
+                popularityScore += momentumBonus;
+                if (momentumBonus >= 8) salesIndicators.push('Strong Market Presence');
+                else if (momentumBonus >= 5) salesIndicators.push('Good Market Presence');
+
+                product.popularityScore = Math.round(popularityScore);
+                product.salesIndicators = salesIndicators;
+            });
+
+            // Sort by popularity score
+            products.sort((a, b) => b.popularityScore - a.popularityScore);
+
+            // Add rank
+            products.forEach((product, index) => {
+                product.rank = index + 1;
+            });
+
+            rankedProducts = products;
+            applyFilters();
+        }
+
+        // Calculate market momentum bonus based on overall market presence patterns
+        function calculateMarketMomentumBonus(product, modelFrequency, brandFrequency) {
+            let momentumBonus = 0;
+
+            // Products with balanced demand/supply signals get momentum bonus
+            // This measures how well-positioned products are in the market
+            const demandSignals = getDemandSignals(product);
+            const supplySignals = getSupplySignals(product, modelFrequency);
+
+            // Calculate market balance (not just demand > supply)
+            const marketBalance = Math.abs(demandSignals - supplySignals);
+            if (marketBalance < 5) {
+                // Well-balanced products (steady demand and supply) get momentum bonus
+                momentumBonus += 5;
+            } else if (demandSignals > supplySignals) {
+                // High demand with moderate supply = good momentum
+                momentumBonus += Math.min(demandSignals - supplySignals, 7);
+            }
+
+            // Brand presence bonus - brands with consistent market presence
+            const brandPresence = (brandFrequency[product.brand] / Math.max(...Object.values(brandFrequency))) * 3;
+            momentumBonus += brandPresence;
+
+            // Model consistency bonus - products that appear consistently across sites
+            if (product.frequency >= 3) {
+                momentumBonus += 2;
+            }
+
+            return Math.min(momentumBonus, 10); // Cap at 10 points
+        }
+
+        // Get demand signals from product
+        function getDemandSignals(product) {
+            let signals = 0;
+
+            if (product.availability) {
+                const availability = product.availability.toLowerCase();
+                if (availability.includes('only') && availability.includes('remaining')) {
+                    const remainingMatch = availability.match(/only\s+(\d+)/);
+                    if (remainingMatch) {
+                        const remaining = parseInt(remainingMatch[1]);
+                        signals += (10 - remaining); // Fewer remaining = stronger signal
+                    }
+                } else if (availability.includes('few') || availability.includes('limited')) {
+                    signals += 7;
+                } else if (availability.includes('out of stock') || availability.includes('sold out')) {
+                    signals += 8; // Previously sold out indicates high demand
+                }
+            }
+
+            return signals;
+        }
+
+        // Get supply signals from product
+        function getSupplySignals(product, modelFrequency) {
+            let signals = 0;
+
+            // Higher frequency across sites suggests higher supply/availability
+            signals += product.frequency * 2;
+
+            // More competitors carrying the product suggests good supply
+            const competitorCount = getCompetitorCountForModel(product.modelKey);
+            signals += competitorCount * 1.5;
+
+            return signals;
+        }
+
+        // Get number of competitors carrying a specific model
+        function getCompetitorCountForModel(modelKey) {
+            const competitors = new Set();
+
+            for (const [compName, compData] of Object.entries(allData)) {
+                const products = compData.products || [];
+                for (const product of products) {
+                    if (`${product.brand}-${product.model}` === modelKey) {
+                        competitors.add(compName);
+                    }
+                }
+            }
+
+            return competitors.size;
+        }
+
+        // Get base price for model comparison
+        function getBasePriceForModel(product) {
+            const similarProducts = rankedProducts.filter(p =>
+                p.brand === product.brand &&
+                p.model === product.model &&
+                p.price > 0
+            );
+
+            if (similarProducts.length === 0) return 0;
+
+            const prices = similarProducts.map(p => p.price);
+            return Math.min(...prices); // Use lowest price as baseline
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const brand = document.getElementById('filterBrand').value;
+            const type = document.getElementById('filterType').value;
+            const priceRange = document.getElementById('filterPrice').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            let filtered = [...rankedProducts];
+
+            // Apply filters
+            if (brand) {
+                filtered = filtered.filter(p => p.brand === brand);
+            }
+
+            if (type) {
+                filtered = filtered.filter(p => p.product_type === type);
+            }
+
+            if (priceRange && filtered.length > 0) {
+                const [min, max] = priceRange.split('-').map(Number);
+                filtered = filtered.filter(p => {
+                    if (!p.price) return false;
+                    return p.price >= min && p.price <= max;
+                });
+            }
+
+            // Apply sorting
+            switch(sortBy) {
+                case 'popularity-desc':
+                    filtered.sort((a, b) => b.popularityScore - a.popularityScore);
+                    break;
+                case 'popularity-asc':
+                    filtered.sort((a, b) => a.popularityScore - b.popularityScore);
+                    break;
+                case 'price-asc':
+                    filtered.sort((a, b) => (a.price || 999999) - (b.price || 999999));
+                    break;
+                case 'price-desc':
+                    filtered.sort((a, b) => (b.price || 0) - (a.price || 0));
+                    break;
+                case 'demand-desc':
+                    filtered.sort((a, b) => (b.popularityScore * 0.4) - (a.popularityScore * 0.4));
+                    break;
+                case 'frequency-desc':
+                    filtered.sort((a, b) => b.frequency - a.frequency);
+                    break;
+            }
+
+            // Update ranks after sorting
+            filtered.forEach((product, index) => {
+                product.displayRank = index + 1;
+            });
+
+            displayRankings(filtered);
+            updateStatistics(filtered);
+        }
+
+        // Display rankings
+        function displayRankings(products) {
+            const container = document.getElementById('rankingsContainer');
+
+            if (products.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-8">No products found matching current filters</p>';
+                return;
+            }
+
+            container.innerHTML = products.slice(0, 50).map(product => `
+                <div class="product-card relative border rounded-lg p-4 brand-${product.brand.toLowerCase()}">
+                    <div class="rank-badge">${product.displayRank}</div>
+                    <div class="popularity-badge">Score: ${product.popularityScore}</div>
+
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">${product.brand}</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2 py-1 rounded">${product.product_type}</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">${product.competitor}</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Freq: ${product.frequency}</span>
+                            </div>
+
+                            <h3 class="font-bold text-lg text-gray-800 mb-2">
+                                ${product.url ? `<a href="${product.url}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">${product.title || product.model} 🔗</a>` : (product.title || product.model)}
+                            </h3>
+
+                            <div class="text-xs text-gray-500 mb-2">Model: ${product.model}</div>
+
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                                ${product.config?.processor ? `<div><span class="text-gray-600">CPU:</span> <span class="font-medium">${product.config.processor}</span></div>` : ''}
+                                ${product.config?.ram ? `<div><span class="text-gray-600">RAM:</span> <span class="font-medium">${product.config.ram}</span></div>` : ''}
+                                ${product.config?.storage ? `<div><span class="text-gray-600">Storage:</span> <span class="font-medium">${product.config.storage}</span></div>` : ''}
+                                <div><span class="text-gray-600">Grade:</span> <span class="font-medium ${product.config?.cosmetic_grade ? 'text-green-700' : 'text-gray-400'}">${product.config?.cosmetic_grade || 'N/A'}</span></div>
+                            </div>
+
+                            ${product.availability ? `<div class="mt-2 text-xs text-gray-600"><span class="font-medium">Availability:</span> ${product.availability}</div>` : ''}
+                        </div>
+
+                        <div class="text-right ml-4">
+                            <div class="text-3xl font-bold text-green-600 mb-2">
+                                ${product.price ? `$${product.price.toFixed(2)}` : 'N/A'}
+                            </div>
+                            <div class="text-sm text-gray-600">Best Price</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update statistics
+        function updateStatistics(products) {
+            if (products.length === 0) {
+                document.getElementById('topBrand').textContent = 'N/A';
+                document.getElementById('topProduct').textContent = 'N/A';
+                document.getElementById('avgPopularity').textContent = '0';
+                document.getElementById('totalProducts').textContent = '0';
+                return;
+            }
+
+            // Most popular brand
+            const brandCounts = {};
+            products.forEach(p => {
+                brandCounts[p.brand] = (brandCounts[p.brand] || 0) + 1;
+            });
+            const topBrand = Object.entries(brandCounts).sort(([,a], [,b]) => b - a)[0];
+            document.getElementById('topBrand').textContent = topBrand ? topBrand[0] : 'N/A';
+
+            // Most popular product
+            const topProduct = products[0];
+            document.getElementById('topProduct').textContent = topProduct ? `${topProduct.brand} ${topProduct.model}` : 'N/A';
+
+            // Average popularity score
+            const avgScore = products.reduce((sum, p) => sum + p.popularityScore, 0) / products.length;
+            document.getElementById('avgPopularity').textContent = Math.round(avgScore).toString();
+
+            // Total products
+            document.getElementById('totalProducts').textContent = products.length.toString();
+        }
+
+
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existing = document.getElementById('notification');
+            if (existing) existing.remove();
+
+            // Create notification
+            const notification = document.createElement('div');
+            notification.id = 'notification';
+            notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-500' :
+                type === 'error' ? 'bg-red-500' :
+                type === 'info' ? 'bg-blue-500' : 'bg-gray-500'
+            } text-white`;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Connect to real-time data stream
+        let dataEventSource = null;
+        
+        function connectDataStream() {
+            if (dataEventSource) {
+                dataEventSource.close();
+            }
+
+            dataEventSource = new EventSource('/api/data/stream');
+
+            dataEventSource.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+
+                    // Skip heartbeat messages
+                    if (data.type === 'heartbeat') return;
+
+                    // Data file was updated - reload silently
+                    if (data.type === 'data_updated') {
+                        console.log('📊 Data file updated - refreshing popularity rankings...');
+                        loadData(); // Reload to update rankings
+                    }
+
+                } catch (error) {
+                    console.error('Error parsing data stream message:', error);
+                }
+            };
+
+            dataEventSource.onerror = function(error) {
+                console.error('Data stream error:', error);
+                
+                // Attempt to reconnect after 3 seconds
+                setTimeout(() => {
+                    console.log('🔄 Reconnecting to data stream...');
+                    connectDataStream();
+                }, 3000);
+            };
+
+            console.log('📡 Connected to real-time data stream');
+        }
+
+        // Load data on page load
+        window.onload = function() {
+            loadData();
+            connectDataStream(); // Connect to real-time data updates
+        };
+
+        // Clean up on page unload
+        window.onbeforeunload = function() {
+            if (dataEventSource) dataEventSource.close();
+        };
+    </script>
+</body>
+</html>

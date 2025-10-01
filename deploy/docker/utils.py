@@ -22,7 +22,7 @@ class FilterType(str, Enum):
 def load_config() -> Dict:
     """Load and return application configuration with environment variable overrides."""
     config_path = Path(__file__).parent / "config.yml"
-    with open(config_path, "r") as config_file:
+    with open(config_path, "r", encoding="utf-8") as config_file:
         config = yaml.safe_load(config_file)
     
     # Override LLM provider from environment if set

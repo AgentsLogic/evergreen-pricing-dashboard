@@ -1,0 +1,793 @@
+"""
+Competitor MSRP Price Scraper v2 - Complete Rebuild
+Scrapes all products from 5 competitor websites
+"""
+
+import asyncio
+import json
+import re
+import sys
+import os
+from datetime import datetime
+from typing import List, Dict, Optional
+from pathlib import Path
+
+# Set default encoding to UTF-8 for all file operations
+import locale
+if sys.platform == 'win32':
+    try:
+        locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+    except:
+        try:
+            locale.setlocale(locale.LC_ALL, 'C.UTF-8')
+        except:
+            pass  # Use system default if UTF-8 locales not available
+    # Reconfigure stdout to handle UTF-8 encoding properly on Windows
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass  # If reconfigure fails, continue with default
+
+from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
+from crawl4ai.extraction_strategy import LLMExtractionStrategy
+from pydantic import BaseModel, Field
+from dotenv import load_dotenv
+
+# Load environment variables
+env_file = Path(__file__).parent / '.env'
+if env_file.exists():
+    load_dotenv(env_file)
+
+
+# ============================================================================
+# Data Models
+# ============================================================================
+
+class ProductConfig(BaseModel):
+    """Product configuration details"""
+    processor: Optional[str] = Field(None, description="Processor (e.g., i5-11th gen, i7-13th gen)")
+    ram: Optional[str] = Field(None, description="RAM (e.g., 8GB, 16GB, 32GB)")
+    storage: Optional[str] = Field(None, description="Storage (e.g., 256GB SSD, 1TB HDD)")
+    cosmetic_grade: Optional[str] = Field(None, description="Grade A, B, or C")
+    form_factor: Optional[str] = Field(None, description="Desktop: Tower, SFF, MFF/Tiny")
+    screen_resolution: Optional[str] = Field(None, description="Laptop: HD, FHD, QHD, 4K")
+    screen_size: Optional[str] = Field(None, description="Screen size in inches")
+
+
+class ReviewData(BaseModel):
+    """Review and rating information"""
+    review_count: Optional[int] = Field(None, description="Number of customer reviews")
+    average_rating: Optional[float] = Field(None, description="Average star rating (1-5)")
+    rating_distribution: Optional[Dict[str, int]] = Field(None, description="5-star, 4-star, etc. counts")
+    is_best_seller: Optional[bool] = Field(None, description="Has 'Best Seller' badge")
+    is_top_rated: Optional[bool] = Field(None, description="Has 'Top Rated' badge")
+    sales_rank: Optional[str] = Field(None, description="Sales rank category or number")
+
+
+class Product(BaseModel):
+    """Product information"""
+    brand: str = Field(..., description="Dell, HP, or Lenovo")
+    model: str = Field(..., description="Model number")
+    product_type: str = Field(..., description="Laptop or Desktop")
+    title: str = Field(..., description="Product title")
+    price: Optional[float] = Field(None, description="Price in USD")
+    url: Optional[str] = Field(None, description="Product URL")
+    config: ProductConfig = Field(default_factory=ProductConfig)
+    availability: Optional[str] = Field(None, description="In stock, Out of stock, etc")
+    reviews: Optional[ReviewData] = Field(default_factory=ReviewData, description="Review and rating data")
+    competitor: Optional[str] = Field(None, description="Competitor name")
+
+
+# ============================================================================
+# Competitor URLs - ALL PAGES
+# ============================================================================
+
+COMPETITORS = {
+    "DellRefurbished": {
+        "base_url": "https://www.dellrefurbished.com",
+        "urls": [
+            "https://www.dellrefurbished.com/laptops",
+            "https://www.dellrefurbished.com/desktop-computers",
+            "https://www.dellrefurbished.com/computer-workstation",
+        ]
+    },
+    "DiscountElectronics": {
+        "base_url": "https://discountelectronics.com",
+        "urls": [
+            "https://discountelectronics.com/refurbished-laptops/",
+            "https://discountelectronics.com/refurbished-computers/",
+        ]
+    },
+    "SystemLiquidation": {
+        "base_url": "https://systemliquidation.com",
+        "urls": [
+            "https://systemliquidation.com/collections/refurbished-desktop-computers",
+            "https://systemliquidation.com/collections/refurbished-laptops",
+            "https://systemliquidation.com/collections/refurbished-mobile-workstations",
+        ]
+    },
+    "PCLiquidations": {
+        "base_url": "https://www.pcliquidations.com",
+        "urls": [
+            "https://www.pcliquidations.com/refurbished-desktop-computers",
+            "https://www.pcliquidations.com/refurbished-laptops",
+        ]
+    },
+    "DiscountPC": {
+        "base_url": "https://discountpc.com",
+        "urls": [
+            "https://discountpc.com/collections/laptops",
+            "https://discountpc.com/collections/desktops",
+        ]
+    }
+}
+
+
+# ============================================================================
+# AI-Powered Scraper
+# ============================================================================
+
+class CompetitorScraper:
+    """AI-powered competitor scraper using DeepSeek/OpenAI"""
+
+    def __init__(self):
+        # Determine provider
+        self.provider = os.getenv("LLM_PROVIDER", "deepseek")
+
+        if self.provider == "deepseek":
+            self.api_key = os.getenv("DEEPSEEK_API_KEY")
+            self.model = "deepseek/deepseek-chat"
+        else:
+            self.api_key = os.getenv("OPENAI_API_KEY")
+            self.model = "openai/gpt-4o-mini"
+
+        if not self.api_key:
+            print(f"[WARNING] No {self.provider.upper()} API key found.")
+            print(f"   Set {self.provider.upper()}_API_KEY in .env file")
+            print("[INFO] Scraping will continue but may be less accurate.")
+
+    async def scrape_url(self, url: str, competitor: str, max_pages: int = 5) -> List[Product]:
+        """Scrape a single URL and extract all products (handles pagination)"""
+        print(f"\n[SCRAPING] Scraping: {url}")
+
+        # Determine product type from URL
+        url_lower = url.lower()
+        if 'laptop' in url_lower or 'notebook' in url_lower:
+            product_type = "Laptop"
+        elif 'desktop' in url_lower or 'workstation' in url_lower:
+            product_type = "Desktop"
+        else:
+            product_type = "Unknown"
+
+        all_products = []
+        consecutive_failures = 0
+
+        # Try to scrape multiple pages
+        for page_num in range(1, max_pages + 1):
+            # Construct page URL
+            if page_num == 1:
+                page_url = url
+            else:
+                # Different sites use different pagination patterns
+                if '?' in url:
+                    page_url = f"{url}&page={page_num}"
+                else:
+                    page_url = f"{url}?page={page_num}"
+
+            print(f"   [PAGE] Page {page_num}...")
+
+            try:
+                products = await self._scrape_single_page(page_url, competitor, product_type)
+
+                if not products:
+                    consecutive_failures += 1
+                    if page_num == 1:
+                        print(f"   [WARNING] No products found on first page - may need manual review")
+                        break
+                    elif consecutive_failures >= 2:
+                        print(f"   [SUCCESS] Reached end of pages at page {page_num}")
+                        break
+                else:
+                    consecutive_failures = 0
+                    all_products.extend(products)
+                    print(f"   [SUCCESS] Found {len(products)} products on page {page_num}")
+                    
+                    # Save incrementally after each page
+                    self._save_incremental_results(competitor, all_products)
+
+                # Be respectful - delay between pages
+                await asyncio.sleep(3)
+
+            except Exception as e:
+                print(f"   [ERROR] Error on page {page_num}: {str(e)}")
+                consecutive_failures += 1
+                if consecutive_failures >= 2:
+                    print(f"   [WARNING] Too many failures, stopping pagination")
+                    break
+                await asyncio.sleep(5)  # Longer delay after error
+
+        return all_products
+
+    async def _scrape_single_page(self, url: str, competitor: str, product_type: str) -> List[Product]:
+        """Scrape a single page"""
+        # Browser configuration
+        browser_config = BrowserConfig(
+            headless=True,
+            verbose=False,
+            extra_args=["--disable-gpu", "--disable-dev-shm-usage", "--no-sandbox"]
+        )
+
+        # Try LLM extraction first, but if it fails, fall back to CSS extraction
+        try:
+            extraction_strategy = LLMExtractionStrategy(
+                llm_config=LLMConfig(
+                    provider=self.model,
+                    api_token=self.api_key
+                ),
+                schema=Product.model_json_schema(),
+                extraction_type="schema",
+                instruction=f"""
+                Extract ALL {product_type} products from this page.
+
+                IMPORTANT RULES:
+                1. ONLY extract products from these brands: Dell, HP, Lenovo
+                2. Ignore all other brands (Acer, Asus, Microsoft, etc.)
+                3. Extract ALL products on the page, not just the first few
+                4. For each product, ALL FIELDS ARE REQUIRED:
+                   - Brand: Must be "Dell", "HP", or "Lenovo" (case sensitive)
+                   - Model: Extract the model number or name (never null/empty)
+                   - Product type: "{product_type}"
+                   - Title: Full product title/name from the page
+                   - Price: Numeric price (no $ sign, just numbers)
+                   - URL: Full product URL from the page
+                   - Processor: CPU description (may be null)
+                   - RAM: Memory amount (may be null)
+                   - Storage: Storage capacity (may be null)
+                   - Cosmetic grade: "Grade A", "Grade B", "Grade C" or null
+                   - Form factor: For desktops only (may be null)
+                   - Screen resolution: For laptops only (may be null)
+                   - Availability: Stock status (may be null)
+
+                DO NOT include products where:
+                - Brand is not exactly "Dell", "HP", or "Lenovo"
+                - Model is empty/null/None
+
+                Return a JSON array of Product objects. Each product must have a valid model field.
+                """
+            )
+        except Exception as e:
+            print(f"   [WARNING] Failed to initialize LLM extraction, using CSS fallback: {e}")
+            # Fall back to a simple text extraction for debugging
+            extraction_strategy = LLMExtractionStrategy(
+                llm_config=LLMConfig(
+                    provider=self.model,
+                    api_token=self.api_key
+                ),
+                schema=Product.model_json_schema(),
+                extraction_type="schema",
+                instruction="Return an empty JSON array [] since LLM extraction failed."
+            )
+
+        # Crawler configuration - removed wait_for to avoid selector timeout
+        crawler_config = CrawlerRunConfig(
+            cache_mode=CacheMode.BYPASS,
+            extraction_strategy=extraction_strategy,
+            delay_before_return_html=5.0,  # Increased delay to let page load
+            page_timeout=90000,  # Increased timeout
+            mean_delay=2.0,
+            max_range=4.0,
+            wait_for_images=False,  # Don't wait for images
+            remove_overlay_elements=True  # Remove popups/overlays
+        )
+
+        products = []
+
+        try:
+            async with AsyncWebCrawler(config=browser_config) as crawler:
+                result = await crawler.arun(
+                    url=url,
+                    config=crawler_config
+                )
+
+                if result.success:
+                    if result.extracted_content:
+                        try:
+                            # Clean the extracted content - remove any BOM or extra whitespace
+                            content = result.extracted_content.strip()
+
+                            # DEBUG: Print the extracted content to see what's happening
+                            print(f"   [DEBUG] Extracted content length: {len(content)}")
+                            print(f"   [DEBUG] First 200 chars: {content[:200]}")
+
+                            # Handle potential encoding issues
+                            if isinstance(content, bytes):
+                                content = content.decode('utf-8', errors='ignore')
+
+                            # Try to extract JSON from the content (LLM might add extra text)
+                            json_start = content.find('[')
+                            json_end = content.rfind(']') + 1
+
+                            if json_start == -1:
+                                # Try to find object instead
+                                json_start = content.find('{')
+                                json_end = content.rfind('}') + 1
+
+                            if json_start != -1 and json_end > json_start:
+                                json_content = content[json_start:json_end]
+                                extracted_data = json.loads(json_content)
+                            else:
+                                extracted_data = json.loads(content)
+
+                            if isinstance(extracted_data, list):
+                                for item in extracted_data:
+                                    try:
+                                        # Ensure competitor field is set
+                                        item['competitor'] = competitor
+                                        product = Product(**item)
+                                        # Ensure URL is absolute
+                                        if product.url and not product.url.startswith('http'):
+                                            base_url = COMPETITORS[competitor]["base_url"]
+                                            product.url = base_url + product.url
+                                        products.append(product)
+                                    except Exception as e:
+                                        print(f"   [WARNING] Error parsing product: {e}")
+                                        continue
+                            elif isinstance(extracted_data, dict):
+                                # Sometimes LLM returns a single object instead of array
+                                try:
+                                    # Ensure competitor field is set
+                                    extracted_data['competitor'] = competitor
+                                    product = Product(**extracted_data)
+                                    if product.url and not product.url.startswith('http'):
+                                        base_url = COMPETITORS[competitor]["base_url"]
+                                        product.url = base_url + product.url
+                                    products.append(product)
+                                except Exception as e:
+                                    print(f"   [WARNING] Error parsing product: {e}")
+
+                        except json.JSONDecodeError as e:
+                            print(f"   [ERROR] JSON decode error: {e}")
+                            print(f"   Raw content: {result.extracted_content[:200]}...")
+                        except Exception as e:
+                            print(f"   [ERROR] Error processing extracted content: {e}")
+                    else:
+                        print(f"   [WARNING] No extracted content (page may be empty or LLM failed)")
+                else:
+                    error_msg = result.error_message if hasattr(result, 'error_message') else 'Unknown error'
+                    print(f"   [ERROR] Crawl failed: {error_msg}")
+
+        except Exception as e:
+            print(f"   [ERROR] Error: {str(e)}")
+
+        return products
+
+    async def scrape_competitor(self, competitor: str, config: Dict) -> List[Product]:
+        """Scrape all URLs for a competitor"""
+        print(f"\n{'='*80}")
+        print(f"[SCRAPER] Scraping {competitor}")
+        print(f"{'='*80}")
+
+        all_products = []
+
+        for url in config["urls"]:
+            products = await self.scrape_url(url, competitor)
+            all_products.extend(products)
+
+            # Be respectful - delay between pages
+            await asyncio.sleep(3)
+
+        print(f"\n[SUCCESS] {competitor}: Found {len(all_products)} total products")
+        return all_products
+
+    async def scrape_all(self) -> Dict[str, List[Product]]:
+        """Scrape all competitors"""
+        results = {}
+
+        for competitor, config in COMPETITORS.items():
+            products = await self.scrape_competitor(competitor, config)
+            results[competitor] = products
+
+        return results
+
+    def _save_incremental_results(self, competitor: str, products: List[Product]):
+        """Save incremental results after each page scrape with backup and validation"""
+        try:
+            filename = "competitor_prices.json"
+            
+            # Load existing data
+            existing_data = {}
+            previous_count = 0
+            try:
+                with open(filename, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+                    # Get previous product count for this competitor
+                    if competitor in existing_data:
+                        previous_count = existing_data[competitor].get('total_products', 0)
+            except FileNotFoundError:
+                print(f"   [INFO] Creating new data file")
+            
+            new_count = len(products)
+            
+            # Validation: Check for significant data loss (>30% reduction)
+            if previous_count > 0 and new_count < previous_count * 0.7:
+                print(f"   [WARNING] Significant data loss detected!")
+                print(f"   [WARNING] Previous: {previous_count} products, New: {new_count} products")
+                print(f"   [WARNING] Keeping existing data to prevent data loss")
+                print(f"   [WARNING] New data saved to {competitor}_temp.json for review")
+                
+                # Save new data to temp file for manual review
+                temp_data = {
+                    competitor: {
+                        "competitor": competitor,
+                        "website": COMPETITORS[competitor]["base_url"],
+                        "scrape_date": datetime.now().isoformat(),
+                        "total_products": new_count,
+                        "products": [p.model_dump() for p in products],
+                        "warning": f"Rejected due to {previous_count - new_count} product loss"
+                    }
+                }
+                with open(f"{competitor}_temp.json", 'w', encoding='utf-8', errors='ignore') as f:
+                    json.dump(temp_data, f, indent=2, ensure_ascii=False)
+                return
+            
+            # Create timestamped backup before overwriting (only if data exists)
+            if previous_count > 0:
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                backup_filename = f"competitor_prices_backup_{timestamp}.json"
+                
+                # Save backup
+                with open(backup_filename, 'w', encoding='utf-8', errors='ignore') as f:
+                    json.dump(existing_data, f, indent=2, ensure_ascii=False)
+                
+                print(f"   [BACKUP] Created backup: {backup_filename}")
+                
+                # Clean up old backups (keep last 5)
+                self._cleanup_old_backups()
+            
+            # Update only the current competitor's data
+            existing_data[competitor] = {
+                "competitor": competitor,
+                "website": COMPETITORS[competitor]["base_url"],
+                "scrape_date": datetime.now().isoformat(),
+                "total_products": new_count,
+                "previous_count": previous_count,
+                "change": new_count - previous_count if previous_count > 0 else new_count,
+                "products": [p.model_dump() for p in products]
+            }
+
+            # Save updated data
+            with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
+                json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+            change_indicator = ""
+            if previous_count > 0:
+                change = new_count - previous_count
+                if change > 0:
+                    change_indicator = f" (+{change})"
+                elif change < 0:
+                    change_indicator = f" ({change})"
+            
+            print(f"   [SAVE] Incremental save: {new_count} products for {competitor}{change_indicator}")
+
+        except Exception as e:
+            print(f"   [ERROR] Failed to save incremental results: {e}")
+            import traceback
+            traceback.print_exc()
+
+    def _cleanup_old_backups(self, keep_count: int = 5):
+        """Clean up old backup files, keeping only the most recent ones"""
+        try:
+            # Find all backup files
+            backup_files = []
+            for file in Path('.').glob('competitor_prices_backup_*.json'):
+                try:
+                    # Extract timestamp from filename
+                    stat = file.stat()
+                    backup_files.append((file, stat.st_mtime))
+                except Exception:
+                    continue
+            
+            # Sort by modification time (newest first)
+            backup_files.sort(key=lambda x: x[1], reverse=True)
+            
+            # Delete old backups beyond keep_count
+            deleted_count = 0
+            for file, _ in backup_files[keep_count:]:
+                try:
+                    file.unlink()
+                    deleted_count += 1
+                except Exception as e:
+                    print(f"   [WARNING] Failed to delete old backup {file}: {e}")
+            
+            if deleted_count > 0:
+                print(f"   [CLEANUP] Deleted {deleted_count} old backup(s), kept {min(len(backup_files), keep_count)}")
+        
+        except Exception as e:
+            print(f"   [WARNING] Backup cleanup failed: {e}")
+
+    def save_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices.json"):
+        """Save results to JSON file"""
+        output = {}
+
+        for competitor, products in results.items():
+            output[competitor] = {
+                "competitor": competitor,
+                "website": COMPETITORS[competitor]["base_url"],
+                "scrape_date": datetime.now().isoformat(),
+                "total_products": len(products),
+                "products": [p.model_dump() for p in products]
+            }
+
+        with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+
+        print(f"\n[SUCCESS] Results saved to {filename}")
+
+    def print_summary(self, results: Dict[str, List[Product]]):
+        """Print summary of results"""
+        print("\n" + "="*80)
+        print("[SUMMARY] SCRAPING SUMMARY")
+        print("="*80)
+
+        total = 0
+        for competitor, products in results.items():
+            count = len(products)
+            total += count
+            print(f"  {competitor:25} {count:4} products")
+
+        print(f"  {'─'*25} {'─'*4}")
+        print(f"  {'TOTAL':25} {total:4} products")
+        print("="*80)
+
+
+class ReviewScraper:
+    """Scrapes review data from individual product pages"""
+
+    def __init__(self):
+        self.provider = os.getenv("LLM_PROVIDER", "deepseek")
+
+        if self.provider == "deepseek":
+            self.api_key = os.getenv("DEEPSEEK_API_KEY")
+            self.model = "deepseek/deepseek-chat"
+        else:
+            self.api_key = os.getenv("OPENAI_API_KEY")
+            self.model = "openai/gpt-4o-mini"
+
+    async def scrape_product_reviews(self, product_url: str) -> Optional[ReviewData]:
+        """Scrape review data from a single product page"""
+        try:
+            browser_config = BrowserConfig(
+                headless=True,
+                verbose=False,
+                extra_args=["--disable-gpu", "--disable-dev-shm-usage", "--no-sandbox"]
+            )
+
+            extraction_strategy = LLMExtractionStrategy(
+                llm_config=LLMConfig(
+                    provider=self.model,
+                    api_token=self.api_key
+                ),
+                schema=ReviewData.model_json_schema(),
+                extraction_type="schema",
+                instruction="""
+                Extract review and rating information from this product page.
+
+                Look for:
+                - Number of customer reviews (e.g., "47 reviews", "234 customer ratings")
+                - Average star rating (e.g., "4.2 out of 5 stars")
+                - Rating distribution (5-star, 4-star, 3-star, 2-star, 1-star counts)
+                - "Best Seller" badges or indicators
+                - "Top Rated" or "Editor's Choice" badges
+                - Sales rank information
+
+                Return a ReviewData object with all available fields.
+                If no review data is found, return empty/null values.
+                """
+            )
+
+            crawler_config = CrawlerRunConfig(
+                cache_mode=CacheMode.BYPASS,
+                extraction_strategy=extraction_strategy,
+                delay_before_return_html=3.0,
+                page_timeout=60000,
+                wait_for_images=False,
+                remove_overlay_elements=True
+            )
+
+            async with AsyncWebCrawler(config=browser_config) as crawler:
+                result = await crawler.arun(
+                    url=product_url,
+                    config=crawler_config
+                )
+
+                if result.success and result.extracted_content:
+                    try:
+                        review_data = ReviewData(**json.loads(result.extracted_content))
+                        return review_data
+                    except Exception as e:
+                        print(f"   ⚠️  Error parsing review data: {e}")
+                        return ReviewData()
+
+                return ReviewData()
+
+        except Exception as e:
+            print(f"   ❌ Error scraping reviews: {str(e)}")
+            return ReviewData()
+
+    async def enrich_products_with_reviews(self, products: List[Product]) -> List[Product]:
+        """Add review data to existing products"""
+        print(f"\n🔍 Enriching {len(products)} products with review data...")
+
+        enriched_products = []
+        for i, product in enumerate(products):
+            if product.url:
+                print(f"   📝 [{i+1}/{len(products)}] Getting reviews for {product.title[:50]}...")
+
+                try:
+                    review_data = await self.scrape_product_reviews(product.url)
+                    product.reviews = review_data
+                    enriched_products.append(product)
+
+                    # Be respectful - delay between products
+                    await asyncio.sleep(2)
+
+                except Exception as e:
+                    print(f"   ⚠️  Failed to get reviews for {product.title}: {str(e)}")
+                    enriched_products.append(product)
+            else:
+                enriched_products.append(product)
+
+        return enriched_products
+
+    def save_enriched_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices_with_reviews.json"):
+        """Save results with review data to JSON file"""
+        output = {}
+
+        for competitor, products in results.items():
+            output[competitor] = {
+                "competitor": competitor,
+                "website": COMPETITORS[competitor]["base_url"],
+                "scrape_date": datetime.now().isoformat(),
+                "total_products": len(products),
+                "products_with_reviews": len([p for p in products if p.reviews and (p.reviews.review_count or p.reviews.average_rating)]),
+                "products": [p.model_dump() for p in products]
+            }
+
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+
+        print(f"\n💾 Results with review data saved to {filename}")
+
+
+# ============================================================================
+# Main
+# ============================================================================
+
+async def main():
+    """Main execution"""
+
+    # Parse command line arguments
+    import argparse
+    parser = argparse.ArgumentParser(description="Scrape competitor prices")
+    parser.add_argument('--competitor', type=str, help='Specific competitor to scrape (e.g., PCLiquidations)')
+    parser.add_argument('--with-reviews', action='store_true', help='Also scrape review data from product pages')
+    args = parser.parse_args()
+
+    if args.competitor:
+        # Scrape only the specified competitor
+        if args.competitor not in COMPETITORS:
+            print(f"❌ Unknown competitor: {args.competitor}")
+            print(f"   Available: {', '.join(COMPETITORS.keys())}")
+            return
+
+        print("\n" + "="*80)
+        print(f"[SCRAPER] Competitor Price Scraper v2 - {args.competitor} Only")
+        print("="*80)
+        print(f"\n[TARGET] Single competitor: {args.competitor}")
+        print("[INFO] Extracting: Dell, HP, Lenovo products only")
+        print("="*80)
+
+        scraper = CompetitorScraper()
+
+        # Scrape only the specified competitor
+        products = await scraper.scrape_competitor(args.competitor, COMPETITORS[args.competitor])
+
+        # DEBUG: Print extracted products before saving
+        print(f"\n{'='*80}")
+        print("[DEBUG] Extracted Products Summary:")
+        print(f"{'='*80}")
+        for i, product in enumerate(products[:10], 1):  # Show first 10
+            print(f"{i:2d}. {product.brand} {product.model} - ${product.price} ({product.product_type})")
+        if len(products) > 10:
+            print(f"... and {len(products)-10} more products")
+        print(f"Total products found: {len(products)}")
+
+        # Save results - load existing data and update only this competitor
+        try:
+            with open("competitor_prices.json", 'r') as f:
+                existing_data = json.load(f)
+        except FileNotFoundError:
+            existing_data = {}
+
+        # Update only the specified competitor
+        existing_data[args.competitor] = {
+            "competitor": args.competitor,
+            "website": COMPETITORS[args.competitor]["base_url"],
+            "scrape_date": datetime.now().isoformat(),
+            "total_products": len(products),
+            "products": [p.model_dump() for p in products]
+        }
+
+        # Save updated data
+        scraper.save_results({args.competitor: products}, filename="temp_results.json")
+        with open("competitor_prices.json", 'w') as f:
+            json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+        print(f"\n[SUCCESS] {args.competitor} scraping complete!")
+        print(f"[DASHBOARD] View results in dashboard: http://localhost:8080")
+
+    else:
+        # Scrape all competitors (original behavior)
+        print("\n" + "="*80)
+        print("[SCRAPER] Competitor Price Scraper v2")
+        print("="*80)
+        print("\n[LIST] Scraping 5 competitors:")
+        for name in COMPETITORS.keys():
+            print(f"   • {name}")
+        print("\n[TARGET] Extracting: Dell, HP, Lenovo products only")
+        print("="*80)
+
+        scraper = CompetitorScraper()
+
+        # Scrape all competitors
+        results = await scraper.scrape_all()
+
+        # Save results
+        scraper.save_results(results)
+
+        # Optionally enrich with review data
+        if args.with_reviews:
+            print("\n" + "="*80)
+            print("[PROCESS] ENRICHING WITH REVIEW DATA")
+            print("="*80)
+
+            review_scraper = ReviewScraper()
+
+            # Flatten all products for review scraping
+            all_products = []
+            for competitor_products in results.values():
+                all_products.extend(competitor_products)
+
+            print(f"[INFO] Will scrape reviews for {len(all_products)} products...")
+            print("[WARNING] This will take a long time due to rate limiting...")
+
+            # Enrich products with review data
+            enriched_products = await review_scraper.enrich_products_with_reviews(all_products)
+
+            # Group back by competitor
+            enriched_results = {}
+            for competitor in results.keys():
+                competitor_products = [p for p in enriched_products if getattr(p, 'competitor', None) == competitor]
+                enriched_results[competitor] = competitor_products
+
+            # Save enriched results
+            review_scraper.save_enriched_results(enriched_results)
+
+            # Print summary with review data
+            scraper.print_summary(enriched_results)
+
+            # Count products with review data
+            products_with_reviews = sum(1 for p in enriched_products if p.reviews and (p.reviews.review_count or p.reviews.average_rating))
+            print(f"[STATS] Products with review data: {products_with_reviews}/{len(enriched_products)}")
+
+        else:
+            # Print summary
+            scraper.print_summary(results)
+
+        print("\n✅ Scraping complete!")
+        print(f"📊 View results in dashboard: http://localhost:8080")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

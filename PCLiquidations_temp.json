@@ -1,0 +1,581 @@
+{
+  "PCLiquidations": {
+    "competitor": "PCLiquidations",
+    "website": "https://www.pcliquidations.com",
+    "scrape_date": "2025-10-01T05:34:58.064838",
+    "total_products": 25,
+    "products": [
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M920Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M920Q Tiny Computer i5-8500T Windows 11",
+        "price": 319.99,
+        "url": "https://www.pcliquidations.com/p152339-lenovo-thinkcentre-m920q-tiny",
+        "config": {
+          "processor": "Intel i5-8500T 2.10GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB 2.5\" SATA SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": true,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5070 SFF Computer i5-9500 Windows 11",
+        "price": 539.99,
+        "url": "https://www.pcliquidations.com/p116530-dell-optiplex-5070-sff",
+        "config": {
+          "processor": "Intel Core i5-9500 Processor, 3.0GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop Computer i5-9500T Windows 11",
+        "price": 312.0,
+        "url": "https://www.pcliquidations.com/p144131-hp-elitedesk-800-g5",
+        "config": {
+          "processor": "Intel i5-9500T 2.2 GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070 Micro Computer i7-9700T Windows 11",
+        "price": 479.99,
+        "url": "https://www.pcliquidations.com/dell-optiplex-7070-micro/p/158116",
+        "config": {
+          "processor": "Intel i7-9700T 2.0GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3050 Micro",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3050 Micro Computer i3-7100T Windows 10",
+        "price": 139.95,
+        "url": "https://www.pcliquidations.com/dell-optiplex-3050-micro/p/155234",
+        "config": {
+          "processor": "Intel i3-7100T 3.4GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": true,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M93p",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M93p Tiny Desktop i5-4570T Windows 10",
+        "price": 154.95,
+        "url": "https://www.pcliquidations.com/p61897-lenovo-thinkcentre-m93p-tiny",
+        "config": {
+          "processor": "Intel Core i5 (i5-4570T) 2.9GHz - 3.60GHz Max Dual",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop Computer i5-9500T Windows 11",
+        "price": 312.0,
+        "url": "https://www.pcliquidations.com/p144131-hp-elitedesk-800-g5",
+        "config": {
+          "processor": "Intel i5-9500T 2.2 GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070 Micro Computer i7-9700T Windows 11",
+        "price": 429.97,
+        "url": "https://www.pcliquidations.com/dell-optiplex-7070-micro/p/158116",
+        "config": {
+          "processor": "Intel i7-9700T 2.0GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3050 Micro Computer i3-7100T Windows 10",
+        "price": 139.95,
+        "url": "https://www.pcliquidations.com/dell-optiplex-3050-micro/p/155234",
+        "config": {
+          "processor": "Intel i3-7100T 3.4GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M93p",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M93p Tiny Desktop i5-4570T Windows 10",
+        "price": 129.99,
+        "url": "https://www.pcliquidations.com/p61897-lenovo-thinkcentre-m93p-tiny",
+        "config": {
+          "processor": "Intel Core i5 (i5-4570T) 2.9GHz - 3.60GHz Max Dual Core Processor",
+          "ram": "8GB DDR3",
+          "storage": "256GB 2.5\" SATA SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": true,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 705 G4",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 705 G4 Mini Desktop Computer Ryzen 5 Pro 2400GE Windows 11",
+        "price": 293.99,
+        "url": "https://www.pcliquidations.com/p150914-hp-elitedesk-705-g4",
+        "config": {
+          "processor": "AMD Ryzen 5 Pro 2400GE Processor, 3.2 GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3080",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3080 Micro Computer i5-10500T Windows 11",
+        "price": 349.99,
+        "url": "https://www.pcliquidations.com/dell-optiplex-3080-micro/p/157848",
+        "config": {
+          "processor": "Intel i5-10500T 3.8GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3650",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3650 Graphic Design Workstation i5-11600 No OS w/ Nvidia Quadro RTX 4000",
+        "price": 909.99,
+        "url": "https://www.pcliquidations.com/dell-precision-3650-graphic/p/156162",
+        "config": {
+          "processor": "Intel Core i5-11600 6-Core (4.8GHz Boost) 65W TDP",
+          "ram": "16GB Dual Channel DDR4 3200MHz",
+          "storage": "256GB NVMe Gen3",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 Micro Computer i5-9500T Windows 11",
+        "price": 299.99,
+        "url": "https://www.pcliquidations.com/dell-optiplex-3070-micro/p/158610",
+        "config": {
+          "processor": "Intel i5-9500T 2.2GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3060",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3060 SFF Computer i5-8400 Windows 11",
+        "price": 256.99,
+        "url": "https://www.pcliquidations.com/p108223-dell-optiplex-3060-sff",
+        "config": {
+          "processor": "Intel i5-8400 2.8GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 SFF Computer i5-9500 Windows 11",
+        "price": 524.94,
+        "url": "https://www.pcliquidations.com/p125156-dell-optiplex-3070-sff",
+        "config": {
+          "processor": "Intel i5-9500 3.0GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5060 SFF Computer i5-8500 Windows 11",
+        "price": 449.99,
+        "url": "https://www.pcliquidations.com/p103227-dell-optiplex-5060-sff",
+        "config": {
+          "processor": "Intel Core i5 (8500) 3.0GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7090",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7090 SFF Computer i7-10700 - Windows 11 Home",
+        "price": 525.99,
+        "url": "https://www.pcliquidations.com/p153656-dell-optiplex-7090-sff",
+        "config": {
+          "processor": "Intel Core i7-10700 Processor, 2.90GHz",
+          "ram": "8GB DDR4",
+          "storage": "128GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": true,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M92P",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M92P Tiny Computer i5-3470T Windows 10",
+        "price": 99.99,
+        "url": "https://www.pcliquidations.com/p144622-lenovo-thinkcentre-m92p-tiny",
+        "config": {
+          "processor": "Intel Core i5 (i5-3470T) 2.9GHz Dual Core Processor",
+          "ram": "8GB DDR3",
+          "storage": "256GB 2.5\" SATA",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5060 SFF Computer i5-8500 Windows 11",
+        "price": 289.99,
+        "url": "https://www.pcliquidations.com/dell-optiplex-5060-sff/p/160151",
+        "config": {
+          "processor": "Intel i5-8500 3.0GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": true,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 Micro Computer i5-8500T Windows 11",
+        "price": 311.97,
+        "url": "https://www.pcliquidations.com/p118250-dell-optiplex-7060-micro",
+        "config": {
+          "processor": "Intel Core i5 (8500T) 2.1GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7060",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7060 SFF Computer i7-8700 Windows 11",
+        "price": 415.98,
+        "url": "https://www.pcliquidations.com/p149781-dell-optiplex-7060-sff",
+        "config": {
+          "processor": "Intel i7-8700 3.20GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 SFF Computer i5-10500 Windows 11",
+        "price": 455.0,
+        "url": "https://www.pcliquidations.com/p153431-hp-prodesk-600-g6",
+        "config": {
+          "processor": "Intel Core i5-10500 Processor, 3.10GHz",
+          "ram": "16GB DDR4",
+          "storage": "500GB NVMe",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 Micro Computer i5-8500T Windows 11",
+        "price": 319.99,
+        "url": "https://www.pcliquidations.com/dell-optiplex-3070-micro/p/158463",
+        "config": {
+          "processor": "Intel Core i5-8500T Processor, 2.1GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "PCLiquidations"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 Micro Computer i5-9500T Windows 11 Pro",
+        "price": 249.99,
+        "url": "https://www.pcliquidations.com/p143635-dell-optiplex-3070-micro",
+        "config": {
+          "processor": "Intel i5-9500T 2.2GHz",
+          "ram": "8GB DDR4",
+          "storage": "256GB 2.5\" SATA SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": true,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "PCLiquidations"
+      }
+    ],
+    "warning": "Rejected due to 25 product loss"
+  }
+}

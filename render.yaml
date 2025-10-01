@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: evergreen-pricing-backend
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python dashboard_server.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+      - key: FLASK_ENV
+        value: production
+      # Add your DeepSeek API key here when deploying
+      # - key: DEEPSEEK_API_KEY
+      #   value: your_api_key_here

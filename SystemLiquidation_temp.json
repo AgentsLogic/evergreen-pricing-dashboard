@@ -1,0 +1,2176 @@
+{
+  "SystemLiquidation": {
+    "competitor": "SystemLiquidation",
+    "website": "https://systemliquidation.com",
+    "scrape_date": "2025-10-01T06:44:25.668981",
+    "total_products": 103,
+    "products": [
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-9500T, 2.2GHz, 16GB RAM, 256GB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 249.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-9500t-3-70ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9500T, 2.2GHz",
+          "ram": "16GB",
+          "storage": "256GB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop, Intel Core i7-9700T, 2.0GHz, 64GB RAM, 2TB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 815.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800-g5-mini-desktop-intel-core-i7-9700t-2-0ghz-64gb-ram-2tb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700T, 2.0GHz",
+          "ram": "64GB",
+          "storage": "2TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel Core i7-6700T, 2.8GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 329.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-micro-desktop-intel-core-i7-6700t-2-8ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700T, 2.8GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3620",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3620 Workstation Tower Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 309.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-precision-3620-workstation-tower-desktop-intel-core-i7-6700-3-4ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.4GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050 Micro Desktop, Intel Core i5-7500T, 2.5GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade a Refurbished",
+        "price": 229.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-dell-optiplex-7050-mini-desktop-intel-core-i5-7500t-2-5ghz-16gb-ram-512gb-solid-state-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-7500T, 2.5GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, SFF Desktop, Intel Core i7-7700, 3.4GHz ,32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 299.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-sff-desktop-intel-core-i7-7700-3-4ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-7700, 3.4GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 3.0GHz, 32GB RAM, 1TB NVMe SSD, DVD-RW, Windows 11 Pro - Grade A Refurbished",
+        "price": 499.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7070-sff-desktop-intel-core-i7-9700-3-0ghz-32gb-ram-1tb-nvme-ssd-dvd-rw-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700, 3.0GHz",
+          "ram": "32GB",
+          "storage": "1TB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3040, SFF Desktop, Intel Core i5-6500, 3.2GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 185.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3040-sff-desktop-intel-core-i5-6500-3-2ghz-16gb-ram-512gb-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6500, 3.2GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, SFF Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 279.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-7050-sff-i7-6700-32gb-ram-1tb-ssd-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.4GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 3.0GHz, 32GB RAM, 512GB NVMe Drive, Windows 11 Pro - Grade A Refurbished",
+        "price": 565.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7070-sff-desktop-i7-9700-3-0ghz-32gb-ram-512gb-nvme-drive-dvdrw-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700, 3.0GHz",
+          "ram": "32GB",
+          "storage": "512GB NVMe Drive",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600G4",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600G4, Tower Desktop, Intel Core i7-8700, 3.2GHz, 32GB RAM, 1TB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 309.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600g4-microtower-desktop-intel-core-i7-8700-3-2ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-8700, 3.2GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 3.0GHz, 32GB RAM, 512GB NVMe Drive, Windows 11 Pro - Grade A Refurbished",
+        "price": 565.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7070-sff-desktop-i7-9700-3-0ghz-32gb-ram-512gb-nvme-drive-dvdrw-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700, 3.0GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600G4",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600G4, Tower Desktop, Intel Core i7-8700, 3.2GHz, 32GB RAM, 1TB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 455.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600g4-microtower-desktop-intel-core-i7-8700-3-2ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-8700, 3.2GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i7-8700T, 2.4GHz, 32GB RAM, 512GB SSD Windows 11 Pro - Grade A Refurbished",
+        "price": 319.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i7-8700t-3-70ghz-32gb-ram-512gb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-8700T, 2.4GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3060",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3060, Micro Desktop, Intel Core i7-8700, 3.2 GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 359.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3060-micro-desktop-i7-8700-3-2-ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-8700, 3.2 GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, SFF Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 255.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-7050-sff-i7-6700-32gb-ram-512gb-ssd-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.4GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3620",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3620 Workstation Tower Desktop, Intel Core i7-6700, 3.4GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 249.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-precision-3620-tower-desktop-intel-core-i7-6700-3-4ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.4GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, SFF Desktop, Intel Core i5-6500, 3.2GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 175.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-7050-sff-i5-6500-16gb-ram-256gb-ssd-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6500, 3.2GHz",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7040, Micro Desktop, Intel Core i5-6600T, 2.70GHz ,16GB RAM, 512GB SSD, Windows 10 Pro -Grade A Refurbished",
+        "price": 175.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7040-micro-i5-6600t-2-70ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6600T, 2.70GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G3",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G3, Mini Desktop, Intel Core i5-6500T, 2.5GHz, 16GB RAM, 512GB, SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 195.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-hp-elitedesk-800g3-mini-desktop-i5-6500t-2-5ghz-16gb-ram-512gb-solid-state-drive-windows-10-professional",
+        "config": {
+          "processor": "Intel Core i5-6500T, 2.5GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop, Intel Core i5-10500T, 2.30GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 445.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-hp-elitedesk-800g6-mini-desktop-i5-10500-3-0ghz-16gb-ram-512gb-solid-state-hard-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G9",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G9 Mini Desktop, Intel Core i7-12700, 2.1GHz, 32GB RAM, 512GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 549.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800-g9-mini-desktop-intel-core-i7-12700-2-1ghz-32gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-12700, 2.1GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel Core i7-7700, 3.6GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 249.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-micro-desktop-intel-core-i7-7700-3-6ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-7700, 3.6GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G3",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G3, Mini Desktop, Intel Core i7-6700T, 2.8GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 339.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800-g3-mini-desktop-i7-6700t-2-8-ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700T, 2.8GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop, Intel Core i5-10500T, 2.30GHz, 32GB RAM, 1TB M2 NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 525.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800g6-mini-desktop-intel-core-i5-10500t-2-30ghz-32gb-ram-1tb-m2-nvme-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.30GHz",
+          "ram": "32GB",
+          "storage": "1TB M2 NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel Core i5-7500T, 2.5GHz, 8GB RAM, 256GB SSD, Windows 10 Pro - Grade a Refurbished",
+        "price": 199.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-dell-optiplex-7050-mini-desktop-intel-core-i5-7500t-2-5ghz-8gb-ram-256gb-solid-state-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-7500T, 2.5GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M710q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M710q Tiny Desktop, Intel Core i7-7700T 2.90GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 319.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m710q-tiny-desktop-intel-core-i7-7700t-2-90ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-7700T 2.90GHz",
+          "ram": "32GB RAM",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "Z440",
+        "product_type": "Desktop",
+        "title": "HP Z440, Tower Workstation, Intel Xeon E5-1630, 3.70 GHz, 32GB RAM, 2TB HDD, Windows 10 Pro - Grade A Refurbished",
+        "price": 305.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-z440-tower-workstation-intel-xeon-e5-1630-3-70-ghz-32gb-ram-2tb-hdd-windows-10-pro-grade-a-refurbished-copy",
+        "config": {
+          "processor": "Intel Xeon E5-1630 3.70 GHz",
+          "ram": "32GB RAM",
+          "storage": "2TB HDD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "Prodesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP Prodesk 600 G6, SFF Desktop, Intel Core i5-10400, 2.9GHz, 32GB RAM, 1TB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 499.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-sff-desktop-intel-core-i7-10700-2-9ghz-32gb-ram-1tb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10400",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel core i7-6700T, 2.8GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 259.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-mdt-i7-6700-16gb-256gb-ssd-dvdrw-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel core i7-6700T",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Tower Desktop, Intel Core i7-6700, 3.4GHz ,32GB RAM,1TB SSD, Windows 10 Pro-Grade A Refurbished",
+        "price": 359.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-7050-twr-i7-6700-32gb-ram-1tb-ssd-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-8400T, 1.7GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 239.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-intel-core-i5-8400t-2-2ghz-16gb-ram-512gb-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-8400T",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M900",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M900, Tower Desktop, Inter Core i7-6700, 3.4GHz,16GB RAM, 512 SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 255.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m900-tower-desktop-intel-core-i7-6700-3-4ghz-16gb-ram-512-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Inter Core i7-6700",
+          "ram": "16GB",
+          "storage": "512 SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G2",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G2, SFF Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 1TB SSD, DVD-RW, Windows 10 Pro - Grade A Refurbished",
+        "price": 325.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-800g2-sff-i7-6700-3-4-32gb-1tb-ssd-no-opt-w10p-refubrished",
+        "config": {
+          "processor": "Intel Core i7-6700",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Tower Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 512GB SSD, Windows 10 Pro-Grade A Refurbished",
+        "price": 319.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-7050-twr-i7-6700-32gb-ram-512gb-ssd-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-9500T, 2.2GHz, 32GB RAM, 512GB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 305.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-9500t-3-70ghz-32gb-ram-512gb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9500T",
+          "ram": "32GB",
+          "storage": "512GB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-8500T, 2.1GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 225.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-8500t-1-7ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-8500T",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-9500T, 3.70GHz, 32GB RAM, 512GB NVMe, Windows 11 Pro - Grade A Refurbished",
+        "price": 305.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-9500t-3-70ghz-32gb-ram-512gb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9500T",
+          "ram": "32GB",
+          "storage": "512GB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-8500T, 2.1GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 225.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-8500t-1-7ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-8500T",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 2.8GHz, 64GB RAM, 2TB NVMe Drive, Windows 11 Pro - Grade A Refurbished",
+        "price": 539.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7070-sff-desktop-intel-core-i7-9700-64gb-ram-2tb-nvme-drive-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700",
+          "ram": "64GB",
+          "storage": "2TB NVMe Drive",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop, Intel Core i5-10500T, 2.30GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 425.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800g6-mini-desktop-intel-core-i5-10500t-2-30ghz-16gb-ram-256gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600G4",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600G4, Tower Desktop, Intel Core i5-8500, 3.0GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 359.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600g4-microtower-desktop-intel-core-i5-8500-3-0ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-8500",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 400 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 400 G6, Mini Desktop, Intel Core i5-10500T, 2.3GHz, 32GB RAM, 1TB NVMe, Windows 10 Pro- Grade A Refurbished",
+        "price": 445.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-400-g6-mini-desktop-intel-core-i5-10500t-2-3ghz-32gb-ram-1tb-nvme-drive-windows-10-pro-grade-a-refurbsihed",
+        "config": {
+          "processor": "Intel Core i5-10500T",
+          "ram": "32GB",
+          "storage": "1TB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M80q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M80q, Tiny Desktop, Intel Core i5-10500T, 2.30GHz, 16GB RAM, 512GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 379.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m80q-tiny-desktop-intel-core-i5-10500t-2-30ghz-16gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 Tower Desktop, Intel Core i5-10400, 2.9GHz, 32GB RAM, 512GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 475.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-tower-desktop-intel-core-i5-10400-2-9ghz-32gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10400",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6, SFF Desktop, Intel Core i5-10400, 2.9GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 399.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-sff-desktop-intel-core-i5-10400-2-9ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10400",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M710Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M710Q, Tiny Desktop, Intel Core i5-6400T, 2.5GHz, 32GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 225.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m710q-tiny-desktop-intel-core-i5-6500t-2-5ghz-32gb-ram-512gb-solid-state-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-6400T",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5040, Tower Desktop, Intel Core i7-6700, 3.40GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 319.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-5040-twr-i7-6700-16gb-ram-256gb-ssd-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7040, SFF Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 255.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7040-sff-desktop-intel-core-i7-6700-3-4ghz-32gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 3.0GHz, 16GB RAM, 1TB NVMe Drive, Windows 11 Pro - Grade A Refurbished",
+        "price": 389.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/copy-of-dell-optiplex-7070-sff-i7-9700-3-0ghz-64gb-ram-1tb-ssd-dvdrw-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700",
+          "ram": "16GB",
+          "storage": "1TB NVMe Drive",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel Core i7-6700T, 2.8GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 275.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-micro-desktop-i7-6700t-2-8ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700T",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel Core i7-6700T, 2.8GHz, 16GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 299.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-mini-desktop-intel-core-i7-6700t-2-8ghz-16gb-ram-1tb-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700T",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q Tiny, Intel Core i5-8400T, 1.7GHz, 8GB RAM, 256GB Solid State Drive, Windows 10 Pro - Grade A Refurbished",
+        "price": 209.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-intel-core-i5-8400t-1-7ghz-8gb-ram-256gb-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-8400T (8th Gen)",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i7-8700T, 2.4GHz, 32GB RAM, 1TB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 349.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i7-8700t-2-40ghz-32gb-ram-1tb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-8700T (8th Gen)",
+          "ram": "32GB",
+          "storage": "1TB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7040, Micro Desktop, Intel Core i5-6500T, 2.50GHz ,16GB RAM, 1TB SSD, Windows 10 Pro -Grade A Refurbished",
+        "price": 195.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7040-micro-desktop-intel-core-i5-6600t-2-70ghz-16gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6500T 2.50GHz",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7040, SFF Desktop, Intel Core i7-6700, 3.4GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 245.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7040-sff-desktop-intel-core-i7-6700-3-4ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700 3.4GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7040, Micro Desktop, Intel Core i5-6500T, 2.5GHz, 8GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 149.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7040-mini-desktop-intel-core-i5-6500t-2-5ghz-8gb-ram-256gb-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6500T 2.5GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M800",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M800, SFF Desktop, Intel Core i7-6700, 3.4GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 299.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m800-sff-desktop-i7-6700-3-4ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700 3.4GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G2",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G2, Mini Desktop, Intel Core i5-6400T 2.2GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 155.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-800g2-micro-desktop-i5-6400t-2-2ghz-16gb-ram-256-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6400T 2.2GHz",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7090",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7090, Tower Desktop, Intel Core i7-10700, 2.9GHz, 64GB RAM, 2TB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 845.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7090-tower-desktop-intel-core-i7-10700-2-9ghz-64gb-ram-2tb-nvme-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700 2.9GHz",
+          "ram": "64GB",
+          "storage": "2TB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i7-9700T, 2.0GHz, 32GB RAM, 1TB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 399.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i7-9700t-3-0ghz-32gb-ram-1tb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700T 2.0GHz",
+          "ram": "32GB",
+          "storage": "1TB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 3.0GHz, 16GB RAM, 256GB M2 SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 359.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7070-sff-i7-9700-16gb-ram-256-m2-sata-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i7-9700 3.0GHz",
+          "ram": "16GB",
+          "storage": "256GB M2 SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop, Intel Core i5-9500T, 2.2GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 399.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800-g5-mini-desktop-intel-core-i5-9500t-2-2ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9500T 2.2GHz",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7070, SFF Desktop, Intel Core i7-9700, 3.0GHz, 16GB RAM, 256GB M2 SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 359.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7070-sff-i7-9700-16gb-ram-256-m2-sata-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i7-9700, 3.0GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB M2 SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop, Intel Core i5-9500T, 2.2GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 269.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800-g5-mini-desktop-intel-core-i5-9500t-2-2ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9500T, 2.2GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5, SFF Desktop, Intel Core i7-9700, 3.0GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 395.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-hp-elitedesk-800-g5-sff-desktop-i7-9700-3-2ghz-16gb-ram-512gb-solid-state-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i7-9700, 3.0GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M715Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M715Q, Tiny Desktop, AMD PRO-A10-7350B, 2.10 GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 185.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m715q-tiny-desktop-amd-pro-a10-7350b-2-10-ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "AMD PRO-A10-7350B, 2.10 GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6, Mini Desktop, Intel Core i7-10700T, 2.0GHz, 32GB RAM, 1TB NVMe, Windows 11 Pro- Grade A Refurbished",
+        "price": 599.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-mini-desktop-intel-core-i7-10700t-2-0ghz-32gb-ram-1tb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700T, 2.0GHz",
+          "ram": "32GB RAM",
+          "storage": "1TB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6 Tower",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 Tower Desktop, Intel Core i5-10400, 2.9GHz, 16GB RAM, 512GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 449.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-tower-desktop-intel-core-i5-10400-2-9ghz-16gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10400, 2.9GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7050, Micro Desktop, Intel Core, i5-6500T, 2.5GHz, 8GB RAM, 256GB SSD, Windows 10 Pro -Grade A Refurbished",
+        "price": 195.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7050-mini-desktop-intel-core-i5-6500t-2-5ghz-8gb-ram-256gb-solid-state-drive-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6500T, 2.5GHz",
+          "ram": "8GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5050",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5050, SFF Desktop, Intel i7-7700, 3.6GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 295.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-5050-sff-desktop-intel-i7-7700-3-4ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel i7-7700, 3.6GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M910T",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M910T, Tower Desktop, Intel Core i7-6700, 3.4GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 245.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m910t-tower-desktop-intel-core-i7-6700-3-4ghz-16gb-ram-256gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.4GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G2",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G2, Tower Desktop, Intel Core i7-6700, 3.40GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 219.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800-g2-tower-desktop-intel-core-i7-6700-3-40ghz-16gb-ram-256gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.40GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5040, SFF Desktop, Intel i7-6700, 3.4GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 339.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-5040-sff-desktop-intel-i7-6700-3-4ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel i7-6700, 3.4GHz",
+          "ram": "32GB RAM",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "Z240",
+        "product_type": "Desktop",
+        "title": "HP Z240, Tower Workstation, Intel Core i7-6700, 3.4GHz, 32GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 289.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-z240-tower-workstation-intel-core-i7-6700-3-2ghz-32gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.4GHz",
+          "ram": "32GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3420",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3420 WorkStation SFF Desktop, Intel i5-6500, 3.2GHz, 16GB RAM, 512GB SSD, DVD-RW, Windows 10 Pro - Grade A Refurbished",
+        "price": 199.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3420-workstation-sff-desktop-intel-i5-6500-3-2ghz-16gb-ram-512gb-ssd-dvd-rw-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel i5-6500, 3.2GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M710",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M710, SFF Desktop, Intel Core i7-6700, 3.40GHz, 32GB RAM, 512GB SSD, Windows 10 Pro, Grade - A Refurbished",
+        "price": 259.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m710-small-form-factor-intel-core-i7-6700-3-40ghz-32gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-6700, 3.40GHz",
+          "ram": "32GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3040",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3040, SFF Desktop, Intel Core i5-6500, 3.2GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 169.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-3040-sff-intel-core-i5-6500-3-2ghz-8gb-ram-512gb-solid-state-drive-no-opt-windows-10-pro-refurbished",
+        "config": {
+          "processor": "Intel Core i5-6500, 3.2GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M710Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M710Q, Tiny Desktop, Intel Core i5-6500T, 8GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 165.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-lenovo-think-centre-m710q-mini-desktop-i5-6500t-16ggb-ram-256gb-ssd-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-6500T",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3060",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3060, Micro Desktop, Intel Core i5-8500T, 2.1GHz, 32GB RAM, 256GB NVMe, Windows 10 Pro - Grade a Refurbished",
+        "price": 319.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-dell-optiplex-3060-micro-desktop-intel-core-i5-8500t-2-1ghz-32gb-ram-256gb-nvme-drive-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-8500T",
+          "ram": "32GB",
+          "storage": "256GB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 93,
+          "average_rating": 4.8,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i7-9700T, 2.0GHz, 16GB RAM, 512GB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 339.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-9500t-3-70ghz-16gb-ram-512gb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700T, 2.0GHz",
+          "ram": "16GB",
+          "storage": "512GB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i7-8700T, 2.4GHz, 16GB RAM, 512GB SSD Windows 11 Pro - Grade A Refurbished",
+        "price": 289.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i7-8700t-2-40ghz-16gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-8700T, 2.4GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q, Tiny Desktop, Intel Core i5-9500T, 2.2GHz, 16GB RAM, 512GB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 275.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m720q-tiny-desktop-intel-core-i5-9500t-3-70ghz-16gb-ram-512gb-nvme-windows-11-pro-grade-a-refurbished-1",
+        "config": {
+          "processor": "Intel Core i5-9500T, 2.2GHz",
+          "ram": "16GB",
+          "storage": "512GB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070, Micro Desktop, Intel Core i7-9700T, 2.0GHz, 32GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 399.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3070-micro-desktop-intel-core-i7-9700t-2-0ghz-32gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700T, 2.0GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070, Micro Desktop, Intel Core i5-9500, 2.2GHz, 32GB RAM, 1TB NVMe SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 349.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3070-micro-desktop-intel-i5-9500t-2-2ghz-32gb-ram-1tb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9500, 2.2GHz",
+          "ram": "32GB",
+          "storage": "1TB NVMe SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070, Micro Desktop, Intel Core i7-9700T, 2.0GHz, 32GB RAM, 1TB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 439.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3070-micro-desktop-intel-core-i7-9700t-2-0ghz-32gb-ram-1tb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-9700T, 2.0GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070, Micro Desktop, Intel Core i5-9400T, 3.0GHz, 16GB RAM, 512GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 329.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-3070-micro-desktop-intel-i5-9400t-3-0ghz-16gb-ram-512gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-9400T, 3.0GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070, Micro Desktop, Intel Core i5-9500T, 2.2GHz, 8GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 289.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-dell-optiplex-3070-micro-i5-9500t-8gb-ram-256gb-ssd-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-9500T, 2.2GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7080, Micro Desktop, Intel Core i7-10700T, 2.0GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 579.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7080-micro-form-factor-desktop-intel-core-i7-10700t-2-0ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700T, 2.0GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In stock",
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070, Micro Desktop, Intel Core i5-9500T, 2.2GHz, 8GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 289.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/refurbished-dell-optiplex-3070-micro-i5-9500t-8gb-ram-256gb-ssd-windows-10-pro",
+        "config": {
+          "processor": "Intel Core i5-9500T, 2.2GHz",
+          "ram": "8GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7080, Micro Desktop, Intel Core i7-10700T, 2.0GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 579.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7080-micro-form-factor-desktop-intel-core-i7-10700t-2-0ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700T, 2.0GHz",
+          "ram": "32GB RAM",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7080, Micro Desktop, Intel Core i5-10500T, 2.3GHz, 16GB RAM, 512GB NVMe, Windows 10 Pro - Grade A Refurbished",
+        "price": 429.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7080-micro-form-factor-desktop-intel-core-i5-10500-2-3ghz-16gb-ram-512gb-nvme-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.3GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7080, Micro Desktop, Intel Core i5-10500T, 2.3GHz, 64GB RAM, 2TB NVMe, Windows 11 Pro - Grade A Refurbished",
+        "price": 605.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7080-micro-form-factor-desktop-intel-core-i5-10500t-2-3ghz-64gb-ram-2tb-nvme-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.3GHz",
+          "ram": "64GB RAM",
+          "storage": "2TB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7080, Micro Desktop, Intel Core i7-10700T, 2.0GHz, 32GB RAM, 512GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 559.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-optiplex-7080-micro-form-factor-desktop-intel-core-i7-10700t-2-0ghz-32gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700T, 2.0GHz",
+          "ram": "32GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop, Intel Core i7-10700T, 2.00GHz, 16GB RAM, 512GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 539.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-elitedesk-800g6-mini-desktop-intel-core-i7-10700t-2-00ghz-16gb-ram-512gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700T, 2.00GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600G4",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600G4, Tower Desktop, Intel Core i5-8500, 3.0GHz, 16GB RAM, 256GB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 285.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600g4-microtower-desktop-intel-core-i5-8500-3-0ghz-8gb-ram-256gb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-8500, 3.0GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 400 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 400 G6, Mini Desktop, Intel Core i5-10500T, 2.3GHz, 16GB RAM, 512GB NVMe, Windows 10 Pro- Grade A Refurbished",
+        "price": 399.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-400-g6-mini-desktop-intel-core-i5-10500t-2-3ghz-16gb-ram-512gb-nvme-drive-windows-10-pro-grade-a-refurbsihed",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.3GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M715Q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M715Q, Tiny Desktop, AMD PRO-A10-7350B, 2.10 GHz, 32GB RAM, 1TB SSD, Windows 10 Pro - Grade A Refurbished",
+        "price": 249.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/lenovo-thinkcentre-m715q-tiny-desktop-amd-pro-a10-7350b-2-10-ghz-32gb-ram-1tb-ssd-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "AMD PRO-A10-7350B, 2.10 GHz",
+          "ram": "32GB RAM",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6, Mini Desktop, Intel Core i5-10500T, 2.3GHz, 16GB RAM, 512GB M2 SSD, Windows 11 Pro- Grade A Refurbished",
+        "price": 429.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-mini-desktop-intel-core-i5-10500t-2-3ghz-16gb-ram-512gb-m2-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.3GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB M2 SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6, Mini Desktop, Intel Core i7-10700T, 2.0GHz, 16GB RAM, 512GB SSD, Windows 11 Pro- Grade A Refurbished",
+        "price": 529.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-mini-desktop-intel-core-i7-10700t-2-0ghz-16gb-ram-512gb-nvme-drive-windows-10-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i7-10700T, 2.0GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6, Mini Desktop, Intel Core i5-10500T, 2.3GHz, 16GB RAM, 512GB NVMe, Windows 10 Pro- Grade A Refurbished",
+        "price": 415.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-mini-desktop-intel-core-i5-10500t-2-3ghz-16gb-ram-512gb-nvme-drive-windows-10-pro-grade-a-refurbsihed",
+        "config": {
+          "processor": "Intel Core i5-10500T, 2.3GHz",
+          "ram": "16GB RAM",
+          "storage": "512GB NVMe",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "Dell",
+        "model": "Vostro 3681",
+        "product_type": "Desktop",
+        "title": "Dell Vostro 3681 SFF Desktop, Intel Core i5-10400, 2.9GHz, 16GB RAM, 256GB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 399.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/dell-vostro-3681-sff-desktop-intel-core-i5-10400-2-9ghz-16gb-ram-256gb-ssd-windows-11-pro-grade-a-refurbished",
+        "config": {
+          "processor": "Intel Core i5-10400, 2.9GHz",
+          "ram": "16GB RAM",
+          "storage": "256GB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 SFF Desktop, Intel Core i7-10700, 2.9GHz, 32GB RAM, 1TB SSD, Windows 11 Pro - Grade A Refurbished",
+        "price": 599.0,
+        "url": "https://systemliquidation.com/collections/refurbished-desktop-computers/products/hp-prodesk-600-g6-sff-desktop-intel-core-i7-10700-2-9ghz-32gb-ram-1tb-ssd-windows-11-pro-grade-a-refurbished-1",
+        "config": {
+          "processor": "Intel Core i7-10700, 2.9GHz",
+          "ram": "32GB RAM",
+          "storage": "1TB SSD",
+          "cosmetic_grade": "Grade A",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "SystemLiquidation"
+      }
+    ],
+    "warning": "Rejected due to 114 product loss"
+  }
+}
