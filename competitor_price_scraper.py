@@ -842,16 +842,76 @@ def clean_product_title(title: str) -> str:
         return title.strip()
 
     def save_results(self, filename: str = "competitor_prices.json"):
-        """Save results to JSON file"""
-        output = {
-            competitor: data.model_dump()
-            for competitor, data in self.results.items()
-        }
+        """Save results to JSON file with merge logic to prevent data loss"""
+        try:
+            # Load existing data
+            existing_data = {}
+            try:
+                with open(filename, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+            except FileNotFoundError:
+                print(f"   [INFO] Creating new data file")
 
-        with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
+            # Merge new results with existing data - never remove existing products
+            for competitor, new_data in self.results.items():
+                existing_products = existing_data.get(competitor, {}).get('products', [])
 
-        print(f"\n💾 Results saved to {filename}")
+                # Convert new products to dict format for easier comparison
+                new_products_dict = {}
+                for product in new_data.products:
+                    # Use URL as unique key, or create a composite key if URL is missing
+                    key = product.url if product.url else f"{product.brand}_{product.model}_{product.price}"
+                    new_products_dict[key] = product.model_dump()
+
+                # Merge with existing products - never remove existing ones
+                merged_products = existing_products.copy()
+
+                # Add new products that don't already exist
+                new_additions = 0
+                for key, product_dict in new_products_dict.items():
+                    # Check if this product already exists (by URL or by brand/model/price combination)
+                    exists = False
+                    for existing_product in merged_products:
+                        existing_key = existing_product.get('url') if existing_product.get('url') else f"{existing_product.get('brand')}_{existing_product.get('model')}_{existing_product.get('price')}"
+                        if existing_key == key:
+                            exists = True
+                            break
+
+                    if not exists:
+                        merged_products.append(product_dict)
+                        new_additions += 1
+
+                # Update the competitor data with merged results
+                existing_data[competitor] = {
+                    "competitor": competitor,
+                    "website": new_data.website,
+                    "scrape_date": new_data.scrape_date,
+                    "total_products": len(merged_products),
+                    "existing_products": len(existing_products),
+                    "new_additions": new_additions,
+                    "products": merged_products
+                }
+
+                print(f"   [MERGE] {competitor}: {len(merged_products)} total products (+{new_additions} new)")
+
+            # Save updated data
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+            print(f"\n💾 Merged results saved to {filename}")
+
+        except Exception as e:
+            print(f"   [ERROR] Failed to save merged results: {e}")
+            # Fallback to simple save if merge fails
+            output = {
+                competitor: data.model_dump()
+                for competitor, data in self.results.items()
+            }
+
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+
+            print(f"\n💾 Fallback save completed to {filename}")
 
     def generate_report(self) -> str:
         """Generate a summary report"""

@@ -391,84 +391,77 @@ class CompetitorScraper:
         return results
 
     def _save_incremental_results(self, competitor: str, products: List[Product]):
-        """Save incremental results after each page scrape with backup and validation"""
+        """Save incremental results after each page scrape - merge with existing data"""
         try:
             filename = "competitor_prices.json"
-            
+
             # Load existing data
             existing_data = {}
-            previous_count = 0
+            existing_products = []
             try:
                 with open(filename, 'r', encoding='utf-8') as f:
                     existing_data = json.load(f)
-                    # Get previous product count for this competitor
+                    # Get existing products for this competitor
                     if competitor in existing_data:
-                        previous_count = existing_data[competitor].get('total_products', 0)
+                        existing_products = existing_data[competitor].get('products', [])
             except FileNotFoundError:
                 print(f"   [INFO] Creating new data file")
-            
-            new_count = len(products)
-            
-            # Validation: Check for significant data loss (>30% reduction)
-            if previous_count > 0 and new_count < previous_count * 0.7:
-                print(f"   [WARNING] Significant data loss detected!")
-                print(f"   [WARNING] Previous: {previous_count} products, New: {new_count} products")
-                print(f"   [WARNING] Keeping existing data to prevent data loss")
-                print(f"   [WARNING] New data saved to {competitor}_temp.json for review")
-                
-                # Save new data to temp file for manual review
-                temp_data = {
-                    competitor: {
-                        "competitor": competitor,
-                        "website": COMPETITORS[competitor]["base_url"],
-                        "scrape_date": datetime.now().isoformat(),
-                        "total_products": new_count,
-                        "products": [p.model_dump() for p in products],
-                        "warning": f"Rejected due to {previous_count - new_count} product loss"
-                    }
-                }
-                with open(f"{competitor}_temp.json", 'w', encoding='utf-8', errors='ignore') as f:
-                    json.dump(temp_data, f, indent=2, ensure_ascii=False)
-                return
-            
-            # Create timestamped backup before overwriting (only if data exists)
-            if previous_count > 0:
+
+            # Convert new products to dict format for easier comparison
+            new_products_dict = {}
+            for product in products:
+                # Use URL as unique key, or create a composite key if URL is missing
+                key = product.url if product.url else f"{product.brand}_{product.model}_{product.price}"
+                new_products_dict[key] = product.model_dump()
+
+            # Merge with existing products - never remove existing ones
+            merged_products = existing_products.copy()
+
+            # Add new products that don't already exist
+            new_additions = 0
+            for key, product_dict in new_products_dict.items():
+                # Check if this product already exists (by URL or by brand/model/price combination)
+                exists = False
+                for existing_product in merged_products:
+                    existing_key = existing_product.get('url') if existing_product.get('url') else f"{existing_product.get('brand')}_{existing_product.get('model')}_{existing_product.get('price')}"
+                    if existing_key == key:
+                        exists = True
+                        break
+
+                if not exists:
+                    merged_products.append(product_dict)
+                    new_additions += 1
+
+            # Create timestamped backup before updating (only if data exists)
+            if existing_products:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 backup_filename = f"competitor_prices_backup_{timestamp}.json"
-                
+
                 # Save backup
                 with open(backup_filename, 'w', encoding='utf-8', errors='ignore') as f:
                     json.dump(existing_data, f, indent=2, ensure_ascii=False)
-                
+
                 print(f"   [BACKUP] Created backup: {backup_filename}")
-                
+
                 # Clean up old backups (keep last 5)
                 self._cleanup_old_backups()
-            
+
             # Update only the current competitor's data
             existing_data[competitor] = {
                 "competitor": competitor,
                 "website": COMPETITORS[competitor]["base_url"],
                 "scrape_date": datetime.now().isoformat(),
-                "total_products": new_count,
-                "previous_count": previous_count,
-                "change": new_count - previous_count if previous_count > 0 else new_count,
-                "products": [p.model_dump() for p in products]
+                "total_products": len(merged_products),
+                "existing_products": len(existing_products),
+                "new_additions": new_additions,
+                "products": merged_products
             }
 
             # Save updated data
             with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
                 json.dump(existing_data, f, indent=2, ensure_ascii=False)
 
-            change_indicator = ""
-            if previous_count > 0:
-                change = new_count - previous_count
-                if change > 0:
-                    change_indicator = f" (+{change})"
-                elif change < 0:
-                    change_indicator = f" ({change})"
-            
-            print(f"   [SAVE] Incremental save: {new_count} products for {competitor}{change_indicator}")
+            print(f"   [MERGE] Merged data: {len(merged_products)} total products (+{new_additions} new) for {competitor}")
 
         except Exception as e:
             print(f"   [ERROR] Failed to save incremental results: {e}")
