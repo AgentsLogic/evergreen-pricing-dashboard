@@ -79,6 +79,13 @@ def index():
     return send_file('price_dashboard.html')
 
 
+@app.route('/health')
+def health():
+    """Health check endpoint for container health probes"""
+    return jsonify({"status": "ok"}), 200
+
+
+
 @app.route('/api/data')
 def get_data():
     """Get the current competitor prices data"""

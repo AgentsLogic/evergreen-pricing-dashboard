@@ -165,18 +165,18 @@ def parse_price(price_text: str) -> Optional[float]:
 def classify_product_type(title: str, description: str = "") -> str:
     """Determine if product is laptop or desktop"""
     text = (title + " " + description).lower()
-    
+
     laptop_keywords = ['laptop', 'notebook', 'latitude', 'precision mobile', 'elitebook', 'probook', 'thinkpad']
     desktop_keywords = ['desktop', 'optiplex', 'precision tower', 'precision sff', 'elitedesk', 'prodesk', 'thinkcentre', 'tower', 'sff', 'mff', 'tiny']
-    
+
     for keyword in laptop_keywords:
         if keyword in text:
             return 'Laptop'
-    
+
     for keyword in desktop_keywords:
         if keyword in text:
             return 'Desktop'
-    
+
     return 'Unknown'
 
 
@@ -308,7 +308,7 @@ def extract_storage_info(text: str) -> Optional[str]:
 def extract_screen_resolution(text: str) -> Optional[str]:
     """Extract screen resolution from text"""
     text_lower = text.lower()
-    
+
     if '3840' in text or '2160' in text or '4k' in text_lower or 'uhd' in text_lower:
         return '4K UHD (3840x2160)'
     elif '2560' in text or '1440' in text or 'qhd' in text_lower or '2k' in text_lower:
@@ -317,21 +317,21 @@ def extract_screen_resolution(text: str) -> Optional[str]:
         return 'FHD (1920x1080)'
     elif '1366' in text or '768' in text or text_lower.count('hd') > 0:
         return 'HD (1366x768)'
-    
+
     return None
 
 
 def extract_form_factor(text: str) -> Optional[str]:
     """Extract desktop form factor from text"""
     text_lower = text.lower()
-    
+
     if 'tiny' in text_lower or 'mff' in text_lower or 'micro' in text_lower:
         return 'MFF/Tiny'
     elif 'sff' in text_lower or 'small form' in text_lower:
         return 'SFF'
     elif 'tower' in text_lower or 'mt' in text_lower:
         return 'Tower'
-    
+
     return None
 
 
@@ -341,11 +341,11 @@ def extract_form_factor(text: str) -> Optional[str]:
 
 class CompetitorPriceScraper:
     """Main scraper for competitor pricing data"""
-    
+
     def __init__(self, use_llm: bool = False):
         self.use_llm = use_llm
         self.results: Dict[str, CompetitorData] = {}
-    
+
     async def scrape_competitor(self, competitor_name: str, config: dict) -> CompetitorData:
         """Scrape a single competitor website"""
         print(f"\n{'='*80}")
@@ -371,6 +371,11 @@ class CompetitorPriceScraper:
         # Filter for Dell, HP, Lenovo only
         filtered_products = [p for p in all_products if p.brand in ['Dell', 'HP', 'Lenovo']]
 
+        # Enrich PCLiquidations products with missing Grade by visiting product pages
+        if competitor_name == 'PCLiquidations':
+            print("\nEnriching PCLiquidations products to capture cosmetic Grade...")
+            filtered_products = await self.enrich_pcliquidations_grades_safe(filtered_products)
+
         print(f"\n✅ Total products found: {len(all_products)}")
         print(f"✅ Dell/HP/Lenovo products: {len(filtered_products)}")
 
@@ -381,7 +386,7 @@ class CompetitorPriceScraper:
             products=filtered_products,
             total_products=len(filtered_products)
         )
-    
+
     async def scrape_pages_with_pagination(self, base_url: str, competitor: str, product_type: str) -> List[Product]:
         """Scrape multiple pages with pagination for a given URL"""
         all_products = []
@@ -542,7 +547,7 @@ class CompetitorPriceScraper:
             print(f"   ❌ Error scraping {url}: {str(e)}")
 
         return products
-    
+
     def parse_products_from_markdown(self, markdown: str, competitor: str,
                                     product_type: str, page_url: str) -> List[Product]:
         """Parse products from markdown content"""
@@ -680,6 +685,10 @@ class CompetitorPriceScraper:
         else:
             config.form_factor = extract_form_factor(all_text)
 
+        # Try to extract a direct product URL from this section (e.g., /p12345-...)
+        product_url = self.extract_product_url_from_section(section, competitor)
+        final_url = product_url or page_url
+
         # Clean the title to remove markdown formatting
         cleaned_title = clean_markdown_text(title)
 
@@ -690,7 +699,7 @@ class CompetitorPriceScraper:
             title=cleaned_title[:200],  # Limit title length
             price=price,
             price_text=price_text,
-            url=page_url,
+            url=final_url,
             config=config
         )
 
@@ -714,6 +723,242 @@ class CompetitorPriceScraper:
                 return match.group(1).strip()
 
         return ""
+
+
+    def extract_product_url_from_section(self, section: str, competitor: str) -> Optional[str]:
+        """Try to extract a product detail URL from a section.
+        For PCLiquidations, product pages look like /p12345-some-slug
+        """
+        try:
+            # Absolute URL first
+            m_abs = re.search(r'(https?://[^\s"\)\]]*?/p\d{5,}-[a-z0-9\-]+)', section, re.IGNORECASE)
+            if m_abs:
+                return m_abs.group(1)
+
+            # Relative URL like /p125225-dell-latitude-3510-15
+            m_rel = re.search(r'\b(/p\d{5,}-[a-z0-9\-]+)', section, re.IGNORECASE)
+            if m_rel:
+                base = COMPETITORS.get(competitor, {}).get('url', '').rstrip('/')
+                if base:
+                    return f"{base}{m_rel.group(1)}"
+        except Exception:
+            pass
+        return None
+
+    async def enrich_pcliquidations_grades(self, products: List[Product]) -> List[Product]:
+        """Visit PCLiquidations product pages to fill missing cosmetic grades."""
+        targets = [p for p in products if (p.config is not None and p.config.cosmetic_grade in (None, '')) and p.url and 'pcliquidations.com' in p.url]
+        if not targets:
+            return products
+
+        print(f"   8157 Enriching {len(targets)} products with Grade from product pages...")
+
+        browser_config = BrowserConfig(headless=True, verbose=False)
+        crawler_config = CrawlerRunConfig(
+            cache_mode=CacheMode.BYPASS,
+            wait_for_images=False,
+            scan_full_page=True,
+            delay_before_return_html=2.0,
+        )
+
+        try:
+            async with AsyncWebCrawler(config=browser_config) as crawler:
+                for p in targets:
+                    try:
+                        res = await crawler.arun(url=p.url, config=crawler_config)
+                        if res.success:
+                            page_text = (res.markdown.raw_markdown or '') + ' ' + (res.metadata.get('title', '') or '')
+                            grade = self.extract_cosmetic_grade(page_text)
+                            if grade:
+                                p.config.cosmetic_grade = grade
+                                # Also, if our model was blank, try to refine from H1/title
+                                if not p.model:
+                                    p.model = self.extract_model_from_title(page_text)
+                    except Exception as e:
+                        print(f"      6a7 Unable to enrich grade for {p.url}: {e}")
+        except Exception as e:
+            print(f"   6a8 Grade enrichment session error: {e}")
+
+        return products
+
+    async def enrich_pcliquidations_grades_safe(self, products: List[Product]) -> List[Product]:
+        """Visit PCLiquidations product pages and extract all grade variants as separate products."""
+        targets = [p for p in products if p.url and 'pcliquidations.com' in p.url]
+        if not targets:
+            return products
+
+        print(f"   Enriching {len(targets)} PCLiquidations products with all grade variants...")
+
+        browser_config = BrowserConfig(headless=True, verbose=False)
+        crawler_config = CrawlerRunConfig(
+            cache_mode=CacheMode.BYPASS,
+            wait_for_images=False,
+            scan_full_page=True,
+            delay_before_return_html=2.0,
+        )
+
+        enriched_products = []
+
+        try:
+            async with AsyncWebCrawler(config=browser_config) as crawler:
+                for p in targets:
+                    try:
+                        res = await crawler.arun(url=p.url, config=crawler_config)
+                        if res.success:
+                            page_text = (res.markdown.raw_markdown or '') + ' ' + (res.metadata.get('title', '') or '')
+
+                            # Extract all grade variants from this page
+                            grade_variants = self.extract_all_grade_variants(page_text, p)
+
+                            if grade_variants:
+                                enriched_products.extend(grade_variants)
+                                print(f"      ✓ Found {len(grade_variants)} grade variants for {p.title[:50]}...")
+                            else:
+                                # If no grades found, keep original product
+                                enriched_products.append(p)
+                                print(f"      ⚠️ No grade variants found for {p.title[:50]}...")
+                        else:
+                            # If page failed to load, keep original product
+                            enriched_products.append(p)
+                            print(f"      ❌ Failed to load page for {p.title[:50]}...")
+                    except Exception as e:
+                        # If error occurred, keep original product
+                        enriched_products.append(p)
+                        print(f"      ❌ Error processing {p.title[:50]}...: {e}")
+
+        except Exception as e:
+            print(f"   ❌ Grade enrichment session error: {e}")
+            return products
+
+        print(f"   ✅ PCLiquidations enrichment complete! {len(enriched_products)} total products after enrichment")
+        return enriched_products
+
+
+    def extract_all_grade_variants(self, page_text: str, original_product: Product) -> List[Product]:
+        """Extract all grade variants from a PCLiquidations product page"""
+        variants = []
+
+        # Look for grade-specific pricing patterns in PCLiquidations pages
+        # They typically have sections like "Grade A: $XXX", "Grade B: $XXX", etc.
+
+        # Pattern 1: "Grade A: $XXX" format
+        grade_price_pattern = r'Grade\s*([ABC])\s*[:\-]?\s*[\$]?(\d+(?:,\d{3})*(?:\.\d{2})?)'
+        matches = re.findall(grade_price_pattern, page_text, re.IGNORECASE)
+
+        if matches:
+            for grade, price_str in matches:
+                grade = grade.upper()
+                price = float(price_str.replace(',', ''))
+
+                # Create a new product for this grade variant
+                variant = Product(
+                    brand=original_product.brand,
+                    model=original_product.model,
+                    product_type=original_product.product_type,
+                    title=f"{original_product.title} (Grade {grade})",
+                    price=price,
+                    price_text=f"${price:.2f}",
+                    url=original_product.url,
+                    config=ProductConfig(
+                        processor=original_product.config.processor,
+                        ram=original_product.config.ram,
+                        storage=original_product.config.storage,
+                        cosmetic_grade=f"Grade {grade}",
+                        form_factor=original_product.config.form_factor,
+                        screen_resolution=original_product.config.screen_resolution,
+                        screen_size=original_product.config.screen_size
+                    ),
+                    availability=original_product.availability,
+                    condition=original_product.condition
+                )
+                variants.append(variant)
+
+        # If no structured grade patterns found, try to extract from product options
+        if not variants:
+            # Look for grade mentions and associated prices
+            grade_mentions = []
+            if 'grade a' in page_text.lower():
+                grade_mentions.append(('A', 'grade a'))
+            if 'grade b' in page_text.lower():
+                grade_mentions.append(('B', 'grade b'))
+            if 'grade c' in page_text.lower():
+                grade_mentions.append(('C', 'grade c'))
+
+            # Try to find prices near each grade mention
+            for grade, grade_keyword in grade_mentions:
+                # Look for price within 100 characters of grade mention
+                grade_pos = page_text.lower().find(grade_keyword)
+                if grade_pos != -1:
+                    # Extract text around the grade mention
+                    start = max(0, grade_pos - 100)
+                    end = min(len(page_text), grade_pos + 100)
+                    context = page_text[start:end]
+
+                    # Look for price in this context
+                    price_match = re.search(r'[\$](\d+(?:,\d{3})*(?:\.\d{2})?)', context)
+                    if price_match:
+                        price = float(price_match.group(1).replace(',', ''))
+
+                        variant = Product(
+                            brand=original_product.brand,
+                            model=original_product.model,
+                            product_type=original_product.product_type,
+                            title=f"{original_product.title} (Grade {grade})",
+                            price=price,
+                            price_text=f"${price:.2f}",
+                            url=original_product.url,
+                            config=ProductConfig(
+                                processor=original_product.config.processor,
+                                ram=original_product.config.ram,
+                                storage=original_product.config.storage,
+                                cosmetic_grade=f"Grade {grade}",
+                                form_factor=original_product.config.form_factor,
+                                screen_resolution=original_product.config.screen_resolution,
+                                screen_size=original_product.config.screen_size
+                            ),
+                            availability=original_product.availability,
+                            condition=original_product.condition
+                        )
+                        variants.append(variant)
+
+        # If still no variants found, try one more approach - look for multiple price points
+        if not variants:
+            # Extract all prices from the page
+            all_prices = re.findall(r'[\$](\d+(?:,\d{3})*(?:\.\d{2})?)', page_text)
+            unique_prices = list(set(float(p.replace(',', '')) for p in all_prices))
+
+            # If we find multiple prices, assume they correspond to different grades
+            if len(unique_prices) >= 2:
+                # Sort prices and assume lowest is Grade C, highest is Grade A
+                unique_prices.sort()
+                grade_order = ['C', 'B', 'A']  # Lowest price = Grade C, highest = Grade A
+
+                for i, price in enumerate(unique_prices[:3]):  # Max 3 grades
+                    if i < len(grade_order):
+                        grade = grade_order[i]
+                        variant = Product(
+                            brand=original_product.brand,
+                            model=original_product.model,
+                            product_type=original_product.product_type,
+                            title=f"{original_product.title} (Grade {grade})",
+                            price=price,
+                            price_text=f"${price:.2f}",
+                            url=original_product.url,
+                            config=ProductConfig(
+                                processor=original_product.config.processor,
+                                ram=original_product.config.ram,
+                                storage=original_product.config.storage,
+                                cosmetic_grade=f"Grade {grade}",
+                                form_factor=original_product.config.form_factor,
+                                screen_resolution=original_product.config.screen_resolution,
+                                screen_size=original_product.config.screen_size
+                            ),
+                            availability=original_product.availability,
+                            condition=original_product.condition
+                        )
+                        variants.append(variant)
+
+        return variants
 
     def extract_cosmetic_grade(self, text: str) -> Optional[str]:
         """Extract cosmetic grade from text"""

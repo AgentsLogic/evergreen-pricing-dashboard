@@ -1,0 +1,191 @@
+{
+  "DiscountPC": {
+    "competitor": "DiscountPC",
+    "website": "https://discountpc.com",
+    "scrape_date": "2025-10-01T07:30:09.258025",
+    "total_products": 9,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 SFF i5 Gen 8 Desktop | Windows 11",
+        "price": 315.99,
+        "url": "https://discountpc.com/products/dell-optiplex-7060-sff-i5-desktop-windows-11-compatible",
+        "config": {
+          "processor": "Intel I5 Gen 8",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3070 Micro i5 Gen 8 Desktop | Windows 11 | Grade C",
+        "price": 299.95,
+        "url": "https://discountpc.com/products/dell-optiplex-3070-micro-i5-desktop-windows-11-compatible",
+        "config": {
+          "processor": "Intel I5 Gen 8",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": "Grade C",
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 SFF i5 Gen 9 Desktop | Windows 11",
+        "price": 355.99,
+        "url": "https://discountpc.com/products/dell-optiplex-7070-sff-i5-desktop-windows-11-compatible",
+        "config": {
+          "processor": "Intel I5 Gen 9",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5070",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5070 SFF i5 Gen 9 Desktop | Windows 11",
+        "price": 379.99,
+        "url": "https://discountpc.com/products/dell-optiplex-5070-sff-i5-9th-gen-desktop-windows-11",
+        "config": {
+          "processor": "Intel I5 Gen 9",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 SFF i7 Gen 9 Desktop | Windows 11",
+        "price": 419.95,
+        "url": "https://discountpc.com/products/dell-optiplex-7070-sff-i7-desktop-windows-11-compatible",
+        "config": {
+          "processor": "Intel I7 Gen 9",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5080",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5080 SFF i5 Gen 10 Desktop | Windows 11",
+        "price": 499.99,
+        "url": "https://discountpc.com/products/dell-optiplex-5080-sff-i5-desktop-windows-11-compatible",
+        "config": {
+          "processor": "Intel I5 Gen 10",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q G1 Tiny i5 Gen 10 Desktop | Windows 11",
+        "price": 349.95,
+        "url": "https://discountpc.com/products/lenovo-thinkcentre-m70q-tiny-i5-desktop-windows-11",
+        "config": {
+          "processor": "Intel I5 Gen 10",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Sold Out",
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3050",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3050 SFF i5 Gen 6 Desktop | Windows 10",
+        "price": 99.99,
+        "url": "https://discountpc.com/products/dell-optiplex-3050-sff-i5-gen-7-desktop-windows-10",
+        "config": {
+          "processor": "Intel I5 Gen 6",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Sold Out",
+        "reviews": null,
+        "competitor": "DiscountPC"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 Micro i5 Gen 8 Desktop | Windows 11",
+        "price": 305.99,
+        "url": "https://discountpc.com/products/dell-optiplex-3060-micro-i5-gen-8-desktop-windows-11",
+        "config": {
+          "processor": "Intel I5 Gen 8",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountPC"
+      }
+    ],
+    "warning": "Rejected due to 14 product loss"
+  }
+}
