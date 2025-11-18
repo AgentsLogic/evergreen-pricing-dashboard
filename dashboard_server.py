@@ -101,6 +101,58 @@ def get_data():
         return jsonify({"error": str(e)}), 500
 
 
+
+@app.route('/api/report/msrp', methods=['GET'])
+def generate_msrp_report_api():
+    """Generate and download weekly MSRP CSV report with price deltas.
+
+    This uses the existing generate_msrp_report helpers to compare the
+    current competitor_prices.json against the most recent prior report
+    in msrp_history/ and returns a CSV file.
+    """
+    try:
+        from datetime import date, datetime
+        from generate_msrp_report import (
+            load_current_products,
+            find_latest_report,
+            load_previous_prices,
+            write_report,
+            DEFAULT_HISTORY_DIR,
+        )
+    except Exception as e:
+        return jsonify({"error": f"Reporting module not available: {str(e)}"}), 500
+
+    try:
+        # Optional ?date=YYYY-MM-DD override; default is today
+        date_param = request.args.get('date')
+        if date_param:
+            try:
+                report_date = datetime.strptime(date_param, "%Y-%m-%d").date()
+            except ValueError:
+                return jsonify({"error": "Invalid date format. Use YYYY-MM-DD."}), 400
+        else:
+            report_date = date.today()
+
+        history_dir = DEFAULT_HISTORY_DIR
+
+        current_rows = load_current_products()
+        latest_report = find_latest_report(history_dir)
+        previous_prices = load_previous_prices(latest_report) if latest_report else {}
+        out_path = write_report(current_rows, previous_prices, history_dir, report_date)
+
+        return send_file(
+            out_path,
+            mimetype='text/csv',
+            as_attachment=True,
+            attachment_filename=out_path.name,
+        )
+
+    except FileNotFoundError as e:
+        return jsonify({"error": str(e)}), 404
+    except Exception as e:
+        return jsonify({"error": f"Failed to generate report: {str(e)}"}), 500
+
+
 @app.route('/api/scrape/status')
 def scrape_status():
     """Get the current scraping status"""

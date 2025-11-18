@@ -147,6 +147,97 @@ class CompetitorScraper:
             print(f"   Set {self.provider.upper()}_API_KEY in .env file")
             print("[INFO] Scraping will continue but may be less accurate.")
 
+    # ------------------------------------------------------------------
+    # Brand / CPU helpers to enforce Jeff's scope (Dell/HP/Lenovo, Intel 8th+)
+    # ------------------------------------------------------------------
+    def _normalize_brand(self, brand: Optional[str]) -> Optional[str]:
+        """Map various brand spellings to canonical form; return None if not Dell/HP/Lenovo."""
+        if not brand:
+            return None
+        b = brand.strip().lower()
+        if "dell" in b:
+            return "Dell"
+        if b in {"hp", "hewlett-packard", "hewlett packard", "hewlett\u2011packard"} or "hewlett" in b:
+            return "HP"
+        if "lenovo" in b:
+            return "Lenovo"
+        return None
+
+    def _extract_intel_generation(self, text: Optional[str]) -> Optional[int]:
+        """Best-effort Intel CPU generation parser.
+
+        We treat anything we cannot confidently parse as "unknown" (None),
+        which lets us conservatively drop it from the dataset if desired.
+        """
+        if not text:
+            return None
+        t = text.lower()
+
+        # Must look like an Intel family CPU; otherwise we treat as non-Intel
+        if "intel" not in t and "core i" not in t:
+            return None
+
+        # Pattern like "11th Gen" / "8th gen"
+        m = re.search(r"(\d{1,2})(?:st|nd|rd|th)\s*gen", t)
+        if m:
+            try:
+                return int(m.group(1))
+            except ValueError:
+                pass
+
+        # Pattern like "i5-8350U" or "i7 9700"
+        m = re.search(r"\bi[3579]-?(\d{4,5})", t)
+        if m:
+            digits = m.group(1)
+            try:
+                if len(digits) >= 5 and digits[:2].isdigit():
+                    gen = int(digits[:2])  # 10xxx, 11xxx, 12xxx, etc.
+                else:
+                    gen = int(digits[0])   # 8xxx, 9xxx
+                if 1 <= gen <= 20:
+                    return gen
+            except ValueError:
+                pass
+
+        # Fallback: "i5 8th gen" style
+        m = re.search(r"\bi[3579]\s*(\d{1,2})\w*\s*gen", t)
+        if m:
+            try:
+                return int(m.group(1))
+            except ValueError:
+                pass
+
+        return None
+
+    def _is_relevant_product(self, product: "Product") -> bool:
+        """Return True only for Dell/HP/Lenovo with Intel 8th-gen or newer CPUs.
+
+        This implements Jeff's business rule: only show 8th+ gen Intel laptops/desktops
+        from Dell, HP, or Lenovo. 7th gen and older (or non-Intel/unknown) are dropped.
+        """
+        # Normalize/validate brand first
+        normalized = self._normalize_brand(getattr(product, "brand", None))
+        if not normalized:
+            return False
+        product.brand = normalized
+
+        # Derive CPU text from config first, then fall back to title/model
+        cpu_text = None
+        cfg = getattr(product, "config", None)
+        if cfg and getattr(cfg, "processor", None):
+            cpu_text = cfg.processor
+        else:
+            # Some sites may only mention CPU in the title
+            cpu_text = (product.title or "") + " " + (product.model or "")
+
+        gen = self._extract_intel_generation(cpu_text)
+        if gen is None:
+            # We couldn't verify Intel generation -> treat as not relevant
+            return False
+
+        # Enforce 8th generation and newer only
+        return gen >= 8
+
     async def scrape_url(self, url: str, competitor: str, max_pages: int = 5) -> List[Product]:
         """Scrape a single URL and extract all products (handles pagination)"""
         print(f"\n[SCRAPING] Scraping: {url}")
@@ -249,6 +340,11 @@ class CompetitorScraper:
                    - Screen resolution: For laptops only (may be null)
                    - Availability: Stock status (may be null)
 
+                   CPU / GENERATION FILTERING (VERY IMPORTANT):
+                   - Only include products with Intel Core CPUs that are 8th generation or newer.
+                   - If you cannot confidently determine the Intel generation (from model numbers like i5-8350U, i7-9700, i5-1135G7, or phrases like "11th Gen"), SKIP that product.
+                   - Skip any products with non-Intel CPUs (AMD, Ryzen, etc).
+
                 DO NOT include products where:
                 - Brand is not exactly "Dell", "HP", or "Lenovo"
                 - Model is empty/null/None
@@ -325,6 +421,11 @@ class CompetitorScraper:
                                         # Ensure competitor field is set
                                         item['competitor'] = competitor
                                         product = Product(**item)
+
+                                        # Enforce brand / CPU rules (Dell/HP/Lenovo, Intel 8th-gen+)
+                                        if not self._is_relevant_product(product):
+                                            continue
+
                                         # Ensure URL is absolute
                                         if product.url and not product.url.startswith('http'):
                                             base_url = COMPETITORS[competitor]["base_url"]
@@ -339,6 +440,13 @@ class CompetitorScraper:
                                     # Ensure competitor field is set
                                     extracted_data['competitor'] = competitor
                                     product = Product(**extracted_data)
+
+                                    # Enforce brand / CPU rules; if this single object
+                                    # does not qualify, treat the page as having no products
+                                    # from our target set so fallback logic can run.
+                                    if not self._is_relevant_product(product):
+                                        return []
+
                                     if product.url and not product.url.startswith('http'):
                                         base_url = COMPETITORS[competitor]["base_url"]
                                         product.url = base_url + product.url
@@ -356,6 +464,64 @@ class CompetitorScraper:
                 else:
                     error_msg = result.error_message if hasattr(result, 'error_message') else 'Unknown error'
                     print(f"   [ERROR] Crawl failed: {error_msg}")
+
+                # Fallback: if LLM-based extraction produced no products but we have markdown,
+                # use the older heuristic markdown parser from competitor_price_scraper.
+                if not products and hasattr(result, "markdown") and getattr(result, "markdown", None):
+                    try:
+                        from competitor_price_scraper import CompetitorPriceScraper
+                        print("   [INFO] No products from LLM extraction; falling back to heuristic markdown parser.")
+
+                        fallback_scraper = CompetitorPriceScraper(use_llm=False)
+                        fallback_products = fallback_scraper.parse_products_from_markdown(
+                            result.markdown.raw_markdown,
+                            competitor,
+                            product_type,
+                            url,
+                        )
+                        print(f"   [INFO] Fallback parser found {len(fallback_products)} products")
+
+                        for legacy_product in fallback_products:
+                            try:
+                                legacy_cfg = getattr(legacy_product, "config", None)
+                                new_cfg = ProductConfig(
+                                    processor=getattr(legacy_cfg, "processor", None) if legacy_cfg else None,
+                                    ram=getattr(legacy_cfg, "ram", None) if legacy_cfg else None,
+                                    storage=getattr(legacy_cfg, "storage", None) if legacy_cfg else None,
+                                    cosmetic_grade=getattr(legacy_cfg, "cosmetic_grade", None) if legacy_cfg else None,
+                                    form_factor=getattr(legacy_cfg, "form_factor", None) if legacy_cfg else None,
+                                    screen_resolution=getattr(legacy_cfg, "screen_resolution", None) if legacy_cfg else None,
+                                    screen_size=getattr(legacy_cfg, "screen_size", None) if legacy_cfg else None,
+                                )
+
+                                product = Product(
+                                    brand=getattr(legacy_product, "brand", None),
+                                    model=getattr(legacy_product, "model", None),
+                                    product_type=getattr(legacy_product, "product_type", product_type),
+                                    title=getattr(legacy_product, "title", None),
+                                    price=getattr(legacy_product, "price", None),
+                                    url=getattr(legacy_product, "url", None),
+                                    config=new_cfg,
+                                    availability=getattr(legacy_product, "availability", None),
+                                    competitor=competitor,
+                                )
+
+                                # Enforce brand / CPU rules; skip non-qualifying PCL products
+                                if not self._is_relevant_product(product):
+                                    continue
+
+                                # Ensure URL is absolute
+                                if product.url and not product.url.startswith('http'):
+                                    base_url = COMPETITORS[competitor]["base_url"]
+                                    product.url = base_url + product.url
+
+                                products.append(product)
+                            except Exception as conv_e:
+                                print(f"   [WARNING] Error converting fallback product: {conv_e}")
+                    except ImportError as ie:
+                        print(f"   [WARNING] Fallback parser not available: {ie}")
+                    except Exception as fe:
+                        print(f"   [WARNING] Fallback markdown parsing failed: {fe}")
 
         except Exception as e:
             print(f"   [ERROR] Error: {str(e)}")
@@ -500,16 +666,39 @@ class CompetitorScraper:
             print(f"   [WARNING] Backup cleanup failed: {e}")
 
     def save_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices.json"):
-        """Save results to JSON file"""
+        """Save results to JSON file.
+
+        As an extra safety net, we re-apply the 8th-gen+ Intel Dell/HP/Lenovo rule
+        here so that *only* compliant products ever get written to disk.
+        """
         output = {}
 
         for competitor, products in results.items():
+            filtered: List[Product] = []
+            dropped = 0
+
+            for p in products:
+                try:
+                    if self._is_relevant_product(p):
+                        filtered.append(p)
+                    else:
+                        dropped += 1
+                except Exception as e:
+                    print(f"   [WARNING] Skipping product during final filter: {e}")
+                    dropped += 1
+
+            if dropped:
+                print(
+                    f"[FILTER] {competitor}: dropped {dropped} products at save time "
+                    f"that do not match Dell/HP/Lenovo Intel 8th-gen+ rule"
+                )
+
             output[competitor] = {
                 "competitor": competitor,
                 "website": COMPETITORS[competitor]["base_url"],
                 "scrape_date": datetime.now().isoformat(),
-                "total_products": len(products),
-                "products": [p.model_dump() for p in products]
+                "total_products": len(filtered),
+                "products": [p.model_dump() for p in filtered]
             }
 
         with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
@@ -685,6 +874,15 @@ async def main():
 
         # Scrape only the specified competitor
         products = await scraper.scrape_competitor(args.competitor, COMPETITORS[args.competitor])
+
+        # Final hard filter (defensive) to enforce 8th-gen+ Intel rule
+        filtered_products = [p for p in products if scraper._is_relevant_product(p)]
+        if len(filtered_products) != len(products):
+            print(
+                f"[FILTER] {args.competitor}: dropped {len(products) - len(filtered_products)} "
+                f"products in final hard 8th-gen+ Intel filter"
+            )
+        products = filtered_products
 
         # DEBUG: Print extracted products before saving
         print(f"\n{'='*80}")

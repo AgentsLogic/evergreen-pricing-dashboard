@@ -10,12 +10,12 @@
         .brand-dell { border-left: 4px solid #007DB8; }
         .brand-hp { border-left: 4px solid #0096D6; }
         .brand-lenovo { border-left: 4px solid #E2231A; }
-        
+
         .product-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        
+
         .product-card {
             transition: all 0.3s ease;
         }
@@ -51,6 +51,7 @@
                         <div onclick="exportToCSV('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
                         <div onclick="exportToCSV('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
                         <div onclick="exportToCSV('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+                        <div onclick="downloadMsrpReport()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer border-t border-gray-100 text-xs">Weekly MSRP Δ Report (UP/DOWN)</div>
                     </div>
                 </div>
                 <div class="relative">
@@ -71,6 +72,20 @@
                     🛑 Stop Scraper
                 </button>
             </div>
+        </div>
+        <!-- Weekly MSRP reminder banner -->
+        <div id="msrpBanner" class="bg-blue-50 border border-blue-200 text-blue-800 text-xs md:text-sm rounded-lg px-4 py-3 mb-4 flex items-start justify-between gap-3">
+            <div class="flex items-start gap-2">
+                <span class="mt-0.5">ℹ️</span>
+                <p>
+                    For the most accurate <span class="font-semibold">Weekly MSRP Delta Report</span>, run a full
+                    <span class="font-mono">"Scrape All Sites"</span> first, then click <span class="font-mono">"Refresh Data"</span>
+                    before exporting. This ensures price changes are compared against your latest scrape.
+                </p>
+            </div>
+            <button type="button" onclick="dismissMsrpBanner()" class="ml-2 text-blue-400 hover:text-blue-700 text-xs font-semibold">
+                ✕
+            </button>
         </div>
 
         <!-- Filters -->
@@ -162,6 +177,21 @@
                 <div id="statMaxPrice" class="text-3xl font-bold text-red-600">$0</div>
             </div>
         </div>
+        <!-- Per-Site Summary (8th-gen+ Intel only) -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">📌 Per-Site Summary (8th-gen+ Intel only)</h2>
+            <p class="text-xs text-gray-500 mb-1">
+                Counts below reflect products that passed the hard Dell/HP/Lenovo + Intel 8th-generation-or-newer filter.
+            </p>
+            <p class="text-xs text-gray-400 mb-3">
+                The "Weekly MSRP Delta Report" export compares today's prices against your last saved MSRP report.
+                Run it after a fresh "Scrape All Sites" to see which competitor prices went UP, DOWN, or stayed the same.
+            </p>
+            <div id="siteSummaryContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
+                <!-- Summary cards will be injected here -->
+            </div>
+        </div>
+
 
 
 
@@ -247,8 +277,9 @@
 
                 allData = await response.json();
                 applyFilters();
+                updateSiteSummary();
                 console.log('Data loaded successfully');
-                
+
                 // Only show notification if not silent (manual refresh)
                 if (!silent) {
                     showNotification('Data refreshed successfully!', 'success');
@@ -339,7 +370,7 @@
         // Display products
         function displayProducts() {
             const container = document.getElementById('productsContainer');
-            
+
             if (filteredProducts.length === 0) {
                 container.innerHTML = '<p class="text-gray-500 text-center py-8">No products found</p>';
                 return;
@@ -382,14 +413,16 @@
         // Update statistics
         function updateStatistics() {
             const prices = filteredProducts.filter(p => p.price).map(p => p.price);
-            
+
             document.getElementById('statTotal').textContent = filteredProducts.length;
-            
+
             if (prices.length > 0) {
                 const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
                 const min = Math.min(...prices);
                 const max = Math.max(...prices);
-                
+
+
+
                 document.getElementById('statAvgPrice').textContent = `$${avg.toFixed(2)}`;
                 document.getElementById('statMinPrice').textContent = `$${min.toFixed(2)}`;
                 document.getElementById('statMaxPrice').textContent = `$${max.toFixed(2)}`;
@@ -399,6 +432,43 @@
                 document.getElementById('statMaxPrice').textContent = '$0';
             }
         }
+
+	        // Per-site summary (uses allData, independent of filters)
+	        function updateSiteSummary() {
+	            const container = document.getElementById('siteSummaryContainer');
+	            if (!container) return;
+
+	            const entries = Object.entries(allData || {});
+	            if (entries.length === 0) {
+	                container.innerHTML = '<p class="text-gray-500 text-sm">No data loaded yet. Run the scraper, then click "Refresh Data".</p>';
+	                return;
+	            }
+
+	            const cards = entries.map(([name, data]) => {
+	                const products = data.products || [];
+	                const total = (typeof data.total_products === 'number') ? data.total_products : products.length;
+	                const scrapeDate = data.scrape_date ? new Date(data.scrape_date).toLocaleString() : 'N/A';
+	                const existing = (typeof data.existing_products === 'number') ? data.existing_products : null;
+	                const newAdd = (typeof data.new_additions === 'number') ? data.new_additions : null;
+
+	                let extraLine = '';
+	                if (existing !== null && newAdd !== null) {
+	                    extraLine = `<div class="text-xs text-gray-500 mt-1">Prev: ${existing}, New this run: ${newAdd}</div>`;
+	                }
+
+	                return `
+	                    <div class="border rounded-lg p-4 bg-gray-50">
+	                        <div class="text-sm font-semibold text-gray-800 mb-1">${name}</div>
+	                        <div class="text-2xl font-bold text-blue-600 mb-1">${total}</div>
+	                        <div class="text-xs text-gray-500">Last scrape: ${scrapeDate}</div>
+	                        ${extraLine}
+	                    </div>
+	                `;
+	            });
+
+	            container.innerHTML = cards.join('');
+	        }
+
 
 
 
@@ -504,6 +574,52 @@
 
             showNotification(`Exported ${productsToExport.length} products (${site}) to CSV`, 'success');
             closeAllDropdowns();
+        }
+
+        async function downloadMsrpReport() {
+            try {
+                const response = await fetch('/api/report/msrp');
+                if (!response.ok) {
+                    let errorMsg = 'Failed to generate MSRP report';
+                    try {
+                        const err = await response.json();
+                        if (err && err.error) {
+                            errorMsg = err.error;
+                        }
+                    } catch (e) {
+                        // ignore JSON parse errors and fall back to generic message
+                    }
+                    showNotification(errorMsg, 'error');
+                    closeAllDropdowns();
+                    return;
+                }
+
+                const blob = await response.blob();
+                let filename = 'msrp_report.csv';
+                const disposition = response.headers.get('Content-Disposition');
+                if (disposition) {
+                    const match = disposition.match(/filename="?([^";]+)"?/i);
+                    if (match && match[1]) {
+                        filename = match[1];
+                    }
+                }
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+
+                showNotification('Weekly MSRP delta report downloaded', 'success');
+                closeAllDropdowns();
+            } catch (error) {
+                console.error('Error downloading MSRP report:', error);
+                showNotification('Error downloading MSRP report', 'error');
+                closeAllDropdowns();
+            }
         }
 
         // Stop scraper
@@ -649,6 +765,33 @@
             }, 5000);
         }
 
+        // Dismiss MSRP banner and remember choice
+        function dismissMsrpBanner() {
+            const banner = document.getElementById('msrpBanner');
+            if (banner) {
+                banner.classList.add('hidden');
+                try {
+                    localStorage.setItem('msrpBannerDismissed', '1');
+                } catch (e) {
+                    // ignore storage errors (privacy mode, etc.)
+                }
+            }
+        }
+
+        // Initialize MSRP banner visibility based on stored preference
+        (function initMsrpBanner() {
+            try {
+                if (localStorage.getItem('msrpBannerDismissed') === '1') {
+                    const banner = document.getElementById('msrpBanner');
+                    if (banner) {
+                        banner.classList.add('hidden');
+                    }
+                }
+            } catch (e) {
+                // ignore storage errors
+            }
+        })();
+
         // Chat functionality
         let chatMessages = [];
         let chatPaused = false;
@@ -769,7 +912,7 @@
         // Connect to real-time data stream
         let dataEventSource = null;
         let lastUpdateTime = null;
-        
+
         function connectDataStream() {
             if (dataEventSource) {
                 dataEventSource.close();
@@ -788,10 +931,10 @@
                     if (data.type === 'data_updated') {
                         console.log('📊 Data file updated - refreshing dashboard...');
                         lastUpdateTime = new Date();
-                        
+
                         // Show subtle update indicator
                         showUpdateIndicator();
-                        
+
                         // Reload data silently
                         loadData(true);
                     }
@@ -803,7 +946,7 @@
 
             dataEventSource.onerror = function(error) {
                 console.error('Data stream error:', error);
-                
+
                 // Attempt to reconnect after 3 seconds
                 setTimeout(() => {
                     console.log('🔄 Reconnecting to data stream...');
@@ -813,13 +956,13 @@
 
             console.log('📡 Connected to real-time data stream');
         }
-        
+
         // Show subtle update indicator
         function showUpdateIndicator() {
             // Remove existing indicator
             const existing = document.getElementById('updateIndicator');
             if (existing) existing.remove();
-            
+
             // Create indicator
             const indicator = document.createElement('div');
             indicator.id = 'updateIndicator';
@@ -831,9 +974,9 @@
                 </svg>
                 <span>Updating products...</span>
             `;
-            
+
             document.body.appendChild(indicator);
-            
+
             // Change to success message after data loads
             setTimeout(() => {
                 indicator.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2';
@@ -843,7 +986,7 @@
                     </svg>
                     <span>Products updated!</span>
                 `;
-                
+
                 // Remove after 3 seconds
                 setTimeout(() => {
                     indicator.remove();
@@ -982,14 +1125,14 @@
             try {
                 const response = await fetch('/api/scrape/status');
                 const status = await response.json();
-                
+
                 if (status.running) {
                     // Enable stop button if scraper is running
                     const stopBtn = document.getElementById('stopScraperBtn');
                     stopBtn.disabled = false;
                     stopBtn.classList.remove('opacity-50', 'cursor-not-allowed');
                     stopBtn.classList.add('hover:bg-red-700');
-                    
+
                     // Start polling for status updates
                     pollScraperStatus();
                 }
