@@ -189,8 +189,8 @@ class CompetitorScraper:
             except ValueError:
                 pass
 
-        # Pattern like "i5-8350U" or "i7 9700"
-        m = re.search(r"\bi[3579]-?(\d{4,5})", t)
+        # Pattern like "i5-8350U" or "i7 9700" (with optional space or hyphen)
+        m = re.search(r"\bi[3579][\s-]?(\d{4,5})", t)
         if m:
             digits = m.group(1)
             try:
@@ -325,33 +325,28 @@ class CompetitorScraper:
                 instruction=f"""
                 Extract ALL {product_type} products from this page.
 
-                IMPORTANT RULES:
-                1. ONLY extract products from these brands: Dell, HP, Lenovo
-                2. Ignore all other brands (Acer, Asus, Microsoft, etc.)
-                3. Extract ALL products on the page, not just the first few
-                4. For each product, ALL FIELDS ARE REQUIRED:
-                   - Brand: Must be "Dell", "HP", or "Lenovo" (case sensitive)
-                   - Model: Extract the model number or name (never null/empty)
+                IMPORTANT:
+                1. Include EVERY {product_type} product shown on the page. Do not limit yourself to only Dell, HP, or Lenovo.
+                2. Do NOT discard a product just because the CPU generation, RAM, storage, or other details are unclear.
+                3. For each product, fill these fields:
+                   - Brand: Brand name exactly as shown (e.g., Dell, HP, Lenovo, Acer, Asus, etc.). If you truly cannot find the brand, set it to null.
+                   - Model: Extract the model number or name (never null/empty).
                    - Product type: "{product_type}"
-                   - Title: Full product title/name from the page
-                   - Price: Numeric price (no $ sign, just numbers)
-                   - URL: Full product URL from the page
-                   - Processor: CPU description (may be null)
-                   - RAM: Memory amount (may be null)
-                   - Storage: Storage capacity (may be null)
-                   - Cosmetic grade: "Grade A", "Grade B", "Grade C" or null
-                   - Form factor: For desktops only (may be null)
-                   - Screen resolution: For laptops only (may be null)
-                   - Availability: Stock status (may be null)
+                   - Title: Full product title/name from the page.
+                   - Price: Numeric price in USD (no $ sign, just numbers).
+                   - URL: Full product URL from the page.
+                   - Config.processor: Copy the CPU description text exactly as shown (e.g., "Intel Core i5 8500T 2.1GHz").
+                   - Config.ram: Memory amount (may be null).
+                   - Config.storage: Storage capacity (may be null).
+                   - Config.cosmetic_grade: "Grade A", "Grade B", "Grade C" or null.
+                   - Config.form_factor: For desktops only (Tower, SFF, MFF/Tiny), may be null.
+                   - Config.screen_resolution: For laptops only (HD, FHD, QHD, 4K), may be null.
+                   - Availability: Stock status (may be null).
 
-                   CPU / GENERATION FILTERING (VERY IMPORTANT):
-                   - Only include products with Intel Core CPUs that are 8th generation or newer.
-                   - If you cannot confidently determine the Intel generation (from model numbers like i5-8350U, i7-9700, i5-1135G7, or phrases like "11th Gen"), SKIP that product.
-                   - Skip any products with non-Intel CPUs (AMD, Ryzen, etc).
-
-                DO NOT include products where:
-                - Brand is not exactly "Dell", "HP", or "Lenovo"
-                - Model is empty/null/None
+                VERY IMPORTANT:
+                - Do NOT try to decide which CPUs are 8th generation or newer.
+                - Do NOT filter out products based on CPU brand or generation.
+                - Your job is ONLY to extract all {product_type} products and their raw details; another system will apply business rules later.
 
                 Return a JSON array of Product objects. Each product must have a valid model field.
                 """
