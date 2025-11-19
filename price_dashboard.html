@@ -177,20 +177,13 @@
                 <div id="statMaxPrice" class="text-3xl font-bold text-red-600">$0</div>
             </div>
         </div>
-        <!-- Per-Site Summary (8th-gen+ Intel only) -->
+        <!-- Skipped products summary (8th-gen+ Intel filter) -->
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h2 class="text-xl font-bold text-gray-800 mb-4">📌 Per-Site Summary (8th-gen+ Intel only)</h2>
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                <p class="text-xs text-gray-500">
-                    Counts below reflect only Dell/HP/Lenovo systems with Intel 8th-generation-or-newer CPUs.
-                </p>
-                <p id="skipSummary" class="text-[11px] text-gray-500 mt-2 md:mt-0 md:ml-4">
-                    Skipped products (non-target brand or pre-8th-gen/non-Intel CPUs): &mdash;
-                </p>
-            </div>
-            <div id="siteSummaryContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
-                <!-- Summary cards will be injected here -->
-            </div>
+            <h2 id="skipSummary" class="text-sm md:text-base font-semibold text-gray-800">
+                Skipped products (non Dell/HP/Lenovo or pre-8th-gen/non-Intel CPUs): &mdash;
+            </h2>
+            <!-- Hidden container so JS can still build per-site cards without showing them -->
+            <div id="siteSummaryContainer" class="hidden"></div>
         </div>
 
 
