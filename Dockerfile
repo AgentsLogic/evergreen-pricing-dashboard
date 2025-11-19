@@ -173,8 +173,9 @@ COPY deploy/docker/* ${APP_HOME}/
 # copy the playground + any future static assets
 COPY deploy/docker/static ${APP_HOME}/static
 
-# Copy Evergreen Pricing dashboard backend & UI assets
-COPY dashboard_server.py scraper_v2.py price_dashboard.html graphs_dashboard.html popularity_dashboard.html multi_site_comparison.html ${APP_HOME}/
+# Copy Evergreen Pricing dashboard backend & UI assets + fallback parser + report script
+COPY dashboard_server.py scraper_v2.py competitor_price_scraper.py generate_msrp_report.py \
+     price_dashboard.html graphs_dashboard.html popularity_dashboard.html multi_site_comparison.html ${APP_HOME}/
 
 # Change ownership of the application directory to the non-root user
 RUN chown -R appuser:appuser ${APP_HOME}
