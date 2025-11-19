@@ -698,6 +698,7 @@ class CompetitorScraper:
                 "website": COMPETITORS[competitor]["base_url"],
                 "scrape_date": datetime.now().isoformat(),
                 "total_products": len(filtered),
+                "skipped_products": dropped,
                 "products": [p.model_dump() for p in filtered]
             }
 

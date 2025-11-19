@@ -180,13 +180,14 @@
         <!-- Per-Site Summary (8th-gen+ Intel only) -->
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
             <h2 class="text-xl font-bold text-gray-800 mb-4">📌 Per-Site Summary (8th-gen+ Intel only)</h2>
-            <p class="text-xs text-gray-500 mb-1">
-                Counts below reflect products that passed the hard Dell/HP/Lenovo + Intel 8th-generation-or-newer filter.
-            </p>
-            <p class="text-xs text-gray-400 mb-3">
-                The "Weekly MSRP Delta Report" export compares today's prices against your last saved MSRP report.
-                Run it after a fresh "Scrape All Sites" to see which competitor prices went UP, DOWN, or stayed the same.
-            </p>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                <p class="text-xs text-gray-500">
+                    Counts below reflect only Dell/HP/Lenovo systems with Intel 8th-generation-or-newer CPUs.
+                </p>
+                <p id="skipSummary" class="text-[11px] text-gray-500 mt-2 md:mt-0 md:ml-4">
+                    Skipped products (non-target brand or pre-8th-gen/non-Intel CPUs): &mdash;
+                </p>
+            </div>
             <div id="siteSummaryContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
                 <!-- Summary cards will be injected here -->
             </div>
@@ -436,13 +437,22 @@
 	        // Per-site summary (uses allData, independent of filters)
 	        function updateSiteSummary() {
 	            const container = document.getElementById('siteSummaryContainer');
+            const skipSummaryEl = document.getElementById('skipSummary');
+
 	            if (!container) return;
 
 	            const entries = Object.entries(allData || {});
 	            if (entries.length === 0) {
 	                container.innerHTML = '<p class="text-gray-500 text-sm">No data loaded yet. Run the scraper, then click "Refresh Data".</p>';
+                if (skipSummaryEl) {
+                    skipSummaryEl.innerHTML = 'Skipped products (non-target brand or pre-8th-gen/non-Intel CPUs): &mdash;';
+                }
+
 	                return;
 	            }
+
+            let totalSkipped = 0;
+
 
 	            const cards = entries.map(([name, data]) => {
 	                const products = data.products || [];
@@ -450,23 +460,33 @@
 	                const scrapeDate = data.scrape_date ? new Date(data.scrape_date).toLocaleString() : 'N/A';
 	                const existing = (typeof data.existing_products === 'number') ? data.existing_products : null;
 	                const newAdd = (typeof data.new_additions === 'number') ? data.new_additions : null;
+                const skipped = (typeof data.skipped_products === 'number') ? data.skipped_products : null;
 
-	                let extraLine = '';
+	                let extraLines = '';
 	                if (existing !== null && newAdd !== null) {
-	                    extraLine = `<div class="text-xs text-gray-500 mt-1">Prev: ${existing}, New this run: ${newAdd}</div>`;
+	                    extraLines += `<div class="text-xs text-gray-500 mt-1">Prev: ${existing}, New this run: ${newAdd}</div>`;
 	                }
+                if (skipped !== null) {
+                    totalSkipped += skipped;
+                    extraLines += `<div class="text-xs text-gray-400 mt-1">Skipped by 8th-gen+ Intel filter: ${skipped}</div>`;
+                }
 
 	                return `
 	                    <div class="border rounded-lg p-4 bg-gray-50">
 	                        <div class="text-sm font-semibold text-gray-800 mb-1">${name}</div>
 	                        <div class="text-2xl font-bold text-blue-600 mb-1">${total}</div>
 	                        <div class="text-xs text-gray-500">Last scrape: ${scrapeDate}</div>
-	                        ${extraLine}
+	                        ${extraLines}
 	                    </div>
 	                `;
 	            });
 
 	            container.innerHTML = cards.join('');
+
+            if (skipSummaryEl) {
+                skipSummaryEl.textContent = `Skipped products (non Dell/HP/Lenovo or pre-8th-gen/non-Intel CPUs): ${totalSkipped.toLocaleString()}`;
+            }
+
 	        }
 
 
