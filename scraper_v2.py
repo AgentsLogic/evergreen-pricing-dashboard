@@ -10,6 +10,7 @@ import sys
 import os
 from datetime import datetime
 from typing import List, Dict, Optional
+from collections import defaultdict
 from pathlib import Path
 
 # Set default encoding to UTF-8 for all file operations
@@ -141,6 +142,9 @@ class CompetitorScraper:
         else:
             self.api_key = os.getenv("OPENAI_API_KEY")
             self.model = "openai/gpt-4o-mini"
+
+        # Track how many products we drop per competitor due to Jeff's 8th-gen+ Intel filter
+        self.skipped_counts = defaultdict(int)
 
         if not self.api_key:
             print(f"[WARNING] No {self.provider.upper()} API key found.")
@@ -424,6 +428,8 @@ class CompetitorScraper:
 
                                         # Enforce brand / CPU rules (Dell/HP/Lenovo, Intel 8th-gen+)
                                         if not self._is_relevant_product(product):
+                                            # Count products that fail Jeff's 8th-gen+ Intel filter
+                                            self.skipped_counts[competitor] += 1
                                             continue
 
                                         # Ensure URL is absolute
@@ -445,6 +451,8 @@ class CompetitorScraper:
                                     # does not qualify, treat the page as having no products
                                     # from our target set so fallback logic can run.
                                     if not self._is_relevant_product(product):
+                                        # Count this as skipped and let fallback logic run
+                                        self.skipped_counts[competitor] += 1
                                         return []
 
                                     if product.url and not product.url.startswith('http'):
@@ -508,6 +516,8 @@ class CompetitorScraper:
 
                                 # Enforce brand / CPU rules; skip non-qualifying PCL products
                                 if not self._is_relevant_product(product):
+                                    # Count products dropped by the 8th-gen+ Intel filter
+                                    self.skipped_counts[competitor] += 1
                                     continue
 
                                 # Ensure URL is absolute
@@ -668,24 +678,23 @@ class CompetitorScraper:
     def save_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices.json"):
         """Save results to JSON file.
 
-        As an extra safety net, we re-apply the 8th-gen+ Intel Dell/HP/Lenovo rule
-        here so that *only* compliant products ever get written to disk.
+        Products passed into this method have already gone through Jeff's
+        Dell/HP/Lenovo + Intel 8th‑gen+ filter. Here we only look up how many
+        products were skipped during scraping so the dashboard can display it.
         """
         output = {}
 
         for competitor, products in results.items():
-            filtered: List[Product] = []
-            dropped = 0
+            # Products are already filtered when they reach save_results
+            filtered: List[Product] = list(products)
 
-            for p in products:
-                try:
-                    if self._is_relevant_product(p):
-                        filtered.append(p)
-                    else:
-                        dropped += 1
-                except Exception as e:
-                    print(f"   [WARNING] Skipping product during final filter: {e}")
-                    dropped += 1
+            # How many products did we drop for this competitor during scraping?
+            dropped = 0
+            try:
+                if hasattr(self, "skipped_counts"):
+                    dropped = int(self.skipped_counts.get(competitor, 0))
+            except Exception:
+                dropped = 0
 
             if dropped:
                 print(
@@ -902,17 +911,25 @@ async def main():
         except FileNotFoundError:
             existing_data = {}
 
+        # Look up how many products we skipped for this competitor during scraping
+        dropped_for_competitor = 0
+        try:
+            if hasattr(scraper, "skipped_counts"):
+                dropped_for_competitor = int(scraper.skipped_counts.get(args.competitor, 0))
+        except Exception:
+            dropped_for_competitor = 0
+
         # Update only the specified competitor
         existing_data[args.competitor] = {
             "competitor": args.competitor,
             "website": COMPETITORS[args.competitor]["base_url"],
             "scrape_date": datetime.now().isoformat(),
             "total_products": len(products),
+            "skipped_products": dropped_for_competitor,
             "products": [p.model_dump() for p in products]
         }
 
         # Save updated data
-        scraper.save_results({args.competitor: products}, filename="temp_results.json")
         with open("competitor_prices.json", 'w') as f:
             json.dump(existing_data, f, indent=2, ensure_ascii=False)
 
