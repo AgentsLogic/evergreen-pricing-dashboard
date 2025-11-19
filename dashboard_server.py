@@ -22,6 +22,8 @@ except ImportError:
     WATCHDOG_AVAILABLE = False
     print("[WARNING] Watchdog not available - file watching disabled")
 
+from crawl4ai.utils import perform_completion_with_backoff
+
 app = Flask(__name__)
 CORS(app)
 
@@ -535,7 +537,7 @@ def chat_stream():
 
 @app.route('/api/chat/send', methods=['POST'])
 def send_chat_message():
-    """Send a message to the chat"""
+    """Send a message to the chat (typically the user's message)."""
     data = request.get_json()
     if not data or 'message' not in data:
         return jsonify({"error": "Message is required"}), 400
@@ -566,6 +568,110 @@ def send_chat_message():
         chat_history.pop(0)
 
     return jsonify({"success": True})
+
+
+@app.route('/api/chat/llm', methods=['POST'])
+def chat_llm():
+    """LLM-backed chat endpoint.
+
+    Accepts a raw user message, calls the configured LLM provider,
+    and streams the assistant's reply back through the SSE chat stream.
+    """
+    data = request.get_json(silent=True) or {}
+    user_message = (data.get('message') or '').strip()
+
+    if not user_message:
+        return jsonify({"error": "Message is required"}), 400
+
+    # Build simple conversational context from recent history
+    recent_history = chat_history[-20:]
+    history_lines = []
+    for item in recent_history:
+        msg_text = item.get('message')
+        if msg_text:
+            history_lines.append(msg_text)
+
+    history_text = "\n".join(history_lines)
+
+    provider = os.getenv("LLM_PROVIDER", "deepseek")
+    if provider == "deepseek":
+        api_key = os.getenv("DEEPSEEK_API_KEY")
+        model = "deepseek/deepseek-chat"
+        base_url = os.getenv("DEEPSEEK_API_BASE")
+    else:
+        api_key = os.getenv("OPENAI_API_KEY")
+        model = "openai/gpt-4o-mini"
+        base_url = os.getenv("OPENAI_API_BASE")
+
+    if not api_key:
+        error_message = "LLM API key is not configured. Set DEEPSEEK_API_KEY or OPENAI_API_KEY."
+        error_payload = {
+            'message': f"[Chat LLM error] {error_message}",
+            'type': 'error',
+            'source': 'llm'
+        }
+        chat_message_queue.put(error_payload)
+        chat_history.append({
+            'timestamp': datetime.now().isoformat(),
+            **error_payload,
+        })
+        if len(chat_history) > 1000:
+            chat_history.pop(0)
+        return jsonify({"error": error_message}), 500
+
+    system_prompt = (
+        "You are an AI assistant embedded in the Evergreen Pricing dashboard. "
+        "Be concise, helpful, and focus on questions about PC hardware, pricing, "
+        "and this dashboard when relevant."
+    )
+
+    prompt_parts = [system_prompt]
+    if history_text:
+        prompt_parts.append("Recent conversation:\n" + history_text)
+    prompt_parts.append(f"User: {user_message}\nAssistant:")
+    prompt = "\n\n".join(prompt_parts)
+
+    try:
+        response = perform_completion_with_backoff(
+            provider=model,
+            prompt_with_variables=prompt,
+            api_token=api_key,
+            base_url=base_url,
+        )
+        if not hasattr(response, "choices") or not response.choices:
+            raise RuntimeError("LLM returned unexpected response format")
+        assistant_content = response.choices[0].message.content
+    except Exception as e:
+        error_message = f"LLM error: {str(e)}"
+        error_payload = {
+            'message': f"[Chat LLM error] {error_message}",
+            'type': 'error',
+            'source': 'llm'
+        }
+        chat_message_queue.put(error_payload)
+        chat_history.append({
+            'timestamp': datetime.now().isoformat(),
+            **error_payload,
+        })
+        if len(chat_history) > 1000:
+            chat_history.pop(0)
+        return jsonify({"error": error_message}), 500
+
+    assistant_message = f"Assistant: {assistant_content}"
+    message_data = {
+        'message': assistant_message,
+        'type': 'success',
+        'source': 'llm'
+    }
+    chat_message_queue.put(message_data)
+    chat_history.append({
+        'timestamp': datetime.now().isoformat(),
+        **message_data,
+    })
+    if len(chat_history) > 1000:
+        chat_history.pop(0)
+
+    return jsonify({"success": True, "reply": assistant_content})
 
 
 @app.route('/api/chat/history')

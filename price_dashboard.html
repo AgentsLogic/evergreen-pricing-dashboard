@@ -1081,13 +1081,14 @@
             }
         }
 
-        // Send test message using API
+        // Send chat message using API and get real LLM response
         async function sendTestMessage() {
             const input = document.getElementById('chatInput');
             const message = input.value.trim();
 
             if (message) {
                 try {
+                    // First send the user message to the chat stream
                     const response = await fetch('/api/chat/send', {
                         method: 'POST',
                         headers: {
@@ -1102,19 +1103,15 @@
                     if (response.ok) {
                         input.value = '';
 
-                        // Simulate LLM response
-                        setTimeout(async () => {
-                            await fetch('/api/chat/send', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    message: `Assistant: Thanks for your message "${message}". This is a test response to demonstrate the chat functionality.`,
-                                    type: 'success'
-                                })
-                            });
-                        }, 1000);
+                        // Then ask the LLM to respond
+                        await fetch('/api/chat/llm', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ message })
+                        });
+                        // The assistant reply will be delivered via /api/chat/stream SSE
                     } else {
                         showNotification('Failed to send message', 'error');
                     }
