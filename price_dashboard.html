@@ -182,9 +182,7 @@
             <h2 id="skipSummary" class="text-sm md:text-base font-semibold text-gray-800">
                 Skipped products (non Dell/HP/Lenovo or pre-8th-gen/non-Intel CPUs): &mdash;
             </h2>
-            <p class="mt-2 text-xs text-gray-500">
-                Per-site breakdown below shows qualifying products (in the table) and products skipped by Jeff's rule for each competitor.
-            </p>
+
             <div id="siteSummaryContainer" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
@@ -463,12 +461,12 @@
 	                }
                 if (skipped !== null) {
                     totalSkipped += skipped;
-                    extraLines += `<div class="text-xs text-gray-400 mt-1">Skipped by 8th-gen+ Intel filter: ${skipped}</div>`;
+                    extraLines += `<div class="text-xs text-gray-600 mt-1">Skipped products: ${skipped}</div>`;
                 }
 
 	                return `
 	                    <div class="border rounded-lg p-4 bg-gray-50">
-	                        <div class="text-sm font-semibold text-gray-800 mb-1">${name}</div>
+	                        <div class="text-sm font-semibold text-gray-800 mb-1">${(data.website || (name + '.com')).replace(/^https?:\/\//, '').replace(/^www\./, '')}</div>
 	                        <div class="text-2xl font-bold text-blue-600 mb-1">${total}</div>
 	                        <div class="text-xs text-gray-500">Last scrape: ${scrapeDate}</div>
 	                        ${extraLines}
@@ -901,28 +899,15 @@
             showNotification(`Exported ${chatMessages.length} messages as ${format.toUpperCase()}`, 'success');
         }
 
-        // Send test message
-        function sendTestMessage() {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-
-            if (message) {
-                addChatMessage(`User: ${message}`, 'info');
-                input.value = '';
-
-                // Simulate LLM response
-                setTimeout(() => {
-                    addChatMessage(`Assistant: Thanks for your message "${message}". This is a test response to demonstrate the chat functionality.`, 'success');
-                }, 1000);
-            }
-        }
-
         // Allow Enter key to send test message
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendTestMessage();
-            }
-        });
+        const chatInputEl = document.getElementById('chatInput');
+        if (chatInputEl) {
+            chatInputEl.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendTestMessage();
+                }
+            });
+        }
 
         // Connect to real-time data stream
         let dataEventSource = null;
