@@ -696,6 +696,18 @@
 
                 if (response.ok) {
                     showNotification(`Scraper started for ${siteName}! Check status below...`, 'success');
+
+                    // Align competitor filter with what we're scraping so totals match expectations
+                    const competitorSelect = document.getElementById('filterCompetitor');
+                    if (competitorSelect) {
+                        competitorSelect.value = site === 'all' ? '' : site;
+                    }
+
+                    // Re-apply filters on whatever data is currently loaded
+                    if (typeof applyFilters === 'function') {
+                        applyFilters();
+                    }
+
                     // Enable stop button
                     const stopBtn = document.getElementById('stopScraperBtn');
                     stopBtn.disabled = false;
