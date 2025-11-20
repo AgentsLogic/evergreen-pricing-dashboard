@@ -177,13 +177,15 @@
                 <div id="statMaxPrice" class="text-3xl font-bold text-red-600">$0</div>
             </div>
         </div>
-        <!-- Skipped products summary (8th-gen+ Intel filter) -->
+        <!-- Skipped products summary (8th-gen+ Intel filter) + per-site breakdown -->
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
             <h2 id="skipSummary" class="text-sm md:text-base font-semibold text-gray-800">
                 Skipped products (non Dell/HP/Lenovo or pre-8th-gen/non-Intel CPUs): &mdash;
             </h2>
-            <!-- Hidden container so JS can still build per-site cards without showing them -->
-            <div id="siteSummaryContainer" class="hidden"></div>
+            <p class="mt-2 text-xs text-gray-500">
+                Per-site breakdown below shows qualifying products (in the table) and products skipped by Jeff's rule for each competitor.
+            </p>
+            <div id="siteSummaryContainer" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
 
