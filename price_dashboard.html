@@ -1068,44 +1068,38 @@
             }
         }
 
-        // Send chat message using API and get real LLM response
+        // Send chat message using API and show real LLM response (no SSE dependency)
         async function sendTestMessage() {
             const input = document.getElementById('chatInput');
             const message = input.value.trim();
 
-            if (message) {
-                try {
-                    // First send the user message to the chat stream
-                    const response = await fetch('/api/chat/send', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            message: `User: ${message}`,
-                            type: 'info'
-                        })
-                    });
+            if (!message) return;
 
-                    if (response.ok) {
-                        input.value = '';
+            // Immediately show the user message in the chat, so something always happens
+            addChatMessage(`User: ${message}`, 'info');
+            input.value = '';
 
-                        // Then ask the LLM to respond
-                        await fetch('/api/chat/llm', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ message })
-                        });
-                        // The assistant reply will be delivered via /api/chat/stream SSE
-                    } else {
-                        showNotification('Failed to send message', 'error');
-                    }
-                } catch (error) {
-                    console.error('Error sending message:', error);
-                    showNotification('Error sending message', 'error');
+            try {
+                const response = await fetch('/api/chat/llm', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message })
+                });
+
+                const data = await response.json().catch(() => ({}));
+
+                if (response.ok && data.reply) {
+                    // Show assistant reply directly, even if SSE stream has issues
+                    addChatMessage(`Assistant: ${data.reply}`, 'success');
+                } else {
+                    const errMsg = (data && data.error) ? data.error : 'Failed to get LLM reply';
+                    showNotification(errMsg, 'error');
                 }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                showNotification('Error sending message', 'error');
             }
         }
 
