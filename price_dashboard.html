@@ -851,13 +851,6 @@
             messageCount++;
         }
 
-        // Clear chat
-        function clearChat() {
-            document.getElementById('chatMessages').innerHTML = '';
-            chatMessages = [];
-            messageCount = 0;
-            addChatMessage('Chat cleared', 'warning');
-        }
 
         // Toggle pause chat
         function togglePauseChat() {
@@ -1051,20 +1044,21 @@
             connectChatStream();
         }
 
-        // Clear chat using API
+        // Clear chat: always clear the UI immediately, then best-effort clear on the server
         async function clearChat() {
+            // Clear local UI state right away so the button always "works"
+            document.getElementById('chatMessages').innerHTML = '';
+            chatMessages = [];
+            messageCount = 0;
+
             try {
                 const response = await fetch('/api/chat/clear', { method: 'POST' });
-                if (response.ok) {
-                    document.getElementById('chatMessages').innerHTML = '';
-                    chatMessages = [];
-                    messageCount = 0;
-                } else {
-                    showNotification('Failed to clear chat', 'error');
+                if (!response.ok) {
+                    showNotification('Failed to clear chat history on server', 'error');
                 }
             } catch (error) {
-                console.error('Error clearing chat:', error);
-                showNotification('Error clearing chat', 'error');
+                console.error('Error clearing chat on server:', error);
+                showNotification('Error clearing chat on server', 'error');
             }
         }
 
