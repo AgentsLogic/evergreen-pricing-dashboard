@@ -1095,10 +1095,13 @@
                     addChatMessage(`Assistant: ${data.reply}`, 'success');
                 } else {
                     const errMsg = (data && data.error) ? data.error : 'Failed to get LLM reply';
+                    // Surface LLM errors directly into the chat log as well as a toast
+                    addChatMessage(`[Chat LLM error] ${errMsg}`, 'error');
                     showNotification(errMsg, 'error');
                 }
             } catch (error) {
                 console.error('Error sending message:', error);
+                addChatMessage('[Chat LLM error] Error sending message to /api/chat/llm', 'error');
                 showNotification('Error sending message', 'error');
             }
         }
