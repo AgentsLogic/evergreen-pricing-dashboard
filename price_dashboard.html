@@ -824,8 +824,10 @@
         let eventSource = null;
 
         // Add message to chat
-        function addChatMessage(message, type = 'info') {
-            if (chatPaused) return;
+        // options.bypassPause=true allows critical/manual messages to show even when paused
+        function addChatMessage(message, type = 'info', options = {}) {
+            const { bypassPause = false } = options;
+            if (chatPaused && !bypassPause) return;
 
             const showTimestamps = document.getElementById('showTimestamps').checked;
             const timestamp = showTimestamps ? `[${new Date().toLocaleTimeString()}] ` : '';
@@ -873,7 +875,8 @@
                 'bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600 transition' :
                 'bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition';
 
-            addChatMessage(`Chat ${chatPaused ? 'paused' : 'resumed'}`, chatPaused ? 'warning' : 'success');
+            // Always show the pause/resume message, even when paused
+            addChatMessage(`Chat ${chatPaused ? 'paused' : 'resumed'}`, chatPaused ? 'warning' : 'success', { bypassPause: true });
         }
 
         // Export chat
@@ -1082,7 +1085,7 @@
             if (!message) return;
 
             // Immediately show the user message in the chat, so something always happens
-            addChatMessage(`User: ${message}`, 'info');
+            addChatMessage(`User: ${message}`, 'info', { bypassPause: true });
             input.value = '';
 
             try {
@@ -1098,16 +1101,16 @@
 
                 if (response.ok && data.reply) {
                     // Show assistant reply directly, even if SSE stream has issues
-                    addChatMessage(`Assistant: ${data.reply}`, 'success');
+                    addChatMessage(`Assistant: ${data.reply}`, 'success', { bypassPause: true });
                 } else {
                     const errMsg = (data && data.error) ? data.error : 'Failed to get LLM reply';
                     // Surface LLM errors directly into the chat log as well as a toast
-                    addChatMessage(`[Chat LLM error] ${errMsg}`, 'error');
+                    addChatMessage(`[Chat LLM error] ${errMsg}`, 'error', { bypassPause: true });
                     showNotification(errMsg, 'error');
                 }
             } catch (error) {
                 console.error('Error sending message:', error);
-                addChatMessage('[Chat LLM error] Error sending message to /api/chat/llm', 'error');
+                addChatMessage('[Chat LLM error] Error sending message to /api/chat/llm', 'error', { bypassPause: true });
                 showNotification('Error sending message', 'error');
             }
         }
