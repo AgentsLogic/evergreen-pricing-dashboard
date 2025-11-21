@@ -20,6 +20,18 @@
             transition: all 0.3s ease;
         }
     </style>
+        <script>
+            // Dark mode toggle with persistence
+            (function() {
+                const stored = localStorage.getItem('eg_dark_mode');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = stored === 'true' || (stored === null && prefersDark);
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+        </script>
+
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
@@ -33,6 +45,10 @@
                 <a href="/popularity" class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition inline-flex items-center gap-2">
                     🏆 Popularity Rankings
                 </a>
+                <button id="darkModeToggle" type="button" onclick="toggleDarkMode()" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition flex items-center gap-2">
+                    <span id="darkModeIcon">🌙</span>
+                    <span id="darkModeLabel">Dark</span>
+                </button>
                 <a href="/multi-site-comparison" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition inline-flex items-center gap-2">
                     ⚖️ Compare Prices
                 </a>
