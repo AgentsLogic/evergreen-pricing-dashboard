@@ -66,6 +66,7 @@
                         <div onclick="runScraper('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
                         <div onclick="runScraper('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
                         <div onclick="runScraper('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+                        <div onclick="runScraper('EvergreenElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">EvergreenElectronics Only</div>
                     </div>
                 </div>
                 <button id="stopScraperBtn" onclick="stopScraper()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition opacity-50 cursor-not-allowed" disabled>
@@ -88,75 +89,6 @@
             </button>
         </div>
 
-        <!-- Filters -->
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h2 class="text-xl font-bold text-gray-800 mb-4">🔍 Filters & Sorting</h2>
-            <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Competitor</label>
-                    <select id="filterCompetitor" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                        <option value="">All Competitors</option>
-                        <option value="PCLiquidations">PCLiquidations</option>
-                        <option value="DiscountElectronics">DiscountElectronics</option>
-                        <option value="SystemLiquidation">SystemLiquidation</option>
-                        <option value="DellRefurbished">DellRefurbished</option>
-                        <option value="DiscountPC">DiscountPC</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
-                    <select id="filterBrand" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                        <option value="">All Brands</option>
-                        <option value="Dell">Dell</option>
-                        <option value="HP">HP</option>
-                        <option value="Lenovo">Lenovo</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Product Type</label>
-                    <select id="filterType" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                        <option value="">All Types</option>
-                        <option value="Laptop">Laptops</option>
-                        <option value="Desktop">Desktops</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Cosmetic Grade</label>
-                    <select id="filterGrade" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                        <option value="">All Grades</option>
-                        <option value="Grade A">Grade A</option>
-                        <option value="Grade B">Grade B</option>
-                        <option value="Grade C">Grade C</option>
-                        <option value="N/A">N/A (Not Listed)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
-                    <select id="filterPrice" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                        <option value="">All Prices</option>
-                        <option value="0-300">$0 - $300</option>
-                        <option value="300-500">$300 - $500</option>
-                        <option value="500-800">$500 - $800</option>
-                        <option value="800-1200">$800 - $1,200</option>
-                        <option value="1200-99999">$1,200+</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
-                    <select id="sortBy" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                        <option value="price-asc">Price: Low to High</option>
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="brand-asc">Brand: A-Z</option>
-                        <option value="model-asc">Model: A-Z</option>
-                        <option value="competitor-asc">Competitor: A-Z</option>
-                    </select>
-                </div>
-            </div>
-            <div class="mt-4">
-                <input type="text" id="searchBox" placeholder="🔎 Search products..." onkeyup="applyFilters()"
-                       class="w-full border border-gray-300 rounded-lg px-4 py-2">
-            </div>
-        </div>
 
         <!-- Statistics -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
@@ -239,6 +171,74 @@
                 </button>
             </div>
         </div>
+
+        <!-- Filters (moved below Live Bot Status) -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6 mt-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">🔍 Filters & Sorting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Competitor</label>
+                    <select id="filterCompetitor" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Competitors</option>
+                        <option value="PCLiquidations">PCLiquidations</option>
+                        <option value="DiscountElectronics">DiscountElectronics</option>
+                        <option value="SystemLiquidation">SystemLiquidation</option>
+                        <option value="DellRefurbished">DellRefurbished</option>
+                        <option value="DiscountPC">DiscountPC</option>
+                        <option value="EvergreenElectronics">EvergreenElectronics</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+                    <select id="filterBrand" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Brands</option>
+                        <option value="Dell">Dell</option>
+                        <option value="HP">HP</option>
+                        <option value="Lenovo">Lenovo</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Product Type</label>
+                    <select id="filterType" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Types</option>
+                        <option value="Laptop">Laptops</option>
+                        <option value="Desktop">Desktops</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Cosmetic Grade</label>
+                    <select id="filterGrade" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Grades</option>
+                        <option value="Grade A">Grade A</option>
+                        <option value="Grade B">Grade B</option>
+                        <option value="Grade C">Grade C</option>
+                        <option value="N/A">N/A (Not Listed)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                    <select id="filterPrice" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">All Prices</option>
+                        <option value="0-300">$0 - $300</option>
+                        <option value="300-500">$300 - $500</option>
+                        <option value="500-800">$500 - $800</option>
+                        <option value="800-1200">$800 - $1,200</option>
+                        <option value="1200-99999">$1,200+</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                    <select id="sortBy" onchange="applyFilters()" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="brand-asc">Brand (A-Z)</option>
+                        <option value="model-asc">Model (A-Z)</option>
+                        <option value="competitor-asc">Competitor (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Products Table -->
         <div class="bg-white rounded-lg shadow-lg p-6">

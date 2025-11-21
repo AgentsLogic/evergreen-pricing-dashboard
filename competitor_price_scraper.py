@@ -102,7 +102,16 @@ COMPETITORS = {
         "desktop_urls": [
             "https://discountpc.com/collections/desktops",
         ]
-    }
+    },
+    "EvergreenElectronics": {
+        "url": "https://evergreenelectronics.com",
+        "laptop_urls": [
+            "https://evergreenelectronics.com/collections/certified-refurbished-laptops",
+        ],
+        "desktop_urls": [
+            "https://evergreenelectronics.com/collections/windows-11-computers",
+        ]
+    },
 }
 
 

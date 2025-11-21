@@ -121,7 +121,14 @@ COMPETITORS = {
             "https://discountpc.com/collections/laptops",
             "https://discountpc.com/collections/desktops",
         ]
-    }
+    },
+    "EvergreenElectronics": {
+        "base_url": "https://evergreenelectronics.com",
+        "urls": [
+            "https://evergreenelectronics.com/collections/windows-11-computers",
+            "https://evergreenelectronics.com/collections/certified-refurbished-laptops",
+        ]
+    },
 }
 
 
