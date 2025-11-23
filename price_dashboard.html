@@ -1217,6 +1217,7 @@
         window.onbeforeunload = function() {
             disconnectChatStream();
             if (dataEventSource) dataEventSource.close();
+        };
 
         // Dark mode toggle handler
         function toggleDarkMode() {
@@ -1254,7 +1255,6 @@
                 }
             }
         })();
-        };
     </script>
 </body>
 </html>
