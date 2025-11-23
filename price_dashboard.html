@@ -19,6 +19,57 @@
         .product-card {
             transition: all 0.3s ease;
         }
+
+        /* Simple dark mode overrides */
+        html.dark body {
+            background-color: #020617; /* slate-950 style */
+            color: #e5e7eb;
+        }
+
+        html.dark .bg-white {
+            background-color: #020617;
+            color: #e5e7eb;
+        }
+
+        html.dark .bg-gray-50 {
+            background-color: #020617;
+            color: #e5e7eb;
+        }
+
+        html.dark .text-gray-800 {
+            color: #e5e7eb;
+        }
+
+        html.dark .text-gray-700 {
+            color: #d1d5db;
+        }
+
+        html.dark .text-gray-600 {
+            color: #9ca3af;
+        }
+
+        html.dark .border-gray-300 {
+            border-color: #4b5563;
+        }
+
+        html.dark input,
+        html.dark select,
+        html.dark textarea {
+            background-color: #111827;
+            color: #e5e7eb;
+            border-color: #4b5563;
+        }
+
+        html.dark #chatContainer {
+            background-color: #020617;
+            color: #e5e7eb;
+        }
+
+        html.dark #msrpBanner {
+            background-color: #111827;
+            border-color: #1f2937;
+            color: #e5e7eb;
+        }
     </style>
         <script>
             // Dark mode toggle with persistence
@@ -1114,6 +1165,43 @@
                 });
 
                 const data = await response.json().catch(() => ({}));
+
+        // Dark mode toggle handler
+        function toggleDarkMode() {
+            const root = document.documentElement;
+            const isDark = root.classList.toggle('dark');
+            localStorage.setItem('eg_dark_mode', isDark ? 'true' : 'false');
+
+            const label = document.getElementById('darkModeLabel');
+            const icon = document.getElementById('darkModeIcon');
+            if (label && icon) {
+                if (isDark) {
+                    label.textContent = 'Light';
+                    icon.textContent = '☀️';
+                } else {
+                    label.textContent = 'Dark';
+                    icon.textContent = '🌙';
+                }
+            }
+        }
+
+        // Initialize dark mode button state on load
+        (function syncDarkModeButton() {
+            const stored = localStorage.getItem('eg_dark_mode');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = stored === 'true' || (stored === null && prefersDark);
+            const label = document.getElementById('darkModeLabel');
+            const icon = document.getElementById('darkModeIcon');
+            if (label && icon) {
+                if (isDark) {
+                    label.textContent = 'Light';
+                    icon.textContent = '☀️';
+                } else {
+                    label.textContent = 'Dark';
+                    icon.textContent = '🌙';
+                }
+            }
+        })();
 
                 if (response.ok && data.reply) {
                     // Show assistant reply directly, even if SSE stream has issues
