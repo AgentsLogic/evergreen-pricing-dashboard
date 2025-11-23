@@ -1166,42 +1166,7 @@
 
                 const data = await response.json().catch(() => ({}));
 
-        // Dark mode toggle handler
-        function toggleDarkMode() {
-            const root = document.documentElement;
-            const isDark = root.classList.toggle('dark');
-            localStorage.setItem('eg_dark_mode', isDark ? 'true' : 'false');
 
-            const label = document.getElementById('darkModeLabel');
-            const icon = document.getElementById('darkModeIcon');
-            if (label && icon) {
-                if (isDark) {
-                    label.textContent = 'Light';
-                    icon.textContent = '☀️';
-                } else {
-                    label.textContent = 'Dark';
-                    icon.textContent = '🌙';
-                }
-            }
-        }
-
-        // Initialize dark mode button state on load
-        (function syncDarkModeButton() {
-            const stored = localStorage.getItem('eg_dark_mode');
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = stored === 'true' || (stored === null && prefersDark);
-            const label = document.getElementById('darkModeLabel');
-            const icon = document.getElementById('darkModeIcon');
-            if (label && icon) {
-                if (isDark) {
-                    label.textContent = 'Light';
-                    icon.textContent = '☀️';
-                } else {
-                    label.textContent = 'Dark';
-                    icon.textContent = '🌙';
-                }
-            }
-        })();
 
                 if (response.ok && data.reply) {
                     // Show assistant reply directly, even if SSE stream has issues
@@ -1252,6 +1217,43 @@
         window.onbeforeunload = function() {
             disconnectChatStream();
             if (dataEventSource) dataEventSource.close();
+
+        // Dark mode toggle handler
+        function toggleDarkMode() {
+            const root = document.documentElement;
+            const isDark = root.classList.toggle('dark');
+            localStorage.setItem('eg_dark_mode', isDark ? 'true' : 'false');
+
+            const label = document.getElementById('darkModeLabel');
+            const icon = document.getElementById('darkModeIcon');
+            if (label && icon) {
+                if (isDark) {
+                    label.textContent = 'Light';
+                    icon.textContent = '\u2600\ufe0f';
+                } else {
+                    label.textContent = 'Dark';
+                    icon.textContent = '\ud83c\udf19';
+                }
+            }
+        }
+
+        // Initialize dark mode button state on load
+        (function syncDarkModeButton() {
+            const stored = localStorage.getItem('eg_dark_mode');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = stored === 'true' || (stored === null && prefersDark);
+            const label = document.getElementById('darkModeLabel');
+            const icon = document.getElementById('darkModeIcon');
+            if (label && icon) {
+                if (isDark) {
+                    label.textContent = 'Light';
+                    icon.textContent = '\u2600\ufe0f';
+                } else {
+                    label.textContent = 'Dark';
+                    icon.textContent = '\ud83c\udf19';
+                }
+            }
+        })();
         };
     </script>
 </body>
