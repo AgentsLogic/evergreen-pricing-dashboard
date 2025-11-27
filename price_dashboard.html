@@ -613,6 +613,47 @@
             }
         });
 
+        // Helper: extract Intel CPU generation for CSV export
+        function extractIntelGeneration(text) {
+            if (!text) return '';
+            const t = text.toLowerCase();
+
+            if (!t.includes('intel') && !t.includes('core i')) {
+                return '';
+            }
+
+            // Pattern like "11th Gen" / "8th gen"
+            let m = t.match(/(\d{1,2})(?:st|nd|rd|th)\s*gen/);
+            if (m) {
+                const gen = parseInt(m[1], 10);
+                if (!Number.isNaN(gen)) return gen.toString();
+            }
+
+            // Pattern like "i5-8350U" or "i7 9700"
+            m = t.match(/\bi[3579][\s-]?(\d{4,5})/);
+            if (m) {
+                const digits = m[1];
+                let gen;
+                if (digits.length >= 5 && /^\d{2}/.test(digits)) {
+                    gen = parseInt(digits.slice(0, 2), 10);
+                } else {
+                    gen = parseInt(digits[0], 10);
+                }
+                if (!Number.isNaN(gen) && gen >= 1 && gen <= 20) {
+                    return gen.toString();
+                }
+            }
+
+            // Fallback: "i5 8th gen" style
+            m = t.match(/\bi[3579]\s*(\d{1,2})\w*\s*gen/);
+            if (m) {
+                const gen = parseInt(m[1], 10);
+                if (!Number.isNaN(gen)) return gen.toString();
+            }
+
+            return '';
+        }
+
         // Export to CSV (updated to support site selection)
         function exportToCSV(site = 'all') {
             let productsToExport = filteredProducts;
@@ -629,20 +670,25 @@
                 return;
             }
 
-            const headers = ['Competitor', 'Brand', 'Type', 'Model', 'Price', 'Processor', 'RAM', 'Storage', 'Screen', 'Form Factor', 'Cosmetic Grade'];
-            const rows = productsToExport.map(p => [
-                p.competitor,
-                p.brand,
-                p.product_type,
-                p.model || p.title,
-                p.price || '',
-                p.config.processor || '',
-                p.config.ram || '',
-                p.config.storage || '',
-                p.config.screen_resolution || '',
-                p.config.form_factor || '',
-                p.config.cosmetic_grade || 'N/A'
-            ]);
+            const headers = ['Competitor', 'Brand', 'Type', 'Model', 'Price', 'Processor', 'PG', 'RAM', 'Storage', 'Screen', 'Form Factor', 'Cosmetic Grade'];
+            const rows = productsToExport.map(p => {
+                const cpuText = (p.config && p.config.processor) ? p.config.processor : `${p.title || ''} ${p.model || ''}`;
+                const pg = extractIntelGeneration(cpuText);
+                return [
+                    p.competitor,
+                    p.brand,
+                    p.product_type,
+                    p.model || p.title,
+                    p.price || '',
+                    p.config.processor || '',
+                    pg,
+                    p.config.ram || '',
+                    p.config.storage || '',
+                    p.config.screen_resolution || '',
+                    p.config.form_factor || '',
+                    p.config.cosmetic_grade || 'N/A'
+                ];
+            });
 
             const csv = [headers, ...rows].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
             const blob = new Blob([csv], { type: 'text/csv' });
