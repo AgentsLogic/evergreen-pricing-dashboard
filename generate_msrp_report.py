@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path
@@ -41,6 +42,7 @@ class ProductRow:
     form_factor: Optional[str]
     screen_resolution: Optional[str]
     price_current: Optional[float]
+    cpu_generation: Optional[int] = None
 
     def key(self) -> str:
         """Stable key for matching between weeks.
@@ -51,6 +53,49 @@ class ProductRow:
         if not base:
             base = f"{self.brand or ''}|{self.model or ''}"
         return f"{self.competitor}|{base}".lower()
+
+
+def extract_intel_generation(text: Optional[str]) -> Optional[int]:
+    """Best-effort Intel CPU generation parser (mirrors dashboard logic)."""
+    if not text:
+        return None
+    t = text.lower()
+
+    # Must look like an Intel family CPU; otherwise treat as non-Intel
+    if "intel" not in t and "core i" not in t:
+        return None
+
+    # Pattern like "11th Gen" / "8th gen"
+    m = re.search(r"(\d{1,2})(?:st|nd|rd|th)\s*gen", t)
+    if m:
+        try:
+            return int(m.group(1))
+        except ValueError:
+            pass
+
+    # Pattern like "i5-8350U" or "i7 9700" (with optional space or hyphen)
+    m = re.search(r"\bi[3579][\s-]?(\d{4,5})", t)
+    if m:
+        digits = m.group(1)
+        try:
+            if len(digits) >= 5 and digits[:2].isdigit():
+                gen = int(digits[:2])  # 10xxx, 11xxx, etc.
+            else:
+                gen = int(digits[0])   # 8xxx, 9xxx
+            if 1 <= gen <= 20:
+                return gen
+        except ValueError:
+            pass
+
+    # Fallback: "i5 8th gen" style
+    m = re.search(r"\bi[3579]\s*(\d{1,2})\w*\s*gen", t)
+    if m:
+        try:
+            return int(m.group(1))
+        except ValueError:
+            pass
+
+    return None
 
 
 def load_current_products(json_path: Path = CURRENT_JSON) -> List[ProductRow]:
@@ -66,6 +111,8 @@ def load_current_products(json_path: Path = CURRENT_JSON) -> List[ProductRow]:
         products = comp_data.get("products", []) or []
         for p in products:
             cfg = p.get("config") or {}
+            cpu_text = cfg.get("processor") or f"{p.get('title','')} {p.get('model','')}"
+            gen = extract_intel_generation(cpu_text)
             rows.append(
                 ProductRow(
                     competitor=competitor_name,
@@ -81,6 +128,7 @@ def load_current_products(json_path: Path = CURRENT_JSON) -> List[ProductRow]:
                     form_factor=cfg.get("form_factor"),
                     screen_resolution=cfg.get("screen_resolution"),
                     price_current=p.get("price"),
+                    cpu_generation=gen,
                 )
             )
 
@@ -141,6 +189,7 @@ def write_report(
         "title",
         "url",
         "processor",
+        "pg",
         "ram",
         "storage",
         "cosmetic_grade",
@@ -189,6 +238,7 @@ def write_report(
                 "title": r.title or "",
                 "url": r.url or "",
                 "processor": r.processor or "",
+                "pg": str(r.cpu_generation) if r.cpu_generation is not None else "",
                 "ram": r.ram or "",
                 "storage": r.storage or "",
                 "cosmetic_grade": r.cosmetic_grade or "",
