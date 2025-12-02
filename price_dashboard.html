@@ -6,6 +6,7 @@
     <title>Competitor MSRP Price Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style>
         .brand-dell { border-left: 4px solid #007DB8; }
         .brand-hp { border-left: 4px solid #0096D6; }
@@ -112,7 +113,8 @@
                         <span id="exportArrow">▼</span>
                     </button>
                     <div id="exportDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
-                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Data</div>
+                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Data (CSV)</div>
+                        <div onclick="exportToExcelWithSummary()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export Excel (Raw + Summary)</div>
                         <div onclick="exportToCSV('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
                         <div onclick="exportToCSV('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
                         <div onclick="exportToCSV('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
@@ -699,6 +701,177 @@
             a.click();
 
             showNotification(`Exported ${productsToExport.length} products (${site}) to CSV`, 'success');
+            closeAllDropdowns();
+        }
+
+        // Helpers for Excel summary export
+        function extractCpuFamily(processorText) {
+            if (!processorText) return '';
+            const t = processorText.toLowerCase();
+            const m = t.match(/\bi([3579])\b/);
+            if (!m) return '';
+            return `i${m[1]}`;
+        }
+
+        function extractRamBucket(ramText) {
+            if (!ramText) return '';
+            const t = ramText.toUpperCase();
+            const m = t.match(/(\d{1,3})\s*(GB|G)\b/);
+            if (!m) return '';
+            const value = parseInt(m[1], 10);
+            if (Number.isNaN(value) || value <= 0 || value > 1024) return '';
+            return `${value}GB`;
+        }
+
+        function extractStorageBucket(storageText) {
+            if (!storageText) return '';
+            const t = storageText.toUpperCase();
+
+            // TB first
+            let m = t.match(/(\d+(?:\.\d+)?)\s*TB\b/);
+            if (m) {
+                const num = parseFloat(m[1]);
+                if (!Number.isNaN(num) && num > 0) {
+                    if (Number.isInteger(num)) {
+                        return `${num}TB`;
+                    }
+                    return `${num}TB`;
+                }
+            }
+
+            // Then GB
+            m = t.match(/(\d{2,5})\s*GB\b/);
+            if (m) {
+                const gb = parseInt(m[1], 10);
+                if (Number.isNaN(gb) || gb <= 0) return '';
+                if (gb >= 1024 && gb % 1024 === 0) {
+                    return `${gb / 1024}TB`;
+                }
+                return `${gb}GB`;
+            }
+
+            return '';
+        }
+
+        // Export to Excel with raw data + AI-style summary sheet
+        function exportToExcelWithSummary() {
+            let productsToExport = filteredProducts;
+
+            if (productsToExport.length === 0) {
+                showNotification('No products found for export', 'warning');
+                return;
+            }
+
+            if (typeof XLSX === 'undefined') {
+                showNotification('Excel export library not loaded', 'error');
+                return;
+            }
+
+            const rawHeaders = ['Competitor', 'Brand', 'Type', 'Model', 'Price', 'Processor', 'PG', 'RAM', 'Storage', 'Screen', 'Form Factor', 'Cosmetic Grade'];
+            const rawRows = productsToExport.map(p => {
+                const cpuText = (p.config && p.config.processor) ? p.config.processor : `${p.title || ''} ${p.model || ''}`;
+                const pg = extractIntelGeneration(cpuText);
+                return [
+                    p.competitor,
+                    p.brand,
+                    p.product_type,
+                    p.model || p.title,
+                    p.price || '',
+                    p.config.processor || '',
+                    pg,
+                    p.config.ram || '',
+                    p.config.storage || '',
+                    p.config.screen_resolution || '',
+                    p.config.form_factor || '',
+                    p.config.cosmetic_grade || 'N/A'
+                ];
+            });
+
+            // Build summary buckets: Processor type, PG, RAM, Storage
+            const buckets = new Map();
+
+            for (const p of productsToExport) {
+                const cfg = p.config || {};
+                const cpuText = cfg.processor || `${p.title || ''} ${p.model || ''}`;
+                const cpuFamily = extractCpuFamily(cpuText);
+                const pg = extractIntelGeneration(cpuText);
+                const ramBucket = extractRamBucket(cfg.ram || '');
+                const storageBucket = extractStorageBucket(cfg.storage || '');
+                const priceVal = typeof p.price === 'number' ? p.price : parseFloat(p.price);
+
+                if (!cpuFamily || !pg || !ramBucket || !storageBucket || !priceVal || Number.isNaN(priceVal)) {
+                    continue;
+                }
+
+                const key = `${cpuFamily}|${pg}|${ramBucket}|${storageBucket}`;
+                let bucket = buckets.get(key);
+                if (!bucket) {
+                    bucket = {
+                        cpuFamily,
+                        pg,
+                        ramBucket,
+                        storageBucket,
+                        totalPrice: 0,
+                        count: 0,
+                    };
+                    buckets.set(key, bucket);
+                }
+                bucket.totalPrice += priceVal;
+                bucket.count += 1;
+            }
+
+            const summaryHeaders = ['Processor Type', 'Processor Generation', 'RAM', 'Storage', '# Units', 'Average Price'];
+            const summaryRows = [];
+
+            for (const bucket of buckets.values()) {
+                const avg = bucket.totalPrice / bucket.count;
+                summaryRows.push([
+                    bucket.cpuFamily,
+                    bucket.pg,
+                    bucket.ramBucket,
+                    bucket.storageBucket,
+                    bucket.count,
+                    avg.toFixed(2),
+                ]);
+            }
+
+            // Sort summary for readability
+            const normalizeStorage = (s) => {
+                if (!s) return 0;
+                const tbMatch = s.match(/(\d+(?:\.\d+)?)TB/i);
+                if (tbMatch) {
+                    return parseFloat(tbMatch[1]) * 1024;
+                }
+                const gbMatch = s.match(/(\d{2,5})GB/i);
+                if (gbMatch) {
+                    return parseInt(gbMatch[1], 10);
+                }
+                return 0;
+            };
+
+            summaryRows.sort((a, b) => {
+                // by processor type, then generation, then RAM, then storage
+                if (a[0] !== b[0]) return a[0].localeCompare(b[0]);
+                const genA = parseInt(a[1], 10) || 0;
+                const genB = parseInt(b[1], 10) || 0;
+                if (genA !== genB) return genA - genB;
+                const ramA = parseInt(a[2], 10) || 0;
+                const ramB = parseInt(b[2], 10) || 0;
+                if (ramA !== ramB) return ramA - ramB;
+                return normalizeStorage(a[3]) - normalizeStorage(b[3]);
+            });
+
+            const wb = XLSX.utils.book_new();
+            const wsRaw = XLSX.utils.aoa_to_sheet([rawHeaders, ...rawRows]);
+            const wsSummary = XLSX.utils.aoa_to_sheet([summaryHeaders, ...summaryRows]);
+
+            XLSX.utils.book_append_sheet(wb, wsRaw, 'Raw Data');
+            XLSX.utils.book_append_sheet(wb, wsSummary, 'Summary');
+
+            const fileName = `competitor_prices_with_summary_${new Date().toISOString().split('T')[0]}.xlsx`;
+            XLSX.writeFile(wb, fileName);
+
+            showNotification(`Exported Excel with summary for ${productsToExport.length} products`, 'success');
             closeAllDropdowns();
         }
 
