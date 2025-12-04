@@ -114,6 +114,7 @@
                     </button>
                     <div id="exportDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
                         <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Data (CSV)</div>
+                        <div onclick="exportAllScrapedCSV()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export All Scraped Data (CSV, ignore filters)</div>
                         <div onclick="exportToExcelWithSummary()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export Excel (Raw + Summary)</div>
                         <div onclick="exportToCSV('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
                         <div onclick="exportToCSV('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
@@ -704,6 +705,61 @@
             closeAllDropdowns();
         }
 
+        // Export all scraped data (ignores UI filters, uses allData)
+        function exportAllScrapedCSV() {
+            if (!allData || Object.keys(allData).length === 0) {
+                showNotification('No data loaded yet. Click "Refresh Data" first.', 'warning');
+                return;
+            }
+
+            const productsToExport = [];
+            for (const [compName, compData] of Object.entries(allData)) {
+                const products = compData.products || [];
+                for (const product of products) {
+                    productsToExport.push({
+                        ...product,
+                        competitor: product.competitor || compName
+                    });
+                }
+            }
+
+            if (productsToExport.length === 0) {
+                showNotification('No products found for raw scrape export', 'warning');
+                return;
+            }
+
+            const headersAll = ['Competitor', 'Brand', 'Type', 'Model', 'Price', 'Processor', 'PG', 'RAM', 'Storage', 'Screen', 'Form Factor', 'Cosmetic Grade'];
+            const rowsAll = productsToExport.map(p => {
+                const cpuText = (p.config && p.config.processor) ? p.config.processor : `${p.title || ''} ${p.model || ''}`;
+                const pg = extractIntelGeneration(cpuText);
+                return [
+                    p.competitor,
+                    p.brand,
+                    p.product_type,
+                    p.model || p.title,
+                    p.price || '',
+                    (p.config && p.config.processor) ? p.config.processor : '',
+                    pg,
+                    (p.config && p.config.ram) ? p.config.ram : '',
+                    (p.config && p.config.storage) ? p.config.storage : '',
+                    (p.config && p.config.screen_resolution) ? p.config.screen_resolution : '',
+                    (p.config && p.config.form_factor) ? p.config.form_factor : '',
+                    (p.config && p.config.cosmetic_grade) ? p.config.cosmetic_grade : 'N/A'
+                ];
+            });
+
+            const csvAll = [headersAll, ...rowsAll].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
+            const blobAll = new Blob([csvAll], { type: 'text/csv' });
+            const urlAll = URL.createObjectURL(blobAll);
+            const aAll = document.createElement('a');
+            aAll.href = urlAll;
+            aAll.download = `competitor_prices_all_scraped_${new Date().toISOString().split('T')[0]}.csv`;
+            aAll.click();
+
+            showNotification(`Exported ${productsToExport.length} products (all scraped data) to CSV`, 'success');
+            closeAllDropdowns();
+        }
+
         // Helpers for Excel summary export
         function extractCpuFamily(processorText) {
             if (!processorText) return '';
@@ -813,25 +869,62 @@
                         storageBucket,
                         totalPrice: 0,
                         count: 0,
+                        // Per-brand aggregates
+                        dellTotal: 0,
+                        dellCount: 0,
+                        hpTotal: 0,
+                        hpCount: 0,
+                        lenovoTotal: 0,
+                        lenovoCount: 0,
                     };
                     buckets.set(key, bucket);
                 }
                 bucket.totalPrice += priceVal;
                 bucket.count += 1;
+
+                // Brand-specific accumulation for Dell / HP / Lenovo
+                const brand = (p.brand || '').toLowerCase();
+                if (brand.includes('dell')) {
+                    bucket.dellTotal += priceVal;
+                    bucket.dellCount += 1;
+                } else if (brand === 'hp' || brand.includes('hewlett')) {
+                    bucket.hpTotal += priceVal;
+                    bucket.hpCount += 1;
+                } else if (brand.includes('lenovo')) {
+                    bucket.lenovoTotal += priceVal;
+                    bucket.lenovoCount += 1;
+                }
             }
 
-            const summaryHeaders = ['Processor Type', 'Processor Generation', 'RAM', 'Storage', '# Units', 'Average Price'];
+            const summaryHeaders = [
+                'Processor Type',
+                'Processor Generation',
+                'RAM',
+                'Storage',
+                '# Units',
+                'Average Price',
+                'Avg Dell $',
+                'Avg HP $',
+                'Avg Lenovo $',
+            ];
             const summaryRows = [];
 
             for (const bucket of buckets.values()) {
-                const avg = bucket.totalPrice / bucket.count;
+                const avgAll = bucket.totalPrice / bucket.count;
+                const avgDell = bucket.dellCount ? bucket.dellTotal / bucket.dellCount : null;
+                const avgHp = bucket.hpCount ? bucket.hpTotal / bucket.hpCount : null;
+                const avgLenovo = bucket.lenovoCount ? bucket.lenovoTotal / bucket.lenovoCount : null;
+
                 summaryRows.push([
                     bucket.cpuFamily,
                     bucket.pg,
                     bucket.ramBucket,
                     bucket.storageBucket,
                     bucket.count,
-                    avg.toFixed(2),
+                    avgAll.toFixed(2),
+                    avgDell !== null ? avgDell.toFixed(2) : '',
+                    avgHp !== null ? avgHp.toFixed(2) : '',
+                    avgLenovo !== null ? avgLenovo.toFixed(2) : '',
                 ]);
             }
 
