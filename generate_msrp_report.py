@@ -212,8 +212,8 @@ def write_report(
             prev_price = previous_prices.get(key)
             cur_price = r.price_current if r.price_current is not None else None
 
-            price_previous_str = f"{prev_price:.2f}" if prev_price is not None else ""
-            price_current_str = f"{cur_price:.2f}" if cur_price is not None else ""
+            price_previous_str = str(int(round(prev_price))) if prev_price is not None else ""
+            price_current_str = str(int(round(cur_price))) if cur_price is not None else ""
 
             change = None
             change_pct = None
@@ -246,7 +246,7 @@ def write_report(
                 "screen_resolution": r.screen_resolution or "",
                 "price_previous": price_previous_str,
                 "price_current": price_current_str,
-                "price_change": f"{change:.2f}" if change is not None else "",
+                "price_change": str(int(round(change))) if change is not None else "",
                 "price_change_pct": f"{change_pct:.2f}" if change_pct is not None else "",
                 "change_flag": flag,
                 "key": key,

@@ -564,7 +564,7 @@
 
                         <div class="text-right ml-4">
                             <div class="text-3xl font-bold text-green-600 mb-2">
-                                ${product.price ? `$${product.price.toFixed(2)}` : 'N/A'}
+                                ${product.price != null ? `$${Math.round(product.price)}` : 'N/A'}
                             </div>
                             <div class="text-sm text-gray-600">Best Price</div>
                         </div>
