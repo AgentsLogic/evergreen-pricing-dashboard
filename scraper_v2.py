@@ -115,20 +115,26 @@ COMPETITORS = {
             "https://www.pcliquidations.com/refurbished-laptops",
         ]
     },
-    "DiscountPC": {
-        "base_url": "https://discountpc.com",
-        "urls": [
-            "https://discountpc.com/collections/laptops",
-            "https://discountpc.com/collections/desktops",
-        ]
-    },
-    "EvergreenElectronics": {
-        "base_url": "https://evergreenelectronics.com",
-        "urls": [
-            "https://evergreenelectronics.com/collections/windows-11-computers",
-            "https://evergreenelectronics.com/collections/certified-refurbished-laptops",
-        ]
-    },
+	"DiscountPC": {
+	    "base_url": "https://discountpc.com",
+	    "urls": [
+	        "https://discountpc.com/collections/laptops",
+	        "https://discountpc.com/collections/desktops",
+	    ]
+	},
+	"EvergreenElectronics": {
+	    "base_url": "https://evergreenelectronics.com",
+	    "urls": [
+	        "https://evergreenelectronics.com/collections/windows-11-computers",
+	        "https://evergreenelectronics.com/collections/certified-refurbished-laptops",
+	    ]
+	},
+	"RefurbishedLaptops": {
+	    "base_url": "https://refurbishedlaptops.com",
+	    "urls": [
+	        "https://refurbishedlaptops.com/refurbished-laptops/",
+	    ]
+	},
 }
 
 

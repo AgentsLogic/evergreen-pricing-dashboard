@@ -120,24 +120,26 @@
                         <div onclick="exportToCSV('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
                         <div onclick="exportToCSV('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
                         <div onclick="exportToCSV('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
-                        <div onclick="exportToCSV('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+	                        <div onclick="exportToCSV('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+	                        <div onclick="exportToCSV('RefurbishedLaptops')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbishedLaptops Only</div>
                         <div onclick="downloadMsrpReport()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer border-t border-gray-100 text-xs">Weekly MSRP Δ Report (UP/DOWN)</div>
                     </div>
                 </div>
                 <div class="relative">
-                    <button onclick="toggleScraperDropdown()" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition flex items-center gap-2">
-                        🕷️ Run Scraper
-                        <span id="scraperArrow">▼</span>
-                    </button>
-                    <div id="scraperDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
-                        <div onclick="runScraper('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Scrape All Sites</div>
-                        <div onclick="runScraper('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
-                        <div onclick="runScraper('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
-                        <div onclick="runScraper('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
-                        <div onclick="runScraper('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
-                        <div onclick="runScraper('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
-                        <div onclick="runScraper('EvergreenElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">EvergreenElectronics Only</div>
-                    </div>
+	                    <button onclick="toggleScraperDropdown()" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition flex items-center gap-2">
+	                        🕷️ Run Scraper
+	                        <span id="scraperArrow">▼</span>
+	                    </button>
+	                    <div id="scraperDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
+	                        <div onclick="runScraper('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Scrape All Sites</div>
+	                        <div onclick="runScraper('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
+	                        <div onclick="runScraper('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
+	                        <div onclick="runScraper('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
+	                        <div onclick="runScraper('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
+	                        <div onclick="runScraper('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+	                        <div onclick="runScraper('EvergreenElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">EvergreenElectronics Only</div>
+	                        <div onclick="runScraper('RefurbishedLaptops')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbishedLaptops Only</div>
+	                    </div>
                 </div>
                 <button id="stopScraperBtn" onclick="stopScraper()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition opacity-50 cursor-not-allowed" disabled>
                     🛑 Stop Scraper
@@ -255,7 +257,8 @@
                         <option value="SystemLiquidation">SystemLiquidation</option>
                         <option value="DellRefurbished">DellRefurbished</option>
                         <option value="DiscountPC">DiscountPC</option>
-                        <option value="EvergreenElectronics">EvergreenElectronics</option>
+	            	    		<option value="EvergreenElectronics">EvergreenElectronics</option>
+	            	    		<option value="RefurbishedLaptops">RefurbishedLaptops</option>
                     </select>
                 </div>
                 <div>
