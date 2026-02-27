@@ -405,8 +405,14 @@ class CompetitorPriceScraper:
         )
 
     async def scrape_pages_with_pagination(self, base_url: str, competitor: str, product_type: str) -> List[Product]:
-        """Scrape multiple pages with pagination for a given URL"""
-        all_products = []
+        """Scrape multiple pages with pagination for a given URL.
+
+        Uses a per-competitor max page cap to avoid runaway scrapes, and also
+        stops early if subsequent pages contain the exact same set of products
+        (which usually indicates we've hit a repeating or terminal page).
+        """
+        all_products: List[Product] = []
+        last_page_keys: Optional[set] = None
 
         try:
             browser_config = BrowserConfig(
@@ -421,7 +427,12 @@ class CompetitorPriceScraper:
                 delay_before_return_html=2.0,
             )
 
-            max_pages = 20  # Limit to prevent endless scraping
+            # Per-competitor max page limits (default is conservative)
+            max_pages_default = 20
+            max_pages_overrides = {
+                "RefurbishedLaptops": 30,  # Deeper catalog; allow more pages
+            }
+            max_pages = max_pages_overrides.get(competitor, max_pages_default)
             page_num = 1
 
             async with AsyncWebCrawler(config=browser_config) as crawler:
@@ -456,6 +467,16 @@ class CompetitorPriceScraper:
                                 print(f"       ✅ Reached end of products at page {page_num}")
                                 break
                         else:
+                            # Detect duplicate pages to avoid infinite/repeating pagination
+                            current_keys = {
+                                (p.url or f"{p.brand}_{p.model}_{p.price}")
+                                for p in products
+                            }
+                            if last_page_keys is not None and current_keys == last_page_keys:
+                                print("       ✅ Detected duplicate product page; stopping pagination")
+                                break
+                            last_page_keys = current_keys
+
                             print(f"       ✅ Found {len(products)} products on page {page_num}")
                             all_products.extend(products)
 
