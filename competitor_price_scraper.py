@@ -56,62 +56,70 @@ class CompetitorData(BaseModel):
 # ============================================================================
 
 COMPETITORS = {
-    "PCLiquidations": {
-        "url": "https://www.pcliquidations.com",
-        "laptop_urls": [
-            "https://www.pcliquidations.com/refurbished-laptops",
-        ],
-        "desktop_urls": [
-            "https://www.pcliquidations.com/refurbished-desktop-computers",
-        ]
-    },
-    "DiscountElectronics": {
-        "url": "https://www.discountelectronics.com",
-        "laptop_urls": [
-            "https://discountelectronics.com/refurbished-laptops/",
-        ],
-        "desktop_urls": [
-            "https://discountelectronics.com/refurbished-computers/",
-        ]
-    },
-    "SystemLiquidation": {
-        "url": "https://www.systemliquidation.com",
-        "laptop_urls": [
-            "https://systemliquidation.com/collections/refurbished-laptops",
-            "https://systemliquidation.com/collections/refurbished-mobile-workstations",
-        ],
-        "desktop_urls": [
-            "https://systemliquidation.com/collections/refurbished-desktop-computers",
-        ]
-    },
-    "DellRefurbished": {
-        "url": "https://www.dellrefurbished.com",
-        "laptop_urls": [
-            "https://www.dellrefurbished.com/laptops",
-        ],
-        "desktop_urls": [
-            "https://www.dellrefurbished.com/desktop-computers",
-            "https://www.dellrefurbished.com/computer-workstation",
-        ]
-    },
-    "DiscountPC": {
-        "url": "https://discountpc.com",
-        "laptop_urls": [
-            "https://discountpc.com/collections/laptops",
-        ],
-        "desktop_urls": [
-            "https://discountpc.com/collections/desktops",
-        ]
-    },
-    "EvergreenElectronics": {
-        "url": "https://evergreenelectronics.com",
-        "laptop_urls": [
-            "https://evergreenelectronics.com/collections/certified-refurbished-laptops",
-        ],
-        "desktop_urls": [
-            "https://evergreenelectronics.com/collections/windows-11-computers",
-        ]
-    },
+	"PCLiquidations": {
+	    "url": "https://www.pcliquidations.com",
+	    "laptop_urls": [
+	        "https://www.pcliquidations.com/refurbished-laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://www.pcliquidations.com/refurbished-desktop-computers",
+	    ]
+	},
+	"DiscountElectronics": {
+	    "url": "https://www.discountelectronics.com",
+	    "laptop_urls": [
+	        "https://discountelectronics.com/refurbished-laptops/",
+	    ],
+	    "desktop_urls": [
+	        "https://discountelectronics.com/refurbished-computers/",
+	    ]
+	},
+	"SystemLiquidation": {
+	    "url": "https://www.systemliquidation.com",
+	    "laptop_urls": [
+	        "https://systemliquidation.com/collections/refurbished-laptops",
+	        "https://systemliquidation.com/collections/refurbished-mobile-workstations",
+	    ],
+	    "desktop_urls": [
+	        "https://systemliquidation.com/collections/refurbished-desktop-computers",
+	    ]
+	},
+	"DellRefurbished": {
+	    "url": "https://www.dellrefurbished.com",
+	    "laptop_urls": [
+	        "https://www.dellrefurbished.com/laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://www.dellrefurbished.com/desktop-computers",
+	        "https://www.dellrefurbished.com/computer-workstation",
+	    ]
+	},
+	"DiscountPC": {
+	    "url": "https://discountpc.com",
+	    "laptop_urls": [
+	        "https://discountpc.com/collections/laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://discountpc.com/collections/desktops",
+	    ]
+	},
+	"EvergreenElectronics": {
+	    "url": "https://evergreenelectronics.com",
+	    "laptop_urls": [
+	        "https://evergreenelectronics.com/collections/certified-refurbished-laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://evergreenelectronics.com/collections/windows-11-computers",
+	    ]
+	},
+	"RefurbishedLaptops": {
+	    "url": "https://refurbishedlaptops.com",
+	    "laptop_urls": [
+	        "https://refurbishedlaptops.com/refurbished-laptops/",
+	    ],
+	    "desktop_urls": [
+	    ]
+	},
 }
 
 
@@ -1014,6 +1022,111 @@ class CompetitorPriceScraper:
                 return f"{size} inch"
 
         return None
+
+
+    def save_results(self, filename: str = "competitor_prices.json"):
+        """Save results to JSON file with merge logic to prevent data loss.
+
+        This method:
+        - Loads any existing data from filename (if present)
+        - Merges new products in without removing existing ones
+        - Uses URL as the primary identity key when available
+        """
+        try:
+            # Load existing data if present
+            existing_data: Dict[str, Dict] = {}
+            try:
+                with open(filename, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+            except FileNotFoundError:
+                print(f"   [INFO] Creating new data file")
+
+            # Merge new results with existing data - never remove existing products
+            for competitor, new_data in self.results.items():
+                existing_products = existing_data.get(competitor, {}).get('products', [])
+
+                # Convert new products to dict format for easier comparison
+                new_products_dict: Dict[str, Dict] = {}
+                for product in new_data.products:
+                    # Use URL as unique key, or create a composite key if URL is missing
+                    key = product.url if product.url else f"{product.brand}_{product.model}_{product.price}"
+                    new_products_dict[key] = product.model_dump()
+
+                # Start with existing products and add any new ones that aren't present yet
+                merged_products = existing_products.copy()
+                new_additions = 0
+
+                for key, product_dict in new_products_dict.items():
+                    # Determine if this product already exists (by URL or brand/model/price combo)
+                    exists = False
+                    for existing_product in merged_products:
+                        existing_key = (
+                            existing_product.get('url')
+                            if existing_product.get('url')
+                            else f"{existing_product.get('brand')}_{existing_product.get('model')}_{existing_product.get('price')}"
+                        )
+                        if existing_key == key:
+                            exists = True
+                            break
+
+                    if not exists:
+                        merged_products.append(product_dict)
+                        new_additions += 1
+
+                # Update the competitor entry with merged results
+                existing_data[competitor] = {
+                    "competitor": competitor,
+                    "website": new_data.website,
+                    "scrape_date": new_data.scrape_date,
+                    "total_products": len(merged_products),
+                    "existing_products": len(existing_products),
+                    "new_additions": new_additions,
+                    "products": merged_products,
+                }
+
+                print(f"   [MERGE] {competitor}: {len(merged_products)} total products (+{new_additions} new)")
+
+            # Save updated data
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+            print(f"\n💾 Merged results saved to {filename}")
+
+        except Exception as e:
+            print(f"   [ERROR] Failed to save merged results: {e}")
+            # Fallback to simple save if merge fails
+            output = {
+                competitor: data.model_dump()
+                for competitor, data in self.results.items()
+            }
+
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+
+            print(f"\n💾 Fallback save completed to {filename}")
+
+
+    def generate_report(self) -> str:
+        """Generate a human-readable summary report for the scraped data."""
+        report: List[str] = []
+        report.append("\n" + "=" * 80)
+        report.append("📊 COMPETITOR PRICING REPORT")
+        report.append("=" * 80 + "\n")
+
+        for competitor, data in self.results.items():
+            report.append(f"\n{competitor} ({data.website})")
+            report.append(f"  Scrape Date: {data.scrape_date}")
+            report.append(f"  Total Products: {data.total_products}")
+
+            # Count by brand
+            brand_counts: Dict[str, int] = {}
+            for product in data.products:
+                brand_counts[product.brand] = brand_counts.get(product.brand, 0) + 1
+
+            for brand, count in brand_counts.items():
+                report.append(f"    - {brand}: {count} products")
+
+        return "\n".join(report)
 
 
 def clean_markdown_text(text: str) -> str:
