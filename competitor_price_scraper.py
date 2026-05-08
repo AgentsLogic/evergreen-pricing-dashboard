@@ -120,6 +120,95 @@ COMPETITORS = {
 	    "desktop_urls": [
 	    ]
 	},
+	"BlairTech": {
+	    "url": "https://blairtech.com",
+	    "laptop_urls": [
+	        "https://blairtech.com/laptops/",
+	    ],
+	    "desktop_urls": [
+	        "https://blairtech.com/desktops/",
+	    ]
+	},
+	"DiscountComputerDepot": {
+	    "url": "https://discountcomputerdepot.com",
+	    "laptop_urls": [
+	        "https://discountcomputerdepot.com/categories/refurbished-computers/laptops-by-price.html",
+	    ],
+	    "desktop_urls": [
+	        "https://discountcomputerdepot.com/categories/refurbished-computers/desktop-computers-by-price.html",
+	    ]
+	},
+	"Reebelo": {
+	    "url": "https://reebelo.com",
+	    "laptop_urls": [
+	        "https://reebelo.com/collections/laptops",
+	    ],
+	    "desktop_urls": [
+	    ]
+	},
+	"RefurbIO": {
+	    "url": "https://us.refurb.io",
+	    "laptop_urls": [
+	        "https://us.refurb.io/collections/laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://us.refurb.io/collections/desktops",
+	    ]
+	},
+	"ReviveIT": {
+	    "url": "https://reviveit.io",
+	    "laptop_urls": [
+	        "https://reviveit.io/laptops/",
+	    ],
+	    "desktop_urls": [
+	        "https://reviveit.io/desktops/",
+	    ]
+	},
+	"TechForLess": {
+	    "url": "https://www.techforless.com",
+	    "laptop_urls": [
+	        "https://www.techforless.com/laptops.html",
+	    ],
+	    "desktop_urls": [
+	        "https://www.techforless.com/desktops.html",
+	    ]
+	},
+	"WisetekMarket": {
+	    "url": "https://www.wisetekmarket.com",
+	    "laptop_urls": [
+	        "https://www.wisetekmarket.com/collections/laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://www.wisetekmarket.com/collections/desktop",
+	    ]
+	},
+	"OfficeDepot": {
+	    "url": "https://www.officedepot.com",
+	    "laptop_urls": [
+	        "https://www.officedepot.com/b/laptop-computers/N-1462020",
+	    ],
+	    "desktop_urls": [
+	        "https://www.officedepot.com/b/desktop-computers/N-1461989",
+	    ]
+	},
+	"JoySystems": {
+	    "url": "https://joysystemspc.com",
+	    "laptop_urls": [
+	        "https://joysystemspc.com/collections/laptops",
+	    ],
+	    "desktop_urls": [
+	        "https://joysystemspc.com/collections/desktops",
+	    ]
+	},
+	"TechtoSchool": {
+	    "url": "https://techtoschool.com",
+	    "laptop_urls": [
+	        "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop",
+	    ],
+	    "desktop_urls": [
+	        "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Desktop",
+	    ]
+	},
 }
 
 

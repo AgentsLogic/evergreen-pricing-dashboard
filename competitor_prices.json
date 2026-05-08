@@ -13444,5 +13444,615 @@
         "competitor": "DiscountPC"
       }
     ]
+  },
+  "RefurbishedLaptops": {
+    "competitor": "RefurbishedLaptops",
+    "website": "https://refurbishedlaptops.com",
+    "scrape_date": "2026-02-26T19:53:13.567901",
+    "total_products": 30,
+    "existing_products": 20,
+    "new_additions": 10,
+    "products": [
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=2",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=3",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=4",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=6",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=7",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=8",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=9",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=10",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=11",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=12",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=13",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=14",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=15",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=16",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=17",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=18",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=19",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=20",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=21",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=22",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=23",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=24",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=25",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=26",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=27",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=28",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=29",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      },
+      {
+        "brand": "Lenovo",
+        "model": "",
+        "product_type": "Laptop",
+        "title": "Details",
+        "price": 499.99,
+        "price_text": "$499.99",
+        "url": "https://refurbishedlaptops.com/refurbished-laptops/?page=30",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "condition": null
+      }
+    ]
   }
 }
