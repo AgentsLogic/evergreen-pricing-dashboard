@@ -286,96 +286,96 @@ def classify_product_type(title: str, description: str = "") -> str:
     return 'Unknown'
 
 
-    def extract_processor_info(text: str) -> Optional[str]:
-        """Extract processor information from text"""
-        text_lower = text.lower()
+def extract_processor_info(text: str) -> Optional[str]:
+    """Extract processor information from text"""
+    text_lower = text.lower()
 
-        # Enhanced patterns for Intel processors
-        intel_patterns = [
-            r'i([3579])-(\d{1,2})(?:th|st|nd|rd)?\s*gen(?:eration)?',
-            r'intel\s*(?:core\s*)?i([3579])-(\d{1,2})(?:th|st|nd|rd)?\s*gen',
-            r'core\s*i([3579])-(\d{1,2})(?:th|st|nd|rd)?\s*gen',
-            r'i([3579])-(\d{1,2})\s*(?:gen|generation)',
-            r'i([3579])\s*(\d{1,2})\s*(?:th|st|nd|rd)?\s*gen',
-            r'core\s*i([3579])\s*(\d{1,2})',
+    # Enhanced patterns for Intel processors
+    intel_patterns = [
+        r'i([3579])-(\d{1,2})(?:th|st|nd|rd)?\s*gen(?:eration)?',
+        r'intel\s*(?:core\s*)?i([3579])-(\d{1,2})(?:th|st|nd|rd)?\s*gen',
+        r'core\s*i([3579])-(\d{1,2})(?:th|st|nd|rd)?\s*gen',
+        r'i([3579])-(\d{1,2})\s*(?:gen|generation)',
+        r'i([3579])\s*(\d{1,2})\s*(?:th|st|nd|rd)?\s*gen',
+        r'core\s*i([3579])\s*(\d{1,2})',
+    ]
+
+    for pattern in intel_patterns:
+        intel_match = re.search(pattern, text_lower)
+        if intel_match:
+            return f"{intel_match.group(1).upper()}-{intel_match.group(2)}th gen"
+
+    # Enhanced patterns for AMD processors
+    amd_patterns = [
+        r'ryzen\s*(\d+)\s*(\d{4})?',
+        r'amd\s*ryzen\s*(\d+)\s*(\d{4})?',
+        r'ryzen\s*(\d+)\s*pro\s*(\d{4})?',
+        r'ryzen\s*(\d+)\s*(\d{4})',
+    ]
+
+    for pattern in amd_patterns:
+        amd_match = re.search(pattern, text_lower)
+        if amd_match:
+            processor = f"Ryzen {amd_match.group(1)}"
+            if amd_match.group(2):
+                processor += f" {amd_match.group(2)}"
+            return processor.title()
+
+    # Look for specific processor models
+    processor_keywords = [
+        'celeron', 'pentium', 'xeon', 'athlon', 'i3', 'i5', 'i7', 'i9'
+    ]
+
+    for keyword in processor_keywords:
+        if keyword in text_lower:
+            # Extract the full processor name around the keyword
+            pattern = rf'(\w*\s*{keyword}\s*\w*)'
+            match = re.search(pattern, text_lower)
+            if match:
+                return match.group(1).title()
+
+    return None
+
+
+def extract_ram_info(text: str) -> Optional[str]:
+    """Extract RAM information from text"""
+    text_lower = text.lower()
+
+    # More specific patterns for RAM
+    ram_patterns = [
+        r'(\d+)\s*GB\s*(?:DDR|RAM|Memory|RAM\s*DDR)',
+        r'(\d+)\s*GB\s*(?:DDR[3-5]|RAM\s+DDR[3-5])',
+        r'(\d+)\s*GB\s*(?:PC[3-5]|RAM\s+PC[3-5])',
+        r'(\d+)\s*GB\s*(?:SDRAM|RAM\s+SDRAM)',
+        r'(\d+)\s*GB\s*(?:LPDDR|RAM\s+LPDDR)',
+        r'(\d+)\s*GB\s*(?:DDR4|DDR5)',
+    ]
+
+    for pattern in ram_patterns:
+        ram_match = re.search(pattern, text_lower)
+        if ram_match:
+            ram_size = ram_match.group(1)
+            # Only accept reasonable RAM sizes (1GB to 128GB)
+            if 1 <= int(ram_size) <= 128:
+                return f"{ram_size}GB"
+
+    # Look for RAM in product specifications context
+    if 'ram' in text_lower or 'memory' in text_lower:
+        # Find numbers followed by GB in context of RAM/memory
+        context_patterns = [
+            r'(?:ram|memory)[\s:]+(\d+)\s*GB',
+            r'(\d+)\s*GB[\s:]+(?:ram|memory)',
+            r'(\d+)\s*GB\s+(?:DDR[3-5]|SDRAM|LPDDR)',
         ]
 
-        for pattern in intel_patterns:
-            intel_match = re.search(pattern, text_lower)
-            if intel_match:
-                return f"{intel_match.group(1).upper()}-{intel_match.group(2)}th gen"
-
-        # Enhanced patterns for AMD processors
-        amd_patterns = [
-            r'ryzen\s*(\d+)\s*(\d{4})?',
-            r'amd\s*ryzen\s*(\d+)\s*(\d{4})?',
-            r'ryzen\s*(\d+)\s*pro\s*(\d{4})?',
-            r'ryzen\s*(\d+)\s*(\d{4})',
-        ]
-
-        for pattern in amd_patterns:
-            amd_match = re.search(pattern, text_lower)
-            if amd_match:
-                processor = f"Ryzen {amd_match.group(1)}"
-                if amd_match.group(2):
-                    processor += f" {amd_match.group(2)}"
-                return processor.title()
-
-        # Look for specific processor models
-        processor_keywords = [
-            'celeron', 'pentium', 'xeon', 'athlon', 'i3', 'i5', 'i7', 'i9'
-        ]
-
-        for keyword in processor_keywords:
-            if keyword in text_lower:
-                # Extract the full processor name around the keyword
-                pattern = rf'(\w*\s*{keyword}\s*\w*)'
-                match = re.search(pattern, text_lower)
-                if match:
-                    return match.group(1).title()
-
-        return None
-
-
-    def extract_ram_info(text: str) -> Optional[str]:
-        """Extract RAM information from text"""
-        text_lower = text.lower()
-
-        # More specific patterns for RAM
-        ram_patterns = [
-            r'(\d+)\s*GB\s*(?:DDR|RAM|Memory|RAM\s*DDR)',
-            r'(\d+)\s*GB\s*(?:DDR[3-5]|RAM\s+DDR[3-5])',
-            r'(\d+)\s*GB\s*(?:PC[3-5]|RAM\s+PC[3-5])',
-            r'(\d+)\s*GB\s*(?:SDRAM|RAM\s+SDRAM)',
-            r'(\d+)\s*GB\s*(?:LPDDR|RAM\s+LPDDR)',
-            r'(\d+)\s*GB\s*(?:DDR4|DDR5)',
-        ]
-
-        for pattern in ram_patterns:
+        for pattern in context_patterns:
             ram_match = re.search(pattern, text_lower)
             if ram_match:
                 ram_size = ram_match.group(1)
-                # Only accept reasonable RAM sizes (1GB to 128GB)
                 if 1 <= int(ram_size) <= 128:
                     return f"{ram_size}GB"
 
-        # Look for RAM in product specifications context
-        if 'ram' in text_lower or 'memory' in text_lower:
-            # Find numbers followed by GB in context of RAM/memory
-            context_patterns = [
-                r'(?:ram|memory)[\s:]+(\d+)\s*GB',
-                r'(\d+)\s*GB[\s:]+(?:ram|memory)',
-                r'(\d+)\s*GB\s+(?:DDR[3-5]|SDRAM|LPDDR)',
-            ]
-
-            for pattern in context_patterns:
-                ram_match = re.search(pattern, text_lower)
-                if ram_match:
-                    ram_size = ram_match.group(1)
-                    if 1 <= int(ram_size) <= 128:
-                        return f"{ram_size}GB"
-
-        return None
+    return None
 
 
 def extract_storage_info(text: str) -> Optional[str]:
@@ -1535,7 +1535,19 @@ async def main():
             return
     else:
         # Scrape all competitors
-        results = await scraper.scrape_all_competitors()
+        print("\n🚀 Starting full scrape of all competitors...")
+        print(f"Total competitors to scrape: {len(COMPETITORS)}")
+        
+        results = {}
+        for competitor_name, config in COMPETITORS.items():
+            try:
+                print(f"\n🔄 Scraping {competitor_name}...")
+                data = await scraper.scrape_competitor(competitor_name, config)
+                results[competitor_name] = data
+            except Exception as e:
+                print(f"❌ Failed to scrape {competitor_name}: {str(e)}")
+        
+        scraper.results = results
 
     # Save results
     scraper.save_results("competitor_prices.json")

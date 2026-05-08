@@ -113,15 +113,24 @@
                         <span id="exportArrow">▼</span>
                     </button>
                     <div id="exportDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
-                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Data (CSV)</div>
-                        <div onclick="exportAllScrapedCSV()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export All Scraped Data (CSV, ignore filters)</div>
-                        <div onclick="exportToExcelWithSummary()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export Excel (Raw + Summary)</div>
+                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Sites</div>
                         <div onclick="exportToCSV('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
                         <div onclick="exportToCSV('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
                         <div onclick="exportToCSV('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>
                         <div onclick="exportToCSV('DellRefurbished')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DellRefurbished Only</div>
-	                        <div onclick="exportToCSV('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
-	                        <div onclick="exportToCSV('RefurbishedLaptops')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbishedLaptops Only</div>
+                        <div onclick="exportToCSV('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
+                        <div onclick="exportToCSV('EvergreenElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">EvergreenElectronics Only</div>
+                        <div onclick="exportToCSV('RefurbishedLaptops')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbishedLaptops Only</div>
+                        <div onclick="exportToCSV('BlairTech')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">BlairTech Only</div>
+                        <div onclick="exportToCSV('DiscountComputerDepot')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountComputerDepot Only</div>
+                        <div onclick="exportToCSV('Reebelo')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Reebelo Only</div>
+                        <div onclick="exportToCSV('RefurbIO')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbIO Only</div>
+                        <div onclick="exportToCSV('ReviveIT')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">ReviveIT Only</div>
+                        <div onclick="exportToCSV('TechForLess')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">TechForLess Only</div>
+                        <div onclick="exportToCSV('WisetekMarket')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">WisetekMarket Only</div>
+                        <div onclick="exportToCSV('OfficeDepot')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">OfficeDepot Only</div>
+                        <div onclick="exportToCSV('JoySystems')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">JoySystems Only</div>
+                        <div onclick="exportToCSV('TechtoSchool')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">TechtoSchool Only</div>
                         <div onclick="downloadMsrpReport()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer border-t border-gray-100 text-xs">Weekly MSRP Δ Report (UP/DOWN)</div>
                     </div>
                 </div>
@@ -139,6 +148,16 @@
 	                        <div onclick="runScraper('DiscountPC')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountPC Only</div>
 	                        <div onclick="runScraper('EvergreenElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">EvergreenElectronics Only</div>
 	                        <div onclick="runScraper('RefurbishedLaptops')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbishedLaptops Only</div>
+	                        <div onclick="runScraper('BlairTech')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">BlairTech Only</div>
+	                        <div onclick="runScraper('DiscountComputerDepot')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountComputerDepot Only</div>
+	                        <div onclick="runScraper('Reebelo')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Reebelo Only</div>
+	                        <div onclick="runScraper('RefurbIO')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">RefurbIO Only</div>
+	                        <div onclick="runScraper('ReviveIT')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">ReviveIT Only</div>
+	                        <div onclick="runScraper('TechForLess')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">TechForLess Only</div>
+	                        <div onclick="runScraper('WisetekMarket')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">WisetekMarket Only</div>
+	                        <div onclick="runScraper('OfficeDepot')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">OfficeDepot Only</div>
+	                        <div onclick="runScraper('JoySystems')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">JoySystems Only</div>
+	                        <div onclick="runScraper('TechtoSchool')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">TechtoSchool Only</div>
 	                    </div>
                 </div>
                 <button id="stopScraperBtn" onclick="stopScraper()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition opacity-50 cursor-not-allowed" disabled>
@@ -257,8 +276,18 @@
                         <option value="SystemLiquidation">SystemLiquidation</option>
                         <option value="DellRefurbished">DellRefurbished</option>
                         <option value="DiscountPC">DiscountPC</option>
-	            	    		<option value="EvergreenElectronics">EvergreenElectronics</option>
-	            	    		<option value="RefurbishedLaptops">RefurbishedLaptops</option>
+                        <option value="EvergreenElectronics">EvergreenElectronics</option>
+                        <option value="RefurbishedLaptops">RefurbishedLaptops</option>
+                        <option value="BlairTech">BlairTech</option>
+                        <option value="DiscountComputerDepot">DiscountComputerDepot</option>
+                        <option value="Reebelo">Reebelo</option>
+                        <option value="RefurbIO">RefurbIO</option>
+                        <option value="ReviveIT">ReviveIT</option>
+                        <option value="TechForLess">TechForLess</option>
+                        <option value="WisetekMarket">WisetekMarket</option>
+                        <option value="OfficeDepot">OfficeDepot</option>
+                        <option value="JoySystems">JoySystems</option>
+                        <option value="TechtoSchool">TechtoSchool</option>
                     </select>
                 </div>
                 <div>
