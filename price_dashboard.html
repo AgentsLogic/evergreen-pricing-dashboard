@@ -113,7 +113,9 @@
                         <span id="exportArrow">▼</span>
                     </button>
                     <div id="exportDropdown" class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
-                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Sites</div>
+                        <div onclick="exportToCSV('all')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Export All Data (CSV)</div>
+                        <div onclick="exportAllScrapedCSV()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export All Scraped Data (CSV, ignore filters)</div>
+                        <div onclick="exportToExcelWithSummary()" class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-xs">Export Excel (Raw + Summary)</div>
                         <div onclick="exportToCSV('PCLiquidations')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">PCLiquidations Only</div>
                         <div onclick="exportToCSV('DiscountElectronics')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">DiscountElectronics Only</div>
                         <div onclick="exportToCSV('SystemLiquidation')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">SystemLiquidation Only</div>

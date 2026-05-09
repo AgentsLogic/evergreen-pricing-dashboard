@@ -135,6 +135,75 @@ COMPETITORS = {
 	        "https://refurbishedlaptops.com/refurbished-laptops/",
 	    ]
 	},
+	"BlairTech": {
+	    "base_url": "https://blairtech.com",
+	    "urls": [
+	        "https://blairtech.com/laptops/",
+	        "https://blairtech.com/desktops/",
+	    ]
+	},
+	"DiscountComputerDepot": {
+	    "base_url": "https://discountcomputerdepot.com",
+	    "urls": [
+	        "https://discountcomputerdepot.com/categories/refurbished-computers/laptops-by-price.html",
+	        "https://discountcomputerdepot.com/categories/refurbished-computers/desktop-computers-by-price.html",
+	    ]
+	},
+	"Reebelo": {
+	    "base_url": "https://reebelo.com",
+	    "urls": [
+	        "https://reebelo.com/collections/laptops",
+	    ]
+	},
+	"RefurbIO": {
+	    "base_url": "https://us.refurb.io",
+	    "urls": [
+	        "https://us.refurb.io/collections/laptops",
+	        "https://us.refurb.io/collections/desktops",
+	    ]
+	},
+	"ReviveIT": {
+	    "base_url": "https://reviveit.io",
+	    "urls": [
+	        "https://reviveit.io/laptops/",
+	        "https://reviveit.io/desktops/",
+	    ]
+	},
+	"TechForLess": {
+	    "base_url": "https://www.techforless.com",
+	    "urls": [
+	        "https://www.techforless.com/laptops.html",
+	        "https://www.techforless.com/desktops.html",
+	    ]
+	},
+	"WisetekMarket": {
+	    "base_url": "https://www.wisetekmarket.com",
+	    "urls": [
+	        "https://www.wisetekmarket.com/collections/laptops",
+	        "https://www.wisetekmarket.com/collections/desktop",
+	    ]
+	},
+	"OfficeDepot": {
+	    "base_url": "https://www.officedepot.com",
+	    "urls": [
+	        "https://www.officedepot.com/b/laptop-computers/N-1462020",
+	        "https://www.officedepot.com/b/desktop-computers/N-1461989",
+	    ]
+	},
+	"JoySystems": {
+	    "base_url": "https://joysystemspc.com",
+	    "urls": [
+	        "https://joysystemspc.com/collections/laptops",
+	        "https://joysystemspc.com/collections/desktops",
+	    ]
+	},
+	"TechtoSchool": {
+	    "base_url": "https://techtoschool.com",
+	    "urls": [
+	        "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop",
+	        "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Desktop",
+	    ]
+	},
 }
 
 
