@@ -1097,14 +1097,14 @@ def send_chat_message_sync(message, message_type='info', source='system'):
 
 if __name__ == '__main__':
     print("\n" + "="*80)
-    print("🚀 Starting Competitor Price Dashboard Server")
+    print("Starting Competitor Price Dashboard Server")
     print("="*80)
-    print("\n📊 Dashboard URL: http://localhost:8080")
-    print("\n✅ Features:")
+    print("\nDashboard URL: http://localhost:8080")
+    print("\nFeatures:")
     print("   - Real-time data updates (no refresh needed!)")
     print("   - Live chat output from scraper")
     print("   - Export CSV, Run Scraper, and more!")
-    print("\n🔍 Starting file watcher for real-time updates...")
+    print("\nStarting file watcher for real-time updates...")
     print("="*80 + "\n")
 
     # Start file watcher for real-time updates (if available)
