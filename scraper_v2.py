@@ -324,8 +324,15 @@ class CompetitorScraper:
         # Enforce 8th generation and newer only
         return gen >= 8
 
-    async def scrape_url(self, url: str, competitor: str, max_pages: int = 5) -> List[Product]:
-        """Scrape a single URL and extract all products (handles pagination)"""
+    async def scrape_url(self, url: str, competitor: str, max_pages: int = 50) -> List[Product]:
+        """Scrape a single URL and extract all products (handles pagination).
+
+        max_pages controls how many paginated result pages we will visit for
+        a given category URL. The default was 5; increasing this to 50 makes
+        it much more likely we reach the true end of results on large sites
+        like OfficeDepot, while the existing two-empty-pages-in-a-row rule
+        still keeps the loop bounded.
+        """
         print(f"\n[SCRAPING] Scraping: {url}")
 
         # Determine product type from URL
