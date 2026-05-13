@@ -260,8 +260,16 @@ class CompetitorScraper:
         t = text.lower()
 
         # Must look like an Intel family CPU; otherwise we treat as non-Intel
-        if "intel" not in t and "core i" not in t:
-            return None
+        # Check for "intel", "core i", or "i3/i5/i7/i9" at start or after space/hyphen
+        has_intel = (
+            "intel" in t or
+            "core i" in t or
+            re.search(r'\bi[3579]\b', t)  # i3, i5, i7, i9 as whole words
+        )
+        if not has_intel:
+            # Still check for model number patterns that might indicate Intel
+            if not any(x in t for x in ["g8", "g9", "g10", "g11", "g12", "g13", "g14"]):
+                return None
 
         # Pattern like "11th Gen" / "8th gen"
         m = re.search(r"(\d{1,2})(?:st|nd|rd|th)\s*gen", t)
@@ -271,15 +279,42 @@ class CompetitorScraper:
             except ValueError:
                 pass
 
+        # Pattern like "I7-1185G7" or "i7-1185g7" (11th gen) - CHECK THIS FIRST
+        m = re.search(r"\bi[3579][\s-]?(\d{4})[a-z]?\d?", t)
+        if m:
+            digits = m.group(1)
+            try:
+                if len(digits) == 4:
+                    gen = int(digits[:2])  # 11xx, 12xx, etc.
+                    if 1 <= gen <= 20:
+                        return gen
+            except ValueError:
+                pass
+
         # Pattern like "i5-8350U" or "i7 9700" (with optional space or hyphen)
         m = re.search(r"\bi[3579][\s-]?(\d{4,5})", t)
         if m:
             digits = m.group(1)
             try:
-                if len(digits) >= 5 and digits[:2].isdigit():
-                    gen = int(digits[:2])  # 10xxx, 11xxx, 12xxx, etc.
-                else:
-                    gen = int(digits[0])   # 8xxx, 9xxx
+                # Extract only digits from the match
+                digits_only = re.sub(r'[^\d]', '', digits)
+                if len(digits_only) >= 5 and digits_only[:2].isdigit():
+                    gen = int(digits_only[:2])  # 10xxx, 11xxx, 12xxx, etc.
+                    if 1 <= gen <= 20:
+                        return gen
+                elif len(digits_only) == 4:
+                    # This is likely 8xxx or 9xxx (8th or 9th gen)
+                    gen = int(digits_only[0])   # 8xxx, 9xxx
+                    if 1 <= gen <= 20:
+                        return gen
+            except ValueError:
+                pass
+
+        # Pattern like "G8", "G9", "G10" in model numbers (8th, 9th, 10th gen)
+        m = re.search(r"\b[gG](\d{1,2})\b", t)
+        if m:
+            try:
+                gen = int(m.group(1))
                 if 1 <= gen <= 20:
                     return gen
             except ValueError:
@@ -312,7 +347,15 @@ class CompetitorScraper:
         cfg = getattr(product, "config", None)
         if cfg and getattr(cfg, "processor", None):
             cpu_text = cfg.processor
-        else:
+            # Check if this CPU text actually contains generation info
+            # If not, fall back to title/model which might have more detail
+            if cpu_text and not self._extract_intel_generation(cpu_text):
+                # CPU text exists but doesn't have generation info, try title/model
+                title_model = (product.title or "") + " " + (product.model or "")
+                if title_model.strip():
+                    cpu_text = title_model
+
+        if not cpu_text:
             # Some sites may only mention CPU in the title
             cpu_text = (product.title or "") + " " + (product.model or "")
 
@@ -395,11 +438,38 @@ class CompetitorScraper:
 
     async def _scrape_single_page(self, url: str, competitor: str, product_type: str) -> List[Product]:
         """Scrape a single page"""
-        # Browser configuration
+        # Browser configuration - enhanced for Cloudflare protection
         browser_config = BrowserConfig(
             headless=True,
             verbose=False,
-            extra_args=["--disable-gpu", "--disable-dev-shm-usage", "--no-sandbox"]
+            extra_args=[
+                "--disable-gpu",
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+                "--disable-blink-features=AutomationControlled",
+                "--disable-features=IsolateOrigins,site-per-process",
+                "--disable-web-security",
+                "--disable-features=VizDisplayCompositor",
+                "--start-maximized",
+                "--disable-infobars",
+                "--disable-extensions",
+                "--disable-notifications",
+                "--disable-popup-blocking",
+                "--disable-save-password-bubble",
+                "--disable-translate",
+                "--disable-background-networking",
+                "--disable-background-timer-throttling",
+                "--disable-backgrounding-occluded-windows",
+                "--disable-renderer-backgrounding",
+                "--disable-component-extensions-with-background-pages",
+                "--disable-backgrounding-occluded-windows",
+                "--disable-backgrounding-occluded-windows",
+                "--disable-features=TranslateUI",
+                "--disable-ipc-flooding-protection",
+                "--disable-renderer-backgrounding",
+                "--disable-features=IsolateOrigins,site-per-process",
+                "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            ]
         )
 
         # Try LLM extraction first, but if it fails, fall back to CSS extraction
@@ -453,14 +523,14 @@ class CompetitorScraper:
                 instruction="Return an empty JSON array [] since LLM extraction failed."
             )
 
-        # Crawler configuration - removed wait_for to avoid selector timeout
+        # Crawler configuration - enhanced for Cloudflare protection
         crawler_config = CrawlerRunConfig(
             cache_mode=CacheMode.BYPASS,
             extraction_strategy=extraction_strategy,
-            delay_before_return_html=5.0,  # Increased delay to let page load
-            page_timeout=90000,  # Increased timeout
-            mean_delay=2.0,
-            max_range=4.0,
+            delay_before_return_html=15.0,  # Increased delay to let page load and bypass Cloudflare
+            page_timeout=180000,  # Increased timeout for Cloudflare
+            mean_delay=5.0,
+            max_range=8.0,
             wait_for_images=False,  # Don't wait for images
             remove_overlay_elements=True  # Remove popups/overlays
         )
@@ -475,7 +545,21 @@ class CompetitorScraper:
                 )
 
                 if result.success:
-                    if result.extracted_content:
+                    # Check for Cloudflare protection and retry multiple times
+                    max_retries = 3
+                    for retry in range(max_retries):
+                        if result.markdown and "cloudflare" in result.markdown.raw_markdown.lower():
+                            if retry < max_retries - 1:
+                                print(f"   [WARNING] Cloudflare protection detected (attempt {retry + 1}/{max_retries}), waiting...")
+                                await asyncio.sleep(10)  # Wait longer for Cloudflare to process
+                                result = await crawler.arun(url=url, config=crawler_config)
+                            else:
+                                print(f"   [ERROR] Cloudflare protection still active after {max_retries} attempts")
+                                break
+                        else:
+                            break
+                    
+                    if result.success and result.extracted_content:
                         try:
                             # Clean the extracted content - remove any BOM or extra whitespace
                             content = result.extracted_content.strip()
@@ -506,6 +590,11 @@ class CompetitorScraper:
                             if isinstance(extracted_data, list):
                                 for item in extracted_data:
                                     try:
+                                        # Skip error objects from LLM extraction failures
+                                        if isinstance(item, dict) and item.get('error', False):
+                                            print(f"   [SKIP] Skipping LLM error object")
+                                            continue
+
                                         # Ensure competitor field is set
                                         item['competitor'] = competitor
                                         product = Product(**item)

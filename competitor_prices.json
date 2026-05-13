@@ -14054,5 +14054,544 @@
         "condition": null
       }
     ]
+  },
+  "TechtoSchool": {
+    "competitor": "TechtoSchool",
+    "website": "https://techtoschool.com",
+    "scrape_date": "2026-05-12T19:02:19.777695",
+    "total_products": 18,
+    "skipped_products": 208,
+    "products": [
+      {
+        "brand": "HP",
+        "model": "640",
+        "product_type": "Laptop",
+        "title": "HP ProBook 640 G8 14\" Laptop",
+        "price": 379.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "x360 1040",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 1040 G8 14\" 2-in-1 Touchscreen Laptop",
+        "price": 265.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "845",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 845 G8 14\" Business Laptop",
+        "price": 479.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "645",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 645 G9 14\" Business Laptop",
+        "price": 439.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "850",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 850 G8 15.6\" Laptop",
+        "price": 359.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=2",
+        "config": {
+          "processor": "203Hp850G8I7G11Dref_300X300",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "G8 14",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkBook 14 G8 14\" Touchscreen Notebook",
+        "price": 2419.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=3",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "G8 16",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkBook 16 G8 16\" Notebook",
+        "price": 1165.67,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=3",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "840",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 840 G8 14\" Notebook",
+        "price": 2565.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=3",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "G10 15",
+        "product_type": "Laptop",
+        "title": "HP 255 G10 15\" Notebook",
+        "price": 499.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=4",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "G11 16",
+        "product_type": "Laptop",
+        "title": "HP ZBook Studio G11 16\" Mobile Workstation",
+        "price": 229.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=4",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "G11 16",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly G11 16\" Mobile Workstation",
+        "price": 3799.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "G11 14",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly G11 14\" Touchscreen Mobile Workstation",
+        "price": 1989.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "G11 14",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly G11 14\" Mobile Workstation",
+        "price": 1899.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "G10 14",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly G10 14\" Mobile Workstation",
+        "price": 1160.4,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "640",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 640 G11 14\" Touchscreen Notebook",
+        "price": 2199.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "665",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 665 G11 16\" Notebook",
+        "price": 1499.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "HD (1366x768)",
+          "screen_size": "16 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "860",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 860 G11 16\" Touchscreen Notebook",
+        "price": 1299.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "460",
+        "product_type": "Laptop",
+        "title": "HP ProBook 460 G11 16\" Touchscreen Notebook",
+        "price": 1485.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools?pf_t_form_factor=Laptop&page=5",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16 inch"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "TechtoSchool"
+      }
+    ]
+  },
+  "WisetekMarket": {
+    "competitor": "WisetekMarket",
+    "website": "https://www.wisetekmarket.com",
+    "scrape_date": "2026-05-12T19:04:16.184789",
+    "total_products": 1,
+    "skipped_products": 63,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "3560 15",
+        "product_type": "Laptop",
+        "title": "Dell Precision 3560 15.6\" 32GB 512GB SSD Core™ I7-1185G7 3GHz WIN11P, Silver \\(Certified Refurbished\\)",
+        "price": 404.74,
+        "url": "https://www.wisetekmarket.com/collections/laptops",
+        "config": {
+          "processor": "I7",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6 inch"
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": null,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "WisetekMarket"
+      }
+    ]
+  },
+  "TechForLess": {
+    "competitor": "TechForLess",
+    "website": "https://www.techforless.com",
+    "scrape_date": "2026-05-13T00:50:55.809873",
+    "total_products": 0,
+    "skipped_products": 0,
+    "products": []
   }
 }
