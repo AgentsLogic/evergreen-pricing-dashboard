@@ -2,10 +2,10 @@
   "TechtoSchool": {
     "competitor": "TechtoSchool",
     "website": "https://techtoschool.com",
-    "scrape_date": "2026-05-14T12:21:45.076411",
-    "total_products": 25,
-    "existing_products": 16,
-    "new_additions": 9,
+    "scrape_date": "2026-05-14T17:15:53.241459",
+    "total_products": 32,
+    "existing_products": 30,
+    "new_additions": 2,
     "products": [
       {
         "brand": "HP",
@@ -680,6 +680,146 @@
           "is_top_rated": null,
           "sales_rank": null
         },
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "ProBook 640 G8",
+        "product_type": "Laptop",
+        "title": "HP ProBook 640 G8 14\" Laptop",
+        "price": 455.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/hp-probook-640-g8-14-laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook x360 1040 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 1040 G8 14\" 2-in-1 Touchscreen Laptop",
+        "price": 565.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/hp-elitebook-x360-1040-g8-14-2-in-1-touchscreen-laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 845 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 845 G8 14\" Windows Notebook",
+        "price": 499.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/hp-elitebook-845-g8-14-business-laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 645 G9",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 645 G9 14\" Business Laptop",
+        "price": 495.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/hp-elitebook-645-g9-14-business-laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 850 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 850 G8 15.6\" Laptop",
+        "price": 499.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/hp-elitebook-850-g8-15-6-laptop",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkBook 14 G8 14",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkBook 14 G8 14\" Touchscreen Notebook",
+        "price": 1165.67,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/lenovo-thinkbook-14-g8-14-touchscreen-notebook",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "TechtoSchool"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 840 G8 14",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 840 G8 14\" Notebook",
+        "price": 360.0,
+        "url": "https://techtoschool.com/collections/pcs-for-schools/products/hp-elitebook-840-g8-14-notebook",
+        "config": {
+          "processor": null,
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
         "competitor": "TechtoSchool"
       }
     ]
