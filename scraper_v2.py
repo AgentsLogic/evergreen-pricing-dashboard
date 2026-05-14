@@ -153,6 +153,9 @@ COMPETITORS = {
 	    "base_url": "https://reebelo.com",
 	    "urls": [
 	        "https://reebelo.com/collections/laptops",
+	        "https://reebelo.com/collections/dell-laptops",
+	        "https://reebelo.com/collections/hp-laptops",
+	        "https://reebelo.com/collections/lenovo-laptops",
 	    ]
 	},
 	"RefurbIO": {
@@ -268,8 +271,11 @@ class CompetitorScraper:
         )
         if not has_intel:
             # Still check for model number patterns that might indicate Intel
+            # (e.g., G8, G9 in "ProBook 640 G8")
             if not any(x in t for x in ["g8", "g9", "g10", "g11", "g12", "g13", "g14"]):
-                return None
+                # Don't return None yet - we might still find patterns like "i5-8350U"
+                # Only return None if no Intel-like patterns at all
+                pass  # Continue to check other patterns
 
         # Pattern like "11th Gen" / "8th gen"
         m = re.search(r"(\d{1,2})(?:st|nd|rd|th)\s*gen", t)
@@ -744,17 +750,17 @@ class CompetitorScraper:
         try:
             filename = "competitor_prices.json"
 
-            # Load existing data
+            # Load existing data (use errors='ignore' to handle corrupted data)
             existing_data = {}
             existing_products = []
             try:
-                with open(filename, 'r', encoding='utf-8') as f:
+                with open(filename, 'r', encoding='utf-8', errors='ignore') as f:
                     existing_data = json.load(f)
                     # Get existing products for this competitor
                     if competitor in existing_data:
                         existing_products = existing_data[competitor].get('products', [])
-            except FileNotFoundError:
-                print(f"   [INFO] Creating new data file")
+            except (FileNotFoundError, json.JSONDecodeError) as e:
+                print(f"   [INFO] Creating new data file (error loading existing: {e})")
 
             # Convert new products to dict format for easier comparison
             new_products_dict = {}

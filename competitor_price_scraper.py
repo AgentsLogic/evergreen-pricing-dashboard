@@ -797,8 +797,12 @@ class CompetitorPriceScraper:
         # Extract brand
         brand = parse_brand_from_text(title)
 
-        # Extract model (look for specific model patterns)
-        model = self.extract_model_from_title(title)
+        # Try to extract a direct product URL from this section first (needed for model extraction)
+        product_url = self.extract_product_url_from_section(section, competitor)
+        final_url = product_url or page_url
+
+        # Extract model (look for specific model patterns, use URL for additional context)
+        model = self.extract_model_from_title_with_url(title, final_url)
 
         # Extract configuration details from all lines in section
         all_text = ' '.join(lines)
@@ -815,10 +819,6 @@ class CompetitorPriceScraper:
             config.screen_size = self.extract_screen_size(all_text)
         else:
             config.form_factor = extract_form_factor(all_text)
-
-        # Try to extract a direct product URL from this section (e.g., /p12345-...)
-        product_url = self.extract_product_url_from_section(section, competitor)
-        final_url = product_url or page_url
 
         # Clean the title to remove markdown formatting
         cleaned_title = clean_markdown_text(title)
@@ -865,9 +865,10 @@ class CompetitorPriceScraper:
     def extract_product_url_from_section(self, section: str, competitor: str) -> Optional[str]:
         """Try to extract a product detail URL from a section.
         For PCLiquidations, product pages look like /p12345-some-slug
+        For TechtoSchool and similar, product pages look like /products/model-name
         """
         try:
-            # Absolute URL first
+            # Absolute URL first - PCLiquidations pattern
             m_abs = re.search(r'(https?://[^\s"\)\]]*?/p\d{5,}-[a-z0-9\-]+)', section, re.IGNORECASE)
             if m_abs:
                 return m_abs.group(1)
@@ -878,9 +879,74 @@ class CompetitorPriceScraper:
                 base = COMPETITORS.get(competitor, {}).get('url', '').rstrip('/')
                 if base:
                     return f"{base}{m_rel.group(1)}"
+
+            # TechtoSchool-style URLs: /products/hp-probook-640-g8-14-laptop
+            m_products = re.search(r'(?:https?://[^\s"\)\]]*?)?\b(/products/[a-z0-9\-]+)', section, re.IGNORECASE)
+            if m_products:
+                base = COMPETITORS.get(competitor, {}).get('url', '').rstrip('/')
+                if base:
+                    return f"{base}{m_products.group(1)}"
+                elif m_products.group(1).startswith('http'):
+                    return m_products.group(1)
+                else:
+                    return f"https://{competitor.lower().replace(' ', '')}.com{m_products.group(1)}"
         except Exception:
             pass
         return None
+
+    def extract_model_from_title_with_url(self, title: str, url: Optional[str]) -> str:
+        """Extract model number from product title or URL.
+
+        URLs often contain the full model name, e.g.:
+        - /products/hp-probook-640-g8-14-laptop -> "HP ProBook 640 G8"
+        - /products/dell-latitude-7420-14-2-in-1 -> "Dell Latitude 7420"
+        """
+        # First try title
+        model = self.extract_model_from_title(title)
+        if model and len(model) > 5:
+            return model
+
+        # Try to extract from URL
+        if url:
+            # TechtoSchool pattern: /products/model-name
+            m = re.search(r'/products/([a-z0-9\-]+)', url, re.IGNORECASE)
+            if m:
+                slug = m.group(1)
+                # Convert slug to title-like format: hp-probook-640-g8-14-laptop -> HP ProBook 640 G8
+                # Split by hyphen and capitalize each word
+                parts = slug.split('-')
+                # Handle numbers followed by letters (like 640g8 -> 640 G8)
+                normalized_parts = []
+                for part in parts:
+                    if part.isdigit():
+                        normalized_parts.append(part)
+                    elif re.match(r'^[a-zA-Z]+$', part):
+                        normalized_parts.append(part.capitalize())
+                    else:
+                        # Part like "640g8" -> split into "640 G8"
+                        match = re.match(r'^(\d+)([a-zA-Z]+)$', part)
+                        if match:
+                            normalized_parts.append(match.group(1))
+                            normalized_parts.append(match.group(2).upper())
+                        else:
+                            normalized_parts.append(part)
+
+                # Join and clean up
+                model_from_url = ' '.join(normalized_parts)
+                # Post-process to handle common patterns
+                model_from_url = re.sub(r'\s+', ' ', model_from_url)
+                model_from_url = model_from_url.strip()
+
+                # Look for generation patterns like G8, G9, G10, G11 in the URL
+                gen_match = re.search(r'[gG](\d{1,2})', slug)
+                if gen_match and 'g' not in model_from_url.lower():
+                    gen_num = gen_match.group(1)
+                    model_from_url = f"{model_from_url} G{gen_num}"
+
+                if model_from_url:
+                    return model_from_url
+
+        return model if model else ""
 
     async def enrich_pcliquidations_grades(self, products: List[Product]) -> List[Product]:
         """Visit PCLiquidations product pages to fill missing cosmetic grades."""
