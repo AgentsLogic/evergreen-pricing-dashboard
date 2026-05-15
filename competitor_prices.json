@@ -2220,5 +2220,495 @@
         "competitor": "Reebelo"
       }
     ]
+  },
+  "DellRefurbished": {
+    "competitor": "DellRefurbished",
+    "website": "https://www.dellrefurbished.com",
+    "scrape_date": "2026-05-14T18:41:09.331608",
+    "total_products": 24,
+    "existing_products": 24,
+    "new_additions": 0,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340",
+        "price": 1109.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-000007/dell-latitude-5340/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "32 GB",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "13 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340",
+        "price": 1049.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-000015/dell-latitude-5340/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340",
+        "price": 989.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-000001/dell-latitude-5340/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "32 GB",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 999.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000005/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "32 GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 1129.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000006/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "32 GB (1x 32GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD Touch (1920 x 1080)",
+          "screen_size": "13.3"
+        },
+        "availability": "Only 8 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 979.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000003/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD Touch (1920 x 1080)",
+          "screen_size": "13.3"
+        },
+        "availability": "Only 4 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 1099.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000001/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD Touch (1920 x 1080)",
+          "screen_size": "13.3"
+        },
+        "availability": "13 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 1039.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000007/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1345U (10-Core, 3.50 GHz)",
+          "ram": "16 GB (1x 16GB)",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD Touch (1920 x 1080)",
+          "screen_size": "13.3"
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 1149.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000008/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "32 GB (1x 32GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD Touch (1920 x 1080)",
+          "screen_size": "13.3"
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340 Touch",
+        "price": 1019.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-touch-000009/dell-latitude-5340-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "32 GB (1x 32GB)",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD Touch (1920 x 1080)",
+          "screen_size": "13.3"
+        },
+        "availability": "Only 6 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 3440 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 3440 Touch",
+        "price": 829.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-3440-touch-000003/dell-latitude-3440-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i3-1315U (6-Core, 3.30 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "14\""
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 3440 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 3440 Touch",
+        "price": 1119.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-3440-touch-000004/dell-latitude-3440-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1335U (10-Core, 3.40 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "14\""
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 599.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000030/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1185G7 (4-Core, 3.00 GHz)",
+          "ram": "32 GB",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 459.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000040/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1145G7 (4-Core, 2.60 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 5 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 449.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000042/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1145G7 (4-Core, 2.60 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 439.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000043/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1135G7 (4-Core, 2.40 GHz)",
+          "ram": "8 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 409.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000039/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1145G7 (4-Core, 2.60 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320",
+        "price": 549.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-000201/dell-latitude-5320/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1185G7 (4-Core, 3.00 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 - No OS",
+        "price": 499.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-no-os-000014/dell-latitude-5320-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1185G7 (4-Core, 3.00 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch",
+        "price": 599.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-000112/dell-latitude-5320-touch/1.html",
+        "config": {
+          "processor": "1x Intel Core i5-1145G7 (4-Core, 2.60 GHz)",
+          "ram": "16 GB",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 529.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000031/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1185G7 (4-Core, 3.00 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade A",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 3 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320 Touch - No OS",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 Touch - No OS",
+        "price": 529.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5320-touch-no-os-000035/dell-latitude-5320-touch-no-os/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1185G7 (4-Core, 3.00 GHz)",
+          "ram": "32 GB",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 2 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340",
+        "price": 939.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-000004/dell-latitude-5340/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "16 GB",
+          "storage": "512 GB (1x 512 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5340",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5340",
+        "price": 919.0,
+        "url": "https://www.dellrefurbished.com/item/dell-latitude-5340-000003/dell-latitude-5340/1.html",
+        "config": {
+          "processor": "1x Intel Core i7-1365U (10-Core, 3.90 GHz)",
+          "ram": "16 GB",
+          "storage": "256 GB (1x 256 GB SSD)",
+          "cosmetic_grade": "Grade B",
+          "form_factor": null,
+          "screen_resolution": "FHD (1920 x 1080)",
+          "screen_size": "13.3\""
+        },
+        "availability": "Only 1 remaining",
+        "reviews": null,
+        "competitor": "DellRefurbished"
+      }
+    ]
   }
 }
