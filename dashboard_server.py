@@ -328,8 +328,9 @@ def run_scraper(scraper_type='basic', site='all'):
             return
 
         elif site == 'all':
-            # Optional: warn if no .env (we can still run without AI key)
-            env_file = Path('.env')
+            # Check for .env in project root (where scraper_v2.py lives)
+            project_root = Path(__file__).parent
+            env_file = project_root / '.env'
             if not env_file.exists():
                 warn_msg = "No .env found — proceeding without AI key; extraction may be less accurate."
                 scraping_status["error"] = None
@@ -476,7 +477,8 @@ def test_scraper():
 @app.route('/api/config')
 def get_config():
     """Get current configuration"""
-    env_file = Path('.env')
+    project_root = Path(__file__).parent
+    env_file = project_root / '.env'
 
     config = {
         "has_env_file": env_file.exists(),
