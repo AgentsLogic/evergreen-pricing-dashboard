@@ -1,4 +1,4 @@
-"""
+﻿"""
 Flask server for the price dashboard with working buttons
 """
 
@@ -209,7 +209,7 @@ def stop_scrape():
 
             scraping_status["running"] = False
             scraping_status["progress"] = "Stopped by user"
-            send_chat_message_sync("🛑 Scraper stopped by user", "warning", "system")
+            send_chat_message_sync("ðŸ›‘ Scraper stopped by user", "warning", "system")
 
             return jsonify({"message": "Scraper stopped successfully"})
         else:
@@ -228,12 +228,12 @@ def run_scraper(scraper_type='basic', site='all'):
 
     # Send initial chat message
     site_text = "all sites" if site == 'all' else site
-    send_chat_message_sync(f"🚀 Starting {scraper_type} scraper for {site_text}...", "info", "scraper")
+    send_chat_message_sync(f"ðŸš€ Starting {scraper_type} scraper for {site_text}...", "info", "scraper")
 
     try:
         # Always use the new scraper_v2.py
         scraping_status["progress"] = f"Running AI-powered scraper..."
-        send_chat_message_sync("🔍 Running AI-powered web scraper (scraper_v2.py)...", "info", "scraper")
+        send_chat_message_sync("ðŸ” Running AI-powered web scraper (scraper_v2.py)...", "info", "scraper")
         script = 'scraper_v2.py'
 
         # Ensure required modules are available in all branches
@@ -280,8 +280,8 @@ def run_scraper(scraper_type='basic', site='all'):
             if site != 'all':
                 cmd.extend(['--competitor', site])
 
-            send_chat_message_sync(f"⚡ Executing: python -u {script} --competitor {site}", "info", "scraper")
-            send_chat_message_sync("📋 Scraping single competitor with pagination...", "info", "scraper")
+            send_chat_message_sync(f"âš¡ Executing: python -u {script} --competitor {site}", "info", "scraper")
+            send_chat_message_sync("ðŸ“‹ Scraping single competitor with pagination...", "info", "scraper")
 
             # Set environment variable to force unbuffered output
             env = os.environ.copy()
@@ -303,7 +303,7 @@ def run_scraper(scraper_type='basic', site='all'):
 
             # Store process globally for stop functionality
             scraper_process = proc
-            send_chat_message_sync(f"✅ Process started (PID: {proc.pid})", "success", "scraper")
+            send_chat_message_sync(f"âœ… Process started (PID: {proc.pid})", "success", "scraper")
 
             # Start streaming output in background thread
             stream_thread = threading.Thread(target=stream_output, args=(proc,))
@@ -316,14 +316,14 @@ def run_scraper(scraper_type='basic', site='all'):
             if proc.returncode == 0:
                 scraping_status["progress"] = "Scraping completed successfully!"
                 scraping_status["last_run"] = datetime.now().isoformat()
-                send_chat_message_sync("✅ Scraping completed successfully!", "success", "scraper")
+                send_chat_message_sync("âœ… Scraping completed successfully!", "success", "scraper")
             else:
                 scraping_status["error"] = "Scraping failed - check logs"
                 scraping_status["progress"] = "Scraping failed"
-                send_chat_message_sync("❌ Scraping failed - check error logs", "error", "scraper")
+                send_chat_message_sync("âŒ Scraping failed - check error logs", "error", "scraper")
 
             # Finished (single-site)
-            send_chat_message_sync(f"🏁 Scraper process finished (exit={proc.returncode})", "info", "scraper")
+            send_chat_message_sync(f"ðŸ Scraper process finished (exit={proc.returncode})", "info", "scraper")
             scraping_status["running"] = False
             return
 
@@ -363,7 +363,7 @@ def run_scraper(scraper_type='basic', site='all'):
                                             msg_type = "error"
                                         elif any(x in decoded_line for x in ['WARNING', 'WARN']):
                                             msg_type = "warning"
-                                        elif any(x in decoded_line for x in ['SUCCESS', '✅', 'COMPLETED']):
+                                        elif any(x in decoded_line for x in ['SUCCESS', 'âœ…', 'COMPLETED']):
                                             msg_type = "success"
                                         else:
                                             msg_type = "info"
@@ -382,8 +382,8 @@ def run_scraper(scraper_type='basic', site='all'):
             # Build command - Use -u flag for unbuffered output
             cmd = [sys.executable, '-u', script]
 
-            send_chat_message_sync(f"⚡ Executing: python -u {script}", "info", "scraper")
-            send_chat_message_sync("📋 Scraping all 5 competitors with pagination...", "info", "scraper")
+            send_chat_message_sync(f"âš¡ Executing: python -u {script}", "info", "scraper")
+            send_chat_message_sync("ðŸ“‹ Scraping all 5 competitors with pagination...", "info", "scraper")
 
             # Set environment variable to force unbuffered output
             env = os.environ.copy()
@@ -407,8 +407,8 @@ def run_scraper(scraper_type='basic', site='all'):
             # Store process globally for stop functionality
             scraper_process = proc
 
-            send_chat_message_sync(f"✅ Process started (PID: {proc.pid})", "success", "scraper")
-            send_chat_message_sync(f"⏳ Waiting for scraper to complete (this may take 30+ minutes)...", "info", "scraper")
+            send_chat_message_sync(f"âœ… Process started (PID: {proc.pid})", "success", "scraper")
+            send_chat_message_sync(f"â³ Waiting for scraper to complete (this may take 30+ minutes)...", "info", "scraper")
 
             # Start streaming output in background thread
             stream_thread = threading.Thread(target=stream_output, args=(proc,))
@@ -424,25 +424,25 @@ def run_scraper(scraper_type='basic', site='all'):
             if proc.returncode == 0:
                 scraping_status["progress"] = "Scraping completed successfully!"
                 scraping_status["last_run"] = datetime.now().isoformat()
-                send_chat_message_sync("✅ Scraping completed successfully!", "success", "scraper")
+                send_chat_message_sync("âœ… Scraping completed successfully!", "success", "scraper")
             else:
                 scraping_status["error"] = "Scraping failed - check logs"
                 scraping_status["progress"] = "Scraping failed"
-                send_chat_message_sync("❌ Scraping failed - check error logs", "error", "scraper")
+                send_chat_message_sync("âŒ Scraping failed - check error logs", "error", "scraper")
 
             # Finished (all sites)
-            send_chat_message_sync(f"🏁 Scraper process finished (exit={proc.returncode})", "info", "scraper")
+            send_chat_message_sync(f"ðŸ Scraper process finished (exit={proc.returncode})", "info", "scraper")
 
     except subprocess.TimeoutExpired:
         error_msg = "Scraper timed out after 30 minutes"
         scraping_status["error"] = error_msg
         scraping_status["progress"] = "Timeout"
-        send_chat_message_sync(f"⏰ {error_msg}", "error", "scraper")
+        send_chat_message_sync(f"â° {error_msg}", "error", "scraper")
     except Exception as e:
         error_msg = str(e)
         scraping_status["error"] = error_msg
         scraping_status["progress"] = "Error occurred"
-        send_chat_message_sync(f"💥 Error occurred: {error_msg}", "error", "scraper")
+        send_chat_message_sync(f"ðŸ’¥ Error occurred: {error_msg}", "error", "scraper")
 
     finally:
         scraping_status["running"] = False
@@ -1124,3 +1124,6 @@ if __name__ == '__main__':
             file_observer.stop()
             file_observer.join()
             print("[WATCHER] File watcher stopped")
+
+
+
