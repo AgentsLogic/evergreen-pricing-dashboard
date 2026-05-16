@@ -8959,5 +8959,4817 @@
         "competitor": "RefurbIO"
       }
     ]
+  },
+  "DiscountComputerDepot": {
+    "competitor": "DiscountComputerDepot",
+    "website": "https://discountcomputerdepot.com",
+    "scrape_date": "2026-05-15T18:45:15.575469",
+    "total_products": 27,
+    "existing_products": 27,
+    "new_additions": 0,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "Latitude 7320",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7320 13.3\" FHD Intel Core i7 11th Gen 16GB RAM 512GB SSD Windows 11",
+        "price": 349.98,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-7320-13-3-fhd-intel-core-i7-11th-gen-16gb-ram-512gb-ssd-windows-11/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "13.3"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5590",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5590 15.6 Laptop Intel Core i7 8th Gen. 32GB RAM 1TB SSD Windows 11 Pro, Wi-Fi",
+        "price": 499.98,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5590-15-6-laptop-intel-core-i7-8th-gen-32gb-ram-1tb-ssd-windows-11-pro-wi-fi/",
+        "config": {
+          "processor": "Intel Core i7 8th Gen.",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 3590",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 3590 15.6\" Laptop Computer Intel Core i5 8th Gen 8GB RAM 256GB SSD Wi-Fi Windows 11 Pro",
+        "price": 209.99,
+        "url": "https://www.discountcomputerdepot.com/refurbished-computers/dell-latitude-3590-15-6-laptop-computer-intel-core-i5-8th-gen-8gb-ram-256gb-ssd-wi-fi-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5 8th Gen",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "ZBook Fury 15 G8",
+        "product_type": "Laptop",
+        "title": "HP ZBook Fury 15 G8 Laptop Computer 15.6\" Intel Core i7 11th Generation 16GB RAM 512GB SSD Wi-Fi Windows 11 Professional",
+        "price": 375.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/hp-zbook-fury-15-g8-laptop-computer-15-6-intel-core-i7-11th-generation-16gb-ram-512gb-ssd-wi-fi-windows-11-professional/",
+        "config": {
+          "processor": "Intel Core i7 11th Generation",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5430",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5430 Laptop 14” FHD Intel Core i7 12th Gen 10-Core 32GB RAM 1TB SSD Windows 11 Pro",
+        "price": 599.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5430-laptop-14-fhd-intel-core-i7-12th-gen-10-core-32gb-ram-1tb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i7 12th Gen 10-Core",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7430",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7430 14in Laptop Intel i5 12th Gen 16GB RAM 256GB SSD Windows 11 Pro",
+        "price": 349.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-7430-14in-laptop-intel-i5-12th-gen-16gb-ram-256gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel i5 12th Gen",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 2,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "ProBook 450 G7",
+        "product_type": "Laptop",
+        "title": "HP ProBook 450 G7 Laptop Computer 15.6\" Intel Core i7 10th Generation 16GB RAM 512GB SSD Wi-Fi Windows 11 Professional",
+        "price": 349.98,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/hp-probook-450-g7-laptop-computer-15-6-intel-core-i7-10th-generation-16gb-ram-512gb-ssd-wi-fi-windows-11-professional/",
+        "config": {
+          "processor": "Intel Core i7 10th Generation",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5420",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5420 Laptop 14” FHD Core i7 11th Gen 32GB RAM 1TB SSD Windows 11 Pro",
+        "price": 499.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5420-laptop-14-fhd-core-i7-11th-gen-32gb-ram-1tb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Core i7 11th Gen",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 1,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5530",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5530 15.6\" Laptop Intel Core i5 12th Gen 16GB RAM 1TB SSD Windows 11 Pro",
+        "price": 459.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5530-15-6-laptop-intel-core-i5-12th-gen-16gb-ram-1tb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5 12th Gen",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5530",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5530 15.6\" Laptop Intel Core i5 12th Gen 16GB RAM 256GB SSD Windows 11 Pro",
+        "price": 399.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5530-15-6-laptop-intel-core-i5-12th-gen-16gb-ram-256gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5 12th Gen",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkPad X1 Carbon",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkPad X1 Carbon Laptop Computer Intel i7 11th Gen 16GB 512GB SSD Windows 11 Pro",
+        "price": 330.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/lenovo-thinkpad-x1-carbon-laptop-computer-intel-i7-11th-gen-16gb-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel i7 11th gen",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 5570",
+        "product_type": "Laptop",
+        "title": "Dell Precision 5570 15.6\" Workstation Laptop Intel Core i9 12th Gen. 14-Cores 5.00GHz 32GB RAM 1TB SSD + 1TB SSD Windows 11 Pro NVIDIA",
+        "price": 1100.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-precision-5570-15-6-workstation-laptop-intel-core-i9-12th-gen-14-cores-5-00ghz-32gb-ram-1tb-ssd-1tb-ssd-windows-11-pro-nvidia/",
+        "config": {
+          "processor": "Intel Core i9 12th Gen. 14-Cores 5.00GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD + 1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkPad T15",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkPad T15 15.6in Laptop Intel i7 10th Gen 16GB RAM 512GB SSD Windows 11 Pro",
+        "price": 384.98,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/lenovo-thinkpad-t15-15-6in-laptop-intel-i7-10th-gen-16gb-ram-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel i7 10th Gen",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5320",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5320 13.3” Laptop 2-in-1 Touchscreen Intel Core i7 11th Gen. 16GB RAM 1TB SSD Windows 11",
+        "price": 414.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5320-13-3-laptop-2-in-1-touchscreen-intel-core-i7-11th-gen-16gb-ram-1tb-ssd-windows-11/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen.",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "13.3"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5530",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5530 15in Laptop Intel Core i5-1250P 16GB RAM 512GB SSD Windows 11 Pro",
+        "price": 424.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5530-15in-laptop-intel-core-i5-1250p-16gb-ram-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5-1250P",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkPad T14 Gen 1",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkPad T14 Gen 1 Laptop Computer 14\" Intel Core i5 10th Generation 16GB RAM 512GB SSD Wi-Fi Windows 11 Professional",
+        "price": 285.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/lenovo-thinkpad-t14-gen-1-laptop-computer-14-intel-core-i5-10th-generation-16gb-ram-512gb-ssd-wi-fi-windows-11-professional/",
+        "config": {
+          "processor": "Intel Core i5 10th Generation",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 860 G10",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 860 G10 Laptop 16\" FHD Intel Core i7 13th Gen. 16GB RAM 512GB SSD Windows 11 Pro",
+        "price": 600.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/hp-elitebook-860-g10-laptop-16-fhd-intel-core-i7-13th-gen-16gb-ram-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i7 13th Gen.",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "16"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7420",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7420 14in FHD Laptop Intel i7-1185G7 32GB RAM 512GB SSD Windows 11 Pro",
+        "price": 449.98,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-7420-14in-fhd-laptop-intel-i7-1185g7-32gb-ram-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel i7-1185G7",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 850 G7",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 850 G7 15.6in Laptop Intel i7 10th Gen 16GB RAM 512GB SSD Windows 11 Pro",
+        "price": 370.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/hp-elitebook-850-g7-15-6in-laptop-intel-i7-10th-gen-16gb-ram-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel i7 10th Gen",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5420",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5420 14\" Laptop Computer Intel Core i5 11th Gen 8GB 256GB SSD Wi-Fi Windows 11 Professional",
+        "price": 230.0,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5420-14-laptop-computer-intel-core-i5-11th-gen-8gb-256gb-ssd-wi-fi-windows-11-professional/",
+        "config": {
+          "processor": "Intel Core i5 11th Gen",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 650 G5",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 650 G5 15.6\" Laptop Computer Intel Core i5 8th Gen 16GB RAM 256GB SSD Windows 11",
+        "price": 239.95,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/hp-elitebook-650-g5-15-6-laptop-computer-intel-core-i5-8th-gen-16gb-ram-256gb-ssd-windows-11/",
+        "config": {
+          "processor": "Intel Core i5 8th Gen",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5430",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5430 Laptop 14” FHD Intel Core i5 12th Gen 4.4GHz 10-Core 16GB RAM 512GB SSD Windows 11 Pro",
+        "price": 349.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5430-laptop-14-fhd-intel-core-i5-12th-gen-4-4ghz-10-core-16gb-ram-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5 12th Gen 4.4GHz 10-Core",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7400",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7400 14\" Laptop PC Intel Core i5 8th Gen. 16GB RAM 256GB SSD Windows 11 Pro",
+        "price": 229.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-7400-14-laptop-pc-intel-core-i5-8th-gen-16gb-ram-256gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i5 8th Gen.",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5420",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5420 14\" Business Laptop Intel Core i7 11th Gen. 16GB DDR4 RAM 256GB SSD Windows 11 Pro",
+        "price": 319.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-latitude-5420-14-business-laptop-intel-core-i7-11th-gen-16gb-ddr4-ram-256gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen.",
+          "ram": "16GB DDR4",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3560",
+        "product_type": "Laptop",
+        "title": "Dell Precision 3560 15.6\" Workstation Laptop Intel Core i7 11th Gen 4.7GHz 16GB RAM 512GB SSD Windows 11 Pro NVIDIA Quadro Graphics",
+        "price": 474.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-precision-3560-15-6-workstation-laptop-intel-core-i7-11th-gen-4-7ghz-16gb-ram-512gb-ssd-windows-11-pro-nvidia-quadro-graphics/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen 4.7GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3561",
+        "product_type": "Laptop",
+        "title": "Dell Precision 3561 15.6\" Workstation Laptop Intel Core i7 11th Gen 8-Core 4.6GHz 32GB RAM 512GB SSD Windows 11 Pro NVIDIA Graphics",
+        "price": 499.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-precision-3561-15-6-workstation-laptop-intel-core-i7-11th-gen-8-core-4-6ghz-32gb-ram-512gb-ssd-windows-11-pro-nvidia-graphics/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen 8-Core 4.6GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3560",
+        "product_type": "Laptop",
+        "title": "Dell Precision 3560 15.6\" Workstation Laptop Intel Core i7 11th Gen 4.7GHz 16GB RAM 512GB SSD Windows 11 NVIDIA Quadro Graphics",
+        "price": 449.99,
+        "url": "https://www.discountcomputerdepot.com/todays-top-deals-save-big/dell-precision-3560-15-6-workstation-laptop-intel-core-i7-11th-gen-4-7ghz-16gb-ram-512gb-ssd-windows-11-nvidia-quadro-graphics/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen 4.7GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "DiscountComputerDepot"
+      }
+    ]
+  },
+  "ReviveIT": {
+    "competitor": "ReviveIT",
+    "website": "https://reviveit.io",
+    "scrape_date": "2026-05-15T18:55:25.399654",
+    "total_products": 146,
+    "existing_products": 143,
+    "new_additions": 3,
+    "products": [
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 Micro Hex-Core i5-8500T 2.10GHz WiFi 16GB 512GB SSD Windows 11 Pro - 1 Year Warranty",
+        "price": 339.99,
+        "url": "https://reviveit.io/d7060dm8500twaw10a2-bc/",
+        "config": {
+          "processor": "Intel Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 SFF Desktop Intel Hex-Core i5-8400 2.80GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 349.99,
+        "url": "https://reviveit.io/d3060s8400m-2w11j1/",
+        "config": {
+          "processor": "Intel Core i5-8400 2.80GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 10 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5060 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 439.99,
+        "url": "https://reviveit.io/d5060s8700w11j1/",
+        "config": {
+          "processor": "i7-8700 3.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 424.99,
+        "url": "https://reviveit.io/d7060s8700w11j1/",
+        "config": {
+          "processor": "i7-8700 3.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5060 SFF Desktop i5-8500 Hex-Core 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 399.99,
+        "url": "https://reviveit.io/d5060s8500w11j1/",
+        "config": {
+          "processor": "Intel Core i5-8500 Hex-Core 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3070 Micro Desktop Hex-Core i5-9500T 2.20GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 389.99,
+        "url": "https://reviveit.io/d3070dm9500twaw11j1/",
+        "config": {
+          "processor": "Intel Core i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 SFF Desktop i5-8500 Hex-Core Min 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 374.99,
+        "url": "https://reviveit.io/d3070s8500now11j1/",
+        "config": {
+          "processor": "Intel Core i5-8500 Hex-Core 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5070 SFF Desktop Intel Hex-Core i5-9500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 369.99,
+        "url": "https://reviveit.io/d5070s9500m-2w11j1/",
+        "config": {
+          "processor": "Intel Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3430 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3430 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 459.99,
+        "url": "https://reviveit.io/d3430s8700w11j1/",
+        "config": {
+          "processor": "Intel Core i7-8700 3.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop Intel Hex-Core i5-10500T 2.30GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 434.99,
+        "url": "https://reviveit.io/h800g6dm10500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G5 SFF",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G5 SFF Intel Hex-Core i5-9500 3.00GHz 16GB 512GB SSD Windows 11 Pro",
+        "price": 369.99,
+        "url": "https://reviveit.io/h600g5s9500w11j1/",
+        "config": {
+          "processor": "Intel Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop Intel Hex-Core i5-9500 3.00GHz Wi-Fi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 434.99,
+        "url": "https://reviveit.io/d7070dm9500waw11j1/",
+        "config": {
+          "processor": "Intel Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 5 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3080 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3080 SFF Desktop Intel Hex-Core i5-10500 3.10GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 464.99,
+        "url": "https://reviveit.io/d3080s10500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 SFF Desktop Intel 8-Core i7-9700 3.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": "https://reviveit.io/d7070s9700m-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop Intel Hex-Core i5-9500 3.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 409.99,
+        "url": "https://reviveit.io/h800g5dm9500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 5 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G8 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G8 Desktop Mini WiFi Intel Hex-Core i5-11500T 1.50GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 564.99,
+        "url": "https://reviveit.io/h800g8dm11500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-11500T 1.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Desktop Micro Core i5-9500T 2.20GHz Wi-Fi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 414.99,
+        "url": "https://reviveit.io/d7070dm9500twaw11j1/",
+        "config": {
+          "processor": "Intel Core i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop Intel Hex-Core i5-8500 3.0GHz Wi-Fi 16GB 512GB SSD Windows 11 Pro 1 Yr Wty",
+        "price": 369.99,
+        "url": "https://reviveit.io/desktops/dell-optiplex-7070-micro-desktop-intel-hex-core-i5-8500-3-0ghz-wi-fi-16gb-512gb-ssd-windows-11-pro-1-yr-wty/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.0GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 SFF Desktop Intel 8-Core i7-9700 3.00GHz 32GB 1TB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 514.99,
+        "url": "https://reviveit.io/d7070s9700m-2w11o1-bc/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700 3.00GHz",
+          "ram": "32GB",
+          "storage": "1TB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3430 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3430 SFF Desktop Intel Hex-Core i5-8500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 369.99,
+        "url": "https://reviveit.io/d3430s8500w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Left",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M80q Gen 3",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M80q Gen 3 Tiny Desktop Intel Hex-Core i5-12500T 2.00GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 599.99,
+        "url": "https://reviveit.io/lm80qg3td12500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 SFF Desktop Intel Hex-Core i5-8400 2.80GHz 8GB 256GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 324.99,
+        "url": "https://reviveit.io/d3060s8400m-2w11e1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8400 2.80GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 10 Left",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 SFF Desktop i5-8500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 379.99,
+        "url": "https://reviveit.io/d7060s8500w11j1/",
+        "config": {
+          "processor": "Intel i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop Intel i5-9500T 2.20GHz Wi-Fi 16GB 512GB SSD Windows 11 Pro",
+        "price": 514.99,
+        "url": "https://reviveit.io/deals/dell-optiplex-7070-micro-desktop-intel-i5-9500t-2-20ghz-wi-fi-16gb-512gb-ssd-windows-11-pro/",
+        "config": {
+          "processor": "Intel i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop Intel Hex-Core i5-9500T 2.20GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 424.99,
+        "url": "https://reviveit.io/desktops/dell-optiplex-7070-micro-desktop-intel-hex-core-i5-9500t-2-20ghz-16gb-512gb-ssd-win-11-pro-1-yr-wty/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7080 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7080 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 16GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": "https://reviveit.io/d7080dm10500twam-2w11n1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G4 Desktop Mini",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G4 Desktop Mini Intel Hex-Core i5-8500T 2.10GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 334.99,
+        "url": "https://reviveit.io/h600g4dm8500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3070 Micro Desktop Hex-Core i5-9500T 2.20GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 389.99,
+        "url": "https://reviveit.io/d3070dm9500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3090 Micro Desktop Intel Hex-Core i5-10400T 2.00GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 444.99,
+        "url": "https://reviveit.io/d3090dm10400twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5070 SFF Desktop 8-Core i7-9700 3.00GHz 32GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 499.99,
+        "url": "https://reviveit.io/d5070s9700w11k1-bc/",
+        "config": {
+          "processor": "8-Core i7-9700 3.00GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop Intel 8-Core i7-9700 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 484.99,
+        "url": "https://reviveit.io/desktops/dell-optiplex-7070-micro-desktop-intel-8-core-i7-9700-3-00ghz-16gb-512gb-ssd-win-11-pro-1-yr-wty/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3070 Micro Desktop Hex-Core i5-9500T 2.20GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 429.99,
+        "url": "https://reviveit.io/d3070dm9500tw11j1/",
+        "config": {
+          "processor": "Hex-Core i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop Intel Hex-Core i5-10500 3.10GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 424.99,
+        "url": "https://reviveit.io/h800g6dm10500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3090 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 419.99,
+        "url": "https://reviveit.io/d3090dm10500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5080 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5080 SFF Desktop Intel 8-Core i7-10700 2.90GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 599.99,
+        "url": "https://reviveit.io/d5080s10700m-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-10700 2.90GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 Micro Desktop Intel Hex-Core i5-10400T 2.00GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 469.99,
+        "url": "https://reviveit.io/d5090dm10400twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7090 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 474.99,
+        "url": "https://reviveit.io/d7090dm10500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3431 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3431 SFF Desktop 6-Core i5-9500 Min 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 399.99,
+        "url": "https://reviveit.io/d3431s9500w11j1/",
+        "config": {
+          "processor": "6-Core i5-9500 Min 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 400 G5 SFF",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 400 G5 SFF Desktop Intel Hex-Core i5-8500 3.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 359.99,
+        "url": "https://reviveit.io/h400g5s8500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q Tiny Desktop Intel i5-8400T 1.70GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 344.99,
+        "url": "https://reviveit.io/lm720qtd8400tw11j1/",
+        "config": {
+          "processor": "Intel i5-8400T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3080 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3080 SFF Desktop Intel Hex-Core i5-10500 3.10GHz 32GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 549.99,
+        "url": "https://reviveit.io/d3080s10500m-2w11k1-bc/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "32GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop 6-Core i5-8400T 1.70GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 329.99,
+        "url": "https://reviveit.io/d7070dm8400twaw11j1/",
+        "config": {
+          "processor": "6-Core i5-8400T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop Intel Hex-Core i5-9500 3.00GHz Wi-Fi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 419.99,
+        "url": "https://reviveit.io/h800g5dm9500wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 Mini Desktop Intel Hex-Core i5-9500T 2.20GHz Wi-Fi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 419.99,
+        "url": "https://reviveit.io/h800g5dm9500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500T 2.20GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 SFF Desktop Intel Hex-Core i5-8400 2.80GHz 32GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 429.99,
+        "url": "https://reviveit.io/d3060s8400m-2w11o1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8400 2.80GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 10 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5060 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5060 Micro Desktop Intel Hex-Core i5-8500T 3.50GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 364.99,
+        "url": "https://reviveit.io/d5060dm8500tw11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500T 3.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 Micro Desktop Intel Hex-Core i5-10400T 2.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 474.99,
+        "url": "https://reviveit.io/d5090dm10400tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7010 Micro",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7010 Micro Desktop Intel 14-Core i5-13500T 1.60GHz Wi-Fi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 734.99,
+        "url": "https://reviveit.io/desktops/dell-optiplex-7010-micro-desktop-intel-14-core-i5-13500t-1-60ghz-wi-fi-16gb-512gb-ssd-win-11-pro-1-yr-wty/",
+        "config": {
+          "processor": "Intel 14-Core i5-13500T 1.60GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3431 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3431 SFF Desktop 6-Core i5-9500 Min 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": null,
+        "config": {
+          "processor": "6-Core i5-9500 Min 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G4 Mini Desktop Intel Hex-Core i5-8500 3.00GHz 16GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 389.99,
+        "url": "https://reviveit.io/h800g4dm8500m-2w11n1-bc/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3000",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3000 SFF Desktop Intel Hex-Core i5-12500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": "https://reviveit.io/d3000s12500nom-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060 Desktop Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 Desktop Micro Intel Quad-Core i5-8400T 1.70GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 369.99,
+        "url": "https://reviveit.io/d3060dm8400tm-2w11j1/",
+        "config": {
+          "processor": "Intel Quad-Core i5-8400T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060 SFF Desktop",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 SFF Desktop Intel Hex-Core i5-8400 2.80GHz 32GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 389.99,
+        "url": "https://reviveit.io/d3060s8400m-2w11k1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8400 2.80GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 10 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M920q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M920q Tiny Desktop Intel Hex-Core i7-8700T 2.40GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 444.99,
+        "url": "https://reviveit.io/lm920qtd8700twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i7-8700T 2.40GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 Desktop Micro i5-8500T 2.10GHz Wi-Fi 16GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 409.99,
+        "url": "https://reviveit.io/d3060dm8500twaw11n1-bc/",
+        "config": {
+          "processor": "i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 3070 SFF Desktop i5-8500 Hex-Core Min 3.00GHz 16GB 512GB SSD Windows 11 Pro 1 Yr Wty",
+        "price": 379.99,
+        "url": "https://reviveit.io/d3070s8500w11j1/",
+        "config": {
+          "processor": "i5-8500 Hex-Core Min 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5000",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5000 Micro Desktop Intel Hex-Core i5-12500T 2.00GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 649.99,
+        "url": "https://reviveit.io/d5000dm12500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5070 SFF Desktop 8-Core i7-9700 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 439.99,
+        "url": "https://reviveit.io/d5070s9700w11j1/",
+        "config": {
+          "processor": "8-Core i7-9700 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7000",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7000 Micro Desktop Intel Hex-Core i5-12500 3.00GHz Wi-Fi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 709.99,
+        "url": "https://reviveit.io/d7000dm12500wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7080",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7080 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 32GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 559.99,
+        "url": "https://reviveit.io/d7080dm10500twam-2w11o1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7090",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7090 SFF Desktop Core i5-10400 2.90GHz 16GB 512GB SSD Windows 11 Pro 1 Yr Wty",
+        "price": 509.99,
+        "url": "https://reviveit.io/d7090s10400w11j1/",
+        "config": {
+          "processor": "Core i5-10400 2.90GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4 SFF",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G4 SFF Desktop Intel Hex-Core i5-8500 3.0GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 374.99,
+        "url": "https://reviveit.io/h800g4s8500w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.0GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q G2 Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q G2 Tiny Desktop Intel Hex-Core i5-10400T 2.00GHz Wi-Fi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 434.99,
+        "url": "https://reviveit.io/lm70qg2td10400twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q Tiny Desktop Intel Hex-Core i5-9500T 2.2GHz M.2 SSD 16GB 512GB - Wifi Antenna Win 11 Pro 1 Yr Wty",
+        "price": 389.99,
+        "url": "https://reviveit.io/lm720qtd9500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500T 2.2GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720Q Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720Q Tiny Desktop Intel i5-8400T 1.70GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 354.99,
+        "url": "https://reviveit.io/lm720qtd8400twaw11j1/",
+        "config": {
+          "processor": "Intel i5-8400T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3070 SFF Desktop Intel Hex-Core i5-9500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty - No Optical Drive",
+        "price": 404.99,
+        "url": "https://reviveit.io/d3070s9500nom-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 9 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7000 SFF Desktop Intel Hex-Core i5-12500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 674.99,
+        "url": "https://reviveit.io/d7000s12500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 Micro Desktop Intel Hex-Core i5-8500T 2.10GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 329.99,
+        "url": "https://reviveit.io/d7060dm8500tw11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 400 G4 Mini",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 400 G4 Mini Desktop Intel Hex-Core i5-8500T 2.10GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 334.99,
+        "url": "https://reviveit.io/h400g4dm8500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5000 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5000 Micro Desktop Intel 12-Core i7-12700T 140GHz 32GB 512GB M.2 SSD Windows 11 Pro",
+        "price": 799.99,
+        "url": "https://reviveit.io/d5000dm12700tm-2w11k1/",
+        "config": {
+          "processor": "Intel 12-Core i7-12700T 140GHz",
+          "ram": "32GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5060 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 32GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 524.99,
+        "url": "https://reviveit.io/d5060s8700w11o1/",
+        "config": {
+          "processor": "Intel Hex-Core i7-8700 3.20GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 Micro Desktop Intel Hex-Core i5-8600 3.10GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 364.99,
+        "url": "https://reviveit.io/d7060dm8600w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8600 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "Elite Mini 600 G9 Mini",
+        "product_type": "Desktop",
+        "title": "HP Elite Mini 600 G9 Mini Desktop Intel Hex-Core i5-12400T 1.80GHz 16GB DDR5 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 649.99,
+        "url": "https://reviveit.io/h600g9dm12400t5m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12400T 1.80GHz",
+          "ram": "16GB DDR5",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 5 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q G2 Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q G2 Tiny Desktop Intel Hex-Core i5-10400T 2.00GHz Wi-Fi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": "https://reviveit.io/desktops/?page=6",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop Intel Hex-Core i5-10500 3.10GHz WiFi 32GB 1TB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 579.99,
+        "url": "https://reviveit.io/h800g6dm10500wam-2w11o1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "32GB",
+          "storage": "1TB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 SFF",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 SFF Desktop Intel Hex-Core i5-10500 3.10GHz M.2 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 479.99,
+        "url": "https://reviveit.io/h800g6s10500nom-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q G2 Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q G2 Tiny Desktop Intel Hex-Core i5-11400T 1.30GHz WiFi 16GB 512GB Win 11 Pro 1 Yr Wty",
+        "price": 509.99,
+        "url": "https://reviveit.io/lm70qg2td11400twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-11400T 1.30GHz",
+          "ram": "16GB",
+          "storage": "512GB",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q Tiny",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q Tiny Desktop Intel Hex-Core i5-10400T 2.00GHz Wi-Fi 32GB 256GB M.2 SSD Win 11 Pro 1 Yr Wty - Certified Refurbished",
+        "price": 659.99,
+        "url": "https://reviveit.io/lm70qtd10400twam-2w11g1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "32GB",
+          "storage": "256GB M.2 SSD",
+          "cosmetic_grade": "Grade B",
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3000 SFF Desktop Intel Hex-Core i3-12300 3.50GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 499.99,
+        "url": "https://reviveit.io/d3000s12300nom-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i3-12300 3.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3080 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3080 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 489.99,
+        "url": "https://reviveit.io/d3080dm10500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 SFF Desktop Intel Hex-Core i5-10400 2.90GHz 32GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 559.99,
+        "url": "https://reviveit.io/d5090s10400w11k1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400 2.90GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7000 Micro",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7000 Micro Desktop Intel Hex-Core i5-12500T 2.00GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 659.99,
+        "url": "https://reviveit.io/d7000dm12500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 1,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7070 Micro Desktop Intel Hex-Core i5-8500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 359.99,
+        "url": "https://reviveit.io/d7070dm8500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7090 Micro Desktop Intel 8-Core i7-11700 2.50GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty - Wifi Antenna",
+        "price": 624.99,
+        "url": "https://reviveit.io/d7090dm11700waw11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-11700 2.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7090 Micro Desktop Intel Hex-Core i5-10400 2.90GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 469.99,
+        "url": "https://reviveit.io/d7090dm10400wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400 2.90GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 SFF",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 SFF Desktop Intel Hex-Core i5-10500 3.10GHz M.2 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": null,
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5000 SFF Desktop Intel Hex-Core i5-12400 2.50GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 659.99,
+        "url": "https://reviveit.io/d5000s12400m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12400 2.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5060 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 32GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 494.99,
+        "url": "https://reviveit.io/d5060s8700w11k1/",
+        "config": {
+          "processor": "Intel Hex-Core i7-8700 3.20GHz",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5070",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 5070 SFF Desktop 8-Core i7-9700 3.00GHz 32GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 549.99,
+        "url": "https://reviveit.io/d5070s9700w11l1-bc/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700 3.00GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5080 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5080 Micro Desktop Intel Hex-Core i5-10400T 2.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 499.99,
+        "url": "https://reviveit.io/d5080dm10400tw11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 9 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkStation P350 Tower",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkStation P350 Tower Workstation 8-Core i7-11700 2.50GHz 16GB 512GB SSD Win 11 Pro",
+        "price": 649.99,
+        "url": "https://reviveit.io/lp350t11700w11j1/",
+        "config": {
+          "processor": "i7-11700 2.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3000 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3000 Micro Desktop Intel Hex-Core i5-12500T 2.00GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 604.99,
+        "url": "https://reviveit.io/d3000dm12500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 10 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3060 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3060 Desktop Micro i5-8500T 2.10GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 344.99,
+        "url": "https://reviveit.io/d3060dm8500tm-2w11j1/",
+        "config": {
+          "processor": "i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3070 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3070 Micro Desktop Hex-Core i5-8500T 2.10GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 339.99,
+        "url": "https://reviveit.io/d3070dm8500twam-2w11j1/",
+        "config": {
+          "processor": "Hex-Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 3080 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 3080 Micro Intel Hex-Core i5-10400T 2.00GHz WiFi 16GB 512GB SSD Windows 11 Pro 1 Yr Wty",
+        "price": 484.99,
+        "url": "https://reviveit.io/d3080dm10400twaw11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5000 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5000 Micro Desktop Intel 12-Core i7-12700T 140GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 759.99,
+        "url": "https://reviveit.io/d5000dm12700tm-2w11j1/",
+        "config": {
+          "processor": "Intel 12-Core i7-12700T 140GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7010 Micro Plus",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7010 Micro Plus Desktop Intel 16-Core i7-13700T 1.40GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 834.99,
+        "url": "https://reviveit.io/products.php?product=Dell-OptiPlex-7010-Micro-Plus-Desktop-Intel-16%252dCore-i7%252d13700T-1.40GHz-WiFi-16GB-512GB-SSD-Win-11-Pro-1-Yr-Wty",
+        "config": {
+          "processor": "Intel 16-Core i7-13700T 1.40GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7010 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7010 SFF Desktop Intel 14-Core i5-13500 1.80GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 714.99,
+        "url": "https://reviveit.io/d7010s13500m-2w11j1/",
+        "config": {
+          "processor": "Intel 14-Core i5-13500 1.80GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 Desktop Intel Hex-Core i5-8500 3.00GHz - Wifi Antenna 16GB 512GB Win 11 Pro 1 Yr Wty",
+        "price": 319.99,
+        "url": "https://reviveit.io/d7060dm8500wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 Micro Desktop Intel Hex-Core i5-8500T 2.10GHz WiFi 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 339.99,
+        "url": "https://reviveit.io/d7060dm8500twaw11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 Micro Desktop Intel Hex-Core i5-10400T 2.00GHz WiFi 8GB 256GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 444.99,
+        "url": "https://reviveit.io/d5090dm10400twam-2w11e1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 9 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 Micro Desktop Intel Hex-Core i7-11700T 1.40GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty - WiFi Antenna",
+        "price": 579.99,
+        "url": "https://reviveit.io/d5090dm11700twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i7-11700T 1.40GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 SFF Desktop Intel Hex-Core i5-10400 2.90GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 509.99,
+        "url": "https://reviveit.io/d5090s10400w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400 2.90GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 5090 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 5090 SFF Desktop Intel Hex-Core i5-11400 2.60GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 559.99,
+        "url": "https://reviveit.io/d5090s11400nom-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-11400 2.60GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7000 Micro",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7000 Micro Desktop Intel 12-Core i7-12700T 1.40GHz Wi-Fi 16GB 512GB M.2 Win 11 Pro 1 Yr Wty",
+        "price": 779.99,
+        "url": "https://reviveit.io/d7000dm12700twam-2w10hj1/",
+        "config": {
+          "processor": "Intel 12-Core i7-12700T 1.40GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7000 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7000 SFF Desktop Intel 12-Core i7-12700 3.60GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 774.99,
+        "url": "https://reviveit.io/d7000s12700m-2w11j1/",
+        "config": {
+          "processor": "Intel 12-Core i7-12700 3.60GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7010 Micro",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7010 Micro Desktop Intel 14-Core i5-13500 2.50GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 724.99,
+        "url": "https://reviveit.io/d7010dm13500m-2w11j1/",
+        "config": {
+          "processor": "Intel 14-Core i5-13500 2.50GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 4 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7010 Micro Plus",
+        "product_type": "Desktop",
+        "title": "Dell OptiPlex 7010 Micro Plus Desktop Intel 14-Core i5-13500T 1.60GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 724.99,
+        "url": "https://reviveit.io/d7010dm13500tm-2w11j1/",
+        "config": {
+          "processor": "Intel 14-Core i5-13500T 1.60GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7010 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7010 SFF Desktop Intel 14-Core i5-13500 1.80GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": null,
+        "config": {
+          "processor": "Intel 14-Core i5-13500 1.80GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "Elite Mini 800 G9",
+        "product_type": "Desktop",
+        "title": "HP Elite Mini 800 G9 Mini Desktop Intel Hex-Core i5-12500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty - WiFi Antenna",
+        "price": 589.99,
+        "url": "https://reviveit.io/h800g9dm12500wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4 Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G4 Mini Desktop Intel Hex-Core i5-8500 3.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": "https://reviveit.io/h800g4dm8500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5 SFF",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 SFF Desktop Intel 8-Core i7-9700 3.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 474.99,
+        "url": "https://reviveit.io/h800g5s9700m-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G5 SFF",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G5 SFF Desktop Intel Hex-Core i5-9500 3.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 414.99,
+        "url": "https://reviveit.io/h800g5s9500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7080 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7080 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 16GB 512GB M.2 SSD Windows 11 Pro 1 Yr Wty",
+        "price": 464.99,
+        "url": "https://reviveit.io/desktops/dell-optiplex-7080-micro-desktop-intel-hex-core-i5-10500t-2-30ghz-16gb-512gb-m-2-ssd-windows-11-pro-1-yr-wty/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7080 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7080 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 479.99,
+        "url": "https://reviveit.io/d7080dm10500twaw11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7080 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7080 SFF Desktop Intel Hex-Core i5-10400 2.90GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 549.99,
+        "url": "https://reviveit.io/d7080s10400w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400 2.90GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7090 Micro",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7090 Micro Desktop Intel Hex-Core i5-10500T 2.30GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 474.99,
+        "url": "https://reviveit.io/d7090dm10500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Micro",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3431 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3431 SFF Desktop Intel 8-Core i7-9700 3.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 619.99,
+        "url": "https://reviveit.io/d3431s9700m-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3431 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Precision 3431 SFF Desktop Intel 8-Core i9-9900 3.10GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 659.99,
+        "url": "https://reviveit.io/d3431s9900m-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i9-9900 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Hurry Only 1 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "Elite Mini 800 G9",
+        "product_type": "Desktop",
+        "title": "HP Elite Mini 800 G9 Mini Desktop Intel 14-Core i5-14500T 1.70GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 714.99,
+        "url": "https://reviveit.io/h800g9dm14500tm-2w11j1/",
+        "config": {
+          "processor": "Intel 14-Core i5-14500T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G6 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 Mini Desktop Intel 8-Core i7-10700T 2.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 499.99,
+        "url": "https://reviveit.io/h600g6dm10700tw11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-10700T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "HP ProDesk 600 G6 Mini",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 Mini Desktop WiFi Intel Hex-Core i5-10500T 2.30GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 464.99,
+        "url": "https://reviveit.io/h600g6dm10500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 2.30GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": "Very Good",
+          "form_factor": "Mini Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "HP ProDesk 600 G6 SFF",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G6 SFF Desktop Intel Hex-Core i5-10500 3.10GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 469.99,
+        "url": "https://reviveit.io/h600g6s10500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": "Very Good",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "HP ProDesk 600 G9 SFF",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G9 SFF Desktop Intel Hex-Core i5-12500 3.00GHz 16GB 512GB SSD Win 11 Pro",
+        "price": 694.99,
+        "url": "https://reviveit.io/h600g9s12500m-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": "Very Good",
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 6 Left",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop Intel 8-Core i7-10700T 2.00GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 544.99,
+        "url": "https://reviveit.io/h800g6dm10700twam-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-10700T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 Left",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop Intel Hex-Core i5-10400T 2.00GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 469.99,
+        "url": "https://reviveit.io/h800g6dm10400tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G6 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G6 Mini Desktop Intel Hex-Core i5-10500 3.10GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 509.99,
+        "url": "https://reviveit.io/h800g6dm10500wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 400 G6 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 400 G6 Mini Desktop Intel 6-Core i5-10400T 2.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 449.99,
+        "url": "https://reviveit.io/h400g6dm10400tm-2w11j1/",
+        "config": {
+          "processor": "Intel 6-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 400 G9 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 400 G9 Mini Desktop WiFi Intel Hex-Core i5-12500T 2.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 629.99,
+        "url": "https://reviveit.io/h400g9dm12500twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-12500T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Left",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G4 Desktop Mini",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G4 Desktop Mini Intel Hex-Core i5-8500T 2.10GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 349.99,
+        "url": "https://reviveit.io/h600g4dm8500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G5 Mini Desktop",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G5 Mini Desktop Intel 8-Core i7-9700T 2.00GHz WiFi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 419.99,
+        "url": "https://reviveit.io/h600g5dm9700twam-2w11j1/",
+        "config": {
+          "processor": "Intel 8-Core i7-9700T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Mini",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Left",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "ProDesk 600 G5 SFF",
+        "product_type": "Desktop",
+        "title": "HP ProDesk 600 G5 SFF Intel Hex-Core i5-9500 3.00GHz 16GB 512GB SSD Windows 11 Pro - No Optical Drive",
+        "price": 364.99,
+        "url": "https://reviveit.io/h600g5s9500now11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-9500 3.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M90q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M90q Tiny Desktop Intel Hex-Core i5-10500T 1.70GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": null,
+        "url": "https://reviveit.io/lm90qtd10500wam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M90q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M90q Tiny Desktop Intel Hex-Core i5-10500T 1.70GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 434.99,
+        "url": "https://reviveit.io/lm90qtd10500tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M90q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M90q Tiny Desktop Intel Hex-Core i5-10500T 1.70GHz 32GB 1TB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 519.99,
+        "url": "https://reviveit.io/lm90qtd10500tm-2w11o1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500T 1.70GHz",
+          "ram": "32GB",
+          "storage": "1TB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M920q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M920q Tiny Desktop Intel Hex-Core i5-8400T 1.70GHz 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 334.99,
+        "url": "https://reviveit.io/lm920qtd8400tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8400T 1.70GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "Z2 G5 SFF",
+        "product_type": "Desktop",
+        "title": "HP Z2 G5 SFF Workstation Desktop Intel Hex-Core i5-10500 3.10GHz 16GB 512GB SSD Win 10 Pro - New In Box",
+        "price": 549.99,
+        "url": "https://reviveit.io/hz2g5s10500m-2w10j1-nib/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10500 3.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Small Form Factor",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q Tiny Desktop Intel Hex-Core i5-10400T 2.00GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 439.99,
+        "url": "https://reviveit.io/lm70qtd10400tm-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70q",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M70q Tiny Desktop Intel Hex-Core i5-10400T 2.00GHz Wi-Fi 16GB 512GB M.2 SSD Win 11 Pro 1 Yr Wty",
+        "price": 529.99,
+        "url": "https://reviveit.io/lm70qtd10400twam-2w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB M.2 SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M720s",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M720s SFF Desktop Intel Hex-Core i5-8400 2.80GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 374.99,
+        "url": "https://reviveit.io/lm720ss8400w11j1/",
+        "config": {
+          "processor": "Intel Hex-Core i5-8400 2.80GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M80q Gen 2",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M80q Gen 2 Tiny Desktop Intel 6-Core i5-10400T 2.00GHz 16GB 512GB SSD M.2 Win 11 Pro 1 Yr Wty",
+        "price": 474.99,
+        "url": "https://reviveit.io/lm80qg2td10400tm-2w11j1/",
+        "config": {
+          "processor": "Intel 6-Core i5-10400T 2.00GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD M.2",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M80q Gen 4",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M80q Gen 4 Tiny Desktop Intel 14-Core i5-13500T 1.60GHz WiFi",
+        "price": 709.99,
+        "url": "https://reviveit.io/lm80qg4td13500twam-2w11j1/",
+        "config": {
+          "processor": "Intel 14-Core i5-13500T 1.60GHz",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M80q Gen 4",
+        "product_type": "Desktop",
+        "title": "Lenovo ThinkCentre M80q Gen 4 Tiny Desktop Intel 14-Core i5-13500T 1.60GHz WiFi 8GB 256GB",
+        "price": 654.99,
+        "url": "https://reviveit.io/lm80qg4td13500twam-2w11e1/",
+        "config": {
+          "processor": "Intel 14-Core i5-13500T 1.60GHz",
+          "ram": "8GB",
+          "storage": "256GB",
+          "cosmetic_grade": null,
+          "form_factor": "Tiny Desktop",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 32GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 494.99,
+        "url": "https://reviveit.io/d7060s8700w11o1-bc/",
+        "config": {
+          "processor": "Intel Hex-Core i7-8700 3.20GHz",
+          "ram": "32GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteDesk 800 G4 Desktop Mini",
+        "product_type": "Desktop",
+        "title": "HP EliteDesk 800 G4 Desktop Mini i5-8500T 2.10GHz 16GB 512GB SSD Win 11 Pro 1 Yr Wty",
+        "price": 329.99,
+        "url": "https://reviveit.io/h800g4dm8500tw11j1/",
+        "config": {
+          "processor": "i5-8500T 2.10GHz",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      },
+      {
+        "brand": "Dell",
+        "model": "Optiplex 7060 SFF",
+        "product_type": "Desktop",
+        "title": "Dell Optiplex 7060 SFF Desktop Intel Hex-Core i7-8700 3.20GHz 16GB 1TB SSD Win 11 Pro 1 Yr Wty",
+        "price": 454.99,
+        "url": "https://reviveit.io/d7060s8700w11n1-bc/",
+        "config": {
+          "processor": "Intel Hex-Core i7-8700 3.20GHz",
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Left!",
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "ReviveIT"
+      }
+    ]
+  },
+  "OfficeDepot": {
+    "competitor": "OfficeDepot",
+    "website": "https://www.officedepot.com",
+    "scrape_date": "2026-05-15T19:00:08.045128",
+    "total_products": 15,
+    "existing_products": 14,
+    "new_additions": 1,
+    "products": [
+      {
+        "brand": "HP",
+        "model": "EliteBook 850 G8 2V9M9AWABA",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 850 G8 15.6\" Notebook - 1920x 1080 - Intel Core i7 (11th Gen) i7-1145G7 Quad-core 2.60 GHz - 2V9M9AWABA",
+        "price": 2214.99,
+        "url": "https://www.officedepot.com/a/products/7145954/HP-EliteBook-850-G8-156-Notebook/",
+        "config": {
+          "processor": "Intel Core i7 (11th Gen) i7-1145G7 Quad-core 2.60 GHz",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "1920x1080",
+          "screen_size": "15.6\""
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 89,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "A1RM7UTABA",
+        "product_type": "Laptop",
+        "title": "HP ProBook 465 G11 16\" Notebook - WUXGA - AMD Ryzen 5 7535U - 16 GB - 256 GB SSD - English Keyboard - A1RM7UTABA",
+        "price": 904.69,
+        "url": "https://www.officedepot.com/a/products/8918049/HP-ProBook-465-G11-16-Notebook/",
+        "config": {
+          "processor": "AMD Ryzen 5 7535U",
+          "ram": "16 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "WUXGA",
+          "screen_size": "16\""
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 7,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "ENVY 13-aq0050od",
+        "product_type": "Laptop",
+        "title": "HP ENVY 13-aq0050od Laptop, 13.3\" Full HD Screen, Intel® Core™ i5-8265U, 8GB Memory, 256GB Solid State Drive, Windows® 10 Home 64",
+        "price": 299.99,
+        "url": "https://www.officedepot.com/a/products/9870792/HP-ENVY-13-aq0050od-Laptop-133/",
+        "config": {
+          "processor": "Intel® Core™ i5-8265U",
+          "ram": "8GB",
+          "storage": "256GB Solid State Drive",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "Full HD",
+          "screen_size": "13.3"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 20,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "31F80AWABA",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 1040 G8 14\" 2 in 1 Notebook - Intel Core i7 11th Gen i7-1185G7 - 32 GB - 512 GB SSD - 31F80AWABA",
+        "price": 3871.0,
+        "url": "https://www.officedepot.com/a/products/7383551/HP-EliteBook-x360-1040-G8-14/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen i7-1185G7",
+          "ram": "32 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14\""
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 50,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "01TQ66",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly G8 Mobile Workstation Laptop, 14\" Full HD Screen, Intel® Core™ i5 11th Gen, 16GB Total RAM, 256GB SSD, Windows 11 Pro, 01TQ66",
+        "price": 1157.99,
+        "url": "https://www.officedepot.com/a/products/7276364/HP-ZBook-Firefly-G8-Mobile-Workstation/",
+        "config": {
+          "processor": "Intel® Core™ i5 11th Gen",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "Full HD",
+          "screen_size": "14\""
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 7,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5000 5430",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5000 5430 14\" Notebook, 1920 x 1080, Intel Core i5 12th Gen i5-1245U Deca-core (10 Core) 1.60GHz, 8GB Total RAM, 256GB SSD, Gray",
+        "price": 1739.99,
+        "url": "https://www.officedepot.com/a/products/9544678/Dell-Latitude-5430-Laptop-14-Screen/",
+        "config": {
+          "processor": "Intel Core i5 12th Gen i5-1245U Deca-core (10 Core) 1.60GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "1920 x 1080",
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 0,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 850 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 850 G8 15.6\" Notebook - Intel Core i7 11th Gen i7-1185G7 - 16 GB - 512 GB SSD - English Keyboard - In-plane Switching (IPS) Technology",
+        "price": 2751.99,
+        "url": "https://www.officedepot.com/a/products/6007841/HP-EliteBook-850-G8-156-Notebook/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen i7-1185G7",
+          "ram": "16 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "In Stock",
+        "reviews": {
+          "review_count": 89,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5000 5430",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5000 5430 14\" Notebook - Intel Core i5 i5-1245U Deca-core (10 Core) 1.60 GHz - 8 GB RAM - 256 GB SSD - Windows 10 Pro",
+        "price": 1687.99,
+        "url": "https://www.officedepot.com/a/products/9831064/Dell-Latitude-5000-5430-14-Notebook/",
+        "config": {
+          "processor": "Intel Core i5 i5-1245U Deca-core (10 Core) 1.60 GHz",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook x360 1030 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 1030 G8 13.3\" Touchscreen 2 in 1 Notebook - Full HD - 1920x1080 - Intel Core i5 i - 316Q5AWABA",
+        "price": 3169.0,
+        "url": "https://www.officedepot.com/a/products/7077611/HP-EliteBook-x360-1030-G8-133/",
+        "config": {
+          "processor": "Intel Core i5 i",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "Full HD",
+          "screen_size": "13.3\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5000 5421",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5000 5421 14\" Notebook, 1920 x 1080, Intel Core i5 11th Gen i5-11500H Hexa-core (6 Core) 2.90GHz, 8GB Total RAM, 256GB SSD, Titan Gray",
+        "price": 1859.99,
+        "url": "https://www.officedepot.com/a/products/7006266/Dell-Latitude-5000-5421-14-Laptop/",
+        "config": {
+          "processor": "Intel Core i5 11th Gen i5-11500H Hexa-core (6 Core) 2.90GHz",
+          "ram": "8GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "1920 x 1080",
+          "screen_size": "14\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook x360 1030 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 1030 G8 13.3\" Touchscreen 2 in 1 Laptop - Intel Core i7 11th Gen i7-1185G7 Quad-core 3 GHz - 316Q7AWABA",
+        "price": 3463.0,
+        "url": "https://www.officedepot.com/a/products/8180994/HP-EliteBook-x360-1030-G8-133/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen i7-1185G7 Quad-core 3 GHz",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "13.3\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook x360 830 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 830 G8 13.3\" 2 in 1 Notebook - Full HD - Intel Core i7 11th Gen i7-1185G7 - 8 GB - 512 GB SSD - 1920 x 1080 - Intel UHD Graphics 620",
+        "price": 3059.09,
+        "url": "https://www.officedepot.com/a/products/9278491/HP-EliteBook-x360-830-G8-133/",
+        "config": {
+          "processor": "Intel Core i7 11th Gen i7-1185G7",
+          "ram": "8 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "Full HD",
+          "screen_size": "13.3\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook x360 830 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook x360 830 G8 13.3\" 2 in 1 Notebook - Full HD - Intel Core i5 11th Gen i5-1145G7 - 8 GB - 256 GB SSD - 1920 x 1080 - Intel UHD Graphics 620",
+        "price": 2676.0,
+        "url": "https://www.officedepot.com/a/products/9728903/HP-EliteBook-x360-830-G8-133/",
+        "config": {
+          "processor": "Intel Core i5 11th Gen i5-1145G7",
+          "ram": "8 GB",
+          "storage": "256 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "Full HD",
+          "screen_size": "13.3\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "ProBook 465 G11",
+        "product_type": "Laptop",
+        "title": "HP ProBook 465 G11 16\" Notebook - WUXGA - AMD Ryzen 7 7735U - 16 GB - 512 GB SSD - English Keyboard - A1RM8UTABA",
+        "price": 954.79,
+        "url": "https://www.officedepot.com/a/products/8920280/HP-ProBook-465-G11-16-Notebook/",
+        "config": {
+          "processor": "AMD Ryzen 7 7735U",
+          "ram": "16 GB",
+          "storage": "512 GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "WUXGA",
+          "screen_size": "16\""
+        },
+        "availability": null,
+        "reviews": null,
+        "competitor": "OfficeDepot"
+      },
+      {
+        "brand": "HP",
+        "model": "8683989",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 840 G8 Notebook - Intel Core i5 - 1145G7/up to 4.4 GHz - vPro - Win 10 Pro 64-bit - Intel Iris Xe Graphics - 2U4J2AWABA",
+        "price": 2180.0,
+        "url": "https://www.officedepot.com/a/products/8683989/HP-EliteBook-840-G8-14-Notebook/",
+        "config": {
+          "processor": "Intel Core i5 - 1145G7/up to 4.4 GHz - vPro",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": null,
+        "reviews": {
+          "review_count": 4,
+          "average_rating": null,
+          "rating_distribution": null,
+          "is_best_seller": null,
+          "is_top_rated": null,
+          "sales_rank": null
+        },
+        "competitor": "OfficeDepot"
+      }
+    ]
   }
 }
