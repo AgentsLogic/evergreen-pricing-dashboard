@@ -822,7 +822,8 @@
         "reviews": null,
         "competitor": "TechtoSchool"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "WisetekMarket": {
     "competitor": "WisetekMarket",
@@ -1561,7 +1562,8 @@
         },
         "competitor": "WisetekMarket"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "Reebelo": {
     "competitor": "Reebelo",
@@ -2219,7 +2221,8 @@
         },
         "competitor": "Reebelo"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "DellRefurbished": {
     "competitor": "DellRefurbished",
@@ -2709,15 +2712,17 @@
         "reviews": null,
         "competitor": "DellRefurbished"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "BlairTech": {
     "competitor": "BlairTech",
     "website": "https://blairtech.com",
-    "scrape_date": "2026-05-15T08:53:08.946257",
+    "scrape_date": "2026-05-16T10:47:11.381526",
     "total_products": 193,
-    "existing_products": 181,
-    "new_additions": 12,
+    "skipped_products": 0,
+    "existing_products": 193,
+    "new_additions": 0,
     "products": [
       {
         "brand": "Dell",
@@ -8958,7 +8963,8 @@
         },
         "competitor": "RefurbIO"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "DiscountComputerDepot": {
     "competitor": "DiscountComputerDepot",
@@ -9522,7 +9528,8 @@
         "reviews": null,
         "competitor": "DiscountComputerDepot"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "ReviveIT": {
     "competitor": "ReviveIT",
@@ -13404,7 +13411,8 @@
         },
         "competitor": "ReviveIT"
       }
-    ]
+    ],
+    "skipped_products": 0
   },
   "OfficeDepot": {
     "competitor": "OfficeDepot",
@@ -13769,6 +13777,1098 @@
           "sales_rank": null
         },
         "competitor": "OfficeDepot"
+      }
+    ],
+    "skipped_products": 0
+  },
+  "DiscountElectronics": {
+    "competitor": "DiscountElectronics",
+    "website": "https://discountelectronics.com",
+    "scrape_date": "2026-05-16T11:56:01.803283",
+    "total_products": 54,
+    "skipped_products": 143,
+    "existing_products": 53,
+    "new_additions": 1,
+    "products": [
+      {
+        "brand": "HP",
+        "model": "EliteBook 845 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 845 G8 AMD Ryzen 7 16GB Windows 11 Pro 14\" Laptop",
+        "price": 550.0,
+        "url": "https://discountelectronics.com/copy-of-hp-elitebook-845-g7-amd-ryzen-7-windows-11-pro-14-laptop/",
+        "config": {
+          "processor": "AMD Ryzen 7",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 3 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ProBook 450 G8",
+        "product_type": "Laptop",
+        "title": "HP ProBook 450 G8 11th Gen i5 16GB RAM 15.6\" Laptop 10-Key Pad",
+        "price": 518.0,
+        "url": "https://discountelectronics.com/hp-probook-450-g8-11th-gen-i5-16gb-ram-15-6-laptop-10-key-pad/",
+        "config": {
+          "processor": "11th Gen i5",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ZBook Firefly 14 G10",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly 14 G10 Workstation Laptop | AMD Ryzen 9 Pro, 32GB RAM, 2K Display",
+        "price": 1364.0,
+        "url": "https://discountelectronics.com/hp-zbook-firefly-14-g10-workstation-laptop-amd-ryzen-9-pro-32gb-ram-2k-display/",
+        "config": {
+          "processor": "AMD Ryzen 9 Pro",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "2K",
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ZBook Firefly 16 G10",
+        "product_type": "Laptop",
+        "title": "HP ZBook Firefly 16 G10 Workstation Laptop | Intel Core i7-1360P, 32GB RAM",
+        "price": 1650.0,
+        "url": "https://discountelectronics.com/hp-zbook-firefly-16-g10-workstation-laptop-intel-core-i7-1360p-32gb-ram/",
+        "config": {
+          "processor": "Intel Core i7-1360P",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ProBook 450 G9",
+        "product_type": "Laptop",
+        "title": "HP ProBook 450 G9 Core i7 12th Gen 15.6'' Touchscreen Laptop 1TB SSD",
+        "price": 850.0,
+        "url": "https://discountelectronics.com/hp-probook-450-g9-core-i7-12th-gen-15-6-touchscreen-laptop-16gb-ram/",
+        "config": {
+          "processor": "Core i7 12th Gen",
+          "ram": null,
+          "storage": "1TB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3480",
+        "product_type": "Laptop",
+        "title": "Dell Precision 3480 Intel Core i7-1370U 32GB RAM SSD 14\" Mobile Workstation Laptop",
+        "price": 1050.0,
+        "url": "https://discountelectronics.com/dell-precision-3480-intel-core-i7-1370u-32gb-ram-ssd-14-mobile-workstation-laptop/",
+        "config": {
+          "processor": "Intel Core i7-1370U",
+          "ram": "32GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "ZBook Fury 16 G9",
+        "product_type": "Laptop",
+        "title": "Hp ZBook Fury 16 G9 i7 16\" Mobile Workstation Laptop | Nvidia RTX A1000 4GB Graphics",
+        "price": 1400.0,
+        "url": "https://discountelectronics.com/hp-zbook-fury-16-g9-i7-16-mobile-workstation-laptop-nvidia-rtx-a1000-4gb-graphics/",
+        "config": {
+          "processor": "12th Gen i7",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 835 G8",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 835 G8 AMD Ryzen 5 13\" Lightweight Laptop | 16GB RAM, Travel Friendly",
+        "price": 467.0,
+        "url": "https://discountelectronics.com/hp-elitebook-835-g8-amd-ryzen-5-13-lightweight-laptop-16gb-ram/",
+        "config": {
+          "processor": "AMD Ryzen 5",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "13"
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7430",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7430 Core i7-1265U 16GB 14\" Laptop Windows 11 Pro Aluminum",
+        "price": 599.0,
+        "url": "https://discountelectronics.com/dell-latitude-7430-core-i7-1265u-16gb-14-laptop-windows-11-pro-aluminum/",
+        "config": {
+          "processor": "Core i7-1265U",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 9 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkPad L14 Gen 4",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkPad L14 Gen 4 vPro Intel Core i7-1365U 14\" Laptop | 32GB RAM, 512GB SSD",
+        "price": 889.0,
+        "url": "https://discountelectronics.com/lenovo-thinkpad-l14-gen-4-vpro-intel-core-i7-1365u-14-laptop-32gb-ram-512gb-ssd/",
+        "config": {
+          "processor": "Intel Core i7-1365U",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7420",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7420 11th Gen i7 16GB Touchscreen Business 14\" Laptop | Backlit Keyboard IR Webcam",
+        "price": 588.0,
+        "url": "https://discountelectronics.com/dell-latitude-7420-11th-gen-i7-16gb-touchscreen-business-14-laptop-backlit-keyboard-ir-webcam/",
+        "config": {
+          "processor": "11th Gen i7",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 7560",
+        "product_type": "Laptop",
+        "title": "Dell Precision 7560 11th Gen i9-11950H 15.6\" Workstation Laptop 32GB RAM Nvidia Graphics",
+        "price": 1650.0,
+        "url": "https://discountelectronics.com/dell-precision-7560-11th-gen-i9-11950h-15-6-workstation-laptop-32gb-ram-nvidia-graphics/",
+        "config": {
+          "processor": "i9-11950H",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 10 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 7560",
+        "product_type": "Laptop",
+        "title": "Dell Precision 7560 i7 32GB RAM 512GB SSD Nvidia 4GB Graphics 15.6\" Workstation Laptop",
+        "price": 1450.0,
+        "url": "https://discountelectronics.com/dell-precision-7560-i7-32gb-ram-512gb-ssd-nvidia-4gb-graphics-15-6-workstation-laptop/",
+        "config": {
+          "processor": "i7-1185G7",
+          "ram": "32GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5520",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5520 i5 16GB Windows 11 Pro 15.6\" Business Laptop Number Pad",
+        "price": 580.0,
+        "url": "https://discountelectronics.com/dell-latitude-5520-i5-11th-gen-16gb-windows-11-pro-15-6-business-laptop/",
+        "config": {
+          "processor": "i5 11th Gen",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 3 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 3440",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 3440 i7-1355U 14\" Lightweight Business Laptop 16GB RAM",
+        "price": 650.0,
+        "url": "https://discountelectronics.com/dell-latitude-3440-i7-1355u-14-lightweight-business-laptop-16gb-ram/",
+        "config": {
+          "processor": "i7-1355U",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5520",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5520 11th Gen i7 16GB RAM 15\" Windows 11 Pro Laptop",
+        "price": 650.0,
+        "url": "https://discountelectronics.com/dell-latitude-5520-11th-gen-i7-16gb-ram-15-windows-11-pro-laptop/",
+        "config": {
+          "processor": "i7 11th Gen",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7440",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7440 13th Gen i7-1365U vPro 32GB RAM Touchscreen 14\" Laptop QHD+",
+        "price": 950.0,
+        "url": "https://discountelectronics.com/dell-latitude-7440-13th-gen-i7-1365u-vpro-32gb-ram-touchscreen-14-laptop-qhd/",
+        "config": {
+          "processor": "i7-1365U vPro",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "QHD+",
+          "screen_size": "14"
+        },
+        "availability": "Only 3 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 860 G11",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 860 G11 Intel Core Ultra 7 16\" Laptop | 32GB RAM + 1TB NVMe SSD",
+        "price": 1228.0,
+        "url": "https://discountelectronics.com/hp-elitebook-860-g11-intel-core-ultra-7-16-laptop-32gb-ram-1tb-nvme-ssd/",
+        "config": {
+          "processor": "Intel Core Ultra 7",
+          "ram": "32GB",
+          "storage": "1TB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "16"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "XPS 13 Plus 9320",
+        "product_type": "Laptop",
+        "title": "Dell XPS 13 Plus 9320 Intel Core i7-1270P 16GB RAM 13.4\" Laptop | 4K OLED Touchscreen Display, Lightweight 2.77 lbs",
+        "price": 850.0,
+        "url": "https://discountelectronics.com/dell-xps-13-plus-9320-intel-core-i7-1270p-16gb-ram-13-4-laptop-4k-oled-touchscreen-display-lightweight-2-77-lbs/",
+        "config": {
+          "processor": "Intel Core i7-1270P",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "4K",
+          "screen_size": "13.4"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7520",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7520 15\" i7 16GB Business Laptop | Lightweight Carbon Fiber",
+        "price": 675.0,
+        "url": "https://discountelectronics.com/carbon-fiber-dell-latitude-7520-15-i7-16gb-business-laptop/",
+        "config": {
+          "processor": "i7-1165G7",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 7550",
+        "product_type": "Laptop",
+        "title": "Dell Precision 7550 i7 15.6'' Workstation Laptop | 32GB RAM NVIDIA Quadro",
+        "price": 1350.0,
+        "url": "https://discountelectronics.com/dell-precision-7550-i7-15-6-workstation-laptop-32gb-ram-nvidia-quadro/",
+        "config": {
+          "processor": "i7-10750H",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7390",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7390 i7 16GB Windows 11 Laptop Lightweight 13\" Laptop",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-latitude-7390-i7-16gb-windows-11-laptop-lightweight-13-laptop/",
+        "config": {
+          "processor": "i7-8650U",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "13"
+        },
+        "availability": "Only 5 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5440",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5440 13th Gen i7 16GB 14\" Laptop Windows 11 Pro Webcam",
+        "price": 675.0,
+        "url": "https://discountelectronics.com/dell-latitude-5440-13th-gen-i7-16gb-14-laptop-windows-11-pro-webcam/",
+        "config": {
+          "processor": "13th Gen i7",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 7550",
+        "product_type": "Laptop",
+        "title": "Dell Precision 7550 i7-10850H 32GB RAM 15.6\" Workstation Laptop Cosmetic",
+        "price": 1200.0,
+        "url": "https://discountelectronics.com/dell-precision-7550-i7-10850h-32gb-ram-15-6-workstation-laptop-cosmetic/",
+        "config": {
+          "processor": "i7-10850H",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkPad X1 Carbon Gen 10",
+        "product_type": "Laptop",
+        "title": "Lenovo ThinkPad X1 Carbon Gen 10 | Core i7-1270P + 14\" 4K UHD | Only 2.5 Lbs | Ultra-light Powerhouse",
+        "price": 1100.0,
+        "url": "https://discountelectronics.com/lenovo-thinkpad-x1-carbon-gen-10-core-i7-1270p-14-4k-uhd-only-2-5-lbs-ultra-light-powerhouse/",
+        "config": {
+          "processor": "Core i7-1270P",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "4K UHD",
+          "screen_size": "14"
+        },
+        "availability": "Only 8 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 5540",
+        "product_type": "Laptop",
+        "title": "Dell Precision 5540 i9-9980HK 15.6'' Workstation Laptop | Nvidia T2000 Graphics, Windows 11 Pro",
+        "price": 1200.0,
+        "url": "https://discountelectronics.com/dell-precision-5540-i9-9980hk-15-6-workstation-laptop-nvidia-t2000-graphics-windows-11-pro/",
+        "config": {
+          "processor": "i9-9980HK",
+          "ram": "32GB RAM",
+          "storage": "1TB NVMe SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "HP",
+        "model": "EliteBook 650 G9",
+        "product_type": "Laptop",
+        "title": "HP EliteBook 650 G9 Intel Core i5 12th Gen 16GB RAM 15.6'' Laptop Cosmetic",
+        "price": 480.0,
+        "url": "https://discountelectronics.com/hp-elitebook-650-g9-intel-core-i5-12th-gen-16gb-ram-15-6-laptop-cosmetic/",
+        "config": {
+          "processor": "Intel Core i5 12th Gen",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5430 Rugged",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5430 Rugged 14\" Laptop 11th Gen i5-1145G7 8GB RAM Windows 11 Pro",
+        "price": 1250.0,
+        "url": "https://discountelectronics.com/dell-latitude-5430-rugged-14-laptop-11th-gen-i5-1145g7-8gb-ram-windows-11-pro/",
+        "config": {
+          "processor": "i5-1145G7",
+          "ram": "8GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 4 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 7740",
+        "product_type": "Laptop",
+        "title": "Dell Precision 7740 i9-9880H 17.3\" Workstation Laptop | 32GB RAM Nvidia RTX 4000 Graphics",
+        "price": 1975.0,
+        "url": "https://discountelectronics.com/dell-precision-7740-i9-9880h-17-3-workstation-laptop-32gb-ram-nvidia-rtx-4000-graphics/",
+        "config": {
+          "processor": "i9-9880H",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "17.3"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 5560",
+        "product_type": "Laptop",
+        "title": "Dell Precision 5560 i7-11850H 4K Touchscreen 15.6\" Laptop | 32GB RAM, Nvidia Graphics",
+        "price": 1200.0,
+        "url": "https://discountelectronics.com/dell-precision-5560-i7-11850h-4k-touchscreen-15-6-laptop-32gb-ram-nvidia-graphics/",
+        "config": {
+          "processor": "i7-11850H",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "4K",
+          "screen_size": "15.6"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5411",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5411 i5-10400H 14\" FHD Business Laptop Windows 11 Pro",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-latitude-5411-i5-10400h-14-fhd-business-laptop-windows-11-pro/",
+        "config": {
+          "processor": "i5-10400H",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "14"
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 5431",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 5431 Intel Core i7-1270P 32GB RAM Windows 11 Pro 14\" Laptop",
+        "price": 899.0,
+        "url": "https://discountelectronics.com/dell-latitude-5431-intel-core-i7-1270p-32gb-ram-windows-11-pro-14-laptop/",
+        "config": {
+          "processor": "Intel Core i7-1270P",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "14"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 15 3520",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 15 3520 i5-1135G7 15.6\" Laptop 10-Key Windows 11 Pro",
+        "price": 399.0,
+        "url": "https://discountelectronics.com/dell-latitude-15-3520-i5-1135g7-15-6-laptop-10-key-windows-11-pro/",
+        "config": {
+          "processor": "i5-1135G7",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "15.6"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Latitude 7420",
+        "product_type": "Laptop",
+        "title": "Dell Latitude 7420 11th Gen i5 SSD Windows 11 Pro FHD 14\" Business Laptop | Lightweight Carbon Fiber",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-latitude-7420-11th-generation-i5-ssd-windows-11-pro-14-laptop-fhd/",
+        "config": {
+          "processor": "11th Gen i5",
+          "ram": null,
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": "FHD",
+          "screen_size": "14"
+        },
+        "availability": "Only 6 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5090 MT",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5090 MT Core i7-10700 16GB 256GB SSD Tower PC",
+        "price": 799.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5090-mt-core-i7-10700-16gb-256gb-ssd-tower-pc/",
+        "config": {
+          "processor": "Core i7-10700",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3650",
+        "product_type": "Unknown",
+        "title": "Dell Precision 3650 i7-11700 32GB RTX 2060 6GB GDDR6 Graphics Workstation PC DVDRW",
+        "price": 1550.0,
+        "url": "https://discountelectronics.com/dell-precision-3650-i7-11700-32gb-rtx-2060-6gb-gddr6-graphics-workstation-pc-dvdrw/",
+        "config": {
+          "processor": "i7-11700",
+          "ram": "32GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Workstation",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3460",
+        "product_type": "Unknown",
+        "title": "Dell Precision 3460 Core i5-12500 16GB Compact Workstation PC",
+        "price": 990.0,
+        "url": "https://discountelectronics.com/dell-precision-3460-core-i5-12500-16gb-compact-workstation-pc/",
+        "config": {
+          "processor": "Core i5-12500",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Workstation",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3000 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3000 Micro Core i5-12500T Windows 11 Pro Tiny PC Computer",
+        "price": 850.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3000-micro-core-i5-12500t-windows-11-pro-tiny-pc-computer/",
+        "config": {
+          "processor": "Core i5-12500T",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5090 SFF",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5090 SFF Core i5-11500 16GB 256GB SSD Windows 11 Business PC",
+        "price": 750.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5090-sff-core-i5-11500-16gb-256gb-ssd-windows-11-business-pc/",
+        "config": {
+          "processor": "Core i5-11500",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "SFF",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Lenovo",
+        "model": "ThinkCentre M70Q Micro",
+        "product_type": "Unknown",
+        "title": "Lenovo ThinkCentre M70Q Micro Windows 11 PC",
+        "price": 350.0,
+        "url": "https://discountelectronics.com/lenovo-thinkcentre-m70q-micro-windows-11-pc/",
+        "config": {
+          "processor": "Intel Quad Core i3-10100T",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 5 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3630",
+        "product_type": "Unknown",
+        "title": "Dell Precision 3630 i7-8700K 32GB RAM 256GB SSD 2TB HDD Nvidia P2200 Workstation PC",
+        "price": 1120.0,
+        "url": "https://discountelectronics.com/dell-precision-3630-i7-8700k-32gb-ram-256gb-ssd-2tb-hdd-nvidia-p2200-workstation-pc/",
+        "config": {
+          "processor": "i7-8700K",
+          "ram": "32GB",
+          "storage": "256GB SSD + 2TB HDD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 3640",
+        "product_type": "Unknown",
+        "title": "Dell Precision 3640 i7-10700 32GB RAM SSD Nvidia RTX 2060 GDDR6 Windows 11 Pro Workstation",
+        "price": 1495.0,
+        "url": "https://discountelectronics.com/dell-precision-3640-i7-10700-32gb-ram-ssd-nvidia-rtx-2060-gddr6-windows-11-pro-workstation/",
+        "config": {
+          "processor": "i7-10700",
+          "ram": "32GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "Precision 5820 X-Series",
+        "product_type": "Unknown",
+        "title": "Dell Precision 5820 X-Series Workstation PC Intel i9-10900X 32GB Ram SSD Nvidia Quadro M4000 8GB Video Card Window 11 Pro",
+        "price": 2150.0,
+        "url": "https://discountelectronics.com/dell-precision-5820-x-series-workstation-pc-intel-i9-10900x-32gb-ram-ssd-nvidia-quadro-m4000-8gb-video-card-window-11-pro/",
+        "config": {
+          "processor": "Intel i9-10900X",
+          "ram": "32GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5260 All-in-One",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex All-in-One PC Core i7 256GB SSD + 750GB AIO Windows 11",
+        "price": 750.0,
+        "url": "https://discountelectronics.com/dell-optiplex-all-in-one-pc-core-i7-256gb-ssd-750gb-hdd-windows-11/",
+        "config": {
+          "processor": "Intel Core i5-8500 @ 4.1GHz",
+          "ram": "16GB",
+          "storage": "256GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "AIO",
+          "screen_resolution": null,
+          "screen_size": "21.5"
+        },
+        "availability": "Only 10 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5080 MT",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5080 MT Core i7-10700 16GB 512GB SSD Tower PC DVD",
+        "price": 875.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5080-mt-core-i7-10700-16gb-512gb-ssd-tower-pc-dvd/",
+        "config": {
+          "processor": "Core i7-10700",
+          "ram": "16GB",
+          "storage": "512GB SSD",
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 10 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5060",
+        "product_type": "Unknown",
+        "title": "Dell Micro Computer Optiplex 5060 i5-8500T SSD Desktop Windows 11 Pro",
+        "price": 450.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5060-i5-8500t-micro-ssd-desktop-windows-11-pro/",
+        "config": {
+          "processor": "i5-8500T",
+          "ram": null,
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 9 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3080 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3080 Micro i5 10th Gen 16GB RAM SSD Windows 11 Pro Computer",
+        "price": 650.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3080-micro-i5-10th-gen-16gb-ram-ssd-windows-11-pro-computer/",
+        "config": {
+          "processor": "i5 10th Gen",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3070 Micro i5-9500T 16GB RAM SSD Windows 11 Pro Mini PC",
+        "price": 525.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3070-micro-i5-9500t-16gb-ram-ssd-windows-11-pro-mini-pc/",
+        "config": {
+          "processor": "i5-9500T",
+          "ram": "16GB",
+          "storage": "SSD",
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 8 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7490",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 7490 All in One PC 10th Gen Core i5-10500 24\" AIO Windows 11 Pro",
+        "price": 750.0,
+        "url": "https://discountelectronics.com/dell-optiplex-7490-all-in-one-pc-10th-gen-core-i5-10500-24-windows-11-pro/",
+        "config": {
+          "processor": "Core i5-10500",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "24"
+        },
+        "availability": "Only 10 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3280",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3280 AIO Core i5 16GB 22\" All in One Desktop PC AIO",
+        "price": 650.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3280-aio-core-i5-16gb-22-all-in-one-desktop-pc/",
+        "config": {
+          "processor": "Core i5-10500T",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": null,
+          "screen_resolution": null,
+          "screen_size": "22"
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7060 MT",
+        "product_type": "Unknown",
+        "title": "Refurbished Dell Optiplex 7060 MT Core i5 Tower PC Windows 11 Dual DisplayPorts",
+        "price": 495.0,
+        "url": "https://discountelectronics.com/refurbished-dell-optiplex-7060-mt-core-i5-tower-pc-windows-11-dual-displayports/",
+        "config": {
+          "processor": "Core i5-8500",
+          "ram": null,
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "Tower",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 1 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 3070 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 3070 Micro i7 9th Gen 16GB RAM SSD Windows 11 Computer",
+        "price": 530.0,
+        "url": "https://discountelectronics.com/dell-optiplex-3070-micro-i7-9th-gen-16gb-ram-ssd-windows-11-computer/",
+        "config": {
+          "processor": "i7 9th Gen",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 7 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 7080 Micro",
+        "product_type": "Unknown",
+        "title": "Micro PC Dell OptiPlex 7080 i5 10th Gen 16GB RAM SSD Windows 11 Pro Business Computer 1D",
+        "price": 695.0,
+        "url": "https://discountelectronics.com/micro-pc-dell-optiplex-7080-i5-10th-gen-16gb-ram-ssd-windows-11-pro-business-computer-1d/",
+        "config": {
+          "processor": "i5 10th Gen",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 3 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
+      },
+      {
+        "brand": "Dell",
+        "model": "OptiPlex 5080 Micro",
+        "product_type": "Unknown",
+        "title": "Dell OptiPlex 5080 Micro i5-10500T 16GB Windows 11 Pro Tiny Desktop PC",
+        "price": 650.0,
+        "url": "https://discountelectronics.com/dell-optiplex-5080-micro-i5-10500t-16gb-windows-11-pro-tiny-desktop-pc/",
+        "config": {
+          "processor": "i5-10500T",
+          "ram": "16GB",
+          "storage": null,
+          "cosmetic_grade": null,
+          "form_factor": "MFF/Tiny",
+          "screen_resolution": null,
+          "screen_size": null
+        },
+        "availability": "Only 2 Remaining",
+        "reviews": null,
+        "competitor": "DiscountElectronics"
       }
     ]
   }

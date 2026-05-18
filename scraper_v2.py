@@ -807,6 +807,7 @@ class CompetitorScraper:
                 "website": COMPETITORS[competitor]["base_url"],
                 "scrape_date": datetime.now().isoformat(),
                 "total_products": len(merged_products),
+                "skipped_products": self.skipped_counts.get(competitor, 0),
                 "existing_products": len(existing_products),
                 "new_additions": new_additions,
                 "products": merged_products
