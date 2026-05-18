@@ -252,6 +252,20 @@ class CompetitorScraper:
             return "Lenovo"
         return None
 
+    def _detect_brand_from_text(self, text: Optional[str]) -> Optional[str]:
+        """Detect Dell/HP/Lenovo brand from free text (title, description, etc.)."""
+        if not text:
+            return None
+        t = text.lower()
+        if "dell" in t:
+            return "Dell"
+        # HP: match 'hp' as a whole word or common HP sub-brand names
+        if re.search(r'\bhp\b', t) or "hewlett" in t or re.search(r'\bprobook\b', t) or re.search(r'\belitebook\b', t) or re.search(r'\bzbook\b', t) or re.search(r'\bproliant\b', t):
+            return "HP"
+        if "lenovo" in t or re.search(r'\bthinkpad\b', t) or re.search(r'\bthinkcentre\b', t) or re.search(r'\bideapad\b', t):
+            return "Lenovo"
+        return None
+
     def _extract_intel_generation(self, text: Optional[str]) -> Optional[int]:
         """Best-effort Intel CPU generation parser.
 
@@ -349,8 +363,15 @@ class CompetitorScraper:
         at all. Only products we can positively identify as <8th gen (or as
         non-Intel) are dropped.
         """
-        # Normalize/validate brand first
+        # Normalize/validate brand first – try the explicit brand field, then
+        # fall back to detecting the brand in the product title/model.  Many
+        # competitor sites populate the brand field with their own store name
+        # (e.g. "DiscountComputerDepot") rather than the OEM brand, but the
+        # title almost always says "Dell Latitude 7420" or "HP EliteBook …".
         normalized = self._normalize_brand(getattr(product, "brand", None))
+        if not normalized:
+            title_model_text = (product.title or "") + " " + (product.model or "")
+            normalized = self._detect_brand_from_text(title_model_text)
         if not normalized:
             return False
         product.brand = normalized
