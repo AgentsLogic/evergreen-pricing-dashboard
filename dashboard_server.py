@@ -103,6 +103,27 @@ def get_data():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/competitors')
+def get_competitors():
+    """Return the list of every competitor the scraper is configured for.
+
+    Used by the dashboard so dropdowns and CSV exports can include sites that
+    do not yet have any rows in competitor_prices.json (otherwise the UI would
+    silently omit newly-added competitors that returned zero products on the
+    last scrape).
+    """
+    try:
+        from scraper_v2 import COMPETITORS as SCRAPER_COMPETITORS
+        names = sorted(SCRAPER_COMPETITORS.keys())
+        details = [
+            {"name": name, "base_url": SCRAPER_COMPETITORS[name].get("base_url", "")}
+            for name in names
+        ]
+        return jsonify({"competitors": names, "details": details, "count": len(names)})
+    except Exception as e:
+        return jsonify({"error": str(e), "competitors": []}), 500
+
+
 
 @app.route('/api/report/msrp', methods=['GET'])
 def generate_msrp_report_api():

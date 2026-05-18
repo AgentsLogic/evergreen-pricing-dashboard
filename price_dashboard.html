@@ -113,6 +113,13 @@
 	                </button>
 	            </div>
 	        </div>
+	        <!-- Markets loading banner (auto-hides after 30 seconds) -->
+	        <div id="marketsLoadingBanner" class="bg-gray-50 border border-gray-200 text-gray-800 text-xs md:text-sm rounded-lg px-4 py-3 mb-4 flex items-center justify-between gap-3">
+	            <div class="flex items-center gap-2">
+	                <span class="mt-0.5">⏳</span>
+	                <p>Markets loading… give it a minute.</p>
+	            </div>
+	        </div>
 	        <!-- Export help banner (closable, explains raw vs summary exports) -->
 	        <div id="exportHelpBanner" class="bg-yellow-50 border border-yellow-200 text-yellow-900 text-xs md:text-sm rounded-lg px-4 py-3 mb-4 flex items-start justify-between gap-3">
 	            <div class="flex items-start gap-2">
@@ -325,6 +332,26 @@
 	        let filteredProducts = [];
 	        let currentPage = 1;
 	        const pageSize = 200;
+	        // Full list of competitors the scraper is configured for, even if the
+	        // last scrape returned zero products for some of them. Populated by
+	        // /api/competitors; used so CSV exports and the export dropdown list
+	        // every site instead of only the ones present in competitor_prices.json.
+	        let configuredCompetitors = [];
+
+        // Fetch the list of configured competitors from the backend so the UI
+        // is always in sync with scraper_v2.COMPETITORS.
+        async function loadConfiguredCompetitors() {
+            try {
+                const res = await fetch('/api/competitors');
+                if (!res.ok) return;
+                const payload = await res.json();
+                if (payload && Array.isArray(payload.competitors)) {
+                    configuredCompetitors = payload.competitors;
+                }
+            } catch (err) {
+                console.warn('Could not load configured competitors list:', err);
+            }
+        }
 
         // Load data from API or JSON file
         async function loadData(silent = false) {
@@ -338,6 +365,9 @@
                 }
 
                 allData = await response.json();
+                // Refresh configured-competitor list opportunistically so newly
+                // added sites show up in exports without a page reload.
+                loadConfiguredCompetitors();
                 applyFilters();
                 updateSiteSummary();
                 console.log('Data loaded successfully');
@@ -781,7 +811,21 @@
                 }
             }
 
-            if (productsToExport.length === 0) {
+            // Build the union of competitors we know about: every configured
+            // site plus any sites that happen to appear in allData. This way the
+            // CSV always lists every competitor, even ones the last scrape
+            // returned zero products for (so the user can see they were not
+            // silently omitted).
+            const knownCompetitors = new Set([
+                ...configuredCompetitors,
+                ...Object.keys(allData || {})
+            ]);
+            const competitorsWithData = new Set(productsToExport.map(p => p.competitor));
+            const missingCompetitors = Array.from(knownCompetitors)
+                .filter(name => name && !competitorsWithData.has(name))
+                .sort();
+
+            if (productsToExport.length === 0 && missingCompetitors.length === 0) {
                 showNotification('No products found for raw scrape export', 'warning');
                 return;
             }
@@ -806,6 +850,16 @@
                 ];
             });
 
+            // Add an explicit "NO DATA" row for each configured competitor that
+            // returned zero products on the last scrape so every site is visible
+            // in the CSV (instead of being silently absent).
+            for (const compName of missingCompetitors) {
+                rowsAll.push([
+                    compName, '', '', 'NO DATA - last scrape returned 0 products',
+                    '', '', '', '', '', '', '', ''
+                ]);
+            }
+
             const csvAll = [headersAll, ...rowsAll].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
             const blobAll = new Blob([csvAll], { type: 'text/csv' });
             const urlAll = URL.createObjectURL(blobAll);
@@ -814,7 +868,13 @@
             aAll.download = `competitor_prices_all_scraped_${new Date().toISOString().split('T')[0]}.csv`;
             aAll.click();
 
-            showNotification(`Exported ${productsToExport.length} products (all scraped data) to CSV`, 'success');
+            const missingMsg = missingCompetitors.length
+                ? ` (${missingCompetitors.length} competitors had no products)`
+                : '';
+            showNotification(
+                `Exported ${productsToExport.length} products (all scraped data)${missingMsg} to CSV`,
+                'success'
+            );
             closeAllDropdowns();
         }
 
@@ -1281,9 +1341,9 @@
             }
         }
 
-	        // Initialize export + MSRP banner visibility based on stored preference
+	        // Initialize export + MSRP banner visibility, and auto-hide markets banner
 	        (function initBanners() {
-            try {
+	            try {
 	                if (localStorage.getItem('exportHelpBannerDismissed') === '1') {
 	                    const exportBanner = document.getElementById('exportHelpBanner');
 	                    if (exportBanner) {
@@ -1291,16 +1351,24 @@
 	                    }
 	                }
 
-                if (localStorage.getItem('msrpBannerDismissed') === '1') {
-                    const banner = document.getElementById('msrpBanner');
-                    if (banner) {
-                        banner.classList.add('hidden');
-                    }
-                }
-            } catch (e) {
-                // ignore storage errors
-            }
-        })();
+	                if (localStorage.getItem('msrpBannerDismissed') === '1') {
+	                    const banner = document.getElementById('msrpBanner');
+	                    if (banner) {
+	                        banner.classList.add('hidden');
+	                    }
+	                }
+
+	                // Auto-hide "Markets loading" banner after 30 seconds
+	                const marketsBanner = document.getElementById('marketsLoadingBanner');
+	                if (marketsBanner) {
+	                    setTimeout(() => {
+	                        marketsBanner.classList.add('hidden');
+	                    }, 30000);
+	                }
+	            } catch (e) {
+	                // ignore storage errors and timer issues
+	            }
+	        })();
 
         // Chat functionality
         let chatMessages = [];

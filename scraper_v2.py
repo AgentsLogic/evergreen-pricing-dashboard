@@ -337,10 +337,17 @@ class CompetitorScraper:
         return None
 
     def _is_relevant_product(self, product: "Product") -> bool:
-        """Return True only for Dell/HP/Lenovo with Intel 8th-gen or newer CPUs.
+        """Return True for Dell/HP/Lenovo with Intel 8th-gen or newer CPUs.
 
-        This implements Jeff's business rule: only show 8th+ gen Intel laptops/desktops
-        from Dell, HP, or Lenovo. 7th gen and older (or non-Intel/unknown) are dropped.
+        Implements Jeff's business rule: only show 8th+ gen Intel laptops/desktops
+        from Dell, HP, or Lenovo. Many competitor listing pages do NOT expose CPU
+        details (only the product detail page does), so when we cannot positively
+        identify the generation we keep the product instead of silently dropping
+        it -- the dashboard's UI filters can still narrow on CPU generation, and
+        keeping these rows is what lets newly added Shopify-style competitors
+        (DiscountPC, EvergreenElectronics, BlairTech, JoySystems, ...) show up
+        at all. Only products we can positively identify as <8th gen (or as
+        non-Intel) are dropped.
         """
         # Normalize/validate brand first
         normalized = self._normalize_brand(getattr(product, "brand", None))
@@ -367,8 +374,17 @@ class CompetitorScraper:
 
         gen = self._extract_intel_generation(cpu_text)
         if gen is None:
-            # We couldn't verify Intel generation -> treat as not relevant
-            return False
+            # Could not verify the Intel generation from the listing page.
+            # If the text mentions a competing CPU brand we know is out of scope
+            # (AMD/Ryzen/Athlon/Celeron/Pentium/Apple), drop it. Otherwise keep
+            # it so listing-page-only data isn't lost.
+            haystack = (cpu_text or "").lower()
+            disqualifiers = ("ryzen", "athlon", "amd ", "celeron", "pentium",
+                             "apple m1", "apple m2", "apple m3", "apple m4",
+                             "mediatek", "snapdragon")
+            if any(tag in haystack for tag in disqualifiers):
+                return False
+            return True
 
         # Enforce 8th generation and newer only
         return gen >= 8
