@@ -1,4 +1,4 @@
-﻿"""
+"""
 Flask server for the price dashboard with working buttons
 """
 
@@ -332,7 +332,7 @@ def run_scraper(scraper_type='basic', site='all'):
             stream_thread.start()
 
             # Wait for completion with timeout
-            proc.wait(timeout=1800)  # 30 minute timeout
+            proc.wait(timeout=1800)  # 30 minute timeout for a single site
 
             if proc.returncode == 0:
                 scraping_status["progress"] = "Scraping completed successfully!"
@@ -436,8 +436,11 @@ def run_scraper(scraper_type='basic', site='all'):
             stream_thread.daemon = True
             stream_thread.start()
 
-            # Wait for completion with timeout
-            proc.wait(timeout=1800)  # 30 minute timeout
+            # Wait for completion with timeout. With 17 competitors and a
+            # per-competitor budget of ~6 minutes in scraper_v2.scrape_all,
+            # the worst-case full run is ~100 minutes. We allow 120 minutes
+            # of wall time here so no site is silently skipped at the end.
+            proc.wait(timeout=7200)  # 120 minute timeout for all-sites run
 
             # Wait for thread to finish reading any remaining output
             stream_thread.join(timeout=5)
@@ -455,7 +458,7 @@ def run_scraper(scraper_type='basic', site='all'):
             send_chat_message_sync(f"ðŸ Scraper process finished (exit={proc.returncode})", "info", "scraper")
 
     except subprocess.TimeoutExpired:
-        error_msg = "Scraper timed out after 30 minutes"
+        error_msg = "Scraper exceeded its wall-clock budget"
         scraping_status["error"] = error_msg
         scraping_status["progress"] = "Timeout"
         send_chat_message_sync(f"â° {error_msg}", "error", "scraper")

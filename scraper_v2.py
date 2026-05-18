@@ -389,14 +389,15 @@ class CompetitorScraper:
         # Enforce 8th generation and newer only
         return gen >= 8
 
-    async def scrape_url(self, url: str, competitor: str, max_pages: int = 50) -> List[Product]:
+    async def scrape_url(self, url: str, competitor: str, max_pages: int = 8) -> List[Product]:
         """Scrape a single URL and extract all products (handles pagination).
 
         max_pages controls how many paginated result pages we will visit for
-        a given category URL. The default was 5; increasing this to 50 makes
-        it much more likely we reach the true end of results on large sites
-        like OfficeDepot, while the existing two-empty-pages-in-a-row rule
-        still keeps the loop bounded.
+        a given category URL. Default is 8: enough to capture the bulk of
+        listings on most competitor sites while keeping the all-sites run
+        within the dashboard subprocess timeout. The existing
+        two-empty-pages-in-a-row rule still terminates earlier when the end
+        of results is reached.
         """
         print(f"\n[SCRAPING] Scraping: {url}")
 
@@ -751,12 +752,27 @@ class CompetitorScraper:
         print(f"\n[SUCCESS] {competitor}: Found {len(all_products)} total products")
         return all_products
 
-    async def scrape_all(self) -> Dict[str, List[Product]]:
-        """Scrape all competitors"""
+    async def scrape_all(self, per_competitor_timeout: int = 360) -> Dict[str, List[Product]]:
+        """Scrape all competitors.
+
+        Each competitor is wrapped in its own asyncio.wait_for so a single slow
+        or hanging site cannot consume the entire run budget. On timeout or
+        error we record an empty list for that competitor and continue.
+        """
         results = {}
 
         for competitor, config in COMPETITORS.items():
-            products = await self.scrape_competitor(competitor, config)
+            try:
+                products = await asyncio.wait_for(
+                    self.scrape_competitor(competitor, config),
+                    timeout=per_competitor_timeout,
+                )
+            except asyncio.TimeoutError:
+                print(f"[TIMEOUT] {competitor}: exceeded {per_competitor_timeout}s budget; moving on")
+                products = []
+            except Exception as e:
+                print(f"[ERROR] {competitor}: {e}")
+                products = []
             results[competitor] = products
 
         return results
