@@ -214,27 +214,52 @@ COMPETITORS = {
 # AI-Powered Scraper
 # ============================================================================
 
+
+def _resolve_llm_provider():
+    """Pick the LLM provider/model/key based on environment.
+
+    Honors LLM_PROVIDER if set ("deepseek" or "openai"). Otherwise auto-picks
+    whichever provider has a non-empty API key, preferring OpenAI when both
+    are present (DeepSeek frequently runs out of credit in production and
+    OpenAI is more reliable for our extraction prompts).
+    """
+    deepseek_key = (os.getenv("DEEPSEEK_API_KEY") or "").strip()
+    openai_key = (os.getenv("OPENAI_API_KEY") or "").strip()
+    forced = (os.getenv("LLM_PROVIDER") or "").strip().lower()
+
+    if forced == "deepseek":
+        return "deepseek", deepseek_key, "deepseek/deepseek-chat"
+    if forced == "openai":
+        return "openai", openai_key, "openai/gpt-4o-mini"
+
+    # Auto-detect: prefer OpenAI when available, fall back to DeepSeek.
+    if openai_key:
+        return "openai", openai_key, "openai/gpt-4o-mini"
+    if deepseek_key:
+        return "deepseek", deepseek_key, "deepseek/deepseek-chat"
+    # No key at all - return openai as default so error messages are coherent.
+    return "openai", "", "openai/gpt-4o-mini"
+
+
 class CompetitorScraper:
     """AI-powered competitor scraper using DeepSeek/OpenAI"""
 
     def __init__(self):
-        # Determine provider
-        self.provider = os.getenv("LLM_PROVIDER", "deepseek")
-
-        if self.provider == "deepseek":
-            self.api_key = os.getenv("DEEPSEEK_API_KEY")
-            self.model = "deepseek/deepseek-chat"
-        else:
-            self.api_key = os.getenv("OPENAI_API_KEY")
-            self.model = "openai/gpt-4o-mini"
+        # Determine provider. If LLM_PROVIDER is set explicitly, honor it.
+        # Otherwise auto-pick whichever provider actually has a non-empty key,
+        # preferring OpenAI when both are present (DeepSeek frequently runs out
+        # of credit in production).
+        self.provider, self.api_key, self.model = _resolve_llm_provider()
 
         # Track how many products we drop per competitor due to Jeff's 8th-gen+ Intel filter
         self.skipped_counts = defaultdict(int)
 
         if not self.api_key:
-            print(f"[WARNING] No {self.provider.upper()} API key found.")
-            print(f"   Set {self.provider.upper()}_API_KEY in .env file")
-            print("[INFO] Scraping will continue but may be less accurate.")
+            print(f"[WARNING] No API key available for provider '{self.provider}'.")
+            print("   Set OPENAI_API_KEY (preferred) or DEEPSEEK_API_KEY in the environment.")
+            print("[INFO] Scraping will continue but LLM extraction will fail.")
+        else:
+            print(f"[INFO] LLM provider: {self.provider} ({self.model})")
 
     # ------------------------------------------------------------------
     # Brand / CPU helpers to enforce Jeff's scope (Dell/HP/Lenovo, Intel 8th+)
@@ -970,14 +995,7 @@ class ReviewScraper:
     """Scrapes review data from individual product pages"""
 
     def __init__(self):
-        self.provider = os.getenv("LLM_PROVIDER", "deepseek")
-
-        if self.provider == "deepseek":
-            self.api_key = os.getenv("DEEPSEEK_API_KEY")
-            self.model = "deepseek/deepseek-chat"
-        else:
-            self.api_key = os.getenv("OPENAI_API_KEY")
-            self.model = "openai/gpt-4o-mini"
+        self.provider, self.api_key, self.model = _resolve_llm_provider()
 
     async def scrape_product_reviews(self, product_url: str) -> Optional[ReviewData]:
         """Scrape review data from a single product page"""
