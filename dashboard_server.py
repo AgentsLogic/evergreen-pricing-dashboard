@@ -284,6 +284,8 @@ def run_scraper(scraper_type='basic', site='all'):
                                         decoded_line = str(line).strip()
 
                                     if decoded_line:  # Only send non-empty lines
+                                        # Also print to server stdout so it appears in Render logs
+                                        print(f"[SCRAPER] {decoded_line}", flush=True)
                                         send_chat_message_sync(decoded_line, message_type, "scraper")
                             except (UnicodeDecodeError, AttributeError) as e:
                                 send_chat_message_sync(f"Line processing error: {str(e)}", "warning", "scraper")
@@ -379,6 +381,8 @@ def run_scraper(scraper_type='basic', site='all'):
                                         decoded_line = str(line).strip()
 
                                     if decoded_line:  # Only send non-empty lines
+                                        # Also print to server stdout so it appears in Render logs
+                                        print(f"[SCRAPER] {decoded_line}", flush=True)
                                         # Determine message type based on content
                                         if any(x in decoded_line for x in ['ERROR', 'FAILED', 'Exception']):
                                             msg_type = "error"
