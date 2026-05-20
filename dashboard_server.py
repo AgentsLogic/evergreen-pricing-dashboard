@@ -27,6 +27,19 @@ from crawl4ai.utils import perform_completion_with_backoff
 app = Flask(__name__)
 CORS(app)
 
+# ---------------------------------------------------------------------------
+# Persistent-disk support
+# ---------------------------------------------------------------------------
+def _data_dir() -> Path:
+    """Return the directory where persistent data lives (disk mount or cwd)."""
+    candidate = Path("/var/data")
+    if candidate.is_dir():
+        return candidate
+    return Path(".")
+
+def _data_file() -> Path:
+    return _data_dir() / "competitor_prices.json"
+
 # Global variable to track scraping status
 scraping_status = {
     "running": False,
@@ -64,7 +77,8 @@ if WATCHDOG_AVAILABLE:
         """Start watching the competitor_prices.json file"""
         event_handler = DataFileWatcher()
         observer = Observer()
-        observer.schedule(event_handler, path='.', recursive=False)
+        watch_path = str(_data_dir())
+        observer.schedule(event_handler, path=watch_path, recursive=False)
         observer.start()
         return observer
 else:
@@ -92,7 +106,7 @@ def health():
 def get_data():
     """Get the current competitor prices data"""
     try:
-        data_file = Path('competitor_prices.json')
+        data_file = _data_file()
         if data_file.exists():
             with open(data_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -734,7 +748,7 @@ def clear_chat():
 def get_multi_site_products():
     """Get products that appear on multiple sites with price comparisons"""
     try:
-        data_file = Path('competitor_prices.json')
+        data_file = _data_file()
         if not data_file.exists():
             return jsonify({"error": "No data file found. Run the scraper first."}), 404
 

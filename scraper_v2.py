@@ -32,6 +32,26 @@ def _log_memory(tag: str) -> None:
     except Exception:
         pass
 
+
+# ---------------------------------------------------------------------------
+# Persistent-disk support
+# ---------------------------------------------------------------------------
+# When Render mounts a persistent disk at /var/data, we store
+# competitor_prices.json there so it survives container restarts and OOM kills.
+# Falls back to the working directory for local development.
+
+def _data_dir() -> Path:
+    """Return the directory where persistent data should live."""
+    candidate = Path("/var/data")
+    if candidate.is_dir():
+        return candidate
+    return Path(".")
+
+
+def _data_file() -> Path:
+    """Absolute path to the competitor prices JSON file."""
+    return _data_dir() / "competitor_prices.json"
+
 # Set default encoding to UTF-8 for all file operations
 import locale
 if sys.platform == 'win32':
@@ -864,7 +884,7 @@ class CompetitorScraper:
     def _save_incremental_results(self, competitor: str, products: List[Product]):
         """Save incremental results after each page scrape - merge with existing data"""
         try:
-            filename = "competitor_prices.json"
+            filename = str(_data_file())
 
             # Load existing data (use errors='ignore' to handle corrupted data)
             existing_data = {}
@@ -906,7 +926,7 @@ class CompetitorScraper:
             # Create timestamped backup before updating (only if data exists)
             if existing_products:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                backup_filename = f"competitor_prices_backup_{timestamp}.json"
+                backup_filename = str(_data_dir() / f"competitor_prices_backup_{timestamp}.json")
 
                 # Save backup
                 with open(backup_filename, 'w', encoding='utf-8', errors='ignore') as f:
@@ -945,7 +965,7 @@ class CompetitorScraper:
         try:
             # Find all backup files
             backup_files = []
-            for file in Path('.').glob('competitor_prices_backup_*.json'):
+            for file in _data_dir().glob('competitor_prices_backup_*.json'):
                 try:
                     # Extract timestamp from filename
                     stat = file.stat()
@@ -971,7 +991,7 @@ class CompetitorScraper:
         except Exception as e:
             print(f"   [WARNING] Backup cleanup failed: {e}")
 
-    def save_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices.json"):
+    def save_results(self, results: Dict[str, List[Product]], filename: str = ""):
         """Merge results into the JSON file without erasing prior data.
 
         scrape_all now returns empty per-competitor lists by design (each page
@@ -992,10 +1012,13 @@ class CompetitorScraper:
                 counter so the dashboard sees the latest filter stats.
           * Always update skipped_products from the live counters.
         """
+        # Resolve the file path - use persistent disk if available.
+        resolved = Path(filename) if filename else _data_file()
+
         # Load existing data so we never wipe disk state on a partial run.
         merged: Dict[str, Dict] = {}
         try:
-            with open(filename, 'r', encoding='utf-8', errors='ignore') as f:
+            with open(resolved, 'r', encoding='utf-8', errors='ignore') as f:
                 merged = json.load(f) or {}
         except (FileNotFoundError, json.JSONDecodeError):
             merged = {}
@@ -1042,10 +1065,10 @@ class CompetitorScraper:
                 "products": product_dicts,
             }
 
-        with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
+        with open(resolved, 'w', encoding='utf-8', errors='ignore') as f:
             json.dump(merged, f, indent=2, ensure_ascii=False)
 
-        print(f"\n[SUCCESS] Results merged into {filename}")
+        print(f"\n[SUCCESS] Results merged into {resolved}")
 
     def print_summary(self, results: Dict[str, List[Product]]):
         """Print summary of results"""
@@ -1230,7 +1253,7 @@ async def main():
 
         # Save results - load existing data and update only this competitor
         try:
-            with open("competitor_prices.json", 'r') as f:
+            with open(_data_file(), 'r') as f:
                 existing_data = json.load(f)
         except FileNotFoundError:
             existing_data = {}
@@ -1254,7 +1277,7 @@ async def main():
         }
 
         # Save updated data
-        with open("competitor_prices.json", 'w') as f:
+        with open(_data_file(), 'w') as f:
             json.dump(existing_data, f, indent=2, ensure_ascii=False)
 
         print(f"\n[SUCCESS] {args.competitor} scraping complete!")
