@@ -441,10 +441,10 @@ def run_scraper(scraper_type='basic', site='all'):
             stream_thread.start()
 
             # Wait for completion with timeout. With 17 competitors and a
-            # per-competitor budget of ~6 minutes in scraper_v2.scrape_all,
-            # the worst-case full run is ~100 minutes. We allow 120 minutes
+            # per-competitor budget of 9 minutes in scraper_v2.scrape_all,
+            # the worst-case full run is ~153 minutes. We allow 180 minutes
             # of wall time here so no site is silently skipped at the end.
-            proc.wait(timeout=7200)  # 120 minute timeout for all-sites run
+            proc.wait(timeout=10800)  # 180 minute timeout for all-sites run
 
             # Wait for thread to finish reading any remaining output
             stream_thread.join(timeout=5)

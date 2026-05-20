@@ -4,6 +4,7 @@ Scrapes all products from 5 competitor websites
 """
 
 import asyncio
+import gc
 import json
 import re
 import sys
@@ -12,6 +13,24 @@ from datetime import datetime
 from typing import List, Dict, Optional
 from collections import defaultdict
 from pathlib import Path
+
+try:
+    import psutil  # type: ignore
+    _PSUTIL_PROC = psutil.Process(os.getpid())
+except Exception:  # pragma: no cover - psutil is optional at runtime
+    psutil = None
+    _PSUTIL_PROC = None
+
+
+def _log_memory(tag: str) -> None:
+    """Best-effort RSS log so we can see memory growth between competitors."""
+    if _PSUTIL_PROC is None:
+        return
+    try:
+        rss_mb = _PSUTIL_PROC.memory_info().rss / (1024 * 1024)
+        print(f"[MEM] {tag}: RSS={rss_mb:.1f} MB")
+    except Exception:
+        pass
 
 # Set default encoding to UTF-8 for all file operations
 import locale
@@ -798,14 +817,22 @@ class CompetitorScraper:
         print(f"\n[SUCCESS] {competitor}: Found {len(all_products)} total products")
         return all_products
 
-    async def scrape_all(self, per_competitor_timeout: int = 360) -> Dict[str, List[Product]]:
+    async def scrape_all(self, per_competitor_timeout: int = 540) -> Dict[str, List[Product]]:
         """Scrape all competitors.
 
         Each competitor is wrapped in its own asyncio.wait_for so a single slow
         or hanging site cannot consume the entire run budget. On timeout or
         error we record an empty list for that competitor and continue.
+
+        Memory note: every page is persisted to disk via
+        _save_incremental_results, so we do NOT need to hold each competitor's
+        product list in memory after the competitor finishes. We replace the
+        list with an empty list and force a GC pass between competitors to keep
+        the resident set under Render's 2 GB container limit.
         """
-        results = {}
+        results: Dict[str, List[Product]] = {}
+
+        _log_memory("scrape_all start")
 
         for competitor, config in COMPETITORS.items():
             try:
@@ -819,7 +846,18 @@ class CompetitorScraper:
             except Exception as e:
                 print(f"[ERROR] {competitor}: {e}")
                 products = []
-            results[competitor] = products
+
+            # Record only the COUNT in the in-memory results dict; the actual
+            # product objects are already persisted to competitor_prices.json
+            # by _save_incremental_results. Keeping them in memory across all
+            # 17 competitors is what was pushing RSS past 1.5 GB and triggering
+            # OOM kills on the Render container.
+            count = len(products)
+            print(f"[DONE] {competitor}: {count} products (data on disk)")
+            results[competitor] = []
+            products = None  # drop reference so GC can reclaim immediately
+            gc.collect()
+            _log_memory(f"after {competitor} ({count} products)")
 
         return results
 
@@ -934,19 +972,37 @@ class CompetitorScraper:
             print(f"   [WARNING] Backup cleanup failed: {e}")
 
     def save_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices.json"):
-        """Save results to JSON file.
+        """Merge results into the JSON file without erasing prior data.
 
-        Products passed into this method have already gone through Jeff's
-        Dell/HP/Lenovo + Intel 8th‑gen+ filter. Here we only look up how many
-        products were skipped during scraping so the dashboard can display it.
+        scrape_all now returns empty per-competitor lists by design (each page
+        was already written incrementally to disk by _save_incremental_results
+        to keep memory usage down). This method must therefore MERGE the
+        in-memory results into the existing file rather than overwrite it,
+        otherwise sites that timed out -- or sites whose data only lives on
+        disk -- would have their previously-saved products wiped out.
+
+        Behaviour:
+          * Load existing file as the baseline.
+          * For each competitor in `results`:
+              - If the in-memory list is non-empty, replace that competitor's
+                products in the baseline (this is the historical behaviour for
+                callers that actually pass products in).
+              - If the in-memory list is empty, keep whatever is already on
+                disk for that competitor and only refresh the skipped-products
+                counter so the dashboard sees the latest filter stats.
+          * Always update skipped_products from the live counters.
         """
-        output = {}
+        # Load existing data so we never wipe disk state on a partial run.
+        merged: Dict[str, Dict] = {}
+        try:
+            with open(filename, 'r', encoding='utf-8', errors='ignore') as f:
+                merged = json.load(f) or {}
+        except (FileNotFoundError, json.JSONDecodeError):
+            merged = {}
 
         for competitor, products in results.items():
-            # Products are already filtered when they reach save_results
             filtered: List[Product] = list(products)
 
-            # How many products did we drop for this competitor during scraping?
             dropped = 0
             try:
                 if hasattr(self, "skipped_counts"):
@@ -960,19 +1016,36 @@ class CompetitorScraper:
                     f"that do not match Dell/HP/Lenovo Intel 8th-gen+ rule"
                 )
 
-            output[competitor] = {
+            existing_entry = merged.get(competitor) or {}
+            existing_products = existing_entry.get("products", []) if isinstance(existing_entry, dict) else []
+
+            if filtered:
+                product_dicts = [p.model_dump() for p in filtered]
+                total = len(product_dicts)
+            else:
+                # Preserve whatever was persisted incrementally to disk.
+                product_dicts = existing_products
+                total = len(product_dicts)
+
+            base_url = ""
+            try:
+                base_url = COMPETITORS[competitor]["base_url"]
+            except Exception:
+                base_url = existing_entry.get("website", "") if isinstance(existing_entry, dict) else ""
+
+            merged[competitor] = {
                 "competitor": competitor,
-                "website": COMPETITORS[competitor]["base_url"],
+                "website": base_url,
                 "scrape_date": datetime.now().isoformat(),
-                "total_products": len(filtered),
+                "total_products": total,
                 "skipped_products": dropped,
-                "products": [p.model_dump() for p in filtered]
+                "products": product_dicts,
             }
 
         with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
+            json.dump(merged, f, indent=2, ensure_ascii=False)
 
-        print(f"\n[SUCCESS] Results saved to {filename}")
+        print(f"\n[SUCCESS] Results merged into {filename}")
 
     def print_summary(self, results: Dict[str, List[Product]]):
         """Print summary of results"""
