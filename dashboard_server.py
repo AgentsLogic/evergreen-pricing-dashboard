@@ -152,6 +152,7 @@ def export_csv():
             website = comp_data.get("website", "")
             scrape_date = comp_data.get("scrape_date", "")
             for p in products:
+                cfg = p.get("config", {}) or {}
                 writer.writerow([
                     comp_name,
                     website,
@@ -159,14 +160,14 @@ def export_csv():
                     p.get("brand", ""),
                     p.get("model", ""),
                     p.get("price", ""),
-                    p.get("processor", ""),
-                    p.get("ram", ""),
-                    p.get("storage", ""),
-                    p.get("cosmetic_grade", ""),
-                    p.get("form_factor", ""),
-                    p.get("screen_size", ""),
-                    p.get("screen_resolution", ""),
-                    p.get("product_url", ""),
+                    cfg.get("processor", ""),
+                    cfg.get("ram", ""),
+                    cfg.get("storage", ""),
+                    cfg.get("cosmetic_grade", ""),
+                    cfg.get("form_factor", ""),
+                    cfg.get("screen_size", ""),
+                    cfg.get("screen_resolution", ""),
+                    p.get("url", ""),
                 ])
 
         csv_bytes = output.getvalue().encode("utf-8")

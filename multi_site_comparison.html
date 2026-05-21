@@ -24,12 +24,21 @@
                 <div class="flex items-center">
                     <h1 class="text-xl font-semibold text-gray-900">Competitive Pricing Intelligence</h1>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 flex-wrap gap-y-2">
                     <a href="/" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                        ← Back to Dashboard
+                        🏠 Dashboard
                     </a>
-                    <button @click="refreshData()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                        🔄 Refresh Data
+                    <a href="/graphs" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        📊 Analytics
+                    </a>
+                    <a href="/popularity" class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        🏆 Popularity
+                    </a>
+                    <a href="/api/export/csv" class="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        📥 Export CSV
+                    </a>
+                    <button type="button" @click="refreshData()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        🔄 Refresh
                     </button>
                 </div>
             </div>
