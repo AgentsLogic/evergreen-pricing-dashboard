@@ -117,6 +117,71 @@ def get_data():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/export/csv')
+def export_csv():
+    """Export all scraped products as a flat CSV file (one row per product).
+
+    Columns: competitor, website, scrape_date, brand, model, price,
+             processor, ram, storage, cosmetic_grade, form_factor,
+             screen_size, screen_resolution, product_url
+    All 17 competitors appear; those with zero products contribute no rows
+    but their summary row IS included in the per-competitor summary sheet
+    (accessible via /api/data).
+    """
+    import csv
+    import io
+    try:
+        data_file = _data_file()
+        if not data_file.exists():
+            return jsonify({"error": "No data file found. Run the scraper first."}), 404
+        with open(data_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow([
+            "competitor", "website", "scrape_date",
+            "brand", "model", "price",
+            "processor", "ram", "storage",
+            "cosmetic_grade", "form_factor",
+            "screen_size", "screen_resolution", "product_url",
+        ])
+
+        for comp_name, comp_data in sorted(data.items()):
+            products = comp_data.get("products", [])
+            website = comp_data.get("website", "")
+            scrape_date = comp_data.get("scrape_date", "")
+            for p in products:
+                writer.writerow([
+                    comp_name,
+                    website,
+                    scrape_date,
+                    p.get("brand", ""),
+                    p.get("model", ""),
+                    p.get("price", ""),
+                    p.get("processor", ""),
+                    p.get("ram", ""),
+                    p.get("storage", ""),
+                    p.get("cosmetic_grade", ""),
+                    p.get("form_factor", ""),
+                    p.get("screen_size", ""),
+                    p.get("screen_resolution", ""),
+                    p.get("product_url", ""),
+                ])
+
+        csv_bytes = output.getvalue().encode("utf-8")
+        from flask import Response
+        from datetime import date
+        filename = f"competitor_prices_{date.today().isoformat()}.csv"
+        return Response(
+            csv_bytes,
+            mimetype="text/csv",
+            headers={"Content-Disposition": f"attachment; filename={filename}"},
+        )
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route('/api/competitors')
 def get_competitors():
     """Return the list of every competitor the scraper is configured for.
