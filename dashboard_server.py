@@ -1,4 +1,4 @@
-﻿"""
+"""
 Flask server for the price dashboard with working buttons
 """
 
@@ -26,6 +26,19 @@ from crawl4ai.utils import perform_completion_with_backoff
 
 app = Flask(__name__)
 CORS(app)
+
+# ---------------------------------------------------------------------------
+# Persistent-disk support
+# ---------------------------------------------------------------------------
+def _data_dir() -> Path:
+    """Return the directory where persistent data lives (disk mount or cwd)."""
+    candidate = Path("/var/data")
+    if candidate.is_dir():
+        return candidate
+    return Path(".")
+
+def _data_file() -> Path:
+    return _data_dir() / "competitor_prices.json"
 
 # Global variable to track scraping status
 scraping_status = {
@@ -64,7 +77,8 @@ if WATCHDOG_AVAILABLE:
         """Start watching the competitor_prices.json file"""
         event_handler = DataFileWatcher()
         observer = Observer()
-        observer.schedule(event_handler, path='.', recursive=False)
+        watch_path = str(_data_dir())
+        observer.schedule(event_handler, path=watch_path, recursive=False)
         observer.start()
         return observer
 else:
@@ -92,7 +106,7 @@ def health():
 def get_data():
     """Get the current competitor prices data"""
     try:
-        data_file = Path('competitor_prices.json')
+        data_file = _data_file()
         if data_file.exists():
             with open(data_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -101,6 +115,93 @@ def get_data():
             return jsonify({"error": "No data file found. Run the scraper first."}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/export/csv')
+def export_csv():
+    """Export all scraped products as a flat CSV file (one row per product).
+
+    Columns: competitor, website, scrape_date, brand, model, price,
+             processor, ram, storage, cosmetic_grade, form_factor,
+             screen_size, screen_resolution, product_url
+    All 17 competitors appear; those with zero products contribute no rows
+    but their summary row IS included in the per-competitor summary sheet
+    (accessible via /api/data).
+    """
+    import csv
+    import io
+    try:
+        data_file = _data_file()
+        if not data_file.exists():
+            return jsonify({"error": "No data file found. Run the scraper first."}), 404
+        with open(data_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow([
+            "competitor", "website", "scrape_date",
+            "brand", "model", "price",
+            "processor", "ram", "storage",
+            "cosmetic_grade", "form_factor",
+            "screen_size", "screen_resolution", "product_url",
+        ])
+
+        for comp_name, comp_data in sorted(data.items()):
+            products = comp_data.get("products", [])
+            website = comp_data.get("website", "")
+            scrape_date = comp_data.get("scrape_date", "")
+            for p in products:
+                cfg = p.get("config", {}) or {}
+                writer.writerow([
+                    comp_name,
+                    website,
+                    scrape_date,
+                    p.get("brand", ""),
+                    p.get("model", ""),
+                    p.get("price", ""),
+                    cfg.get("processor", ""),
+                    cfg.get("ram", ""),
+                    cfg.get("storage", ""),
+                    cfg.get("cosmetic_grade", ""),
+                    cfg.get("form_factor", ""),
+                    cfg.get("screen_size", ""),
+                    cfg.get("screen_resolution", ""),
+                    p.get("url", ""),
+                ])
+
+        csv_bytes = output.getvalue().encode("utf-8")
+        from flask import Response
+        from datetime import date
+        filename = f"competitor_prices_{date.today().isoformat()}.csv"
+        return Response(
+            csv_bytes,
+            mimetype="text/csv",
+            headers={"Content-Disposition": f"attachment; filename={filename}"},
+        )
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/competitors')
+def get_competitors():
+    """Return the list of every competitor the scraper is configured for.
+
+    Used by the dashboard so dropdowns and CSV exports can include sites that
+    do not yet have any rows in competitor_prices.json (otherwise the UI would
+    silently omit newly-added competitors that returned zero products on the
+    last scrape).
+    """
+    try:
+        from scraper_v2 import COMPETITORS as SCRAPER_COMPETITORS
+        names = sorted(SCRAPER_COMPETITORS.keys())
+        details = [
+            {"name": name, "base_url": SCRAPER_COMPETITORS[name].get("base_url", "")}
+            for name in names
+        ]
+        return jsonify({"competitors": names, "details": details, "count": len(names)})
+    except Exception as e:
+        return jsonify({"error": str(e), "competitors": []}), 500
 
 
 
@@ -263,6 +364,8 @@ def run_scraper(scraper_type='basic', site='all'):
                                         decoded_line = str(line).strip()
 
                                     if decoded_line:  # Only send non-empty lines
+                                        # Also print to server stdout so it appears in Render logs
+                                        print(f"[SCRAPER] {decoded_line}", flush=True)
                                         send_chat_message_sync(decoded_line, message_type, "scraper")
                             except (UnicodeDecodeError, AttributeError) as e:
                                 send_chat_message_sync(f"Line processing error: {str(e)}", "warning", "scraper")
@@ -311,7 +414,7 @@ def run_scraper(scraper_type='basic', site='all'):
             stream_thread.start()
 
             # Wait for completion with timeout
-            proc.wait(timeout=1800)  # 30 minute timeout
+            proc.wait(timeout=1800)  # 30 minute timeout for a single site
 
             if proc.returncode == 0:
                 scraping_status["progress"] = "Scraping completed successfully!"
@@ -358,6 +461,8 @@ def run_scraper(scraper_type='basic', site='all'):
                                         decoded_line = str(line).strip()
 
                                     if decoded_line:  # Only send non-empty lines
+                                        # Also print to server stdout so it appears in Render logs
+                                        print(f"[SCRAPER] {decoded_line}", flush=True)
                                         # Determine message type based on content
                                         if any(x in decoded_line for x in ['ERROR', 'FAILED', 'Exception']):
                                             msg_type = "error"
@@ -415,8 +520,11 @@ def run_scraper(scraper_type='basic', site='all'):
             stream_thread.daemon = True
             stream_thread.start()
 
-            # Wait for completion with timeout
-            proc.wait(timeout=1800)  # 30 minute timeout
+            # Wait for completion with timeout. With 17 competitors and a
+            # per-competitor budget of 9 minutes in scraper_v2.scrape_all,
+            # the worst-case full run is ~153 minutes. We allow 180 minutes
+            # of wall time here so no site is silently skipped at the end.
+            proc.wait(timeout=10800)  # 180 minute timeout for all-sites run
 
             # Wait for thread to finish reading any remaining output
             stream_thread.join(timeout=5)
@@ -434,7 +542,7 @@ def run_scraper(scraper_type='basic', site='all'):
             send_chat_message_sync(f"ðŸ Scraper process finished (exit={proc.returncode})", "info", "scraper")
 
     except subprocess.TimeoutExpired:
-        error_msg = "Scraper timed out after 30 minutes"
+        error_msg = "Scraper exceeded its wall-clock budget"
         scraping_status["error"] = error_msg
         scraping_status["progress"] = "Timeout"
         send_chat_message_sync(f"â° {error_msg}", "error", "scraper")
@@ -706,7 +814,7 @@ def clear_chat():
 def get_multi_site_products():
     """Get products that appear on multiple sites with price comparisons"""
     try:
-        data_file = Path('competitor_prices.json')
+        data_file = _data_file()
         if not data_file.exists():
             return jsonify({"error": "No data file found. Run the scraper first."}), 404
 

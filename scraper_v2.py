@@ -4,6 +4,7 @@ Scrapes all products from 5 competitor websites
 """
 
 import asyncio
+import gc
 import json
 import re
 import sys
@@ -12,6 +13,44 @@ from datetime import datetime
 from typing import List, Dict, Optional
 from collections import defaultdict
 from pathlib import Path
+
+try:
+    import psutil  # type: ignore
+    _PSUTIL_PROC = psutil.Process(os.getpid())
+except Exception:  # pragma: no cover - psutil is optional at runtime
+    psutil = None
+    _PSUTIL_PROC = None
+
+
+def _log_memory(tag: str) -> None:
+    """Best-effort RSS log so we can see memory growth between competitors."""
+    if _PSUTIL_PROC is None:
+        return
+    try:
+        rss_mb = _PSUTIL_PROC.memory_info().rss / (1024 * 1024)
+        print(f"[MEM] {tag}: RSS={rss_mb:.1f} MB")
+    except Exception:
+        pass
+
+
+# ---------------------------------------------------------------------------
+# Persistent-disk support
+# ---------------------------------------------------------------------------
+# When Render mounts a persistent disk at /var/data, we store
+# competitor_prices.json there so it survives container restarts and OOM kills.
+# Falls back to the working directory for local development.
+
+def _data_dir() -> Path:
+    """Return the directory where persistent data should live."""
+    candidate = Path("/var/data")
+    if candidate.is_dir():
+        return candidate
+    return Path(".")
+
+
+def _data_file() -> Path:
+    """Absolute path to the competitor prices JSON file."""
+    return _data_dir() / "competitor_prices.json"
 
 # Set default encoding to UTF-8 for all file operations
 import locale
@@ -214,27 +253,52 @@ COMPETITORS = {
 # AI-Powered Scraper
 # ============================================================================
 
+
+def _resolve_llm_provider():
+    """Pick the LLM provider/model/key based on environment.
+
+    Honors LLM_PROVIDER if set ("deepseek" or "openai"). Otherwise auto-picks
+    whichever provider has a non-empty API key, preferring OpenAI when both
+    are present (DeepSeek frequently runs out of credit in production and
+    OpenAI is more reliable for our extraction prompts).
+    """
+    deepseek_key = (os.getenv("DEEPSEEK_API_KEY") or "").strip()
+    openai_key = (os.getenv("OPENAI_API_KEY") or "").strip()
+    forced = (os.getenv("LLM_PROVIDER") or "").strip().lower()
+
+    if forced == "deepseek":
+        return "deepseek", deepseek_key, "deepseek/deepseek-chat"
+    if forced == "openai":
+        return "openai", openai_key, "openai/gpt-4o-mini"
+
+    # Auto-detect: prefer OpenAI when available, fall back to DeepSeek.
+    if openai_key:
+        return "openai", openai_key, "openai/gpt-4o-mini"
+    if deepseek_key:
+        return "deepseek", deepseek_key, "deepseek/deepseek-chat"
+    # No key at all - return openai as default so error messages are coherent.
+    return "openai", "", "openai/gpt-4o-mini"
+
+
 class CompetitorScraper:
     """AI-powered competitor scraper using DeepSeek/OpenAI"""
 
     def __init__(self):
-        # Determine provider
-        self.provider = os.getenv("LLM_PROVIDER", "deepseek")
-
-        if self.provider == "deepseek":
-            self.api_key = os.getenv("DEEPSEEK_API_KEY")
-            self.model = "deepseek/deepseek-chat"
-        else:
-            self.api_key = os.getenv("OPENAI_API_KEY")
-            self.model = "openai/gpt-4o-mini"
+        # Determine provider. If LLM_PROVIDER is set explicitly, honor it.
+        # Otherwise auto-pick whichever provider actually has a non-empty key,
+        # preferring OpenAI when both are present (DeepSeek frequently runs out
+        # of credit in production).
+        self.provider, self.api_key, self.model = _resolve_llm_provider()
 
         # Track how many products we drop per competitor due to Jeff's 8th-gen+ Intel filter
         self.skipped_counts = defaultdict(int)
 
         if not self.api_key:
-            print(f"[WARNING] No {self.provider.upper()} API key found.")
-            print(f"   Set {self.provider.upper()}_API_KEY in .env file")
-            print("[INFO] Scraping will continue but may be less accurate.")
+            print(f"[WARNING] No API key available for provider '{self.provider}'.")
+            print("   Set OPENAI_API_KEY (preferred) or DEEPSEEK_API_KEY in the environment.")
+            print("[INFO] Scraping will continue but LLM extraction will fail.")
+        else:
+            print(f"[INFO] LLM provider: {self.provider} ({self.model})")
 
     # ------------------------------------------------------------------
     # Brand / CPU helpers to enforce Jeff's scope (Dell/HP/Lenovo, Intel 8th+)
@@ -249,6 +313,20 @@ class CompetitorScraper:
         if b in {"hp", "hewlett-packard", "hewlett packard", "hewlett\u2011packard"} or "hewlett" in b:
             return "HP"
         if "lenovo" in b:
+            return "Lenovo"
+        return None
+
+    def _detect_brand_from_text(self, text: Optional[str]) -> Optional[str]:
+        """Detect Dell/HP/Lenovo brand from free text (title, description, etc.)."""
+        if not text:
+            return None
+        t = text.lower()
+        if "dell" in t:
+            return "Dell"
+        # HP: match 'hp' as a whole word or common HP sub-brand names
+        if re.search(r'\bhp\b', t) or "hewlett" in t or re.search(r'\bprobook\b', t) or re.search(r'\belitebook\b', t) or re.search(r'\bzbook\b', t) or re.search(r'\bproliant\b', t):
+            return "HP"
+        if "lenovo" in t or re.search(r'\bthinkpad\b', t) or re.search(r'\bthinkcentre\b', t) or re.search(r'\bideapad\b', t):
             return "Lenovo"
         return None
 
@@ -337,13 +415,27 @@ class CompetitorScraper:
         return None
 
     def _is_relevant_product(self, product: "Product") -> bool:
-        """Return True only for Dell/HP/Lenovo with Intel 8th-gen or newer CPUs.
+        """Return True for Dell/HP/Lenovo with Intel 8th-gen or newer CPUs.
 
-        This implements Jeff's business rule: only show 8th+ gen Intel laptops/desktops
-        from Dell, HP, or Lenovo. 7th gen and older (or non-Intel/unknown) are dropped.
+        Implements Jeff's business rule: only show 8th+ gen Intel laptops/desktops
+        from Dell, HP, or Lenovo. Many competitor listing pages do NOT expose CPU
+        details (only the product detail page does), so when we cannot positively
+        identify the generation we keep the product instead of silently dropping
+        it -- the dashboard's UI filters can still narrow on CPU generation, and
+        keeping these rows is what lets newly added Shopify-style competitors
+        (DiscountPC, EvergreenElectronics, BlairTech, JoySystems, ...) show up
+        at all. Only products we can positively identify as <8th gen (or as
+        non-Intel) are dropped.
         """
-        # Normalize/validate brand first
+        # Normalize/validate brand first – try the explicit brand field, then
+        # fall back to detecting the brand in the product title/model.  Many
+        # competitor sites populate the brand field with their own store name
+        # (e.g. "DiscountComputerDepot") rather than the OEM brand, but the
+        # title almost always says "Dell Latitude 7420" or "HP EliteBook …".
         normalized = self._normalize_brand(getattr(product, "brand", None))
+        if not normalized:
+            title_model_text = (product.title or "") + " " + (product.model or "")
+            normalized = self._detect_brand_from_text(title_model_text)
         if not normalized:
             return False
         product.brand = normalized
@@ -367,20 +459,30 @@ class CompetitorScraper:
 
         gen = self._extract_intel_generation(cpu_text)
         if gen is None:
-            # We couldn't verify Intel generation -> treat as not relevant
-            return False
+            # Could not verify the Intel generation from the listing page.
+            # If the text mentions a competing CPU brand we know is out of scope
+            # (AMD/Ryzen/Athlon/Celeron/Pentium/Apple), drop it. Otherwise keep
+            # it so listing-page-only data isn't lost.
+            haystack = (cpu_text or "").lower()
+            disqualifiers = ("ryzen", "athlon", "amd ", "celeron", "pentium",
+                             "apple m1", "apple m2", "apple m3", "apple m4",
+                             "mediatek", "snapdragon")
+            if any(tag in haystack for tag in disqualifiers):
+                return False
+            return True
 
         # Enforce 8th generation and newer only
         return gen >= 8
 
-    async def scrape_url(self, url: str, competitor: str, max_pages: int = 50) -> List[Product]:
+    async def scrape_url(self, url: str, competitor: str, max_pages: int = 8) -> List[Product]:
         """Scrape a single URL and extract all products (handles pagination).
 
         max_pages controls how many paginated result pages we will visit for
-        a given category URL. The default was 5; increasing this to 50 makes
-        it much more likely we reach the true end of results on large sites
-        like OfficeDepot, while the existing two-empty-pages-in-a-row rule
-        still keeps the loop bounded.
+        a given category URL. Default is 8: enough to capture the bulk of
+        listings on most competitor sites while keeping the all-sites run
+        within the dashboard subprocess timeout. The existing
+        two-empty-pages-in-a-row rule still terminates earlier when the end
+        of results is reached.
         """
         print(f"\n[SCRAPING] Scraping: {url}")
 
@@ -735,20 +837,54 @@ class CompetitorScraper:
         print(f"\n[SUCCESS] {competitor}: Found {len(all_products)} total products")
         return all_products
 
-    async def scrape_all(self) -> Dict[str, List[Product]]:
-        """Scrape all competitors"""
-        results = {}
+    async def scrape_all(self, per_competitor_timeout: int = 540) -> Dict[str, List[Product]]:
+        """Scrape all competitors.
+
+        Each competitor is wrapped in its own asyncio.wait_for so a single slow
+        or hanging site cannot consume the entire run budget. On timeout or
+        error we record an empty list for that competitor and continue.
+
+        Memory note: every page is persisted to disk via
+        _save_incremental_results, so we do NOT need to hold each competitor's
+        product list in memory after the competitor finishes. We replace the
+        list with an empty list and force a GC pass between competitors to keep
+        the resident set under Render's 2 GB container limit.
+        """
+        results: Dict[str, List[Product]] = {}
+
+        _log_memory("scrape_all start")
 
         for competitor, config in COMPETITORS.items():
-            products = await self.scrape_competitor(competitor, config)
-            results[competitor] = products
+            try:
+                products = await asyncio.wait_for(
+                    self.scrape_competitor(competitor, config),
+                    timeout=per_competitor_timeout,
+                )
+            except asyncio.TimeoutError:
+                print(f"[TIMEOUT] {competitor}: exceeded {per_competitor_timeout}s budget; moving on")
+                products = []
+            except Exception as e:
+                print(f"[ERROR] {competitor}: {e}")
+                products = []
+
+            # Record only the COUNT in the in-memory results dict; the actual
+            # product objects are already persisted to competitor_prices.json
+            # by _save_incremental_results. Keeping them in memory across all
+            # 17 competitors is what was pushing RSS past 1.5 GB and triggering
+            # OOM kills on the Render container.
+            count = len(products)
+            print(f"[DONE] {competitor}: {count} products (data on disk)")
+            results[competitor] = []
+            products = None  # drop reference so GC can reclaim immediately
+            gc.collect()
+            _log_memory(f"after {competitor} ({count} products)")
 
         return results
 
     def _save_incremental_results(self, competitor: str, products: List[Product]):
         """Save incremental results after each page scrape - merge with existing data"""
         try:
-            filename = "competitor_prices.json"
+            filename = str(_data_file())
 
             # Load existing data (use errors='ignore' to handle corrupted data)
             existing_data = {}
@@ -790,7 +926,7 @@ class CompetitorScraper:
             # Create timestamped backup before updating (only if data exists)
             if existing_products:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                backup_filename = f"competitor_prices_backup_{timestamp}.json"
+                backup_filename = str(_data_dir() / f"competitor_prices_backup_{timestamp}.json")
 
                 # Save backup
                 with open(backup_filename, 'w', encoding='utf-8', errors='ignore') as f:
@@ -829,7 +965,7 @@ class CompetitorScraper:
         try:
             # Find all backup files
             backup_files = []
-            for file in Path('.').glob('competitor_prices_backup_*.json'):
+            for file in _data_dir().glob('competitor_prices_backup_*.json'):
                 try:
                     # Extract timestamp from filename
                     stat = file.stat()
@@ -855,20 +991,41 @@ class CompetitorScraper:
         except Exception as e:
             print(f"   [WARNING] Backup cleanup failed: {e}")
 
-    def save_results(self, results: Dict[str, List[Product]], filename: str = "competitor_prices.json"):
-        """Save results to JSON file.
+    def save_results(self, results: Dict[str, List[Product]], filename: str = ""):
+        """Merge results into the JSON file without erasing prior data.
 
-        Products passed into this method have already gone through Jeff's
-        Dell/HP/Lenovo + Intel 8th‑gen+ filter. Here we only look up how many
-        products were skipped during scraping so the dashboard can display it.
+        scrape_all now returns empty per-competitor lists by design (each page
+        was already written incrementally to disk by _save_incremental_results
+        to keep memory usage down). This method must therefore MERGE the
+        in-memory results into the existing file rather than overwrite it,
+        otherwise sites that timed out -- or sites whose data only lives on
+        disk -- would have their previously-saved products wiped out.
+
+        Behaviour:
+          * Load existing file as the baseline.
+          * For each competitor in `results`:
+              - If the in-memory list is non-empty, replace that competitor's
+                products in the baseline (this is the historical behaviour for
+                callers that actually pass products in).
+              - If the in-memory list is empty, keep whatever is already on
+                disk for that competitor and only refresh the skipped-products
+                counter so the dashboard sees the latest filter stats.
+          * Always update skipped_products from the live counters.
         """
-        output = {}
+        # Resolve the file path - use persistent disk if available.
+        resolved = Path(filename) if filename else _data_file()
+
+        # Load existing data so we never wipe disk state on a partial run.
+        merged: Dict[str, Dict] = {}
+        try:
+            with open(resolved, 'r', encoding='utf-8', errors='ignore') as f:
+                merged = json.load(f) or {}
+        except (FileNotFoundError, json.JSONDecodeError):
+            merged = {}
 
         for competitor, products in results.items():
-            # Products are already filtered when they reach save_results
             filtered: List[Product] = list(products)
 
-            # How many products did we drop for this competitor during scraping?
             dropped = 0
             try:
                 if hasattr(self, "skipped_counts"):
@@ -882,19 +1039,36 @@ class CompetitorScraper:
                     f"that do not match Dell/HP/Lenovo Intel 8th-gen+ rule"
                 )
 
-            output[competitor] = {
+            existing_entry = merged.get(competitor) or {}
+            existing_products = existing_entry.get("products", []) if isinstance(existing_entry, dict) else []
+
+            if filtered:
+                product_dicts = [p.model_dump() for p in filtered]
+                total = len(product_dicts)
+            else:
+                # Preserve whatever was persisted incrementally to disk.
+                product_dicts = existing_products
+                total = len(product_dicts)
+
+            base_url = ""
+            try:
+                base_url = COMPETITORS[competitor]["base_url"]
+            except Exception:
+                base_url = existing_entry.get("website", "") if isinstance(existing_entry, dict) else ""
+
+            merged[competitor] = {
                 "competitor": competitor,
-                "website": COMPETITORS[competitor]["base_url"],
+                "website": base_url,
                 "scrape_date": datetime.now().isoformat(),
-                "total_products": len(filtered),
+                "total_products": total,
                 "skipped_products": dropped,
-                "products": [p.model_dump() for p in filtered]
+                "products": product_dicts,
             }
 
-        with open(filename, 'w', encoding='utf-8', errors='ignore') as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
+        with open(resolved, 'w', encoding='utf-8', errors='ignore') as f:
+            json.dump(merged, f, indent=2, ensure_ascii=False)
 
-        print(f"\n[SUCCESS] Results saved to {filename}")
+        print(f"\n[SUCCESS] Results merged into {resolved}")
 
     def print_summary(self, results: Dict[str, List[Product]]):
         """Print summary of results"""
@@ -917,14 +1091,7 @@ class ReviewScraper:
     """Scrapes review data from individual product pages"""
 
     def __init__(self):
-        self.provider = os.getenv("LLM_PROVIDER", "deepseek")
-
-        if self.provider == "deepseek":
-            self.api_key = os.getenv("DEEPSEEK_API_KEY")
-            self.model = "deepseek/deepseek-chat"
-        else:
-            self.api_key = os.getenv("OPENAI_API_KEY")
-            self.model = "openai/gpt-4o-mini"
+        self.provider, self.api_key, self.model = _resolve_llm_provider()
 
     async def scrape_product_reviews(self, product_url: str) -> Optional[ReviewData]:
         """Scrape review data from a single product page"""
@@ -1086,7 +1253,7 @@ async def main():
 
         # Save results - load existing data and update only this competitor
         try:
-            with open("competitor_prices.json", 'r') as f:
+            with open(_data_file(), 'r') as f:
                 existing_data = json.load(f)
         except FileNotFoundError:
             existing_data = {}
@@ -1110,7 +1277,7 @@ async def main():
         }
 
         # Save updated data
-        with open("competitor_prices.json", 'w') as f:
+        with open(_data_file(), 'w') as f:
             json.dump(existing_data, f, indent=2, ensure_ascii=False)
 
         print(f"\n[SUCCESS] {args.competitor} scraping complete!")
